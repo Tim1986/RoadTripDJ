@@ -64,7 +64,6 @@ const getClosestCities = address => {
     return wiki().pagesInCategory("Category:American musicians by city")
         .then((result) => {
             const places = []
-            const arrayOfTimPromises = []
             result.forEach(category => {
                 let test = category.split(" from ")
                 places.push(test[1])
@@ -79,18 +78,19 @@ const getClosestCities = address => {
             //----------------------------------Tim's Calls----------------------------------
             const arrayOfTimPromises = []
             for (let i = 0; i < 5; i++) {
-                arrayOfTimPromises.push(getArrayOfArtists("Musicians from " + closestCities[i].cityName, closestCities[i].cityName))
+                let firstArg = `Musicians from ${closestCities[i].cityName}`
+                const arrayOfArtists = []
+                let arrayOfCategories = []
+                let arrayOfTotalCategories = []            
+                arrayOfTimPromises.push(getArrayOfArtists(firstArg, closestCities[i].cityName, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
             }
             return Promise.all(arrayOfTimPromises)
         })
         .catch((error) => { console.log("closestWiki ERROR:" + error) })
 }
 
-const getArrayOfArtists = (searchType, originalLocation) => {
+const getArrayOfArtists = (searchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories) => {
     console.log("Finding array of artists for " + searchType + "...")
-    const arrayOfArtists = []
-    let arrayOfCategories = []
-    let arrayOfTotalCategories = []
 
     return wiki().pagesInCategory(`Category:${searchType}`)
         .then((response) => {
@@ -113,7 +113,7 @@ const getArrayOfArtists = (searchType, originalLocation) => {
             if (arrayOfCategories[0]) {
                 let newSearchType = arrayOfCategories[0]
                 arrayOfCategories.shift();
-                getArrayOfArtists(newSearchType, originalLocation)
+                getArrayOfArtists(newSearchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
             } else {
                 let noDupeArray = Array.from(new Set(arrayOfArtists))
                 let obj = {
@@ -142,4 +142,4 @@ const pushThisPageArtists = (response, arrayOfArtists) => {
     return arrayOfArtists
 }
 
-getClosestCities("Troy, New York").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
+getClosestCities("Philadelphia").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
