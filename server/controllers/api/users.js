@@ -2,8 +2,9 @@ const router = require('express').Router();
 const validateLoginInput = require("../../models/login");
 const User = require('../../models/user');
 const validateRegisterInput = require("../../models/login");
-const bcrypt = require("bcryptjs")
-const jwt = require("passport-jwt");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const secretOrKey = require("../../lib/passport").SECRET;
 
 router.post("/register", (req, res) => {
     //Form validator
@@ -70,11 +71,15 @@ router.post("/login", (req, res) => {
                 // Token
                 jwt.sign(
                     payload,
-                    keys.secretOrKey,
+                    secretOrKey,
                     {
                         expiresIn: 31556926 // 1 year sec
                     },
                     (err, token) => {
+                        if (err) {
+                            console.log(err)
+                        }
+
                         res.json({
                             success: true,
                             token: "Bearer " + token
