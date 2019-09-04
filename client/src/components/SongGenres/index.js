@@ -2,17 +2,6 @@ import React, { Component } from "react";
 import InputCheckDropdown from "../../components/InputCheckDropdown";
 
 class SongGenres extends Component {
-  // state = {
-  //   startPoint: "",
-  //   endPoint: ""
-  // };
-
-  // onInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // };
 
   render() {
     return (
