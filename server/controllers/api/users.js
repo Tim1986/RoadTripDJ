@@ -1,15 +1,16 @@
 const router = require('express').Router();
+const validateLoginInput = require("../../models/login");
+const User = require('../../models/user');
+const validateRegisterInput = require("../../models/login");
+const bcrypt = require("bcryptjs")
 
 router.post("/register", (req, res) => {
-
     //Form validator
     const { errors, isValid } = validateRegisterInput(req.body);
-
     // Check validation
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
     User.findOne({ email: req.body.email }).then(user => {
         if (user) {
             return res.status(400).json({ email: "Email already exists" });
@@ -36,7 +37,7 @@ router.post("/register", (req, res) => {
 });
 
 //Login
-router.post("login", (req, res) => {
+router.post("/login", (req, res) => {
 
     //Form validation
     const { errors, isValid } = validateLoginInput(req.body);
