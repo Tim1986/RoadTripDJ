@@ -102,8 +102,9 @@ const getArrayOfArtists = (searchType, originalLocation, arrayOfArtists, arrayOf
                 for (let i = 1; i < 15; i++) {
                     if (response[response.length - i] && response[response.length - i].includes(":") && response[response.length - i].split(":")[0] === "Category") {
                         if (arrayOfTotalCategories.includes(response[response.length - i].split(":")[1]) || response[response.length - i].split(":")[1].includes("albums") || response[response.length - i].split(":")[1].includes("songs")) {
+                        } else {
                             arrayOfCategories.push(response[response.length - i].split(":")[1])
-                            arrayOfTotalCategories.push(response[response.length - i].split(":")[1])    
+                            arrayOfTotalCategories.push(response[response.length - i].split(":")[1])
                         }
                     }
                 }
@@ -112,7 +113,7 @@ const getArrayOfArtists = (searchType, originalLocation, arrayOfArtists, arrayOf
             if (arrayOfCategories[0]) {
                 let newSearchType = arrayOfCategories[0]
                 arrayOfCategories.shift();
-                getArrayOfArtists(newSearchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
+                return getArrayOfArtists(newSearchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
             } else {
                 let noDupeArray = Array.from(new Set(arrayOfArtists))
                 let obj = {
@@ -120,7 +121,6 @@ const getArrayOfArtists = (searchType, originalLocation, arrayOfArtists, arrayOf
                     array: []
                 }
                 obj.array = noDupeArray
-                console.log(obj.array.length)
                 return obj
             }
         })
@@ -141,4 +141,4 @@ const pushThisPageArtists = (response, arrayOfArtists) => {
     return arrayOfArtists
 }
 
-getClosestCities("New York City").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
+getClosestCities("20 Foxtail Pass, Acworth GA 30101").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
