@@ -3,6 +3,7 @@ const validateLoginInput = require("../../models/login");
 const User = require('../../models/user');
 const validateRegisterInput = require("../../models/login");
 const bcrypt = require("bcryptjs")
+const jwt = require("passport-jwt");
 
 router.post("/register", (req, res) => {
     //Form validator
