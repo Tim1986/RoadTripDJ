@@ -10,10 +10,7 @@ class TripForm extends Component {
     endPoint: "Point B"
   };
 
-  handleStartChange = () => {};
-  handleEndChange = () => {};
-
-  handleChangeValue = e => {
+  handleChangeInput = e => {
     const { name, value } = e.target;
     this.setState({
       [name]: value
@@ -25,7 +22,7 @@ class TripForm extends Component {
       <form>
         <div className="row mx-auto bg-dark text-light p-5">
           <div className="col-lg-6 text-left my-auto">
-            <DestinationForm startPoint={this.state.startPoint} endPoint={this.state.endPoint} onChangeValue={this.handleChangeValue} />
+            <DestinationForm startPoint={this.state.startPoint} endPoint={this.state.endPoint} onChangeInput={this.handleChangeInput} />
           </div>
           <div className="col-lg-6 text-left">
             <SongGenres />
