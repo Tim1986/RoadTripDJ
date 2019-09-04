@@ -51,6 +51,10 @@ const UserSchema = new mongoose.Schema({
       "Password must be at least five characters or longer."
     ]
   },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 
