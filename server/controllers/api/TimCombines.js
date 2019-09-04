@@ -1,11 +1,8 @@
-const axios = require("axios");
 const wiki = require('wikijs').default;
 const googleMapsClient = require('@google/maps').createClient({
     key: 'AIzaSyDj-_Xoa2q3k_8mdhM7xfuh-oHaGhbOIMk',
     Promise: Promise
 });
-
-const daddyArray = []
 
 const getGeoData = address => {
     return googleMapsClient.geocode({ address: address })
@@ -97,16 +94,10 @@ const getArrayOfArtists = (searchType, originalLocation) => {
 
     return wiki().pagesInCategory(`Category:${searchType}`)
         .then((response) => {
-            for (let i = 0; i < response.length; i++) {
-                if (response[i].split(":")[0] === "Category") {
-                } else {
-                    if (response[i].split("(")) {
-                        arrayOfArtists.push(response[i].split("(")[0].trim())
-                    } else {
-                        arrayOfArtists.push(response[i])
-                    }
-                }
-            }
+            pushThisPageArtists(response, arrayOfArtists)
+            // *****************************************************************
+            // This used to be the getAdditionalCategories function call.
+            // Can't do it anymore because I need both category arrays in scope.
             if (response.length > 0) {
                 for (let i = 1; i < 15; i++) {
                     if (response[response.length - i] && response[response.length - i].includes(":") && response[response.length - i].split(":")[0] === "Category") {
@@ -118,6 +109,7 @@ const getArrayOfArtists = (searchType, originalLocation) => {
                     }
                 }
             }
+            // *****************************************************************
             if (arrayOfCategories[0]) {
                 let newSearchType = arrayOfCategories[0]
                 arrayOfCategories.shift();
@@ -134,6 +126,20 @@ const getArrayOfArtists = (searchType, originalLocation) => {
             }
         })
         .catch((error) => { console.log("wiki:" + error) })
+}
+
+const pushThisPageArtists = (response, arrayOfArtists) => {
+    for (let i = 0; i < response.length; i++) {
+        if (response[i].split(":")[0] === "Category") {
+        } else {
+            if (response[i].split("(")) {
+                arrayOfArtists.push(response[i].split("(")[0].trim())
+            } else {
+                arrayOfArtists.push(response[i])
+            }
+        }
+    }
+    return arrayOfArtists
 }
 
 getClosestCities("Troy, New York").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
