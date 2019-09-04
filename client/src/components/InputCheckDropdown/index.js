@@ -130,7 +130,7 @@ class InputCheckDropdown extends Component {
                 genre={genre.name}
                 value={genre.value}
                 onClick={this.onParentClick}
-                defaultChecked={!!this.state.selectedGenres.includes(genre.value)}
+                // defaultChecked={!!this.state.selectedGenres.includes(genre.value)}
               />
             </summary>
 
