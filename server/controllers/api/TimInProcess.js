@@ -66,5 +66,5 @@ const weAreFinished = () => {
     return noDupeArray
 }
 
-const location = "Camden, New Jersey"
+const location = "Brockton, Massachusetts"
 getArrayOfArtists("Musicians from " + location)
