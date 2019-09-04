@@ -12,6 +12,7 @@ const getArrayOfArtists = (searchType) => {
         .then((response) => {
             pushThisPageArtists(response)
             if (response.length > 0) {
+                console.log(response.length)
                 getAdditionalCategories(response)
             }
             if (arrayOfCategories[0]) {
@@ -65,5 +66,5 @@ const weAreFinished = () => {
     return noDupeArray
 }
 
-const location = "Houston"
+const location = "Albany, New York"
 getArrayOfArtists("Musicians from " + location)
