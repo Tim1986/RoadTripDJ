@@ -102,10 +102,9 @@ const getArrayOfArtists = (searchType, originalLocation, arrayOfArtists, arrayOf
                 for (let i = 1; i < 15; i++) {
                     if (response[response.length - i] && response[response.length - i].includes(":") && response[response.length - i].split(":")[0] === "Category") {
                         if (arrayOfTotalCategories.includes(response[response.length - i].split(":")[1]) || response[response.length - i].split(":")[1].includes("albums") || response[response.length - i].split(":")[1].includes("songs")) {
+                            arrayOfCategories.push(response[response.length - i].split(":")[1])
+                            arrayOfTotalCategories.push(response[response.length - i].split(":")[1])    
                         }
-                        arrayOfCategories.push(response[response.length - i].split(":")[1])
-                        arrayOfTotalCategories.push(response[response.length - i].split(":")[1])
-                    } else {
                     }
                 }
             }
@@ -142,4 +141,4 @@ const pushThisPageArtists = (response, arrayOfArtists) => {
     return arrayOfArtists
 }
 
-getClosestCities("Philadelphia").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
+getClosestCities("New York City").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
