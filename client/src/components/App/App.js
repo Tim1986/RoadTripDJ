@@ -6,7 +6,6 @@ import TokenStore from '../../lib/TokenStore';
 import AuthContext from '../../contexts/AuthContext';
 // import Navigation from '../../components/Navigation/Navigation';
 // import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
-import Test from '../../pages/Test';
 import Landing from '../../pages/Landing';
 import Trip from '../../pages/Trip';
 // import Home from '../../pages/Home/Home';
@@ -14,7 +13,7 @@ import Trip from '../../pages/Trip';
 // import Register from '../../pages/Register/Register';
 // import Secret from '../../pages/Secret/Secret';
 import NotFound from '../../pages/NotFound';
-import Navigation from '../../components/Navigation/Navigation';
+import Navigation from '../../components/Navigation';
 import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
@@ -61,13 +60,11 @@ class App extends Component {
     return (
       <AuthContext.Provider value={this.state.auth}>
         <div className='App'>
-          {/* <Navigation /> */}
+          <Navigation />
           <div className='container'>
             <Switch>
-              <Route exact path='/' component={Test} />
-              <Route exact path='/home' component={Landing} />
+              <Route exact path='/' component={Landing} />
               <Route exact path='/newtrip' component={Trip} />
-              {/* <Route exact path='/' component={Home} /> */}
               {/* <Route path='/login' component={Login} /> */}
               {/* <Route path='/register' component={Register} /> */}
               {/* <PrivateRoute path='/secret' component={Secret} /> */}
