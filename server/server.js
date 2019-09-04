@@ -26,12 +26,15 @@ const LOG_MODE = process.env.NODE_ENV === "production" ? "common" : "dev";
 const app = express();
 
 //-- Mongoose Setup ----------------------------------------------------------
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/ProjectThree", {
-  useNewUrlParser: true
-});
-mongoose.connection.on("error", (err) => {
-  console.log(`Mongoose connection err:\n${err}`);
-});
+mongoose.connect(
+  process.env.MONGODB_URI ||
+  'mongodb://localhost/RoadTripDB', {
+    useNewUrlParser: true
+  }
+)
+mongoose.connection.on('error', err => {
+  console.log(`Mongoose connection err:\n${err}`)
+})
 
 //-- Middleware --------------------------------------------------------------
 app.use(logger(LOG_MODE));
