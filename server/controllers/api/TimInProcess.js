@@ -9,18 +9,6 @@ const getArrayOfArtists = (searchType) => {
     if (searchType === "Musicians from the New York metropolitan area") {
         return
     }
-    if (
-        searchType === "Musical groups from Brooklyn‎" ||
-        searchType === "Rappers from Brooklyn" ||
-        searchType === "Rappers from the Bronx"
-    ) {
-        console.log("later")
-        if (arrayOfCategories[0]) {
-            recursive()
-        } else {
-            weAreFinished()
-        }
-    }
     wiki().pagesInCategory(`Category:${searchType}`)
         .then((response) => {
             pushThisPageArtists(response)
@@ -55,6 +43,7 @@ const pushThisPageArtists = (response) => {
 };
 
 const getAdditionalCategories = (response) => {
+    console.log("GETTING NEW CATEGORIES")
     for (let i = 1; i < 15; i++) {
         if (response[response.length - i] && response[response.length - i].includes(":") && response[response.length - i].split(":")[0] === "Category") {
             if (arrayOfTotalCategories.includes(response[response.length - i].split(":")[1]) || response[response.length - i].split(":")[1].includes("albums") || response[response.length - i].split(":")[1].includes("songs")) {
@@ -83,7 +72,8 @@ const weAreFinished = () => {
     arrayOfTotalCategories.length = 0
     console.log(arrayOfArtists.length)
     console.log("return the array")
+    return
 }
 
-const location = "Philadelphia"
+const location = "New York City"
 getArrayOfArtists("Musicians from " + location)
