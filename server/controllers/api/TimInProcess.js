@@ -1,12 +1,24 @@
-const axios = require("axios");
 const wiki = require('wikijs').default;
 
 let arrayOfArtists = []
 let arrayOfCategories = []
+const gotBrooklyn = false
 
 const getArrayOfArtists = (searchType, location) => {
     if (searchType === "the New York metropolitan area") {
         return
+    }
+    if (
+    searchType === "Musical groups from Brooklyn‎" || 
+    searchType === "Rappers from Brooklyn" ||
+    searchType === "Rappers from the Bronx"
+    ) {
+        console.log("later")
+        if (arrayOfCategories[0]) {
+            recursive(location)
+        } else {
+            weAreFinished()
+        }
     }
     if (
     searchType === "San Francisco Conservatory of Music faculty" || 
@@ -35,87 +47,72 @@ const getArrayOfArtists = (searchType, location) => {
     searchType === "New York Jazz Quartet members‎" || 
     searchType === "Bloodhound Gang" || 
     searchType === "Ween" || 
-    searchType === "Philadelphia International Records artists‎"
+    searchType === "Philadelphia International Records artists‎" || 
+    searchType === "Musicians from Queens, New York City" || 
+    searchType === "Musicians from the Bronx" || 
+    searchType === "Musicians from Brooklyn" || 
+    searchType === "Musical groups from Queens, New York‎" ||
+    searchType === "Rappers from Manhattan"
     ) {
-        const url = `https://en.wikipedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:${searchType}&cmlimit=500&format=json`;
-        axios.get(url).then(
-            function (response) {
-                pushThisPageArtists(response)
-                if (response.data.query.categorymembers.length > 0) {
-                    getAdditionalCategories(response)
-                }
-                if (arrayOfCategories[0]) {
-                    recursive(location)
-                } else {
-                    weAreFinished()
-                }
-            })
-            .catch(function (error) {
-                if (error.response) {
-                    console.log("---------------Data---------------");
-                    console.log(error.response.data);
-                    console.log("---------------Status---------------");
-                    console.log(error.response.status);
-                    console.log("---------------Status---------------");
-                    console.log(error.response.headers);
-                } else if (error.request) {
-                    console.log(error.request);
-                } else {
-                    console.log("Error", error.message);
-                }
-                console.log(error.config);
-            });
-    
-    }
-    const url = `https://en.wikipedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:${searchType}_from_${location}&cmlimit=500&format=json`;
-    axios.get(url).then(
-        function (response) {
-            pushThisPageArtists(response)
-            if (response.data.query.categorymembers.length > 0) {
-                getAdditionalCategories(response)
-            }
-            if (arrayOfCategories[0]) {
-                recursive(location)
-            } else {
-                weAreFinished()
-            }
-        })
-        .catch(function (error) {
-            if (error.response) {
-                console.log("---------------Data---------------");
-                console.log(error.response.data);
-                console.log("---------------Status---------------");
-                console.log(error.response.status);
-                console.log("---------------Status---------------");
-                console.log(error.response.headers);
-            } else if (error.request) {
-                console.log(error.request);
-            } else {
-                console.log("Error", error.message);
-            }
-            console.log(error.config);
-        });
-};
+wiki().pagesInCategory(`Category:${searchType}`)
+    .then((response) => {
+        pushThisPageArtists(response)
+        if (response.length > 0) {
+            getAdditionalCategories(response, location)
+        }
+        console.log("=====================")
+        console.log(arrayOfArtists.length)
+        console.log(arrayOfCategories.length)
+        console.log("=====================")
+        if (arrayOfCategories[0]) {
+            recursive(location)
+        } else {
+            weAreFinished()
+        }
+    })
+    .catch((error) => { console.log("wiki:" + error) })
+}
+wiki().pagesInCategory(`Category:${searchType}_from_${location}`)
+    .then((response) => {
+        pushThisPageArtists(response)
+        if (response.length > 0) {
+            getAdditionalCategories(response, location)
+        }
+        console.log("=====================")
+        console.log(arrayOfArtists.length)
+        console.log(arrayOfCategories)
+        console.log("=====================")
+        if (arrayOfCategories[0]) {
+            recursive(location)
+        } else {
+            weAreFinished()
+        }
+    })
+    .catch((error) => { console.log("wiki:" + error) })
+}
 
 const pushThisPageArtists = (response) => {
-    for (let i = 0; i < response.data.query.categorymembers.length; i++) {
-        if (response.data.query.categorymembers[i].title.split(":")[0] === "Category") {
+    for (let i = 0; i < response.length; i++) {
+        if (response[i].split(":")[0] === "Category") {
         } else {
-            if (response.data.query.categorymembers[i].title.split("(")) {
-                arrayOfArtists.push(response.data.query.categorymembers[i].title.split("(")[0].trim())
+            if (response[i].split("(")) {
+                arrayOfArtists.push(response[i].split("(")[0].trim())
             } else {
-                arrayOfArtists.push(response.data.query.categorymembers[i].title)
+                arrayOfArtists.push(response[i])
             }
         }
     }
 };
 
-const getAdditionalCategories = (response) => {
+const getAdditionalCategories = (response, location) => {
     console.log("GETTING NEW CATEGORIES")
-    let members = response.data.query.categorymembers
     for (let i = 1; i < 15; i++) {
-        if (members[members.length - i].title && members[members.length - i].title.includes(":") && members[members.length - i].title.split(":")[0] === "Category") {
-            arrayOfCategories.push(members[members.length - i].title.split(":")[1].split("from")[0].trim())
+        if (response[response.length - i] && response[response.length - i].includes(":") && response[response.length - i].split(":")[0] === "Category") {
+            if (location === response[response.length - i].split(":")[1].split("from")[1].trim()) {
+                arrayOfCategories.push(response[response.length - i].split(":")[1].split("from")[0].trim())
+            } else {
+                arrayOfCategories.push(response[response.length - i].split(":")[1])
+            }
         } else {
             return
         }
@@ -150,8 +147,8 @@ const weAreFinished = () => {
 // getArrayOfArtists("San Francisco Conservatory of Music faculty", "San Francisco")
 // getArrayOfArtists("Musicians", "Salt Lake City")
 // getArrayOfArtists("Musicians", "Boston")
-// getArrayOfArtists("Musicians", "Chicago")
+// getArrayOfArtists("Musicians", "Philadelphia")
 // getArrayOfArtists("Musicians", "Detroit")
 // getArrayOfArtists("Musicians", "Louisville, Kentucky")
-// getArrayOfArtists("Musicians", "New York City")
+getArrayOfArtists("Musicians", "New York City")
 // getArrayOfArtists("Musicians", "Washington, D.C.")
