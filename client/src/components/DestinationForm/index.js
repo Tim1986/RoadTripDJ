@@ -17,7 +17,7 @@ class DestinationForm extends Component {
           placeholder="Point A"
           id="start-point"
           label="Starting Point"
-          onChange={this.props.onChangeValue}
+          onChange={this.props.onChangeInput}
         />
         <InputGroup
           type="text"
@@ -26,7 +26,7 @@ class DestinationForm extends Component {
           placeholder="Point B"
           id="end-point"
           label="Ending Point"
-          onChange={this.props.onChangeValue}
+          onChange={this.props.onChangeInput}
         />
       </div>
     );
