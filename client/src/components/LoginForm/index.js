@@ -66,7 +66,9 @@ class LoginForm extends Component {
                 />
               </div>
 
-              <Button onClick={(e) => API.Spotify.login(e)} value="Login" />
+              {/* <Button onClick={(e) => API.Spotify.login(e)} value="Login" /> */}
+              <button className='btn btn-primary' type='submit'>Login</button>
+
             </form>
           </div>
         </div>

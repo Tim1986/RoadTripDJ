@@ -12,10 +12,10 @@ import Trip from "../../pages/Trip";
 // Other Pages
 import NotFound from "../../pages/NotFound";
 import Navigation from "../../components/Navigation";
-// import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
-// import Login from "../../pages/Login/Login";
-// import Register from "../../pages/Register/Register";
-// import Secret from "../../pages/Secret/Secret";
+import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
+import Login from "../../pages/Login/Login";
+import Register from "../../pages/Register/Register";
+import Secret from "../../pages/Secret/Secret";
 // import Home from "../../pages/Home/Home";
 
 import "./App.css";
@@ -66,7 +66,7 @@ class App extends Component {
     return (
       <AuthContext.Provider value={this.state.auth}>
         <div className="App">
-          <Navigation />
+          {this.state.auth.authToken && <Navigation />}
           <div className="container">
             <Switch>
               <Route exact path='/' component={Landing} />
@@ -74,7 +74,7 @@ class App extends Component {
               <Route exact path='/register' component={Register} />
               <Route path='/login' component={Login} />
               {/* <Route path='/register' component={Register} /> */}
-              {/* <PrivateRoute path='/secret' component={Secret} /> */}
+              <PrivateRoute path='/secret' component={Secret} />
               <Route component={NotFound} />
             </Switch>
           </div>
