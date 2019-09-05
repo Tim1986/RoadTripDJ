@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class RegisterForm extends Component {
   state = {
+    firstName: "",
+    lastName: "",
     email: '',
     password: ''
   };
@@ -15,23 +17,54 @@ class RegisterForm extends Component {
   }
 
   handleSubmit = event => {
-    const { email, password } = this.state;
+    const { firstName, lastName, email, password } = this.state;
 
-    this.props.onSubmit(email, password);
+    this.props.onSubmit(firstName, lastName, email, password);
     event.preventDefault();
   }
 
   render() {
-    const { email, password } = this.state;
+    const { firstName, lastName, email, password } = this.state;
 
     return (
       <div className='RegisterForm'>
         <div className='card'>
           <div className='card-body'>
             <form className='LoginForm' onSubmit={this.handleSubmit}>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text"></span>
+                </div>
+                <input
+                  className="form-control"
+                  id="firstName"
+                  type="text"
+                  name="firstName"
+                  placeholder="FirstName"
+                  value={firstName}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
+              <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                  <span className="input-group-text"></span>
+                </div>
+                <input
+                  className="form-control"
+                  id="lastName"
+                  type="text"
+                  name="lastName"
+                  placeholder="LastName"
+                  value={lastName}
+                  onChange={this.handleInputChange}
+                />
+              </div>
+
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
-                  <span className="input-group-text">@</span>
+                  <span className="input-group-text"></span>
                 </div>
                 <input
                   className='form-control'
@@ -43,10 +76,9 @@ class RegisterForm extends Component {
                   onChange={this.handleInputChange}
                 />
               </div>
-
               <div className='input-group mb-3'>
                 <div className="input-group-prepend">
-                  <span className="input-group-text">a3b</span>
+                  <span className="input-group-text"></span>
                 </div>
                 <input
                   className='form-control'
@@ -63,7 +95,7 @@ class RegisterForm extends Component {
             </form>
           </div>
         </div>
-      </div>
+      </div >
     )
   }
 }
