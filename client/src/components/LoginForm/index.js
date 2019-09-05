@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Button from "../Button"
+import API from "../../lib/API"
 
 import Octicon, { Mail, Key } from '@githubprimer/octicons-react';
 
@@ -61,7 +63,7 @@ class LoginForm extends Component {
                 />
               </div>
 
-              <button className='btn btn-primary' type='submit'>Login</button>
+              <Button onClick={(e) => API.Spotify.login(e)} value="Login" />
             </form>
           </div>
         </div>

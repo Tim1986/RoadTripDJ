@@ -12,9 +12,9 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 //-- Dependencies ------------------------------------------------------------
-const express = require("express");
-const logger = require("morgan");
-const mongoose = require("mongoose");
+const express = require("express"),
+  logger = require("morgan"),
+  mongoose = require("mongoose");
 
 const { passport } = require("./lib/passport");
 
@@ -26,15 +26,12 @@ const LOG_MODE = process.env.NODE_ENV === "production" ? "common" : "dev";
 const app = express();
 
 //-- Mongoose Setup ----------------------------------------------------------
-mongoose.connect(
-  process.env.MONGODB_URI ||
-  'mongodb://localhost/RoadTripDB', {
-    useNewUrlParser: true
-  }
-)
-mongoose.connection.on('error', err => {
-  console.log(`Mongoose connection err:\n${err}`)
-})
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/RoadTripDB", {
+  useNewUrlParser: true
+});
+mongoose.connection.on("error", (err) => {
+  console.log(`Mongoose connection err:\n${err}`);
+});
 
 //-- Middleware --------------------------------------------------------------
 app.use(logger(LOG_MODE));
