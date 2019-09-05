@@ -1,7 +1,7 @@
 const passport = require('passport');
 const { Strategy: JwtStrategy, ExtractJwt } = require('passport-jwt');
 
-const User = require('../models');
+const User = require('../models/user');
 const SECRET = process.env.JWT_SECRET || 'secret';
 
 var JWT_STRATEGY_OPTS = {
@@ -11,7 +11,7 @@ var JWT_STRATEGY_OPTS = {
 
 passport.use(
   new JwtStrategy(JWT_STRATEGY_OPTS, function (jwtPayload, done) {
-    User.findOne({ _id: jwtPayload.sub })
+    User.findOne({ _id: jwtPayload.id })
       .then(user => done(null, user || false))
       .catch(err => done(err, false));
   })
