@@ -32,8 +32,9 @@ const getDistance = (static, alternating) => {
             let resultObj = {
                 cityName: alternating.input,
                 from: static.input,
+                tripMinutes: response.json.rows[0].elements[0].duration.value * 60,
                 howClose: {
-                    value: response.json.rows[0].elements[0].distance.value,
+                    value: response.json.rows[0].elements[0].distance.value ,
                     unitString: response.json.rows[0].elements[0].distance.text
                 }
             }
@@ -62,11 +63,12 @@ const closestWiki = (staticAddress, addressArray) => {
 
 const getClosestCities = address => {
     return wiki().pagesInCategory("Category:American musicians by city")
-        .then((result) => {
+        .then((wikiList) => {
+            console.log('\n...recieved comparison data for ' + address + '...')
             const places = []
-            result.forEach(category => {
-                let test = category.split(" from ")
-                places.push(test[1])
+            wikiList.forEach(category => {
+                let location = category.split(" from ")
+                places.push(location[1])
             });
             return closestWiki(address, places)
         })
@@ -74,17 +76,24 @@ const getClosestCities = address => {
             const sorted = results.filter(x => x !== undefined)
             sorted.sort((a, b) => parseFloat(a.howClose.value) - parseFloat(b.howClose.value))
             const closestCities = sorted.slice(0, 5)
+            //closestCities now contains the 5 closest categories to query for artists
+            console.log('\n...generated list of places to listen to near ' + address)
             console.table(closestCities)
-            //----------------------------------Tim's Calls----------------------------------
-            const arrayOfTimPromises = []
+
+            //first set of async calls to query wikipedia and find relevent artists  
+            //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+            const vows = []
             for (let i = 0; i < 5; i++) {
                 let firstArg = `Musicians from ${closestCities[i].cityName}`
                 const arrayOfArtists = []
                 let arrayOfCategories = []
                 let arrayOfTotalCategories = []            
-                arrayOfTimPromises.push(getArrayOfArtists(firstArg, closestCities[i].cityName, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
+                vows.push(getArrayOfArtists(firstArg, closestCities[i].cityName, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
+                // getArrayOfArtists() on Line 51
             }
-            return Promise.all(arrayOfTimPromises)
+
+            // waits until each result is recieved and returns them all at once as the result of this function
+            return Promise.all(vows)
         })
         .catch((error) => { console.log("closestWiki ERROR:" + error) })
 }
@@ -141,4 +150,50 @@ const pushThisPageArtists = (response, arrayOfArtists) => {
     return arrayOfArtists
 }
 
-getClosestCities("20 Foxtail Pass, Acworth GA 30101").then(function (results) { console.log(JSON.stringify(results, null, 2)) })
+const getTripData = (start, end) => {
+    return Promise.all([
+        getGeoData(start),
+        getGeoData(end)
+    ])
+    .then(res =>{        
+    start = res[0]; end = res[1]
+    return Promise.all([
+        getClosestCities(start.formattedAddress),
+        getClosestCities(end.formattedAddress),
+        getDistance(start, end)
+    ])
+    })
+}
+
+
+
+let x = "20 Foxtail Pass, Acworth GA 30101"
+let y = "2044 Jefferson St. Memphis, TN"
+
+// getClosestCities(x).then(function (results) { console.log(JSON.stringify(results, null, 2)) })
+
+
+getTripData(x,y)
+    .then(rawData =>{
+        //CONVENIENCE VARIABLES for you to use how you wish.
+        const startData = rawData[0]
+            // to get the artists from the city use startData[index].array
+        const endData = rawData[1]
+            //same with this one endData[index].array
+        const tripLength = rawData[2].tripMinutes
+
+        //-------------------CONSOLE.LOGS---------------------
+        const printConfirmFor = (array) => {
+            for (let i = 0; i < array.length;i++){
+                console.log(`
+... getting ${array[i].array.length} artists from ${array[i].name}...`)
+            }
+        }
+
+        printConfirmFor(startData)
+        printConfirmFor(endData)
+
+        console.log("\n... this trip is "+ tripLength + " minutes long\n")
+        // ---------------------------------------------------
+        
+    })
