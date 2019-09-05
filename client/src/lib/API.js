@@ -60,6 +60,16 @@ export default {
         .catch((err) => console.log(err));
     },
 
+    getUser: function() {
+      const accessToken = localStorage.getItem("spotifyAccessToken");
+      axios({
+        method: "GET",
+        url: `/api/spotify/user/${accessToken}`
+      })
+        .then((response) => localStorage.setItem("spotifyUserID", response.data.id))
+        .catch((err) => console.log(err));
+    },
+
     checkForCode: function() {
       const siteURL = window.location.search.substring(1),
         authCode = siteURL.split("=")[1];
@@ -75,7 +85,7 @@ export default {
         url: `/api/spotify/exchangeToken/${authCode}`
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           localStorage.setItem("spotifyAccessToken", response.data.access_token);
           localStorage.setItem("spotifyRefreshToken", response.data.refresh_token);
           window.location.assign("http://localhost:3000/newtrip/");
@@ -85,11 +95,12 @@ export default {
 
     createPlaylist: function(e) {
       e.preventDefault();
-      const accessToken = localStorage.getItem("spotifyAccessToken");
+      const accessToken = localStorage.getItem("spotifyAccessToken"),
+      spotifyUserID = localStorage.getItem("spotifyUserID");
       console.log(accessToken);
       axios({
         method: "GET",
-        url: `/api/spotify/playlist/new/${accessToken}`
+        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`
       })
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
