@@ -82,7 +82,8 @@ router.post("/login", (req, res) => {
 
                         res.json({
                             success: true,
-                            token: "Bearer " + token
+                            token,
+                            user
                         });
                     }
                 );
@@ -92,5 +93,13 @@ router.post("/login", (req, res) => {
         });
     });
 });
+
+router.get("/logout", (req, res) => {
+    req.logout();
+    // res.redirect("/");
+    // window.location.href = "/";
+});
+
+
 
 module.exports = router;
