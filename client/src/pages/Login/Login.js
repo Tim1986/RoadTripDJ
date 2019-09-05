@@ -24,14 +24,14 @@ class Login extends Component {
         let message;
 
         switch (err.response.status) {
-          case 401:
-            message = 'Sorry, that email/password combination is not valid. Please try again.';
-            break;
+          // case 401:
+
+          //   break;
           case 500:
             message = 'Server error. Please try again later.';
             break;
           default:
-            message = 'Unknown error.';
+            message = 'Sorry, that email/password combination is not valid. Please try again.';
         }
 
         this.setState({ error: message });
@@ -39,7 +39,7 @@ class Login extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/secret" } };
+    const { from } = this.props.location.state || { from: { pathname: "/newtrip" } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
