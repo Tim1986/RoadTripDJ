@@ -77,10 +77,10 @@ class App extends Component {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/authorize" component={Authorize} />
-              <Route exact path="/newtrip" component={Trip} />
+              <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
-              <Route path="/login" component={Login} />
+              <PrivateRoute exact path="/authorize" component={Authorize} />
+              <PrivateRoute exact path="/newtrip" component={Trip} />
               {/* <Route path='/register' component={Register} /> */}
               <PrivateRoute path="/secret" component={Secret} />
               <Route component={NotFound} />
