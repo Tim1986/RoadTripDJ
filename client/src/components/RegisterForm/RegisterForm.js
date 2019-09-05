@@ -21,7 +21,10 @@ class RegisterForm extends Component {
 
     this.props.onSubmit(firstName, lastName, email, password);
     event.preventDefault();
-  }
+
+    const newUser = this.state
+    console.log(newUser)
+  };
 
   render() {
     const { firstName, lastName, email, password } = this.state;

@@ -13,20 +13,21 @@ class Register extends Component {
     error: ""
   }
 
-  handleSubmit = (email, password) => {
-    API.Users.register(email, password)
+  handleSubmit = (firstName, lastName, email, password) => {
+    API.Users.register(firstName, lastName, email, password)
       .then(response => {
-          this.setState({ redirectToReferrer: true })
+        this.setState({ redirectToReferrer: true })
       })
-      .catch(err => {
-        if (err.response.status === 401) {
-          this.setState({ error: "Sorry, that email/password combination is not valid. Please try again." });
-        }
-      });
+      .catch(err =>
+        console.log(err)
+        // if (err.response.status === 401) {
+        //   this.setState({ error: "Sorry, that email/password combination is not valid. Please try again." });
+        // }
+      );
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/secret" } };
+    const { from } = this.props.location.state || { from: { pathname: "/login" } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
