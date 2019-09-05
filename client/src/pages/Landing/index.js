@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import LoginForm from "../../components/LoginForm";
+// import { Link } from 'react-router-dom';
+
+// import LoginForm from "../../components/LoginForm";
+import Login from "../Login/Login";
 
 class LandingPage extends Component {
   render() {
@@ -25,8 +28,10 @@ class LandingPage extends Component {
                 </p>
               </div>
               <div className="col-lg-6 text-center my-auto">
-                <h3>Login Form</h3>
-                <LoginForm />
+                {/* <h3>Login Form</h3> */}
+                {/* <LoginForm /> */}
+                <Login />
+                {/* <div className='mt-3'>Don't have an account? <Link to='/register'>Click here to register.</Link></div> */}
               </div>
             </div>
           </div>
