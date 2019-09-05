@@ -7,7 +7,8 @@ import testObj from "../../lib/testJS";
 class TripForm extends Component {
   state = {
     startPoint: "Point A",
-    endPoint: "Point B"
+    endPoint: "Point B",
+    selectedGenres: []
   };
 
   handleChangeInput = e => {
@@ -25,7 +26,7 @@ class TripForm extends Component {
             <DestinationForm startPoint={this.state.startPoint} endPoint={this.state.endPoint} onChangeInput={this.handleChangeInput} />
           </div>
           <div className="col-lg-6 text-left">
-            <SongGenres />
+            <SongGenres selectedGenres={this.state.selectedGenres} onChildClick={this.onChildClick} />
           </div>
           <Button
             value="Generate Playlist"

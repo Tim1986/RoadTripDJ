@@ -1,13 +1,18 @@
 import React, { Component } from "react";
 import TripForm from "../../components/TripForm";
 
+import Navigation from "../../components/Navigation";
+
 class TripPage extends Component {
   render() {
     return (
-      <div className="Home container">
-        <div className="row my-5">
-          <div className="col-12 my-5">
-            <TripForm />
+      <div>
+        {/* <Navigation /> */}
+        <div className="Home container">
+          <div className="row my-5">
+            <div className="col-12 my-5">
+              <TripForm />
+            </div>
           </div>
         </div>
       </div>
