@@ -4,7 +4,16 @@ const router = require("express").Router(),
 router.get("/login", (req, res) => {
   console.log("You logged in to Spotify!");
   const scopes = "playlist-modify-private user-read-private user-read-email";
-  res.redirect(
+  // res.redirect(
+  //   "https://accounts.spotify.com/authorize" +
+  //     "?response_type=code" +
+  //     "&client_id=" +
+  //     process.env.SPOTIFY_ID +
+  //     (scopes ? "&scope=" + encodeURIComponent(scopes) : "") +
+  //     "&redirect_uri=" +
+  //     encodeURIComponent(process.env.REDIRECT_URI)
+  // );
+  res.json(
     "https://accounts.spotify.com/authorize" +
       "?response_type=code" +
       "&client_id=" +

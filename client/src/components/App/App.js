@@ -8,6 +8,7 @@ import AuthContext from "../../contexts/AuthContext";
 // import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 //------------- PAGES -------------
 import Landing from "../../pages/Landing";
+import Authorize from "../../pages/Authorize";
 import Trip from "../../pages/Trip";
 // Other Pages
 import NotFound from "../../pages/NotFound";
@@ -31,6 +32,7 @@ class App extends Component {
 
     this.handleLogout = () => {
       TokenStore.clearToken();
+      localStorage.clear();
       this.setState((prevState) => ({
         auth: { ...prevState.auth, user: undefined, authToken: undefined }
       }));
@@ -59,7 +61,6 @@ class App extends Component {
         this.setState((prevState) => ({ auth: { ...prevState.auth, user } }))
       )
       .catch((err) => console.log(err));
-
   }
 
   render() {
@@ -69,12 +70,13 @@ class App extends Component {
           {this.state.auth.authToken && <Navigation />}
           <div className="container">
             <Switch>
-              <Route exact path='/' component={Landing} />
-              <Route exact path='/newtrip' component={Trip} />
-              <Route exact path='/register' component={Register} />
-              <Route path='/login' component={Login} />
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/authorize" component={Authorize} />
+              <Route exact path="/newtrip" component={Trip} />
+              <Route exact path="/register" component={Register} />
+              <Route path="/login" component={Login} />
               {/* <Route path='/register' component={Register} /> */}
-              <PrivateRoute path='/secret' component={Secret} />
+              <PrivateRoute path="/secret" component={Secret} />
               <Route component={NotFound} />
             </Switch>
           </div>
