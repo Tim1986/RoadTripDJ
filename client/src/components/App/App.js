@@ -50,7 +50,13 @@ class App extends Component {
 
   componentDidMount() {
     const { authToken } = this.state.auth;
-    API.Spotify.checkForCode();
+    if (!localStorage.getItem("spotifyAccessToken")) {
+      API.Spotify.checkForCode();
+    }
+
+    if (!localStorage.getItem("spotifyUserID")) {
+      API.Spotify.getUser();
+    }
 
     if (!authToken) return;
 
