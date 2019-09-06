@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import TripForm from "../../components/TripForm";
 
-import Navigation from "../../components/Navigation";
-
 class TripPage extends Component {
   render() {
     return (
