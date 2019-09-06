@@ -1,3 +1,4 @@
+const geoArtists = require("./../../lib/geoArtists")
 const router = require("express").Router(),
   axios = require("axios");
 
