@@ -88,7 +88,7 @@ export default {
           // console.log(response);
           localStorage.setItem("spotifyAccessToken", response.data.access_token);
           localStorage.setItem("spotifyRefreshToken", response.data.refresh_token);
-          window.location.assign("http://localhost:3000/newtrip/");
+          window.location.assign("https://glacial-savannah-65289.herokuapp.com/newtrip");
         })
         .catch((err) => console.log(err));
     },
