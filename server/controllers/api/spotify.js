@@ -47,7 +47,7 @@ const populatePlaylist = (playlistID, accessToken, res) => {
       "Content-Type": "application/json"
     }
   })
-    .then(() => res.send(200).end())
+    .then(() => res.json(playlistID))
     .catch((err) => console.log(err));
 };
 
