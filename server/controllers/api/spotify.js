@@ -2,10 +2,63 @@ const geoArtists = require("./../../lib/geoArtists")
 const router = require("express").Router(),
   axios = require("axios");
 
+//=================================================
+// Functions
+//=================================================
+
+const getTopSongs = (playlistID, artistIDs, accessToken, res) => {
+  // let spotifyURIs = []
+  artistIDs.forEach((artistID) => {
+    axios({
+      url: `https://api.spotify.com/v1/artists/${artistID}/top-tracks?country=from_token`,
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + accessToken
+      }
+    })
+      .then((response) => {
+        response.data.tracks.forEach((track) => {
+          console.log("Artist Names: ", track.artists);
+          console.log("Song Names: ", track.name);
+          // console.log(track);
+          //push desired tracks into spotifyURIs array
+        });
+      })
+      .catch((err) => console.log(err));
+  });
+  populatePlaylist(playlistID, accessToken, res);
+  // populatePlaylist(playlistID, spotifyURIs, accessToken, res)
+};
+
+// const populatePlaylist = (playlistID, spotifyURIs, accessToken) => {
+const populatePlaylist = (playlistID, accessToken, res) => {
+  axios({
+    url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
+    method: "POST",
+    data: {
+      uris: [
+        "spotify:track:6qnM0XXPZOINWA778uNqQ9",
+        "spotify:track:06WgOCf0LV2h4keYXDRnuh"
+      ]
+      // uris: spotifyURIs
+    },
+    headers: {
+      Authorization: "Bearer " + accessToken,
+      "Content-Type": "application/json"
+    }
+  })
+    .then(() => res.send(200).end())
+    .catch((err) => console.log(err));
+};
+
+//=================================================
+// Routes
+//=================================================
+
 router.get("/login", (req, res) => {
   console.log("You logged in to Spotify!");
   const scopes = "playlist-modify-private user-read-private user-read-email";
-  res.redirect(
+  res.json(
     "https://accounts.spotify.com/authorize" +
       "?response_type=code" +
       "&client_id=" +
@@ -44,41 +97,37 @@ router.get("/user/:accessToken", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get("/playlist/new/:accessToken", (req, res) => {
+router.get("/playlist/new/:userID/:accessToken", (req, res) => {
+  const userID = req.params.userID,
+    accessToken = req.params.accessToken;
   axios({
-    url: "https://api.spotify.com/v1/me",
-    method: "GET",
+    url: `https://api.spotify.com/v1/users/${userID}/playlists`,
+    method: "POST",
+    data: {
+      name: "Test Playlist",
+      description: "Test Description",
+      public: "false"
+    },
     headers: {
-      Authorization: "Bearer " + req.params.accessToken
+      Authorization: "Bearer " + accessToken
     }
   })
-    .then((response1) => {
-      const userID = response1.data.id;
-      axios({
-        url: `https://api.spotify.com/v1/users/${userID}/playlists`,
-        method: "POST",
-        data: {
-          name: "Test Playlist",
-          description: "Test Description",
-          public: "false"
-        },
-        headers: {
-          Authorization: "Bearer " + req.params.accessToken
-        }
-      })
-        .then((response2) => {
-          const newPlaylistID = response2.data.id;
-          console.log(response2);
-          // populatePlaylistbyArtist(newPlaylistID, req);
-        })
-        .catch((err) => console.log(err));
+    .then((response2) => {
+      const newPlaylistID = response2.data.id;
+      // console.log(response2);
+      // getTopSongs(newPlaylistID, [], accessToken, res)
+      getTopSongs(
+        newPlaylistID,
+        [
+          "0FJ3jpm4yEcaAMzek1bD6i",
+          "2H3xDjMmp31iLmsgXxLFyI"
+        ],
+        accessToken,
+        res
+      );
     })
     .catch((err) => console.log(err));
 });
-
-router.get("/playlist/populate/:accessToken", (req, res) => {});
-
-router.get("/album/:accessToken", (req, res) => getAlbumTrackList(req, res));
 
 router.get("/artist/:accessToken", (req, res) => {
   axios({
@@ -86,7 +135,7 @@ router.get("/artist/:accessToken", (req, res) => {
     method: "GET"
   })
     .then((response) => {
-      console.log(response);
+      // console.log(response);
     })
     .catch((err) => console.log(err));
 });

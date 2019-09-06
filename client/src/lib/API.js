@@ -17,8 +17,8 @@ export default {
         }
       });
     },
-    register: function (firstName, lastName, email, password) {
-      return axios.post('/api/users/register', { firstName, lastName, email, password });
+    register: function(firstName, lastName, email, password) {
+      return axios.post("/api/users/register", { firstName, lastName, email, password });
     }
   },
 
@@ -51,13 +51,22 @@ export default {
   },
 
   Spotify: {
-    login: function(e) {
-      e.preventDefault();
+    getRedirectURL: function() {
       axios({
         method: "GET",
         url: "/api/spotify/login"
       })
-        .then((response) => console.log(response))
+        .then((response) => window.location.replace(response.data))
+        .catch((err) => console.log(err));
+    },
+
+    getUser: function() {
+      const accessToken = localStorage.getItem("spotifyAccessToken");
+      axios({
+        method: "GET",
+        url: `/api/spotify/user/${accessToken}`
+      })
+        .then((response) => localStorage.setItem("spotifyUserID", response.data.id))
         .catch((err) => console.log(err));
     },
 
@@ -76,7 +85,7 @@ export default {
         url: `/api/spotify/exchangeToken/${authCode}`
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           localStorage.setItem("spotifyAccessToken", response.data.access_token);
           localStorage.setItem("spotifyRefreshToken", response.data.refresh_token);
           window.location.assign("http://localhost:3000/newtrip/");
@@ -86,14 +95,21 @@ export default {
 
     createPlaylist: function(e) {
       e.preventDefault();
-      const accessToken = localStorage.getItem("spotifyAccessToken");
-      console.log(accessToken)
+      const accessToken = localStorage.getItem("spotifyAccessToken"),
+      spotifyUserID = localStorage.getItem("spotifyUserID");
+      console.log(accessToken);
       axios({
         method: "GET",
-        url: `/api/spotify/playlist/new/${accessToken}`
+        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`
       })
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
     }
   }
 };
+
+//react route /authorize
+//renders Authorize component
+//componentDidMount = query server for the spotify url
+//route.get("/api/spotify/login") returns res.json(URL)
+//.then(window.location = URL)
