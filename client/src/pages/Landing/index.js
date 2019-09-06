@@ -11,20 +11,27 @@ class LandingPage extends Component {
         <div className="row my-5">
           <div className="col-12 my-5">
             <div className="row mx-auto bg-dark text-light p-5">
-              <div className="col-lg-6 text-center">
-                <h5>Welcome to</h5>
+              <div className="col-lg-6">
+                <h5 className="text-center">Welcome to</h5>
                 <h3>Road Trip DJ</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo ea quo
-                  beatae laboriosam dicta ipsam harum velit labore facilis molestias,
-                  laudantium quae. Eligendi voluptates, itaque exercitationem officiis
-                  distinctio eos dolorem.
+                <p className="text-left">
+                Do you love music but get tired of listening to the same old songs every time you go on a road trip? 
+                If so, then this app is for you. 
                 </p>
-                <p>
-                  Recusandae ea iste quis sequi obcaecati deserunt quod adipisci
-                  assumenda. Voluptate animi dolorum voluptatum quas recusandae vel rerum
-                  in. Distinctio itaque quasi nulla consequuntur eius maxime officia
-                  mollitia et a?
+                <p className="text-left">
+                RoadTripDJ creates a Spotify playlist for your road trip with musicians from the cities you’re traveling to and from. 
+                Discover new music, find local artists, and keep your long drives interesting with RoadTripDJ.
+                </p>
+                <p className="text-left">
+                All you have to do is:
+                <ol>
+                <li>Log in to Spotify.</li>
+                <li>Log in to RoadTripDJ.</li>
+                <li>Input a start location and an end location.</li>
+                <li>Select if you want to receive the most well known or least well known musicians.</li>
+                <li>Click “generate playlist” and wait 30-60 seconds.</li>
+                <li>You’ll have a new playlist in your Spotify account!</li>
+                </ol>
                 </p>
               </div>
               <div className="col-lg-6 text-center my-auto">
