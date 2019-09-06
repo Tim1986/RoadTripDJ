@@ -29,12 +29,17 @@ class DestinationForm extends Component {
           label="Ending Point"
           onChange={this.props.onChangeInput}
         />
-        <InputCheck 
-        name="isPopular"
-        label="Choose Most Popular Artists First"
-        onChange={this.props.onChangeCheck}
-        defaultChecked={this.props.isPopular}
-        />
+        <div className="d-flex">
+          <InputCheck
+            name="isPopular"
+            id="isPopular"
+            checkClass="toggle__check"
+            labelClass="toggle__switch"
+            onChange={this.props.onChangeCheck}
+            defaultChecked={this.props.isPopular}
+          />
+          <p>Get {this.props.isPopular ? "Most" : "Least"} Popular Artists First</p>
+        </div>
       </div>
     );
   }

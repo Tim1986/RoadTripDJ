@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 
+import "./index.css";
+
 class InputCheck extends Component {
   render() {
     return (
-      <div className={`form-check ${this.props.extraClass || ""}`}>
+      <div className="form-check">
         <input
-          className="form-check-input"
+          className={`form-check-input ${this.props.checkClass || ""}`}
           type="checkbox"
           name={this.props.name}
           value={this.props.value}
@@ -15,7 +17,10 @@ class InputCheck extends Component {
           onChange={this.props.onChange}
           defaultChecked={this.props.defaultChecked}
         />
-        <label className="form-check-label" htmlFor={this.props.id}>
+        <label
+          className={`form-check-label ${this.props.labelClass || ""}`}
+          htmlFor={this.props.id}
+        >
           {this.props.label}
         </label>
       </div>
