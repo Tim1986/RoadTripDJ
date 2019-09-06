@@ -97,15 +97,20 @@ router.get("/user/:accessToken", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get("/playlist/new/:userID/:accessToken", (req, res) => {
+router.post("/playlist/new/:userID/:accessToken", (req, res) => {
+  console.log(req.body)
+  const startPoint = req.body.startPoint
+  const endPoint = req.body.endPoint
+  const playlistName = startPoint + " to " + endPoint
+  const isPopular = req.body.isPopular
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
   axios({
     url: `https://api.spotify.com/v1/users/${userID}/playlists`,
     method: "POST",
     data: {
-      name: "Test Playlist",
-      description: "Test Description",
+      name: playlistName,
+      description: "A playlist for your trip from " + playlistName + ".",
       public: "false"
     },
     headers: {

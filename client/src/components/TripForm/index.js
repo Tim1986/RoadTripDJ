@@ -8,7 +8,7 @@ class TripForm extends Component {
   state = {
     startPoint: "Point A",
     endPoint: "Point B",
-    selectedGenres: []
+    isPopular: true
   };
 
   handleChangeInput = (e) => {
@@ -44,7 +44,7 @@ class TripForm extends Component {
             }} */}
           <Button
             value="Generate Playlist"
-            onClick={(e) => API.Spotify.createPlaylist(e)}
+            onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
           />
         </div>
       </form>
