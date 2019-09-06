@@ -21,6 +21,7 @@ import Secret from "../../pages/Secret/Secret";
 
 import "./App.css";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -43,8 +44,8 @@ class App extends Component {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
-        onLogout: this.handleLogout
-      }
+        onLogout: this.handleLogout,
+      },
     };
   }
 
@@ -70,6 +71,7 @@ class App extends Component {
   }
 
   render() {
+    { console.log(this.state) }
     return (
       <AuthContext.Provider value={this.state.auth}>
         <div className="App">
