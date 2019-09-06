@@ -7,6 +7,7 @@ class InputCheck extends Component {
         <input
           className="form-check-input"
           type="checkbox"
+          name={this.props.name}
           value={this.props.value}
           id={this.props.id}
           key={this.props.id}
@@ -15,7 +16,7 @@ class InputCheck extends Component {
           defaultChecked={this.props.defaultChecked}
         />
         <label className="form-check-label" htmlFor={this.props.id}>
-          {this.props.genre}
+          {this.props.label}
         </label>
       </div>
     );

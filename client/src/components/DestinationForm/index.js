@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputGroup from "../../components/InputGroup";
+import InputCheck from "../../components/InputCheck";
 
 class DestinationForm extends Component {
   render() {
@@ -27,6 +28,12 @@ class DestinationForm extends Component {
           id="end-point"
           label="Ending Point"
           onChange={this.props.onChangeInput}
+        />
+        <InputCheck 
+        name="isPopular"
+        label="Choose Most Popular Artists First"
+        onChange={this.props.onChangeCheck}
+        defaultChecked={this.props.isPopular}
         />
       </div>
     );
