@@ -2,28 +2,28 @@ import axios from "axios";
 
 export default {
   Users: {
-    login: function(email, password) {
+    login: function (email, password) {
       return axios.post("/api/users/login", { email, password });
     },
 
-    create: function(email, password) {
+    create: function (email, password) {
       return axios.post("/api/users", { email, password });
     },
 
-    getMe: function(authToken) {
+    getMe: function (authToken) {
       return axios.get("/api/users/me", {
         headers: {
           Authorization: `Bearer ${authToken}`
         }
       });
     },
-    register: function(firstName, lastName, email, password) {
+    register: function (firstName, lastName, email, password) {
       return axios.post("/api/users/register", { firstName, lastName, email, password });
     }
   },
 
   Secrets: {
-    getAll: function(authToken) {
+    getAll: function (authToken) {
       return axios.get("/api/secrets", {
         headers: {
           Authorization: `Bearer ${authToken}`
@@ -33,12 +33,12 @@ export default {
   },
 
   testObj: {
-    testFunc: function(e) {
+    testFunc: function (e) {
       e.preventDefault();
       return console.log("Hi from Test");
     },
 
-    testSend: function(e, data) {
+    testSend: function (e, data) {
       e.preventDefault();
       axios({
         method: "POST",
@@ -51,7 +51,7 @@ export default {
   },
 
   Spotify: {
-    getRedirectURL: function() {
+    getRedirectURL: function () {
       axios({
         method: "GET",
         url: "/api/spotify/login"
@@ -60,7 +60,7 @@ export default {
         .catch((err) => console.log(err));
     },
 
-    getUser: function() {
+    getUser: function () {
       const accessToken = localStorage.getItem("spotifyAccessToken");
       axios({
         method: "GET",
@@ -70,7 +70,7 @@ export default {
         .catch((err) => console.log(err));
     },
 
-    checkForCode: function() {
+    checkForCode: function () {
       const siteURL = window.location.search.substring(1),
         authCode = siteURL.split("=")[1];
 
@@ -79,7 +79,7 @@ export default {
       }
     },
 
-    tradeForToken: function(authCode) {
+    tradeForToken: function (authCode) {
       axios({
         method: "GET",
         url: `/api/spotify/exchangeToken/${authCode}`
@@ -88,23 +88,25 @@ export default {
           // console.log(response);
           localStorage.setItem("spotifyAccessToken", response.data.access_token);
           localStorage.setItem("spotifyRefreshToken", response.data.refresh_token);
-          window.location.assign("https://glacial-savannah-65289.herokuapp.com/newtrip");
+          // window.location.assign("https://glacial-savannah-65289.herokuapp.com/newtrip");
+          window.location.assign("http://localhost:3000/newtrip");
         })
         .catch((err) => console.log(err));
     },
 
-    createPlaylist: function(e, data) {
+    createPlaylist: function (e, data) {
       e.preventDefault();
-      const accessToken = localStorage.getItem("spotifyAccessToken"),
-      spotifyUserID = localStorage.getItem("spotifyUserID");
-      console.log(accessToken);
-      axios({
-        method: "POST",
-        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
-        data: data
-      })
-        .then((response) => console.log(response))
-        .catch((err) => console.log(err));
+      // const accessToken = localStorage.getItem("spotifyAccessToken"),
+      //   spotifyUserID = localStorage.getItem("spotifyUserID");
+      // console.log(accessToken);
+      // axios({
+      //   method: "POST",
+      //   url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
+      //   data: data
+      // })
+      //   .then((response) => console.log(response))
+      //   .catch((err) => console.log(err));
+      console.log(data)
     }
   }
 };

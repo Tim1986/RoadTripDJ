@@ -5,11 +5,15 @@ import Button from "../../components/Button";
 import API from "../../lib/API";
 
 class TripForm extends Component {
-  state = {
-    startPoint: "Point A",
-    endPoint: "Point B",
-    isPopular: true
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      startPoint: "Point A",
+      endPoint: "Point B",
+      isPopular: true
+    };
+
+  }
 
   handleChangeInput = (e) => {
     const { name, value } = e.target;
@@ -17,6 +21,12 @@ class TripForm extends Component {
       [name]: value
     });
   };
+
+  onClick = (e) => {
+    e.preventDefault();
+    API.Spotify.createPlaylist(e, this.state);
+    this.props.onClick()
+  }
 
   render() {
     return (
@@ -44,7 +54,8 @@ class TripForm extends Component {
             }} */}
           <Button
             value="Generate Playlist"
-            onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
+            onClick={(e) => this.onClick(e)}
+          // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
           />
         </div>
       </form>
