@@ -54,7 +54,7 @@ class App extends Component {
       API.Spotify.checkForCode();
     }
 
-    if (!localStorage.getItem("spotifyUserID")) {
+    if (localStorage.getItem("spotifyAccessToken") && !localStorage.getItem("spotifyUserID")) {
       API.Spotify.getUser();
     }
 
