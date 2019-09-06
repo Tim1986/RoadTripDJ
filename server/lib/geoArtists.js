@@ -1,13 +1,13 @@
 const wiki = require('wikijs').default;
 const googleMapsClient = require('@google/maps').createClient({
-    key: 'AIzaSyDj-_Xoa2q3k_8mdhM7xfuh-oHaGhbOIMk',
+    key: process.env.GOOGLEAPI,
     Promise: Promise
 });
 
 const Spotify = require('node-spotify-api');
 const spotify = new Spotify({
-    id: "54879e26db014ccdb43776841852efc1",
-    secret: "1b01de30a2fd4c3a99cc9834873a8760"
+    id: process.env.SPOTIFY_ID,
+    secret: process.env.SPOTIFY_SECRET,
 });
 
 const geoArtists = {
@@ -172,100 +172,97 @@ const geoArtists = {
         })
     },
 
-}
-
-module.exports = geoArtists
 
 
-
-const getSpotifyGenres = artist => {
-    return spotify.search({ type: 'artist', query: artist })
-    .then(data =>{
-        if (data && data.artists.items.length > 0) {
-            return newObj = {
-                    artist: artist,
-                    id: data.artists.items[0].id,
-                    popularity: data.artists.items[0].popularity
-                }
-        }}
-    )
-    .catch(err => {
-        return undefined
-    })
-}
-
-const getGenreForArray = (array, isPopular) => {
-    const vows = []
-    // console.log(array)
-    for (let i = 0; i < array.length; i++){
-        vows.push(getSpotifyGenres(array[i]))
-    }
-    return Promise.all(vows)
-    .then(res => res.filter(resolved => 
-        resolved !== undefined))
-    .then(filtered => {
-        if (isPopular) {
-        filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
-        } else {
-        filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
-        
-        }
-    })
-}
-
-
-
-const getStage1 = (array1, array2, isPopular) =>{
-    return Promise.all([
-        getGenreForArray(array1, isPopular),
-        getGenreForArray(array2, isPopular),
-    ])
-}
-
-const getSongsPerArtist = (songNumber, artistNumberFirstGroup) => {
-    if (Math.ceil(songNumber / artistNumberFirstGroup) >= 3) {
-        return 3;
-    } else if (Math.ceil(songNumber / artistNumberFirstGroup) <= 1) {
-        return 1;
-    } else {
-        return 2;
-    }
-}
-
-
-const wrap = (start, end, isPopular) => {
-    let tripLength; 
-    geoArtists.getTrip(start, end)
-        .then(rawData =>{
-            //CONVENIENCE VARIABLES for you to use how you wish.
-            // to get the artists from the city use startData[index].array
-            //same with this one endData[index].array
-            const startData = rawData[0]
-            const endData = rawData[1]
-            tripLength = rawData[2].tripMinutes
-
-            return getStage1(startData[0].array,endData[0].array, isPopular) //gets the CLOSEST cities artists for both start and end cities
+    getSpotifyGenres : artist => {
+        return spotify.search({ type: 'artist', query: artist })
+        .then(data =>{
+            if (data && data.artists.items.length > 0) {
+                return newObj = {
+                        artist: artist,
+                        id: data.artists.items[0].id,
+                        popularity: data.artists.items[0].popularity
+                    }
+            }}
+        )
+        .catch(err => {
+            return undefined
         })
-        .then(res => {
-            const startPoint = res[0]
-            const endPoint = res[1]
+    },
 
-            let totalSongNumber = Math.round(tripLength / 3.5)
+    getGenreForArray : (array, isPopular) => {
+        const vows = []
+        // console.log(array)
+        for (let i = 0; i < array.length; i++){
+            vows.push(getSpotifyGenres(array[i]))
+        }
+        return Promise.all(vows)
+        .then(res => res.filter(resolved => 
+            resolved !== undefined))
+        .then(filtered => {
+            if (isPopular) {
+            filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
+            } else {
+            filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
+            
+            }
+        })
+    },
 
-            const startSongNum = getSongsPerArtist(Math.ceil(totalSongNumber/2) , startPoint.length)
-            const endSongNum = getSongsPerArtist(Math.floor(totalSongNumber/2), endPoint.length)
-    })
+
+
+    getStage1 : (array1, array2, isPopular) =>{
+        return Promise.all([
+            getGenreForArray(array1, isPopular),
+            getGenreForArray(array2, isPopular),
+        ])
+    },
+
+    getSongsPerArtist : (songNumber, artistNumberFirstGroup) => {
+        if (Math.ceil(songNumber / artistNumberFirstGroup) >= 3) {
+            return 3;
+        } else if (Math.ceil(songNumber / artistNumberFirstGroup) <= 1) {
+            return 1;
+        } else {
+            return 2;
+        }
+    },
+
+
+    wrap : (start, end, isPopular) => {
+        let tripLength; 
+        geoArtists.getTrip(start, end)
+            .then(rawData =>{
+                //CONVENIENCE VARIABLES for you to use how you wish.
+                // to get the artists from the city use startData[index].array
+                //same with this one endData[index].array
+                const startData = rawData[0]
+                const endData = rawData[1]
+                tripLength = rawData[2].tripMinutes
+
+                return getStage1(startData[0].array,endData[0].array, isPopular) //gets the CLOSEST cities artists for both start and end cities
+            })
+            .then(res => {
+                const startPoint = res[0]
+                const endPoint = res[1]
+
+                let totalSongNumber = Math.round(tripLength / 3.5)
+
+                const startSongNum = getSongsPerArtist(Math.ceil(totalSongNumber/2) , startPoint.length)
+                const endSongNum = getSongsPerArtist(Math.floor(totalSongNumber/2), endPoint.length)
+        })
+    },
+
+    getSpotifySongs : (songIteration, objArray) => {
+        
+        for (let i = 0; i < objArray; i++) {
+            //GET {songIteration} NUMBER OF SPOTIFY SONGS
+
+        }
+    },
 }
-
-const getSpotifySongs = (songIteration, objArray) => {
-    
-    for (let i = 0; i < objArray; i++) {
-        //GET {songIteration} NUMBER OF SPOTIFY SONGS
-
-    }
-}
-
-
 let x = "20 Foxtail Pass, Acworth GA 30101"
 let y = "2044 Jefferson St. Memphis, TN"
         
+module.exports = geoArtists
+

@@ -93,14 +93,15 @@ export default {
         .catch((err) => console.log(err));
     },
 
-    createPlaylist: function(e) {
+    createPlaylist: function(e, data) {
       e.preventDefault();
       const accessToken = localStorage.getItem("spotifyAccessToken"),
       spotifyUserID = localStorage.getItem("spotifyUserID");
       console.log(accessToken);
       axios({
-        method: "GET",
-        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`
+        method: "POST",
+        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
+        data: data
       })
         .then((response) => console.log(response))
         .catch((err) => console.log(err));
