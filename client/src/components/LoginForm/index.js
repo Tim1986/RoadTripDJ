@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Button from "../Button";
-import API from "../../lib/API";
 
 import Octicon, { Mail, Key } from "@githubprimer/octicons-react";
 
