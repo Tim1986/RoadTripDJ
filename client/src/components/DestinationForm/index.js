@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import InputGroup from "../../components/InputGroup";
+import InputCheck from "../../components/InputCheck";
 
 class DestinationForm extends Component {
   render() {
@@ -28,6 +29,17 @@ class DestinationForm extends Component {
           label="Ending Point"
           onChange={this.props.onChangeInput}
         />
+        <div className="d-flex">
+          <InputCheck
+            name="isPopular"
+            id="isPopular"
+            checkClass="toggle__check"
+            labelClass="toggle__switch"
+            onChange={this.props.onChangeCheck}
+            defaultChecked={this.props.isPopular}
+          />
+          <p>Get {this.props.isPopular ? "Most" : "Least"} Popular Artists First</p>
+        </div>
       </div>
     );
   }

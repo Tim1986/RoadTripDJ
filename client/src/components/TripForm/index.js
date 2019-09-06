@@ -24,39 +24,51 @@ class TripForm extends Component {
 
   onClick = (e) => {
     e.preventDefault();
-    API.Spotify.createPlaylist(e, this.state);
     this.props.onClick()
+    API.Spotify.createPlaylist(e, this.state);
   }
+
+  handleChangeCheck = (e) => {
+    const { name, checked } = e.target;
+    this.setState({
+      [name]: checked
+    });
+  };
 
   render() {
     return (
       <form>
         <div className="row mx-auto bg-dark text-light p-5">
-          <div className="col-12 text-left my-auto">
+          <div className="col-lg-6 col-md-9 col-12 text-left mx-auto">
             <DestinationForm
               startPoint={this.state.startPoint}
               endPoint={this.state.endPoint}
+              isPopular={this.state.isPopular}
               onChangeInput={this.handleChangeInput}
+              onChangeCheck={this.handleChangeCheck}
             />
-          </div>
-          {/* ========== START: Code for Genres ========== */}
-          {/* <div className="col-lg-6 text-left">
-            <SongGenres
-              selectedGenres={this.state.selectedGenres}
-              onChildClick={this.onChildClick}
-            />
-          </div> */}
-          {/* ========== END: Code for Genres ========== */}
-          {/* <Button
+
+            {/* ========== START: Code for Genres ========== */}
+            {/* <div className="col-lg-6 text-left">
+                  <SongGenres
+                    selectedGenres={this.state.selectedGenres}
+                    onChildClick={this.onChildClick}
+                  />
+                </div> */}
+            {/* ========== END: Code for Genres ========== */}
+
+            {/* ========== END: Code for Genres ========== */}
+            {/* <Button
             value="Generate Playlist"
             onClick={(e) => {
               API.testObj.testSend(e, this.state);
             }} */}
-          <Button
-            value="Generate Playlist"
-            onClick={(e) => this.onClick(e)}
-          // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
-          />
+            <Button
+              value="Generate Playlist"
+              onClick={(e) => this.onClick(e)}
+            // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
+            />
+          </div>
         </div>
       </form>
     );
