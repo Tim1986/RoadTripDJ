@@ -16,10 +16,10 @@ import Navigation from "../../components/Navigation";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
-import Secret from "../../pages/Secret/Secret";
-// import Home from "../../pages/Home/Home";
+
 
 import "./App.css";
+
 
 class App extends Component {
   constructor(props) {
@@ -43,8 +43,8 @@ class App extends Component {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
-        onLogout: this.handleLogout
-      }
+        onLogout: this.handleLogout,
+      },
     };
   }
 
@@ -54,7 +54,7 @@ class App extends Component {
       API.Spotify.checkForCode();
     }
 
-    if (!localStorage.getItem("spotifyUserID")) {
+    if (localStorage.getItem("spotifyAccessToken") && !localStorage.getItem("spotifyUserID")) {
       API.Spotify.getUser();
     }
 
@@ -70,6 +70,7 @@ class App extends Component {
   }
 
   render() {
+    { console.log(this.state) }
     return (
       <AuthContext.Provider value={this.state.auth}>
         <div className="App">
@@ -81,8 +82,6 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <PrivateRoute exact path="/authorize" component={Authorize} />
               <PrivateRoute exact path="/newtrip" component={Trip} />
-              {/* <Route path='/register' component={Register} /> */}
-              <PrivateRoute path="/secret" component={Secret} />
               <Route component={NotFound} />
             </Switch>
           </div>

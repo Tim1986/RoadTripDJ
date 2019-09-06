@@ -1,44 +1,47 @@
-import React, { Component } from 'react';
-import Octicon, { Mail, Key, Keyboard } from '@githubprimer/octicons-react';
+import React, { Component } from "react";
+import Button from "../Button";
+
+import Octicon, { Mail, Key, Keyboard } from "@githubprimer/octicons-react";
 
 class RegisterForm extends Component {
   state = {
     firstName: "",
     lastName: "",
-    email: '',
-    password: ''
+    email: "",
+    password: ""
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event) => {
     const { name, value } = event.target;
 
     this.setState({
       [name]: value
     });
-  }
+  };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     const { firstName, lastName, email, password } = this.state;
 
     this.props.onSubmit(firstName, lastName, email, password);
     event.preventDefault();
 
-    const newUser = this.state
-    console.log(newUser)
+    const newUser = this.state;
+    console.log(newUser);
   };
 
   render() {
     const { firstName, lastName, email, password } = this.state;
 
     return (
-      <div className='RegisterForm'>
-        <div className='card'>
-          <div className='card-body'>
-            <form className='LoginForm' onSubmit={this.handleSubmit}>
-
+      <div className="RegisterForm">
+        <div className="card">
+          <div className="card-body">
+            <form className="LoginForm" onSubmit={this.handleSubmit}>
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Keyboard} /></span>
+                  <span className="input-group-text">
+                    <Octicon icon={Keyboard} />
+                  </span>
                 </div>
                 <input
                   className="form-control"
@@ -53,7 +56,9 @@ class RegisterForm extends Component {
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Keyboard} /></span>
+                  <span className="input-group-text">
+                    <Octicon icon={Keyboard} />
+                  </span>
                 </div>
                 <input
                   className="form-control"
@@ -66,43 +71,47 @@ class RegisterForm extends Component {
                 />
               </div>
 
-              <div className='input-group mb-3'>
+              <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Mail} /></span>
+                  <span className="input-group-text">
+                    <Octicon icon={Mail} />
+                  </span>
                 </div>
                 <input
-                  className='form-control'
-                  id='email'
-                  type='email'
-                  name='email'
-                  placeholder='email@provider.com'
+                  className="form-control"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="email@provider.com"
                   value={email}
                   onChange={this.handleInputChange}
                 />
               </div>
-              <div className='input-group mb-3'>
+              <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Key} /></span>
+                  <span className="input-group-text">
+                    <Octicon icon={Key} />
+                  </span>
                 </div>
                 <input
-                  className='form-control'
-                  id='password'
-                  type='password'
-                  name='password'
-                  placeholder='password'
+                  className="form-control"
+                  id="password"
+                  type="password"
+                  name="password"
+                  placeholder="password"
                   value={password}
                   onChange={this.handleInputChange}
                 />
               </div>
 
-              <button className='btn btn-primary' type='submit'>Register</button>
+              <Button type="submit" value="Register" />
+              {/* <button className='btn btn-primary' type='submit'>Register</button> */}
             </form>
           </div>
         </div>
-      </div >
-    )
+      </div>
+    );
   }
 }
 
 export default RegisterForm;
-
