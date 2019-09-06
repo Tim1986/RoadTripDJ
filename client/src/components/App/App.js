@@ -16,8 +16,7 @@ import Navigation from "../../components/Navigation";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
-import Secret from "../../pages/Secret/Secret";
-// import Home from "../../pages/Home/Home";
+
 
 import "./App.css";
 
@@ -83,8 +82,6 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <PrivateRoute exact path="/authorize" component={Authorize} />
               <PrivateRoute exact path="/newtrip" component={Trip} />
-              {/* <Route path='/register' component={Register} /> */}
-              <PrivateRoute path="/secret" component={Secret} />
               <Route component={NotFound} />
             </Switch>
           </div>
