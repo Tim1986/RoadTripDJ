@@ -48,7 +48,7 @@ const geoArtists = {
                 return resultObj
             })
             .catch((error) => {
-                console.log("ERROR | getDistance Query: " + alternating.input + " | " + error)
+                console.log("\nERROR | getDistance Query: " + alternating.input + " | " + error)
             })
     },
 
@@ -66,6 +66,7 @@ const geoArtists = {
                 }
                 return Promise.all(matrixPromises)
             })
+            .catch(err => console.log("\nClosestWiki ERROR (getGeoData, geoDataLoop, getDistance): " + err))
     },
 
     getClosestCities : address => {
@@ -102,7 +103,7 @@ const geoArtists = {
                 // waits until each result is recieved and returns them all at once as the result of this function
                 return Promise.all(vows)
             })
-            .catch((error) => { console.log("closestWiki ERROR:" + error) })
+            .catch((error) => { console.log("\nGetClosestCities ERROR:" + error + "\n") })
     },
 
     getArrayOfArtists : (searchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories) => {
@@ -140,7 +141,7 @@ const geoArtists = {
                     return obj
                 }
             })
-            .catch((error) => { console.log("wiki:" + error) })
+            .catch((error) => { console.log("\nGet array of Artists: " + error) })
     },
 
     pushThisPageArtists : (response, arrayOfArtists) => {
@@ -158,23 +159,22 @@ const geoArtists = {
     },
 
     getTrip : (start, end) => {
-        return Promise.all([
-            geoArtists.getGeoData(start),
-            geoArtists.getGeoData(end)
-        ])
-        .then(res =>{        
-        start = res[0]; end = res[1]
+        // return Promise.all([
+        //     geoArtists.getGeoData(start),
+        //     geoArtists.getGeoData(end)
+        // ])
+        // .then(res =>{        
         return Promise.all([
             geoArtists.getClosestCities(start.formattedAddress),
             geoArtists.getClosestCities(end.formattedAddress),
             geoArtists.getDistance(start, end)
         ])
-        })
     },
+    
 
 
 
-    getSpotifyGenres : artist => {
+    getSpotifyGenres : (artist) => {
         return spotify.search({ type: 'artist', query: artist })
         .then(data =>{
             if (data && data.artists.items.length > 0) {
@@ -190,35 +190,37 @@ const geoArtists = {
         })
     },
 
-    getGenreForArray : (array, isPopular) => {
+    getSpotifyForArray : (array, isPopular) => {
         const vows = []
         // console.log(array)
         for (let i = 0; i < array.length; i++){
-            vows.push(getSpotifyGenres(array[i]))
+            vows.push(geoArtists.getSpotifyGenres(array[i]))
         }
         return Promise.all(vows)
         .then(res => res.filter(resolved => 
             resolved !== undefined))
         .then(filtered => {
             if (isPopular) {
-            filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
+            return filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
             } else {
-            filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
+            return filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
             
             }
         })
+        .catch(err => console.log("\ngetSpotifyForArray Error: " + err))
     },
 
 
 
     getStage1 : (array1, array2, isPopular) =>{
         return Promise.all([
-            getGenreForArray(array1, isPopular),
-            getGenreForArray(array2, isPopular),
+            geoArtists.getSpotifyForArray(array1, isPopular),
+            geoArtists.getSpotifyForArray(array2, isPopular),
         ])
     },
 
     getSongsPerArtist : (songNumber, artistNumberFirstGroup) => {
+    
         if (Math.ceil(songNumber / artistNumberFirstGroup) >= 3) {
             return 3;
         } else if (Math.ceil(songNumber / artistNumberFirstGroup) <= 1) {
@@ -240,29 +242,32 @@ const geoArtists = {
                 const endData = rawData[1]
                 tripLength = rawData[2].tripMinutes
 
-                return getStage1(startData[0].array,endData[0].array, isPopular) //gets the CLOSEST cities artists for both start and end cities
+                return geoArtists.getStage1(startData[0].array, endData[0].array, isPopular) //gets the CLOSEST cities artists for both start and end cities
             })
-            .then(res => {
-                const startPoint = res[0]
-                const endPoint = res[1]
-
+            .then(result => {
+                
+                const startArr = result[0]
+                const endArr = result[1]
                 let totalSongNumber = Math.round(tripLength / 3.5)
+                const startSongNum = geoArtists.getSongsPerArtist(Math.ceil(totalSongNumber/2) , startArr.length)
+                const endSongNum = geoArtists.getSongsPerArtist(Math.floor(totalSongNumber/2), endArr.length)
 
-                const startSongNum = getSongsPerArtist(Math.ceil(totalSongNumber/2) , startPoint.length)
-                const endSongNum = getSongsPerArtist(Math.floor(totalSongNumber/2), endPoint.length)
+                console.log(res)
+                // console.log(endArr)
+                console.log(startSongNum)
+                console.log(endSongNum)
+                // return Promise.all([
+                //     res,
+                //     startSongNum, endSongNum
+                // ])
+                return result
         })
     },
-
-    getSpotifySongs : (songIteration, objArray) => {
-        
-        for (let i = 0; i < objArray; i++) {
-            //GET {songIteration} NUMBER OF SPOTIFY SONGS
-
-        }
-    },
 }
+
 let x = "20 Foxtail Pass, Acworth GA 30101"
 let y = "2044 Jefferson St. Memphis, TN"
         
 module.exports = geoArtists
 
+geoArtists.wrap(x,y, true).then(result => console.log(result))
