@@ -48,7 +48,7 @@ const populatePlaylist = (playlistID, accessToken, res) => {
       "Content-Type": "application/json"
     }
   })
-    .then(() => res.sendStatus(200).end())
+    .then(() => res.json(playlistID))
     .catch((err) => console.log(err));
 };
 
@@ -113,7 +113,7 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
         end = req.body.endPoint,
         isPopular = req.body.isPopular
   return algorithm.step1(start, end)
-  
+
   .then( results => { 
     console.log(results)
   })  
