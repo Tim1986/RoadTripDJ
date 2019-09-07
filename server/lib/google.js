@@ -1,0 +1,50 @@
+const googleMapsClient = require('@google/maps').createClient({
+    key: process.env.GOOGLEAPI,
+    Promise: Promise
+});
+
+const google = {
+
+    getGeoData : address => {
+        return googleMapsClient.geocode({ address: address })
+            .asPromise()
+            .then((response) => {
+                let geoRes = {
+                    input: address,
+                    formattedAddress: response.json.results[0].formatted_address,
+                    latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
+                }
+                return geoRes
+            })
+    },
+
+    geoDataLoop : (array, startIndex) => { //set startIndex to 3 to avoid undefined wiki category calls
+        const geoPromises = [];
+        for (let i = startIndex; i < array.length; i++) { 
+            geoPromises.push(google.getGeoData(array[i]))
+        }
+        return Promise.all(geoPromises)
+    },
+
+    getDistance : (from, to) => {
+        return googleMapsClient.distanceMatrix({ origins: static.latLng, destinations: alternating.latLng, mode: 'driving' })
+            .asPromise()
+            .then((response) => {
+                let resultObj = {
+                    to: to.input,
+                    from: from.input,
+                    tripMinutes: response.json.rows[0].elements[0].duration.value * 60,
+                    howClose: {
+                        value: response.json.rows[0].elements[0].distance.value ,
+                        unitString: response.json.rows[0].elements[0].distance.text
+                    }
+                }
+                return resultObj
+            })
+            .catch((error) => {
+                console.log("\nERROR | google | getDistance Query: " + alternating.input + " | " + error)
+            })
+    },
+    
+}
+module.exports = google

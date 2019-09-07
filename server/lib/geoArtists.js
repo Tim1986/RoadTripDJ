@@ -1,3 +1,4 @@
+
 const wiki = require('wikijs').default;
 const googleMapsClient = require('@google/maps').createClient({
     key: process.env.GOOGLEAPI,
@@ -252,7 +253,7 @@ const geoArtists = {
                 const startSongNum = geoArtists.getSongsPerArtist(Math.ceil(totalSongNumber/2) , startArr.length)
                 const endSongNum = geoArtists.getSongsPerArtist(Math.floor(totalSongNumber/2), endArr.length)
 
-                console.log(res)
+                console.log(result)
                 // console.log(endArr)
                 console.log(startSongNum)
                 console.log(endSongNum)
@@ -270,4 +271,4 @@ let y = "2044 Jefferson St. Memphis, TN"
         
 module.exports = geoArtists
 
-geoArtists.wrap(x,y, true).then(result => console.log(result))
+// geoArtists.wrap(x,y, true).then(result => console.log(result))
