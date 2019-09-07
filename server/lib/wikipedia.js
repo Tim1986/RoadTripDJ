@@ -12,19 +12,20 @@ const wikipedia = {
                     places.push(location[1])
                 });
                 const fixPlaces = places.slice(3) //this slices of the nonplace returning
-                const noHonolulu = fixPlaces.filter(item => item !== "honolulu") //Who takes a roadtrip to Hawaii? 
+                const noHonolulu = fixPlaces.filter(item => item !== "Honolulu") //Who takes a roadtrip to Hawaii? 
                 return noHonolulu
             })
         },
     
     getArrayOfArtistsLoop : (arrayOfCities) => {
-        let closestCities =  arrayOfCities,
-            arrayOfArtists = [],
-            arrayOfCategories = []
+        const arrayOfArtists = [],
+              arrayOfTotalCategories =[],
+              arrayOfCategories = []
+        
 
-        for (let i = 0; i < closestCities.length; i++) {
-             let searchType = `Musicians from ${closestCities[i].cityName}`
-             wikipedia.getArrayOfArtists(searchType, closestCities[i].cityName, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
+        for (let i = 0; i < arrayOfCities.length; i++) {
+             let searchType = `Musicians from ${arrayOfCities[i].to}`
+             wikipedia.getArrayOfArtists(searchType, arrayOfCities[i].to, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
         }
 
         return arrayOfArtists

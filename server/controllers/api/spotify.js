@@ -1,4 +1,4 @@
-const geoArtists = require("./../../lib/algorithm")
+const algorithm = require("./../../lib/algorithm")
 const router = require("express").Router(),
   axios = require("axios");
 
@@ -111,14 +111,19 @@ router.get("/user/:accessToken", (req, res) => {
 router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   const start = req.body.startPoint,
         end = req.body.endPoint,
-        isPopular = req.body.isPopular
-  return algorithm.step1(start, end)
+        isPopular = req.body.isPopular,
+        userID = req.params.userID,
+        accessToken = req.params.accessToken,
+        playlistName = start.formattedAddress + " to " + end.formattedAddress
+
+  return algorithm.tracks(start, end, isPopular, userID, accessToken)
 
   .then( results => { 
     console.log(results)
   })  
   .catch((err) => console.log(err));
 });
+
 
 router.get("/artist/:accessToken", (req, res) => {
   axios({

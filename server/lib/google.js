@@ -5,6 +5,18 @@ const googleMapsClient = require('@google/maps').createClient({
 
 const google = {
 
+    startGeo : (start, end) => {
+        return google.geoDataLoop([start,end],0)
+        .then(posData => {
+            return Promise.all([
+                posData,
+                google.getDistance(posData[0], posData[1])
+            ])
+        })
+    },
+    
+
+
     getGeoData : address => {
         return googleMapsClient.geocode({ address: address })
             .asPromise()
@@ -27,7 +39,7 @@ const google = {
     },
 
     getDistance : (from, to) => {
-        return googleMapsClient.distanceMatrix({ origins: static.latLng, destinations: alternating.latLng, mode: 'driving' })
+        return googleMapsClient.distanceMatrix({ origins: from.latLng, destinations: to.latLng, mode: 'driving' })
             .asPromise()
             .then((response) => {
                 let resultObj = {
@@ -42,7 +54,7 @@ const google = {
                 return resultObj
             })
             .catch((error) => {
-                console.log("\nERROR | google | getDistance Query: " + alternating.input + " | " + error)
+                console.log("\nERROR | google | getDistance Query: to " + to.input + " from " + from.input +  " | " + error)
             })
     },
     
