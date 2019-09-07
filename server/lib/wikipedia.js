@@ -22,13 +22,13 @@ const wikipedia = {
               arrayOfTotalCategories =[],
               arrayOfCategories = []
         
-
+        const vows = [];
         for (let i = 0; i < arrayOfCities.length; i++) {
              let searchType = `Musicians from ${arrayOfCities[i].to}`
-             wikipedia.getArrayOfArtists(searchType, arrayOfCities[i].to, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories)
+             vows.push(wikipedia.getArrayOfArtists(searchType, arrayOfCities[i].to, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
         }
 
-        return arrayOfArtists
+        return Promise.all(vows)
     },
 
     getArrayOfArtists : (searchType, originalLocation, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories) => {
