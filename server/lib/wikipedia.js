@@ -5,7 +5,7 @@ const wikipedia = {
     musicCities : () => {
         return wiki().pagesInCategory("Category:American musicians by city")
             .then((wikiList) => {
-                console.log('-Wikipedia category data recieved.')
+                console.log('--Wikipedia category data recieved.')
                 const places = []
                 wikiList.forEach(category => {
                     let location = category.split(" from ")
