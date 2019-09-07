@@ -20,14 +20,12 @@ const wikipedia = {
     getArrayOfArtistsLoop : (arrayOfCities) => {
         const arrayOfArtists = [],
               arrayOfTotalCategories =[],
-              arrayOfCategories = []
-        
-        const vows = [];
-        for (let i = 0; i < arrayOfCities.length; i++) {
-             let searchType = `Musicians from ${arrayOfCities[i].to}`
-             vows.push(wikipedia.getArrayOfArtists(searchType, arrayOfCities[i].to, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
+              arrayOfCategories = [],
+              vows = []
+        for (city of arrayOfCities) {
+             let searchType = `Musicians from ${city.to}`
+             vows.push(wikipedia.getArrayOfArtists(searchType, city.to, arrayOfArtists, arrayOfCategories, arrayOfTotalCategories))
         }
-
         return Promise.all(vows)
     },
 
@@ -58,6 +56,7 @@ const wikipedia = {
                         array: []
                     }
                     obj.array = noDupeArray
+
                     return obj
                 }
             })

@@ -119,7 +119,7 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   return algorithm.tracks(start, end, isPopular, userID, accessToken)
 
   .then( results => { 
-    console.log(results)
+    console.log(results + " This is the end of the algorithm")
   })  
   .catch((err) => console.log(err));
 });

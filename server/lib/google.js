@@ -54,7 +54,7 @@ const google = {
                 return resultObj
             })
             .catch((error) => {
-                console.log("\nERROR | google | getDistance Query: to " + to.input + " from " + from.input +  " | " + error)
+                console.log("\nERROR | google | getDistance method: to " + to.input + " from " + from.input +  " | " + error)
             })
     },
     

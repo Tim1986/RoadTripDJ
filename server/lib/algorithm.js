@@ -6,61 +6,71 @@ const algorithm = {
     tracks :  (start, end, isPopular, userID, accessToken) => {
         return wikipedia.musicCities()
         .then(cityPool =>
-        algorithm.step1(start,end, cityPool)
+        algorithm.initialize(start,end, cityPool)
         )
             
         
       },
 
-    step1 : (start, end, arrayOfCities) => {
-        return google.startGeo(start,end)
-        .then(userInput => {
+    initialize : (start, end, arrayOfCities) => {
+        return algorithm.step1(start, end)
+        .then(userInput => { 
             const tripObj = {
-                 startPoint : userInput[0][0],
-                  endPoint : userInput[0][1],
-                  tripTime : userInput[1].tripMinutes
+                startPoint : userInput[0][0],
+                endPoint : userInput[0][1],
+                tripTime : userInput[1].tripMinutes
             }
-
         return algorithm.step2(tripObj.startPoint, tripObj.endPoint, arrayOfCities)
         })
-        .then(closestCities => {
-        return algorithm.step3(closestCities)
-        })   
+        .then(cityPoints => {
+        console.log("--Found Closest Cities...")
+        return algorithm.step3(cityPoints)
+        })
+        .then(results =>
+            console.log(results)
+        )
         
     },
-
-    step2 : (start, end, array) => {
-        console.log("--Found the closest Cities to " + start.formattedAddress + " and " + end.formattedAddress)
-        return Promise.all([
-            algorithm.closestWiki(start, array),
-            algorithm.closestWiki(end, array)
-        ])
-        },
     
-
+    step1 : (start, end) => {
+        return google.startGeo(start,end)
+    },
+    
+    step2 : (start, end, array) => {
+        console.log("--Getting geoData for all supplied cities")
+        return google.geoDataLoop(array, 0)
+        .then(function (newArray) {
+        return Promise.all([
+            algorithm.closestWiki(start, newArray),
+            algorithm.closestWiki(end, newArray)
+            ])
+        })
+    },
+    
+    
     step3 : (closeArr) => {
+        console.log("--Searching Wiki for artists in closest cities")
         return Promise.all([
             wikipedia.getArrayOfArtistsLoop(closeArr[0]),
             wikipedia.getArrayOfArtistsLoop(closeArr[1])
         ])
     },
-
     
-    closestWiki : (staticObj, addressArray) => {
-        return google.geoDataLoop(addressArray, 0)
-            .then(function (newArray) {
-                const matrixPromises = []
-                for (let i = 0; i < newArray.length; i++) {
-                    matrixPromises.push(google.getDistance(staticObj, newArray[i]))
-                }
-                return Promise.all(matrixPromises)
-            })
-            .then((results)=>(
-                algorithm.closestify(results)
-            ))
+    
+    closestWiki : (staticObj, geoArray) => {
+        console.log("--Getting distance between trip cities and wiki categories")
+        const matrixPromises = []
+        for (let cityObj of geoArray) {
+            matrixPromises.push(google.getDistance(staticObj, cityObj))
+            }
+        return Promise.all(matrixPromises)
 
-                
+        .then((results)=>{
+            console.log("--checking which cities are closest to " + staticObj.formattedAddress)
+            return algorithm.closestify(results)
+        })
     },
+
     closestify : (results) => {
         const sorted = results.filter(x => x !== undefined)
         sorted.sort((a, b) => parseFloat(a.howClose.value) - parseFloat(b.howClose.value))
