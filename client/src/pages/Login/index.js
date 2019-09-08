@@ -24,9 +24,6 @@ class Login extends Component {
         let message;
 
         switch (err.response.status) {
-          // case 401:
-
-          //   break;
           case 500:
             message = 'Server error. Please try again later.';
             break;

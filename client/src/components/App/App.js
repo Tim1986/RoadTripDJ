@@ -14,7 +14,6 @@ import Trip from "../../pages/Trip";
 import NotFound from "../../pages/NotFound";
 import Navigation from "../../components/Navigation";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
-import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 
 
@@ -78,7 +77,6 @@ class App extends Component {
           <div className="container">
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
               <PrivateRoute exact path="/authorize" component={Authorize} />
               <PrivateRoute exact path="/newtrip" component={Trip} />
