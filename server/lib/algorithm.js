@@ -8,23 +8,24 @@ const algorithm = {
         .then(cityPool =>{
         return algorithm.initialize(start,end, cityPool, isPopular)
         })
-
+        .catch(err => console.log("\nERROR | Tracks error | " + err))
             
         
       },
 
     initialize : (start, end, arrayOfCities, isPopular) => {
-        console.log("--Formatting user inputs for shear aesthetic appeal")
         return algorithm.step1(start, end)
-            .then(userInput => { 
+        .then(userInput => { 
+            console.log("--Formatted user inputs for shear aesthetic appeal")
+
             const tripObj = {
                 startPoint : userInput[0][0],
                 endPoint : userInput[0][1],
                 tripTime : userInput[1].tripMinutes
             }
-        return algorithm.step2(tripObj.startPoint, tripObj.endPoint, arrayOfCities, tripObj.tripTime)
+            return algorithm.step2(tripObj.startPoint, tripObj.endPoint, arrayOfCities, tripObj.tripTime)
         })
-            .then(cityPoints => {
+        .then(cityPoints => {
             console.log("--Found Closest Cities...")
             return algorithm.step3(cityPoints, cityPoints[2])
         })
@@ -32,7 +33,12 @@ const algorithm = {
             console.log("--Found relevent artists for start and end points")
             return algorithm.step4(results, results[2], isPopular)
         })
-        
+        .then(trackURIs => {
+            console.log(`--Collected ${trackURIs.length} songs to hand over to spotify `)
+            //PSUEDO: sort the start/end arrays of track object into one big array of spotify URIs
+            return trackURIs
+        })
+        .catch()
     },
     
     step1 : (start, end) => {
@@ -65,18 +71,47 @@ const algorithm = {
         console.log(cityObjArr)
         console.log(tripTime)
         let totalSongNumber = Math.round(tripTime / 3.5)
-        const startArr = cityObjArr[0]
-        const endArr = cityObjArr[1]
-        const startNum = algorithm.getSongsPerArtist(Math.ceil(totalSongNumber/2) , startArr.length)
-        const endNum = algorithm.getSongsPerArtist(Math.floor(totalSongNumber/2), endArr.length)
-
+        const startObjArr = cityObjArr[0],
+              endObjArr = cityObjArr[1],
+              startNum = algorithm.getSongsPerArtist(Math.ceil(totalSongNumber/2) , startObjArr.length),
+              endNum = algorithm.getSongsPerArtist(Math.floor(totalSongNumber/2), endObjArr.length),
+              first = algorithm.getTracks(startObjArr,totalSongNumber, startNum, isPopular),
+              second = algorithm.getTracks(endObjArr,totalSongNumber, endNum, isPopular)
+        
+        return Promise.all([first, second])
+        .then(trackObjs =>{
+            const URIs = []
+            for ( array of trackObjs){
+                for (obj of array){
+                    let uri = obj.id
+                    URIs.push(uri)
+                }
+            }
+            return URIs
+            // parse the results and return an array of spotify track URI's
+        })
 
         
 
     },
 
-    songCheck : (array, num, isPopular) => {
-        spotifyNPM.getSpotifyForArray()
+    getTracks : (array, total, perArtist, isPopular) => {
+        let totalToGet = total //probably unecessary but makes me feel safe and warm
+        return () => {                  //returns the results of this funtion. I think this will make sure that the for loop completes
+            const songs = []            //empty array for which to push the track objects into.
+            for (let city of array) {   //for loop that loops through each of the 5 closest city objects 
+                while (totalToGet < 0){      //checks how many songs are needed. If it is more than 0 than it continues to the spotify query
+                    return spotifyNPM.getSpotifyForArray(city.array, perArtist, isPopular) 
+                    .then(returnedSongs => {
+                        totalToGet = totalToGet - returnedSongs.length //subtracts total number of tracks returned from the total
+                        songs.push(returnedSongs)
+                    })
+                    .catch(err => console.log("\nERROR | getTracks -> getSpotifyForArray in " + city.name + " | " + err + "\n"))
+                }
+            }
+            return songs
+            
+        }
     },
     
     closestWiki : (staticObj, geoArray) => {

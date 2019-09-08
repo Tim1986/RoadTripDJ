@@ -21,21 +21,20 @@ const spotifyNPM = {
         })
     },
 
-    getSpotifyForArray : (array, isPopular) => {
+    getSpotifyForArray : (array, num, isPopular) => {
         const vows = []
         // console.log(array)
         for (let i = 0; i < array.length; i++){
-            vows.push(geoArtists.getSpotifyGenres(array[i]))
+            vows.push(spotifyNPM.getSpotifyGenres(array[i]))
         }
         return Promise.all(vows)
         .then(res => res.filter(resolved => 
             resolved !== undefined))
         .then(filtered => {
             if (isPopular) {
-            return filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
+            return filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity)).slice(0, num-1)
             } else {
-            return filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
-            
+            return filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity)).slice(0, num-1)
             }
         })
         .catch(err => console.log("\ngetSpotifyForArray Error: " + err))

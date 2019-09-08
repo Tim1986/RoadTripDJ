@@ -52,15 +52,6 @@ const populatePlaylist = (playlistID, accessToken, res) => {
     .catch((err) => console.log(err));
 };
 
-const tracks = (req) => {
-  
-        playlistName = start.formattedAddress + " to " + end.formattedAddress,
-        userID = req.params.userID,
-        accessToken = req.params.accessToken
-        
-  
-  
-}
 
 //=================================================
 // Routes
