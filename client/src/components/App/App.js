@@ -4,21 +4,19 @@ import { Switch, Route } from "react-router-dom";
 import API from "../../lib/API";
 import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
-// import Navigation from '../../components/Navigation/Navigation';
-// import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 //------------- PAGES -------------
 import Landing from "../../pages/Landing";
+import Register from "../../pages/Register/Register";
 import Authorize from "../../pages/Authorize";
 import Trip from "../../pages/Trip";
 // Other Pages
 import NotFound from "../../pages/NotFound";
+// Other Partials
 import Navigation from "../../components/Navigation";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
-import Register from "../../pages/Register/Register";
-
+import Footer from "../../components/Footer";
 
 import "./App.css";
-
 
 class App extends Component {
   constructor(props) {
@@ -42,8 +40,8 @@ class App extends Component {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
-        onLogout: this.handleLogout,
-      },
+        onLogout: this.handleLogout
+      }
     };
   }
 
@@ -53,7 +51,10 @@ class App extends Component {
       API.Spotify.checkForCode();
     }
 
-    if (localStorage.getItem("spotifyAccessToken") && !localStorage.getItem("spotifyUserID")) {
+    if (
+      localStorage.getItem("spotifyAccessToken") &&
+      !localStorage.getItem("spotifyUserID")
+    ) {
       API.Spotify.getUser();
     }
 
@@ -69,13 +70,15 @@ class App extends Component {
   }
 
   render() {
-    { console.log(this.state) }
+    {
+      console.log(this.state);
+    }
     return (
       <AuthContext.Provider value={this.state.auth}>
         <div className="App">
           {this.state.auth.authToken && <Navigation />}
           <div>
-          {/* <div className="container"> */}
+            {/* <div className="container"> */}
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
@@ -84,6 +87,7 @@ class App extends Component {
               <Route component={NotFound} />
             </Switch>
           </div>
+          <Footer />
         </div>
       </AuthContext.Provider>
     );
