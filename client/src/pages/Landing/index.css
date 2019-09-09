@@ -1,10 +1,28 @@
 .landing {
-  background-image: url("route-66.jpg");
+  background-image: url("../../images/route-66.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .landing__main {
   background: #fff;
+}
+
+.hero {
+  height: 500px;
+}
+
+.hero__welcome,
+.hero__login {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__login {
+  background-color: lightgray;
+  color: #000;
 }

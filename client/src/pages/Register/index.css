@@ -1,0 +1,13 @@
+.register {
+  background-image: url("../../images/route-66.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.register__container {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 2em;
+  padding: 2em;
+}

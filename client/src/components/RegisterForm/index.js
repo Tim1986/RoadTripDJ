@@ -33,8 +33,8 @@ class RegisterForm extends Component {
     const { firstName, lastName, email, password } = this.state;
 
     return (
-      <div className="RegisterForm">
-        <div className="card">
+      <div className="register__form">
+        <div>
           <div className="card-body">
             <form className="LoginForm" onSubmit={this.handleSubmit}>
               <div className="input-group mb-3">
