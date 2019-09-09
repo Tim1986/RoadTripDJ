@@ -2,9 +2,11 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <div className="text-center bg-light mt-auto">
-      <p>Footer</p>
-    </div>
+    <footer className="footer text-center bg-light mt-auto">
+      <div className="container">
+        <p>Footer</p>
+      </div>
+    </footer>
   );
 }
 

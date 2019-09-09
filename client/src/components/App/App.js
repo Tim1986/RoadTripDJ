@@ -75,7 +75,7 @@ class App extends Component {
     }
     return (
       <AuthContext.Provider value={this.state.auth}>
-        <div className="App">
+        <div className="App d-flex flex-column h-100">
           {this.state.auth.authToken && <Navigation />}
           <div>
             {/* <div className="container"> */}
