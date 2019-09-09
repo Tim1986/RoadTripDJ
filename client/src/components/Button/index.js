@@ -5,7 +5,7 @@ import "./index.css";
 function Button(props) {
   return (
     <button
-      className="btn btn-primary btn-block"
+      className="btn btn-orange btn-block"
       onClick={props.onClick}
       type={props.type}
     >
