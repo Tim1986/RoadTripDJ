@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./index.css";
+
 function BlurbMulti(props) {
   return (
     <div className="text-center">
@@ -13,9 +15,11 @@ function BlurbMulti(props) {
         {props.multiContent ? (
           props.multiContent.map((item) => {
             return (
-              <div className={`col-${12 / props.cols}`}>
-                {item.map((subitem) => {
-                  return <p className="text-left">{subitem}</p>;
+              <div className={`col-12 col-md-${12 / props.cols}`}>
+                {item.icon ? <p className={item.icon.className} >{item.icon.content}</p> : null}
+                {item.image ? <img src={item.image.url} /> : null}
+                {item.text.content.map((subitem) => {
+                  return <p className="text-center">{subitem}</p>;
                 })}
               </div>
             );

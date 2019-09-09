@@ -11,25 +11,48 @@ class LandingPage extends Component {
   ];
 
   howItWorksMulti = [
-    [
-      "Register and log in to Road Trip DJ.",
-      "When prompted, log in to Spotify and grant Road Trip DJ permission to create playlists on your account."
-    ],
-    [
-      "Input a start location and an end location.",
-      "Select if you want to receive the most well known or least well known musicians."
-    ],
-    [
-      "Click “generate playlist” and wait 30-60 seconds.",
-      "You’ll have a new playlist in your Spotify account!"
-    ]
+    {
+      icon: {
+        className: "icon--number",
+        content: "1"
+      },
+      text: {
+        content: [
+          "Register and log in to Road Trip DJ. When prompted, log in to Spotify and grant Road Trip DJ permission to create playlists on your account."
+        ]
+      }
+    },
+    {
+      icon: {
+        className: "icon--number",
+        content: "2"
+      },
+      text: {
+        content: [
+          "Input a start location and an end location. Select if you want to receive the most well known or least well known musicians."
+        ]
+      }
+    },
+    {
+      icon: {
+        className: "icon--number",
+        content: "3"
+      },
+      text: {
+        content: [
+          "Click “generate playlist” and wait 30-60 seconds. You’ll have a new playlist in your Spotify account!"
+        ]
+      }
+    }
   ];
 
-  howItWorksSecondary = ["It is necessary to grant access to your Spotify account in order to use this app."]
+  howItWorksSecondary = [
+    "It is necessary to grant access to your Spotify account in order to use this app."
+  ];
 
   render() {
     return (
-      <div className="Home container p-5" style={{backgroundColor: "lightgray"}}>
+      <div className="Home container p-5" style={{ backgroundColor: "lightgray" }}>
         <div className="row mx-auto p-5">
           <div className="col-lg-6 my-auto">
             <h3 className="text-center">Welcome to</h3>
