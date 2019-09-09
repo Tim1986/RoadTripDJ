@@ -5,7 +5,7 @@ import "./index.css";
 function BlurbMulti(props) {
   return (
     <div className="text-center">
-      <h2 className="display-4 mb-5">{props.title}</h2>
+      <h2 className="display-4 mb-5 title">{props.title}</h2>
       <div className="row">
         {props.primaryContent ? (
           <div className="col-12">
@@ -27,7 +27,7 @@ function BlurbMulti(props) {
         ) : null}
         {props.secondaryContent ? (
           <div className="col-12">
-            {props.secondaryContent.map((item) => <p>{item}</p>)}
+            {props.secondaryContent.map((item) => <p className="font-weight-bold">{item}</p>)}
           </div>
         ) : null}
       </div>
