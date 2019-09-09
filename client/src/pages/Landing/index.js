@@ -59,7 +59,7 @@ class LandingPage extends Component {
           <div className="row bg-dark text-light">
             <div className="hero__welcome p-5 text-center col-lg-6">
               <div>
-                <h3 className="">Welcome to</h3>
+                <h3 className="hero__welcome-subtitle">Welcome to</h3>
                 <h1 className="display-3">Road Trip DJ</h1>
               </div>
             </div>

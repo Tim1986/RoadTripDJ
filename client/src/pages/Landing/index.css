@@ -22,6 +22,12 @@
   align-items: center;
 }
 
+.hero__welcome-subtitle {
+  display: inline-block;
+  border-bottom: 2px solid #e78c30;
+  padding-bottom: 0.4em;
+}
+
 .hero__login {
   background-color: lightgray;
   color: #000;

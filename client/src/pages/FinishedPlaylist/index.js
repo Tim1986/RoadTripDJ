@@ -12,7 +12,7 @@ function FinishedPlaylist(props) {
           <h1 className="mb-4">Your Playlist Is Finished!</h1>
           <div className="d-flex justify-content-around">
             <Link className="btn btn-primary" to="/newtrip">
-              Create Another Playlist.
+              Create Another Playlist
             </Link>
             <a
               className="btn btn-success"

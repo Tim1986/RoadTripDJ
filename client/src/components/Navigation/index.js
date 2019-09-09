@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import AuthContext from "../../contexts/AuthContext";
 import AuthDropdown from "../../components/AuthDropdown/AuthDropdown";
 
+import "./index.css";
+
 class Navigation extends Component {
   static contextType = AuthContext;
 
@@ -24,8 +26,8 @@ class Navigation extends Component {
     const togglerClass = `navbar-toggler ${collapsed && "collapsed"}`;
 
     return (
-      <div className="Navigation" style={{position: "relative", zIndex: "999"}}>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-3">
+      <div className="navigation" style={{ position: "relative", zIndex: "999" }}>
+        <nav className="navbar navbar-expand-lg navbar-light mb-3">
           <Link className="navbar-brand" to="#">
             Road Trip DJ
           </Link>
