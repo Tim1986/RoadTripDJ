@@ -1,0 +1,12 @@
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.register__container {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2em;
+  padding: 2em;
+}

@@ -1,0 +1,16 @@
+.icon--number {
+  background-color: #e78c30;
+  color: white;
+  font-size: 2em;
+  /* border: 1px solid #000; */
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0 0.5em;
+  margin: 0.4em 0;
+}
+
+.title {
+  display: inline-block;
+  border-bottom: 2px solid #e78c30;
+  padding-bottom: 0.4em;
+}

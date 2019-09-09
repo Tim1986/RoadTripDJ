@@ -12,7 +12,6 @@ class TripForm extends Component {
       endPoint: "Point B",
       isPopular: true
     };
-
   }
 
   handleChangeInput = (e) => {
@@ -24,9 +23,9 @@ class TripForm extends Component {
 
   onClick = (e) => {
     e.preventDefault();
-    this.props.onClick()
+    this.props.onClick();
     API.Spotify.createPlaylist(e, this.state);
-  }
+  };
 
   handleChangeCheck = (e) => {
     const { name, checked } = e.target;
@@ -38,8 +37,8 @@ class TripForm extends Component {
   render() {
     return (
       <form>
-        <div className="row mx-auto bg-dark text-light p-5">
-          <div className="col-lg-6 col-md-9 col-12 text-left mx-auto">
+        <div className="row mx-auto p-5">
+          <div className="text-left mx-auto">
             <DestinationForm
               startPoint={this.state.startPoint}
               endPoint={this.state.endPoint}
@@ -66,7 +65,7 @@ class TripForm extends Component {
             <Button
               value="Generate Playlist"
               onClick={(e) => this.onClick(e)}
-            // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
+              // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
             />
           </div>
         </div>

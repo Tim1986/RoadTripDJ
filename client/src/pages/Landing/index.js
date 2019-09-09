@@ -1,45 +1,86 @@
 import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 
-// import LoginForm from "../../components/LoginForm";
-import Login from "../Login/Login";
+import BlurbMulti from "../../components/BlurbMulti";
+import Login from "../Login";
+
+import "./index.css";
 
 class LandingPage extends Component {
+  whatWeDo = [
+    "RoadTripDJ creates a Spotify playlist for your road trip with musicians from the cities you’re traveling to and from. Discover new music, find local artists, and keep your long drives interesting with RoadTripDJ.",
+    "Do you love music but get tired of listening to the same old songs every time you go on a road trip? If so, then this app is for you."
+  ];
+
+  howItWorksMulti = [
+    {
+      icon: {
+        className: "icon--number",
+        content: "1"
+      },
+      text: {
+        content: [
+          "Register and log in to Road Trip DJ. When prompted, log in to Spotify and grant Road Trip DJ permission to create playlists on your account."
+        ]
+      }
+    },
+    {
+      icon: {
+        className: "icon--number",
+        content: "2"
+      },
+      text: {
+        content: [
+          "Input a start location and an end location. Select if you want to receive the most well known or least well known musicians."
+        ]
+      }
+    },
+    {
+      icon: {
+        className: "icon--number",
+        content: "3"
+      },
+      text: {
+        content: [
+          "Click “generate playlist” and wait 30-60 seconds. You’ll have a new playlist in your Spotify account!"
+        ]
+      }
+    }
+  ];
+
+  howItWorksSecondary = [
+    "It is necessary to grant access to your Spotify account in order to use this app."
+  ];
+
   render() {
     return (
-      <div className="Home container">
-        <div className="row my-5">
-          <div className="col-12 my-5">
-            <div className="row mx-auto bg-dark text-light p-5">
-              <div className="col-lg-6">
-                <h5 className="text-center">Welcome to</h5>
-                <h3>Road Trip DJ</h3>
-                <p className="text-left">
-                Do you love music but get tired of listening to the same old songs every time you go on a road trip? 
-                If so, then this app is for you. 
-                </p>
-                <p className="text-left">
-                RoadTripDJ creates a Spotify playlist for your road trip with musicians from the cities you’re traveling to and from. 
-                Discover new music, find local artists, and keep your long drives interesting with RoadTripDJ.
-                </p>
-                <p className="text-left">
-                All you have to do is:
-                <ol>
-                <li>Log in to Spotify.</li>
-                <li>Log in to RoadTripDJ.</li>
-                <li>Input a start location and an end location.</li>
-                <li>Select if you want to receive the most well known or least well known musicians.</li>
-                <li>Click “generate playlist” and wait 30-60 seconds.</li>
-                <li>You’ll have a new playlist in your Spotify account!</li>
-                </ol>
-                </p>
+      <div className="landing">
+        <div className="container landing__main">
+          <div className="row bg-dark text-light">
+            <div className="hero__welcome p-5 text-center col-lg-6">
+              <div>
+                <h3 className="hero__welcome-subtitle">Welcome to</h3>
+                <h1 className="display-3">Road Trip DJ</h1>
               </div>
-              <div className="col-lg-6 text-center my-auto">
-                {/* <h3>Login Form</h3> */}
-                {/* <LoginForm /> */}
-                <Login />
-                {/* <div className='mt-3'>Don't have an account? <Link to='/register'>Click here to register.</Link></div> */}
-              </div>
+            </div>
+            <div
+              className="col-lg-6 text-center p-5 hero__login">
+              <Login />
+            </div>
+          </div>
+          <div className="row p-5 ">
+            <div className="col-12 my-5 px-5">
+              <BlurbMulti title="What We Do" primaryContent={this.whatWeDo} />
+            </div>
+          </div>
+          <div className="row p-5" style={{ backgroundColor: "lightgray" }}>
+            <div className="col-12 my-5 px-5">
+              <BlurbMulti
+                title="How It Works"
+                cols={3}
+                multiContent={this.howItWorksMulti}
+                secondaryContent={this.howItWorksSecondary}
+              />
             </div>
           </div>
         </div>

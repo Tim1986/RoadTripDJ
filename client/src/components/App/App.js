@@ -4,22 +4,20 @@ import { Switch, Route } from "react-router-dom";
 import API from "../../lib/API";
 import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
-// import Navigation from '../../components/Navigation/Navigation';
-// import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
 //------------- PAGES -------------
 import Landing from "../../pages/Landing";
+import Register from "../../pages/Register";
 import Authorize from "../../pages/Authorize";
 import Trip from "../../pages/Trip";
+import FinishedPlaylist from "../../pages/FinishedPlaylist";
 // Other Pages
 import NotFound from "../../pages/NotFound";
+// Other Partials
 import Navigation from "../../components/Navigation";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
-import Login from "../../pages/Login/Login";
-import Register from "../../pages/Register/Register";
-
+import Footer from "../../components/Footer";
 
 import "./App.css";
-
 
 class App extends Component {
   constructor(props) {
@@ -43,8 +41,8 @@ class App extends Component {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
-        onLogout: this.handleLogout,
-      },
+        onLogout: this.handleLogout
+      }
     };
   }
 
@@ -54,7 +52,10 @@ class App extends Component {
       API.Spotify.checkForCode();
     }
 
-    if (localStorage.getItem("spotifyAccessToken") && !localStorage.getItem("spotifyUserID")) {
+    if (
+      localStorage.getItem("spotifyAccessToken") &&
+      !localStorage.getItem("spotifyUserID")
+    ) {
       API.Spotify.getUser();
     }
 
@@ -70,21 +71,24 @@ class App extends Component {
   }
 
   render() {
-    { console.log(this.state) }
+    {
+      console.log(this.state);
+    }
     return (
       <AuthContext.Provider value={this.state.auth}>
-        <div className="App">
+        <div className="App d-flex flex-column h-100">
           {this.state.auth.authToken && <Navigation />}
-          <div className="container">
+          <div>
             <Switch>
               <Route exact path="/" component={Landing} />
-              <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
               <PrivateRoute exact path="/authorize" component={Authorize} />
               <PrivateRoute exact path="/newtrip" component={Trip} />
+              <PrivateRoute exact path="/done" component={FinishedPlaylist} />
               <Route component={NotFound} />
             </Switch>
           </div>
+          <Footer />
         </div>
       </AuthContext.Provider>
     );

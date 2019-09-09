@@ -1,0 +1,34 @@
+.landing {
+  background-image: url("../../images/route-66.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.landing__main {
+  background: #fff;
+}
+
+.hero {
+  height: 500px;
+}
+
+.hero__welcome,
+.hero__login {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__welcome-subtitle {
+  display: inline-block;
+  border-bottom: 2px solid #e78c30;
+  padding-bottom: 0.4em;
+}
+
+.hero__login {
+  background-color: lightgray;
+  color: #000;
+}
