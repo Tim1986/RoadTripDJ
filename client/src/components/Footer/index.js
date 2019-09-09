@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./index.css"
 
@@ -10,8 +11,7 @@ function Footer(props) {
     >
       <div className="container">
         <p>
-          &copy; 2019 | Get In Touch
-        </p>
+          &copy; 2019 | <Link to="/contact">Get In Touch</Link>        </p>
       </div>
     </footer>
   );
