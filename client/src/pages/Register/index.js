@@ -39,17 +39,15 @@ class Register extends Component {
 
     return (
       <div className="register container">
-        <div className="">
-          <div className="row">
-            <div className="register__container col-lg-6 col-md-9 col-12 mx-auto">
-              <h1>Register Account</h1>
-              {this.state.error && (
-                <div className="alert alert-danger mb-3" role="alert">
-                  {this.state.error}
-                </div>
-              )}
-              <RegisterForm onSubmit={this.handleSubmit} />
-            </div>
+        <div className="row">
+          <div className="register__container col-lg-6 col-md-9 col-12 mx-auto">
+            <h1>Register Account</h1>
+            {this.state.error && (
+              <div className="alert alert-danger mb-3" role="alert">
+                {this.state.error}
+              </div>
+            )}
+            <RegisterForm onSubmit={this.handleSubmit} />
           </div>
         </div>
       </div>
