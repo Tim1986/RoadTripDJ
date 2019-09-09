@@ -57,14 +57,14 @@ class LandingPage extends Component {
       <div className="landing">
         <div className="container landing__main">
           <div className="row bg-dark text-light">
-            <div className="p-5 mt-5 text-center col-lg-6" style={{ minHeight: "500px" }}>
-              <h3 className="">Welcome to</h3>
-              <h1 className="display-3">Road Trip DJ</h1>
+            <div className="hero__welcome p-5 text-center col-lg-6">
+              <div>
+                <h3 className="">Welcome to</h3>
+                <h1 className="display-3">Road Trip DJ</h1>
+              </div>
             </div>
             <div
-              className="col-lg-6 text-center p-5"
-              style={{ backgroundColor: "lightgray", color: "#000", minHeight: "500px" }}
-            >
+              className="col-lg-6 text-center p-5 hero__login">
               <Login />
             </div>
           </div>

@@ -1,4 +1,20 @@
-
 .landing__main {
   background: #fff;
+}
+
+.hero {
+  height: 500px;
+}
+
+.hero__welcome,
+.hero__login {
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__login {
+  background-color: lightgray;
+  color: #000;
 }
