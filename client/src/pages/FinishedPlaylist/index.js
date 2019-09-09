@@ -6,7 +6,7 @@ import "./index.css";
 function FinishedPlaylist(props) {
   const playlistID = localStorage.getItem("playlistID");
   return (
-    <div className="container my-auto">
+    <div className="container my-auto fp-r">
       <div className="row text-center">
         <div className="finished-playlist col-lg-6 col-md-9 col-12 mx-auto p-4">
           <h1 className="mb-4">Your Playlist Is Finished!</h1>

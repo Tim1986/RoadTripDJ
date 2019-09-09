@@ -1,7 +1,10 @@
-.finished-playlist {
-  background-color: rgba(255, 255, 255, 0.8);
+.fp-r {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+}
+
+.finished-playlist {
+  background-color: rgba(255, 255, 255, 0.8);
 }
