@@ -78,7 +78,6 @@ class App extends Component {
         <div className="App d-flex flex-column h-100">
           {this.state.auth.authToken && <Navigation />}
           <div>
-            {/* <div className="container"> */}
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />

@@ -38,7 +38,7 @@ class TripForm extends Component {
     return (
       <form>
         <div className="row mx-auto p-5">
-          <div className="col-12 text-left mx-auto">
+          <div className="text-left mx-auto">
             <DestinationForm
               startPoint={this.state.startPoint}
               endPoint={this.state.endPoint}

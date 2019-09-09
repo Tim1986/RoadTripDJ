@@ -1,0 +1,11 @@
+/* .newtrip {
+  height: 100%;
+} */
+
+.newtrip__container {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 2.5em;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}

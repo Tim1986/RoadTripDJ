@@ -17,10 +17,10 @@ class TripPage extends Component {
   };
   render() {
     return (
-      <div className="newtrip">
-        <div className="container">
-          <div className="row" style={{ backgroundColor: "rgba(255,255,255,0.8)" }}>
-            <div className="col-lg-6 col-md-9 col-12 mx-auto">
+      <div>
+        <div className="container newtrip">
+          <div className="row">
+            <div className="col-lg-6 col-md-9 col-12 mx-auto newtrip__container">
               <TripForm onClick={() => this.toggleModal()} />
             </div>
           </div>
