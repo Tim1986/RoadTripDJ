@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import TripForm from "../../components/TripForm";
 import Modal from "../../components/Modal/Modal";
 
+import "./index.css";
+
 class TripPage extends Component {
   state = {
     modalStyle: { display: "none" }
@@ -15,10 +17,10 @@ class TripPage extends Component {
   };
   render() {
     return (
-      <div>
-        <div className="Home container">
-          <div className="row my-5">
-            <div className="col-12 my-5">
+      <div className="newtrip h-100">
+        <div className="container">
+          <div className="row mx-auto" style={{ backgroundColor: "#fff" }}>
+            <div className="col-lg-6 col-md-9 col-12 mx-auto">
               <TripForm onClick={() => this.toggleModal()} />
             </div>
           </div>
