@@ -104,14 +104,13 @@ export default {
         url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
         data: data
       })
-        .then((response) => console.log(response))
+        .then((response) => {
+          console.log(response)
+          // localStorage.setItem("playlistID");
+          // window.location.assign("https://glacial-savannah-65289.herokuapp.com/done");
+          // window.location.assign("http://localhost:3000/done");
+        })
         .catch((err) => console.log(err));
     }
   }
 };
-
-//react route /authorize
-//renders Authorize component
-//componentDidMount = query server for the spotify url
-//route.get("/api/spotify/login") returns res.json(URL)
-//.then(window.location = URL)

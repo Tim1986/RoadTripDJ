@@ -17,8 +17,8 @@ class TripPage extends Component {
   };
   render() {
     return (
-      <div className="newtrip">
-        <div className="container">
+      <div className="">
+        <div className="newtrip container">
           <div className="row">
             <div className="col-lg-6 col-md-9 col-12 mx-auto newtrip__container">
               <TripForm onClick={() => this.toggleModal()} />

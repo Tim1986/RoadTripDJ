@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  position: relative;
   background-image: url("../../images/route-66.jpg");
   background-repeat: no-repeat;
   background-position: center;
