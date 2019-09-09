@@ -57,24 +57,24 @@ class LandingPage extends Component {
       <div className="landing">
         <div className="container landing__main">
           <div className="row bg-dark text-light">
-            <div className="p-5 mt-5 text-center col-lg-6" style={{minHeight: "300px"}}>
+            <div className="p-5 mt-5 text-center col-lg-6" style={{ minHeight: "500px" }}>
               <h3 className="">Welcome to</h3>
               <h1 className="display-3">Road Trip DJ</h1>
             </div>
             <div
-              className="col-lg-6 text-center my-auto p-5"
-              style={{ backgroundColor: "lightgray", color: "#000" }}
+              className="col-lg-6 text-center p-5"
+              style={{ backgroundColor: "lightgray", color: "#000", minHeight: "500px" }}
             >
               <Login />
             </div>
           </div>
           <div className="row p-5 ">
-            <div className="col-12 my-5">
+            <div className="col-12 my-5 px-5">
               <BlurbMulti title="What We Do" primaryContent={this.whatWeDo} />
             </div>
           </div>
-          <div className="row p-5" style={{ backgroundColor: "lightgray"}}>
-            <div className="col-12 my-5">
+          <div className="row p-5" style={{ backgroundColor: "lightgray" }}>
+            <div className="col-12 my-5 px-5">
               <BlurbMulti
                 title="How It Works"
                 cols={3}
