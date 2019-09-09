@@ -21,7 +21,7 @@ const spotifyNPM = {
         })
     },
 
-    getSpotifyForArray : (array, num, isPopular) => {
+    getSpotifyForArray : (array, isPopular) => {
         const vows = []
         // console.log(array)
         for (let i = 0; i < array.length; i++){
@@ -32,9 +32,9 @@ const spotifyNPM = {
             resolved !== undefined))
         .then(filtered => {
             if (isPopular) {
-            return filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity)).slice(0, num-1)
+            return filtered.sort((a,b) => parseFloat(b.popularity) - parseFloat(a.popularity))
             } else {
-            return filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity)).slice(0, num-1)
+            return filtered.sort((a,b) => parseFloat(a.popularity) - parseFloat(b.popularity))
             }
         })
         .catch(err => console.log("\ngetSpotifyForArray Error: " + err))

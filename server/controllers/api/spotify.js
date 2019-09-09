@@ -1,56 +1,7 @@
 const algorithm = require("./../../lib/algorithm")
+const spot = require("./spot.js")
 const router = require("express").Router(),
   axios = require("axios");
-
-//=================================================
-// Functions
-//=================================================
-
-const getTopSongs = (songNum, playlistID, artistIDs, accessToken, res) => {
-  let spotifyURIs = []
-  artistIDs.forEach((artistID) => {
-    axios({
-      url: `https://api.spotify.com/v1/artists/${artistID}/top-tracks?country=from_token`,
-      method: "GET",
-      headers: {
-        Authorization: "Bearer " + accessToken
-      }
-    })
-      .then((response) => {
-        response.data.tracks.forEach((track) => {
-          console.log(track)
-          // console.log("Artist Names: ", track.artists);
-          // console.log("Song Names: ", track.name);
-          // // console.log(track);
-          //push desired tracks into spotifyURIs array
-        });
-      })
-      .catch((err) => console.log(err));
-  });
-  // populatePlaylist(playlistID, accessToken, res);
-  // populatePlaylist(playlistID, spotifyURIs, accessToken, res)
-};
-
-// const populatePlaylist = (playlistID, spotifyURIs, accessToken) => {
-const populatePlaylist = (playlistID, accessToken, res) => {
-  axios({
-    url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
-    method: "POST",
-    data: {
-      uris: [
-        "spotify:track:6qnM0XXPZOINWA778uNqQ9",
-        "spotify:track:06WgOCf0LV2h4keYXDRnuh"
-      ]
-      // uris: spotifyURIs
-    },
-    headers: {
-      Authorization: "Bearer " + accessToken,
-      "Content-Type": "application/json"
-    }
-  })
-    .then(() => res.json(playlistID))
-    .catch((err) => console.log(err));
-};
 
 
 //=================================================
@@ -100,20 +51,53 @@ router.get("/user/:accessToken", (req, res) => {
 });
 
 router.post("/playlist/new/:userID/:accessToken", (req, res) => {
+  console.log(req.body)
   const start = req.body.startPoint,
         end = req.body.endPoint,
         isPopular = req.body.isPopular,
+    //  const start = "test",
+    //     end = "test",
+    //     isPopular = false,
         userID = req.params.userID,
         accessToken = req.params.accessToken,
-        playlistName = start.formattedAddress + " to " + end.formattedAddress
+        playlistName = start + " to " + end
+  
+  const axiosPromise = axios({
+        url: `https://api.spotify.com/v1/users/${userID}/playlists`,
+        method: "POST",
+        data: {
+        name: playlistName,
+        description: "A playlist for your trip from " + playlistName + ".",
+        public: "false"
+      },
+        headers: {
+        Authorization: "Bearer " + accessToken
+      }
+      })
+    return Promise.all([
+      start,
+      end,
+      isPopular,
+      axiosPromise
+    ])
+    
+    .then(result => {
+    const start = result[0],
+            end = result[1],
+            isPopular = result[2],
+            newPlaylistID = result[3].data.id
+    return algorithm.tracks(start, end, isPopular, userID, accessToken, newPlaylistID)
+    })
+    .then( results => { 
+      // console.log(results)
+      // spot.populatePlaylist(results[3], results[0], results[2], res)
+      //this is the send to the front-end end
 
-  return algorithm.tracks(start, end, isPopular, userID, accessToken)
+    })  
+    .catch((err) => console.log(err));
+  })
+  
 
-  .then( results => { 
-    console.log(results + " This is the end of the algorithm")
-  })  
-  .catch((err) => console.log(err));
-});
 
 
 router.get("/artist/:accessToken", (req, res) => {
@@ -126,5 +110,9 @@ router.get("/artist/:accessToken", (req, res) => {
     })
     .catch((err) => console.log(err));
 });
+
+//=================================================
+// Functions in spot.js
+//=================================================
 
 module.exports = router;
