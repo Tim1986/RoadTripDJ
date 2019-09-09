@@ -5,6 +5,8 @@ import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
 import RegisterForm from '../../components/RegisterForm/RegisterForm';
 
+import "./index.css"
+
 class Register extends Component {
   static contextType = AuthContext;
 
@@ -35,7 +37,7 @@ class Register extends Component {
     }
 
     return (
-      <div className='Login'>
+      <div className='register'>
         <div className='row'>
           <div className='col'>
             <h1>Register Account</h1>

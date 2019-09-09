@@ -6,7 +6,7 @@ import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
 //------------- PAGES -------------
 import Landing from "../../pages/Landing";
-import Register from "../../pages/Register/Register";
+import Register from "../../pages/Register";
 import Authorize from "../../pages/Authorize";
 import Trip from "../../pages/Trip";
 // Other Pages
