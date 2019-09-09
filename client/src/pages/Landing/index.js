@@ -4,6 +4,8 @@ import React, { Component } from "react";
 import BlurbMulti from "../../components/BlurbMulti";
 import Login from "../Login";
 
+import "./index.css";
+
 class LandingPage extends Component {
   whatWeDo = [
     "RoadTripDJ creates a Spotify playlist for your road trip with musicians from the cities you’re traveling to and from. Discover new music, find local artists, and keep your long drives interesting with RoadTripDJ.",
@@ -52,29 +54,34 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="Home container p-5" style={{ backgroundColor: "lightgray" }}>
-        <div className="row mx-auto p-5">
-          <div className="col-lg-6 my-auto">
-            <h3 className="text-center">Welcome to</h3>
-            <h1>Road Trip DJ</h1>
+      <div className="landing">
+        <div className="container landing__main">
+          <div className="row bg-dark text-light">
+            <div className="p-5 mt-5 text-center col-lg-6" style={{minHeight: "300px"}}>
+              <h3 className="">Welcome to</h3>
+              <h1 className="display-3">Road Trip DJ</h1>
+            </div>
+            <div
+              className="col-lg-6 text-center my-auto p-5"
+              style={{ backgroundColor: "lightgray", color: "#000" }}
+            >
+              <Login />
+            </div>
           </div>
-          <div className="col-lg-6 text-center my-auto">
-            <Login />
+          <div className="row p-5 ">
+            <div className="col-12 my-5">
+              <BlurbMulti title="What We Do" primaryContent={this.whatWeDo} />
+            </div>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-12 my-5">
-            <BlurbMulti title="What We Do" primaryContent={this.whatWeDo} />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-12 my-5">
-            <BlurbMulti
-              title="How It Works"
-              cols={3}
-              multiContent={this.howItWorksMulti}
-              secondaryContent={this.howItWorksSecondary}
-            />
+          <div className="row p-5" style={{ backgroundColor: "lightgray"}}>
+            <div className="col-12 my-5">
+              <BlurbMulti
+                title="How It Works"
+                cols={3}
+                multiContent={this.howItWorksMulti}
+                secondaryContent={this.howItWorksSecondary}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,10 @@
+.landing {
+  background-image: url("route-66.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.landing__main {
+  background: #fff;
+}

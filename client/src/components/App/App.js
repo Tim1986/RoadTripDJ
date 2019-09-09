@@ -74,7 +74,8 @@ class App extends Component {
       <AuthContext.Provider value={this.state.auth}>
         <div className="App">
           {this.state.auth.authToken && <Navigation />}
-          <div className="container">
+          <div>
+          {/* <div className="container"> */}
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route exact path="/register" component={Register} />
