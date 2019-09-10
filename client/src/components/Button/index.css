@@ -18,3 +18,24 @@
   border-color: #b36b23;
   box-shadow: 0 0 0 2.5px lightgray inset, 0 0 0 5px #b36b23;
 }
+
+.btn-green {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+  color: #fff;
+  background-color: #218338;
+  border-color: #218338;
+  box-shadow: 0 0 0 2.5px lightgray inset, 0 0 0 5px #218338;
+}
+
+.btn-green:active:focus,
+.btn-green:active:focus {
+  background-color: #19682b;
+  border-color: #19682b;
+  box-shadow: 0 0 0 2.5px lightgray inset, 0 0 0 5px #19682b;
+}

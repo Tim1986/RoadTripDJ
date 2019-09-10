@@ -11,11 +11,11 @@ function FinishedPlaylist(props) {
         <div className="finished-playlist col-lg-6 col-md-9 col-12 mx-auto p-4">
           <h1 className="mb-4">Your Playlist Is Finished!</h1>
           <div className="d-flex justify-content-around">
-            <Link className="btn btn-primary" to="/newtrip">
+            <Link className="btn btn-orange" to="/newtrip">
               Create Another Playlist
             </Link>
             <a
-              className="btn btn-success"
+              className="btn btn-green"
               href={`https://open.spotify.com/playlist/${playlistID}`}
               target="_blank"
             >
