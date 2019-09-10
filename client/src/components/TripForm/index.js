@@ -24,7 +24,7 @@ class TripForm extends Component {
   onClick = (e) => {
     e.preventDefault();
     this.props.onClick();
-    // API.Spotify.createPlaylist(e, this.state);
+    API.Spotify.createPlaylist(e, this.state);
   };
 
   handleChangeCheck = (e) => {
