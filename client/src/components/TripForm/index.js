@@ -65,7 +65,7 @@ class TripForm extends Component {
             <Button
               value="Generate Playlist"
               onClick={(e) => this.onClick(e)}
-              // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
+            // onClick={(e) => API.Spotify.createPlaylist(e, this.state)}
             />
           </div>
         </div>
