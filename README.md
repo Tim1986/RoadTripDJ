@@ -6,6 +6,8 @@ https://glacial-savannah-65289.herokuapp.com/
 
 ## How to Use It
 
+![First Screenshot](/ss-for-readme.png)
+
 RoadTripDJ creates a Spotify playlist for your road trip with musicians from the cities you’re traveling to and from. Discover new music, find local artists, and keep your long drives interesting with RoadTripDJ.
 
 First register and log in to Road Trip DJ. When prompted, log in to Spotify and grant Road Trip DJ permission to create playlists on your account. It is necessary to grant access to your Spotify account in order to use this app.
