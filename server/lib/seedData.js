@@ -1,4 +1,5 @@
 const seedData = [
+  "Test Push",
   {
     name: "Alabama",
     abbr: "AL",
