@@ -1,6 +1,8 @@
 const router = require("express").Router(),
   axios = require("axios");
 
+const seed = require("../../lib/seed");
+
 //=================================================
 // Functions
 //=================================================
@@ -13,8 +15,9 @@ const func2 = () => {};
 // Routes
 //=================================================
 
-router.get("/test", (req, res) => {
-  
+router.get("/seed", (req, res) => {
+  seed();
+  res.end();
 });
 
 module.exports = router;

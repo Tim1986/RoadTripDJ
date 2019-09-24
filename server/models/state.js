@@ -6,11 +6,21 @@ const StateSchema = new Schema({
     type: String,
     trim: true
   },
-  cities: [
-    {}
+  abbr: {
+    type: String,
+    trim: true
+  },
+  searchedCities: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "SearchedCity"
+    }
   ],
-  closestStates: [
-    {}
+  wikiCities: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "WikiCity"
+    }
   ]
 });
 
