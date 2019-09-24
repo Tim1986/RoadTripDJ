@@ -26,9 +26,18 @@ const LOG_MODE = process.env.NODE_ENV === "production" ? "common" : "dev";
 const app = express();
 
 //-- Mongoose Setup ----------------------------------------------------------
+// mongoose.connect(
+//   process.env.MONGODB_URI ||
+//     "mongodb://dreamteam:getgudjawbs4@ds211368.mlab.com:11368/heroku_7k8rf6zz",
+//   {
+//     useNewUrlParser: true
+//   }
+// );
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/RoadTripDB", {
   useNewUrlParser: true
 });
+
 mongoose.connection.on("error", (err) => {
   console.log(`Mongoose connection err:\n${err}`);
 });
