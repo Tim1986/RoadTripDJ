@@ -1499,7 +1499,7 @@ lodash.once@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
   integrity sha1-DdOXEhPHxW34gJd9UEyI+0cal6w=
 
-lodash@^4.15.0, lodash@^4.17.11:
+lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -2051,6 +2051,11 @@ process-nextick-args@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
+
+promise-throttle@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/promise-throttle/-/promise-throttle-1.0.1.tgz#4bb871c9a4ad99dd224dbf57b9e3c9384020656c"
+  integrity sha512-pdiK8b2RU2e93U0rBK7YyO18x74OQPsg3sFmyCGGNYNbfnyUwWiU5g6mFgWtOW8KsPnCYVHIOzm1iRwv0YWXrw==
 
 proxy-addr@~2.0.5:
   version "2.0.5"

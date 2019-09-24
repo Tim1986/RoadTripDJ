@@ -6,7 +6,7 @@ const googleMapsClient = require('@google/maps').createClient({
 const google = {
 
     startGeo : (start, end) => {
-        return google.geoDataLoop([start,end],0)
+        return google.geoDataLoop([start,end],0) //
         .then(posData => {
             return Promise.all([
                 posData,
@@ -38,7 +38,7 @@ const google = {
         return Promise.all(geoPromises)
     },
 
-    getDistance : (from, to) => {
+    getDistance : (from, to) => {  //requires the lat lng
         return googleMapsClient.distanceMatrix({ origins: from.latLng, destinations: to.latLng, mode: 'driving' })
             .asPromise()
             .then((response) => {

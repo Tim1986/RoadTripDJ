@@ -2,11 +2,14 @@ const google = require("./google")
 const wikipedia = require("./wikipedia")
 const spotifyNPM = require("./spotifyNPM")
 const spot = require("../controllers/api/spot")
+const _ = require("lodash")
+
+const timer = ms => new Promise(res => setTimeout(res, ms));
 
 const algorithm = {
     tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
 
-        return wikipedia.musicCities()
+        return wikipedia.musicCities() //UPDATE: stored in Database database query
             .then(cityPool => {
 
                 return algorithm.initialize(start, end, cityPool, isPopular, newPlaylistID, accessToken)
@@ -48,7 +51,10 @@ const algorithm = {
                 // return algorithm.step4(arrays, 6009402, isPopular, playlistID)
             })
             .then(trackURIs => {
-                console.log(`--Collected ${trackURIs.length} artists to hand over to spotify `)
+              const newArray =  _.flattenDeep(trackURIs)
+                console.log(newArray)
+
+                console.log(`--Collected ${newArray.length} artists to hand over to spotify `)
                 //PSUEDO: sort the start/end arrays of track object into one big array of spotify URIs
                 return trackURIs
             })
@@ -88,12 +94,14 @@ const algorithm = {
         const startObjArr = cityObjArr[0],
             endObjArr = cityObjArr[1],
             startNum = algorithm.getSongsPerArtist(Math.ceil(totalSongNumber / 2), startObjArr.length),
-            endNum = algorithm.getSongsPerArtist(Math.floor(totalSongNumber / 2), endObjArr.length),
+            endNum = algorithm.getSongsPe
+            rArtist(Math.floor(totalSongNumber / 2), endObjArr.length),
             first = algorithm.getTracks(startObjArr, totalSongNumber, startNum, isPopular, playlistID, accessToken),
             second = algorithm.getTracks(endObjArr, totalSongNumber, endNum, isPopular, playlistID, accessToken)
 
         return Promise.all([first, second])
             .then(trackObjs => {
+                console.log(trackObjs)
                 const URIs = []
                 trackObjs.forEach(x => {
                     for (let i = 0; i < x.length; i++) {
@@ -105,12 +113,27 @@ const algorithm = {
                 // parse the results and return an array of spotify track URI's
             })
             .catch(err => console.log("Step4 ERROR: " + err))
+    },
 
+    getTracksForArtists: (songs, total, indexStart, perArtist, playlistID, artistIDs, accessToken) => {
+        if (total <= 0) return;
 
+        return spot.getTopSongs(perArtist, playlistID, artistIDs[indexStart], accessToken)
+            .then(returnedIDs => {
+                songs.push(returnedIDs)
+                total = total - returnedIDs.length;
+                indexStart = indexStart + 1
+
+                
+                console.log("--Pausing for 100ms")
+                return timer(100);
+            })
+            .then(() => {
+                return algorithm.getTracksForArtists(songs, total, indexStart, perArtist, playlistID, artistIDs, accessToken)
+            })
     },
 
     getTracks: (array, total, perArtist, isPopular, playlistID, accessToken) => {
-        let totalToGet = total //probably unecessary but makes me feel safe and warm
         const songs = [] //empty array for which to push the track objects into.
         const promises = []
         for (let city of array) { //for loop that loops through each of the 5 closest city objects 
@@ -119,22 +142,9 @@ const algorithm = {
         return Promise.all(promises)
             .then(returnedArtists => {
                 // console.log(returnedArtists)
-                const artistIDs = returnedArtists.map(x => {
-                    if (Array.isArray(x)) {
-                        // return x[0].id
-                    }else{
-                    console.log(x)
-                    return x.id
-                    }
-                })
-                console.log(artistIDs)
-                while (totalToGet > 0) { //checks how many songs are needed. If it is more than 0 than it continues to the spotify query
-                    spot.getTopSongs(perArtist, playlistID, artistIDs, accessToken)
-                        .then(returnedIDs => {
-                            songs.push(returnedIDs)
-                            totalToGet = totalToGet - returnedIDs.length //subtracts total number of tracks returned from the total
-                    })
-                }
+                const artistIDs = _.flattenDeep(returnedArtists).map(x => x.id)
+                // console.log(artistIDs)
+                return algorithm.getTracksForArtists(songs, total, 0, perArtist, playlistID, artistIDs, accessToken);
             })
             .catch(err => console.log("\nERROR | getTracks -> getSpotifyForArray in " + city.name + " | " + err + "\n"))
     },

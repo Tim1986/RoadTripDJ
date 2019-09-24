@@ -89,8 +89,8 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
     return algorithm.tracks(start, end, isPopular, userID, accessToken, newPlaylistID)
     })
     .then( results => { 
-      // console.log(results)
-      // spot.populatePlaylist(results[3], results[0], results[2], res)
+      console.log(results)
+      spot.populatePlaylist(results[3], results[0], results[2], res)
       //this is the send to the front-end end
 
     })  
