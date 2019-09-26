@@ -8,7 +8,7 @@ const promiseThrottle = new PromiseThrottle({
 });
 
 const spot = {
-    getTopSongs: (songNum, playlistID, artistIDs, accessToken) => {
+    getTopSongs: (songNum, artistIDs, accessToken) => {
       let spotifyURIs = []
       let promises = []
 

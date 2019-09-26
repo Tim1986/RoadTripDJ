@@ -10,6 +10,7 @@ import Register from "../../pages/Register";
 import Authorize from "../../pages/Authorize";
 import Trip from "../../pages/Trip";
 import FinishedPlaylist from "../../pages/FinishedPlaylist";
+import Contact from "../../pages/Contact"
 // Other Pages
 import NotFound from "../../pages/NotFound";
 // Other Partials
@@ -85,6 +86,7 @@ class App extends Component {
               <PrivateRoute exact path="/authorize" component={Authorize} />
               <PrivateRoute exact path="/newtrip" component={Trip} />
               <PrivateRoute exact path="/done" component={FinishedPlaylist} />
+              <Route exact path="/contact" component={Contact} />
               <Route component={NotFound} />
             </Switch>
           </div>
