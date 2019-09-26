@@ -1,4 +1,4 @@
-[{ artist: "Maxine Jones", spotifyID: "0Jpj08MNDRaBHWmEMaTPaq", popularity: 2.0 },
+const patersonNJArtists = [{ artist: "Maxine Jones", spotifyID: "0Jpj08MNDRaBHWmEMaTPaq", popularity: 2.0 },
 { artist: "Randy Edelman", spotifyID: "3shMd6Vll0mOcviQ3hrk8m", popularity: 43.0 },
 { artist: "Chauncey Black", spotifyID: "5tHdz9ijD6DnXlAl5edTz3", popularity: 18.0 },
 { artist: "Fetty Wap", spotifyID: "6PXS4YHDkKvl1wkIl4V8DL", popularity: 76.0 },
@@ -28,3 +28,5 @@
 { artist: "Bob DeVos", spotifyID: "0oUGhDnDmiM9OFBxSFcS3z", popularity: 4.0 },
 { artist: "David Libert", spotifyID: "2v9XbRdH8ORZvXBJIvMLlM", popularity: 4.0 },
 ]
+
+module.exports = patersonNJArtists;

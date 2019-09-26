@@ -1,4 +1,4 @@
-[{ artist: "Henry Doktorski", spotifyID: "1F6tn0wn0PbbWDM3UWAKML", popularity: 1.0 },
+const newBrunswickNJArtists = [{ artist: "Henry Doktorski", spotifyID: "1F6tn0wn0PbbWDM3UWAKML", popularity: 1.0 },
 { artist: "Franke Previte", spotifyID: "3GzfDAzRuvCPjye4hQsKLF", popularity: 0.0 },
 { artist: "Hoagy Lands", spotifyID: "6ad1aRY4ao85Etnv3e79YT", popularity: 0.0 },
 { artist: "Mark Helias", spotifyID: "477gMnSsaTHsAIDlidg1Ra", popularity: 6.0 },
@@ -17,3 +17,5 @@
 { artist: "Streetlight Manifesto", spotifyID: "1OKOTYGoCE2buxTYMegJp7", popularity: 55.0 },
 { artist: "Gates", spotifyID: "1gPhS1zisyXr5dHTYZyiMe", popularity: 78.0 },
 ]
+
+module.exports = newBrunswickNJArtists;

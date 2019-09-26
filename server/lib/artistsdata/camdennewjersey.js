@@ -1,4 +1,4 @@
-[{ artist: "Cindy Birdsong", spotifyID: "0gzqkXQkRXNVDIyJXET3Gr", popularity: 0.0 },
+const camdenNJArtists = [{ artist: "Cindy Birdsong", spotifyID: "0gzqkXQkRXNVDIyJXET3Gr", popularity: 0.0 },
 { artist: "Rachel Gould", spotifyID: "54SWsJGcDkT1IzhHhQNHje", popularity: 1.0 },
 { artist: "Lola Falana", spotifyID: "2nKM2mqeHqKTCnI1abFbYh", popularity: 0.0 },
 { artist: "Christine Andreas", spotifyID: "5cxl2myOakg9OH8q7nh1th", popularity: 22.0 },
@@ -27,3 +27,5 @@
 { artist: "Anna Sosenko", spotifyID: "6McscrthMgLjcwzmXQlRdd", popularity: 0.0 },
 { artist: "Jus Allah", spotifyID: "1rpmyC5KVfoFqkNHKkSTXf", popularity: 36.0 },
 ]
+
+module.exports = camdenNJArtists;

@@ -1,4 +1,4 @@
-[{ artist: "Sarah Dash", spotifyID: "40GzTuEPg9xjzGeXJESEMH", popularity: 11.0 },
+const trentonNJArtists = [{ artist: "Sarah Dash", spotifyID: "40GzTuEPg9xjzGeXJESEMH", popularity: 11.0 },
 { artist: "John Coates Jr.", spotifyID: "6LJviGGAtbD5f1DtyYbqbB", popularity: 3.0 },
 { artist: "Tim Kelly", spotifyID: "6jXOSlHv2XCMSTATjyaF9b", popularity: 0.0 },
 { artist: "George Antheil", spotifyID: "00iJnnUu476m1HX16e3por", popularity: 17.0 },
@@ -24,3 +24,5 @@
 { artist: "Drew Gress", spotifyID: "4HMyzDtVu6uNLYQZqYeOXK", popularity: 24.0 },
 { artist: "Michael Ray", spotifyID: "6ghiFYcwn2Vzl6K50U0UPz", popularity: 60.0 },
 ]
+
+module.exports = trentonNJArtists;

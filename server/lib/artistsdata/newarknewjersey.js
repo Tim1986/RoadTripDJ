@@ -1,4 +1,4 @@
-[{ artist: "Vivian Blaine", spotifyID: "6NvuGN3n9Ygub10wEQo7al", popularity: 10.0 },
+const newArkNJArtists = [{ artist: "Vivian Blaine", spotifyID: "6NvuGN3n9Ygub10wEQo7al", popularity: 10.0 },
 { artist: "Vinnie Burke", spotifyID: "2f7E2frr4rryAgkKN6xmMm", popularity: 0.0 },
 { artist: "Dez Cadena", spotifyID: "7hYVVQtW4xyPd6GrFO0ral", popularity: 15.0 },
 { artist: "Akon", spotifyID: "0z4gvV4rjIZ9wHck67ucSV", popularity: 79.0 },
@@ -131,3 +131,5 @@
 { artist: "Redman", spotifyID: "7xTKLpo7UCzXSnlH7fOIoM", popularity: 67.0 },
 { artist: "Fred Schneider", spotifyID: "7HWVWTbgJBXqBX6Jd4AvzJ", popularity: 16.0 },
 ]
+
+module.exports = newArkNJArtists;

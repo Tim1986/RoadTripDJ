@@ -1,4 +1,4 @@
-[{ artist: "Christopher Bolduc", spotifyID: "0d9OXZ3YNc8Xi3t41jT8bW", popularity: 0.0 },
+const albanyNYArtists = [{ artist: "Christopher Bolduc", spotifyID: "0d9OXZ3YNc8Xi3t41jT8bW", popularity: 0.0 },
 { artist: "Jason Bittner", spotifyID: "3gFahi4Jiwvmr6UCG9Sz6J", popularity: 0.0 },
 { artist: "Drug Church", spotifyID: "6q4AmzK3GzCuEzkurnYuEQ", popularity: 42.0 },
 { artist: "David Alan Miller", spotifyID: "7jsY4twYEKz5V2awNkoEax", popularity: 13.0 },
@@ -23,3 +23,5 @@
 { artist: "Joe Kraemer", spotifyID: "1cqB0cMBR5OooKEEhRbWpl", popularity: 27.0 },
 { artist: "Jeremy James", spotifyID: "41FAFO0sEodQajiyqTtNX3", popularity: 27.0 },
 ]
+
+module.exports = albanyNYArtists;

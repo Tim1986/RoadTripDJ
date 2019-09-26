@@ -1,4 +1,4 @@
-[{ artist: "Tony Bellamy", spotifyID: "5pCZ54eQQ5izmSbaGe4ha2", popularity: 0.0 },
+const lasVegasNVArtists = [{ artist: "Tony Bellamy", spotifyID: "5pCZ54eQQ5izmSbaGe4ha2", popularity: 0.0 },
 { artist: "Ginger Costa-Jackson", spotifyID: "2Dlz4RB9oC9QeDzsQXD5eq", popularity: 0.0 },
 { artist: "Dave Fogg", spotifyID: "0XvB7SU7OSAsJivqU50IIY", popularity: 2.0 },
 { artist: "Ben McKee", spotifyID: "4Nr8r2DYhxdi2nwehrwxRw", popularity: 2.0 },
@@ -40,3 +40,5 @@
 { artist: "Big B", spotifyID: "0dwYOqqBADcpYOJRmlZSgH", popularity: 41.0 },
 { artist: "Paul Taylor", spotifyID: "3wBSOZFd5KLsEZ1yoVSICQ", popularity: 42.0 },
 ]
+
+module.exports = lasVegasNVArtists;

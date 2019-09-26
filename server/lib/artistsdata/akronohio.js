@@ -1,4 +1,4 @@
-const akronoh = [
+const akronOHArtists = [
     { artist: "Ralph Carney", spotifyID: "0pa2mkOjPCweXAyOK38OIl", popularity: 36 },
     { artist: "Tim Easton", spotifyID: "11ixEVNpyaaCW7VfC7fx8M", popularity: 18.0 },
     { artist: "Patrick Carney", spotifyID: "6yPEOdG1RrtchjBRdnu8tu", popularity: 40.0 },
@@ -41,4 +41,4 @@ const akronoh = [
     { artist: "Vaughn Monroe", spotifyID: "5TD3Mad384osX9K8DLkx7L", popularity: 32.0 },
 ]
 
-module.exports = akronoh;
+module.exports = akronOHArtists;

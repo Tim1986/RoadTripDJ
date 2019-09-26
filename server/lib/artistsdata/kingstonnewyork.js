@@ -1,4 +1,4 @@
-[{ artist: "Paul Austin Kelly", spotifyID: "5IG8FJfBfakAGASg54RMeZ", popularity: 7.0 },
+const kingstonNYArtists = [{ artist: "Paul Austin Kelly", spotifyID: "5IG8FJfBfakAGASg54RMeZ", popularity: 7.0 },
 { artist: "Nathan Tysen", spotifyID: "3saxQOFSDbcTdys0ZLuZw1", popularity: 11.0 },
 { artist: "Joey Eppard", spotifyID: "15QmccbaMt8K6nYrUBIbLb", popularity: 10.0 },
 { artist: "Margarethe Bence", spotifyID: "0r0BGgcaAyR4lkwRqDgqbn", popularity: 9.0 },
@@ -11,3 +11,5 @@
 { artist: "Sarai", spotifyID: "5Rh6PMrlYoyU5xhR36YAfX", popularity: 36.0 },
 { artist: "Henry Paul", spotifyID: "4GGDnwXsF5e9gjhJMRZ03s", popularity: 24.0 },
 ]
+
+module.exports = kingstonNYArtists;

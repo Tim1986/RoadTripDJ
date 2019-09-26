@@ -1,4 +1,4 @@
-[{ artist: "Al Caldwell", spotifyID: "2KiE9SatKB0q4k0k1510Dh", popularity: 0.0 },
+const stLouisMOArtists = [{ artist: "Al Caldwell", spotifyID: "2KiE9SatKB0q4k0k1510Dh", popularity: 0.0 },
 { artist: "Harry Babbitt", spotifyID: "1f63xLVV20bhJScsuKfJyb", popularity: 11.0 },
 { artist: "Joanna Brouk", spotifyID: "3yITaOTDcBPYNnYxlxQuUt", popularity: 29.0 },
 { artist: "Tommy Bankhead", spotifyID: "5TaE3MpQr2zk0OZ6mce22K", popularity: 0.0 },
@@ -249,3 +249,5 @@
 { artist: "Stir", spotifyID: "4RqnVnpq5R0R5rJKeV9pWc", popularity: 15.0 },
 { artist: "Sullen", spotifyID: "13CMfEeq8AC6ryGOPODqE1", popularity: 42.0 }
 ]
+
+module.exports = stLouisMOArtists;

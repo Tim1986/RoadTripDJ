@@ -1,4 +1,4 @@
-[{ artist: "Pat DiNizio", spotifyID: "0M9n1PZNvicgGQby4zLbwQ", popularity: 3.0 },
+const plainfieldNJArtists = [{ artist: "Pat DiNizio", spotifyID: "0M9n1PZNvicgGQby4zLbwQ", popularity: 3.0 },
 { artist: "Paul Crook", spotifyID: "4aVJSH0uVRq1NjgXM8qQhO", popularity: 13.0 },
 { artist: "Bill Evans", spotifyID: "4jXfFzeP66Zy67HM2mvIIF", popularity: 62.0 },
 { artist: "DJ Cheese", spotifyID: "5fUksOsRrC4Xv3LuNY8UZa", popularity: 0.0 },
@@ -24,3 +24,5 @@
 { artist: "David S. Ware", spotifyID: "53HPkfQRFqSSicbdJZuitU", popularity: 9.0 },
 { artist: "Vita", spotifyID: "4NEYQeEYBUjfaXgDQGvFvu", popularity: 70.0 },
 ]
+
+modules.exports = plainfieldNJArtists;

@@ -1,4 +1,4 @@
-[{ artist: "Gordon MacRae", spotifyID: "3dvIPsJH7o9xnBwFxowzof", popularity: 35.0 },
+const eastOrangeNJArtists = [{ artist: "Gordon MacRae", spotifyID: "3dvIPsJH7o9xnBwFxowzof", popularity: 35.0 },
 { artist: "Queen Latifah", spotifyID: "5m7wCUhYhBh7A3A3YMxrbt", popularity: 58.0 },
 { artist: "Treach", spotifyID: "3b3teOkAyYfhj4xiMvqYvW", popularity: 33.0 },
 { artist: "Bill Chinnock", spotifyID: "4gl3qjGVkweASR3WvcO7Wv", popularity: 5.0 },
@@ -20,3 +20,5 @@
 { artist: "Bill Ware", spotifyID: "3D34yeE2dyhGvzinxRTsup", popularity: 16.0 },
 { artist: "Antonique Smith", spotifyID: "4h6ZCTKha4MPmhpxYUs7E5", popularity: 17.0 },
 ]
+
+module.exports = eastOrangeNJArtists;

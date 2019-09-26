@@ -1,4 +1,4 @@
-[{ artist: "Sándor Szabó", spotifyID: "0HeoiFw73K0feJhANUVO4U", popularity: 4.0 },
+const summitNJArtists = [{ artist: "Sándor Szabó", spotifyID: "0HeoiFw73K0feJhANUVO4U", popularity: 4.0 },
 { artist: "Meryl Streep", spotifyID: "2HB65P72dFRiOKvbLLcil2", popularity: 66.0 },
 { artist: "Stephen Paulus", spotifyID: "4WoqkIaM67iDWsXNQM6hri", popularity: 27.0 },
 { artist: "Margareta Pâslaru", spotifyID: "6llCWDNSRei7erYiRu7AIu", popularity: 12.0 },
@@ -12,3 +12,5 @@
 { artist: "Ozzie Ahlers", spotifyID: "5CyHwJd9qgVahpDAYIh3eN", popularity: 0.0 },
 { artist: "East River Pipe", spotifyID: "0oXeIbxeFdqMtDYxcwwUTN", popularity: 15.0 },
 ]
+
+module.exports = summitNJArtists;

@@ -1,4 +1,4 @@
-[{ artist: "George Balch Wilson", spotifyID: "7y1MmNCfNgHrePlWZXkyA1", popularity: 0.0 },
+const lincolnNEArtists = [{ artist: "George Balch Wilson", spotifyID: "7y1MmNCfNgHrePlWZXkyA1", popularity: 0.0 },
 { artist: "Max Crook", spotifyID: "0KClUSWvzT3BQyRjnoDMeM", popularity: 0.0 },
 { artist: "Boxcar Willie", spotifyID: "6ISSzeT1ACKbGLO0JBZ23r", popularity: 30.0 },
 { artist: "Matthew Sweet", spotifyID: "2idymNTKUdnTxforkb12Mw", popularity: 44.0 },
@@ -15,3 +15,5 @@
 { artist: "John Moran", spotifyID: "2DYUqITyiQa3vdquZzAtZp", popularity: 11.0 },
 { artist: "The Millions", spotifyID: "4bCXgLyFqKJwz5x9o0U9ZG", popularity: 3.0 },
 ]
+
+module.exports = lincolnNEArtists;

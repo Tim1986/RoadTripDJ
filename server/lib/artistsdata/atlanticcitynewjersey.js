@@ -1,4 +1,4 @@
-[{ artist: "Joe Albany", spotifyID: "31irFHg3rS596BJCLOroZ9", popularity: 20.0 },
+const atlanticCityNJArtists = [{ artist: "Joe Albany", spotifyID: "31irFHg3rS596BJCLOroZ9", popularity: 20.0 },
 { artist: "Tasha Holiday", spotifyID: "6EVl1CXeN3s9xZNduHXcI1", popularity: 0.0 },
 { artist: "Chris Arena", spotifyID: "5X310IEeDgiwju1wQtukds", popularity: 19.0 },
 { artist: "Seth Justman", spotifyID: "20EcjmY2WLQZKpwIJ97n3p", popularity: 0.0 },
@@ -18,3 +18,5 @@
 { artist: "Mary Stafford", spotifyID: "2gpf992SBo5JKP0WqVOWLb", popularity: 0.0 },
 { artist: "Jack Harrold", spotifyID: "0qi0bUTfst8govLzzcHKRs", popularity: 0.0 },
 ]
+
+module.exports = atlanticCityNJArtists;

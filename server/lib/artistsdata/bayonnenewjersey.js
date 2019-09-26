@@ -1,4 +1,4 @@
-[{ artist: "Clem Burke", spotifyID: "61epBnARBxcRE73wVCuUqd", popularity: 1.0 },
+const bayonneNJArtists = [{ artist: "Clem Burke", spotifyID: "61epBnARBxcRE73wVCuUqd", popularity: 1.0 },
 { artist: "Elmer Chambers", spotifyID: "6yvO5zAKddqGiiuNAGDZE5", popularity: 0.0 },
 { artist: "Tammy Blanchard", spotifyID: "41BsSiToqwYBTW1TQ0S1SF", popularity: 23.0 },
 { artist: "Robert Tepper", spotifyID: "5T1bhiyED6hokaKTechcKI", popularity: 50.0 },
@@ -10,3 +10,5 @@
 { artist: "Mark Stein", spotifyID: "3EMwCDUrZg7sMPvZmSA6t0", popularity: 1.0 },
 { artist: "Arnold Fishkind", spotifyID: "3iD4gR12ZgHxgtEXkIHfpK", popularity: 0.0 },
 ]
+
+module.exports = bayonneNJArtists;

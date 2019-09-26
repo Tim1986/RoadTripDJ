@@ -1,4 +1,4 @@
-[{ artist: "Donald Fagen", spotifyID: "0S1SjYebdSaiMpI8xSW2Wb", popularity: 48.0 },
+const passaicNJArtists = [{ artist: "Donald Fagen", spotifyID: "0S1SjYebdSaiMpI8xSW2Wb", popularity: 48.0 },
 { artist: "Tony Inzalaco", spotifyID: "19wVrujeKujLamvUypS7Eu", popularity: 0.0 },
 { artist: "Lewis Kaplan", spotifyID: "5PBtILS1lFFsLvWJGOg4mY", popularity: 0.0 },
 { artist: "Marvin David Levy", spotifyID: "5qZUfNqXONn9qfZFSa5137", popularity: 0.0 },
@@ -11,3 +11,5 @@
 { artist: "Jack Fina", spotifyID: "36Jv930tZyxSpTJlHQALxO", popularity: 1.0 },
 { artist: "Robert Helps", spotifyID: "0PfjU7GDiilRc2c9yjIxYm", popularity: 3.0 },
 ]
+
+module.exports = passaicNJArtists;

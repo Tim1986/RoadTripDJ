@@ -1,4 +1,4 @@
-[
+const missoulaMTArtists = [
     { artist: "David Maslanka", spotifyID: "4Y2OXwc53GsYa1MT3R17bR", popularity: 29.0 },
     { artist: "Chance McKinney", spotifyID: "2IjKhWoQcBNhQV0isgpyfM", popularity: 25.0 },
     { artist: "Judith Blegen", spotifyID: "3NKSgyFIc07Of1ZkWHHQTg", popularity: 13.0 },
@@ -10,4 +10,6 @@
     { artist: "John Haughm", spotifyID: "01RKDmMtZZE7bUj4nqatpU", popularity: 0.0 },
     { artist: "Roger Nichols", spotifyID: "0HDRLUQ5RSEnlCjZ7GNS9B", popularity: 22.0 }
 ]
+
+module.exports = missoulaMTArtists;
 

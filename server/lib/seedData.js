@@ -1,3 +1,12 @@
+const akronOHArtists = require ("../lib/artistsdata/akronohio"),
+albanyNYArtists = require ("../lib/artistsdata/albanynewyork"),
+
+
+
+
+
+
+
 const seedData = [
   {
     name: "Alabama",
@@ -988,7 +997,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Akron",
-        artists: []
+        artists: akronOHArtists
       },
       {
         name: "Canton",

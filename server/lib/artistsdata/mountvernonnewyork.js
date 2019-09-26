@@ -1,4 +1,4 @@
-[{ artist: "Ingram Marshall", spotifyID: "2s0TXSF4Nqiy1UkZKJ9yWt", popularity: 19.0 },
+const mountVernonNYArtists = [{ artist: "Ingram Marshall", spotifyID: "2s0TXSF4Nqiy1UkZKJ9yWt", popularity: 19.0 },
 { artist: "Danny Kalb", spotifyID: "0sLfl57NFTh7W0DyqNoj5L", popularity: 3.0 },
 { artist: "Pete Rock & CL Smooth", spotifyID: "3fJ60AcIgLzQkVitEvA7uq", popularity: 52.0 },
 { artist: "Alex Briley", spotifyID: "7euBkQRr54yBoOBOs8Vgll", popularity: 0.0 },
@@ -12,3 +12,5 @@
 { artist: "Sal Mosca", spotifyID: "4mlKrvB0VlpcY87T6TFJLv", popularity: 0.0 },
 { artist: "Pete Rock", spotifyID: "3BeQqzKdlARoOd6y30kCO2", popularity: 59.0 },
 ]
+
+module.exports = mountVernonNYArtists;

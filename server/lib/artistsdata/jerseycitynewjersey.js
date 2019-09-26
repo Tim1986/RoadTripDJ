@@ -1,4 +1,4 @@
-[{ artist: "Harold Adamson", spotifyID: "4aPdXwJ0VY9ZWhTiMS0vei", popularity: 4.0 },
+const jerseyCityNJArtists = [{ artist: "Harold Adamson", spotifyID: "4aPdXwJ0VY9ZWhTiMS0vei", popularity: 4.0 },
 { artist: "Al Caiola", spotifyID: "1kiuYnpzdoWeSpdHObdhQ6", popularity: 36.0 },
 { artist: "Chill Rob G", spotifyID: "7rQ0Kt1wAU7IU3VpciuuXr", popularity: 10.0 },
 { artist: "Chris Phoenix", spotifyID: "0QXIl1ixPdgnBTk98N4gVd", popularity: 0.0 },
@@ -44,3 +44,5 @@
 { artist: "David Kikoski", spotifyID: "11c9fr8DFDGQZ1Cv77L8PW", popularity: 19.0 },
 { artist: "Apache", spotifyID: "1veLiIQBt4YcFO5Z36DwFO", popularity: 54.0 },
 ]
+
+module.exports = jerseyCityNJArtists;

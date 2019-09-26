@@ -1,4 +1,4 @@
-[{ artist: "Matt Gilman", spotifyID: "73hSbuO7zeiAnHpkyhQN5P", popularity: 50.0 },
+const kansasCityMOArtists = [{ artist: "Matt Gilman", spotifyID: "73hSbuO7zeiAnHpkyhQN5P", popularity: 50.0 },
 { artist: "Robert Russell Bennett", spotifyID: "52SryVadriXLIyUJx3pU9Q", popularity: 21.0 },
 { artist: "Alex Bailey", spotifyID: "3089cfbw81D49XhuMRcyQD", popularity: 1.0 },
 { artist: "Carol Duboc", spotifyID: "4MZOTmZxvF4s1ZwnDH1Hsf", popularity: 19.0 },
@@ -135,3 +135,5 @@
 { artist: "The Elders", spotifyID: "1vV4PNRH6SBycDRxAz4YXt", popularity: 30.0 },
 { artist: "Shiner", spotifyID: "07Y8JgX0uHDWSBehZGncbg", popularity: 27.0 },
 ]
+
+module.exports = kansasCityMOArtists;

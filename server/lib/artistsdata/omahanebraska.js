@@ -1,4 +1,4 @@
-[{ artist: "Kianna Alarid", spotifyID: "3ymLZfMyndgHhoPC00ORvN", popularity: 24.0 },
+const omahaNEArtists = [{ artist: "Kianna Alarid", spotifyID: "3ymLZfMyndgHhoPC00ORvN", popularity: 24.0 },
 { artist: "Ryan Fox", spotifyID: "38y247P7uwzEKagxEQ1uPG", popularity: 0.0 },
 { artist: "Todd Fink", spotifyID: "7Iqf401AaWeOy2B3G1NTCL", popularity: 2.0 },
 { artist: "Peter Buffett", spotifyID: "5OYsEzWYxTyO2pKSQxywcb", popularity: 18.0 },
@@ -62,3 +62,5 @@
 { artist: "Steve Turre", spotifyID: "1fJEAxQLhUQdBmUjsj3vIF", popularity: 22.0 },
 { artist: "Elliott Smith", spotifyID: "2ApaG60P4r0yhBoDCGD8YG", popularity: 62.0 },
 ]
+
+module.exports = omahaNEArtists;

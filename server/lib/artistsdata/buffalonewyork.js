@@ -1,4 +1,4 @@
-[{ artist: "Chuckie Campbell", spotifyID: "5KednZ2T0QlmOkff7nDtRK", popularity: 1.0 },
+const buffaloNYArtists = [{ artist: "Chuckie Campbell", spotifyID: "5KednZ2T0QlmOkff7nDtRK", popularity: 1.0 },
 { artist: "Ani DiFranco", spotifyID: "0AiTwNtYX8m4uhfU7rJ8RD", popularity: 53.0 },
 { artist: "Patrick Cowley", spotifyID: "1pggi3bfbAPkwrylE63MEO", popularity: 44.0 },
 { artist: "Frankie Dunlop", spotifyID: "5aX7oXHgxcRWdKGEsvgQkb", popularity: 2.0 },
@@ -82,3 +82,5 @@
 { artist: "Pamela Z", spotifyID: "05cGsE3L2JX7Tc1auPVQZa", popularity: 4.0 },
 { artist: "Z. Mann Zilla", spotifyID: "3cQXr8INoXGC7qc0Kdgbka", popularity: 0.0 },
 ]
+
+module.exports = buffaloNYArtists;

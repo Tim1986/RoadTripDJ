@@ -1,4 +1,4 @@
-[{ artist: "Willie Watson", spotifyID: "5j9IEu1SEY0JslCPmfVsgq", popularity: 44.0 },
+const ithacaNYArtists = [{ artist: "Willie Watson", spotifyID: "5j9IEu1SEY0JslCPmfVsgq", popularity: 44.0 },
 { artist: "Julius Eastman", spotifyID: "0pOwr98sKzhTEHlLzkFzyQ", popularity: 26.0 },
 { artist: "Raphael Hillyer", spotifyID: "4Ivpq3LSEeyofWmICGO7Pi", popularity: 3.0 },
 { artist: "Kyle Jarrow", spotifyID: "0zoKcajCBBmaQibhH8b7QS", popularity: 0.0 },
@@ -17,3 +17,5 @@
 { artist: "Gary Driscoll", spotifyID: "2uW07oq2oBadeC9LgxkyOt", popularity: 0.0 },
 { artist: "Lewis Hartsough", spotifyID: "39VaCOujpRPDrzA1SC14mY", popularity: 3.0 },
 ]
+
+module.exports = ithacaNYArtists;
