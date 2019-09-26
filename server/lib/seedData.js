@@ -484,6 +484,18 @@ const seedData = [
       {
         name: "Gary",
         artists: []
+      },
+      {
+        name: "Indianapolis",
+        artists: []
+      },
+      {
+        name: "Richmond",
+        artists: []
+      },
+      {
+        name: "South Bend",
+        artists: []
       }
     ]
   },
@@ -987,6 +999,10 @@ const seedData = [
         artists: []
       },
       {
+        name: "Cleveland",
+        artists: []
+      },
+      {
         name: "Dayton",
         artists: []
       },
@@ -1184,6 +1200,10 @@ const seedData = [
       {
         name: "Houston",
         artists: []
+      },
+      {
+        name: "San Antonio",
+        artists: []
       }
     ]
   },
@@ -1297,6 +1317,32 @@ const seedData = [
       },
       {
         name: "Wheeling",
+        artists: []
+      }
+    ]
+  },
+  {
+    name: "Wisconsin",
+    abbr: "WI",
+    wikiCities: [
+      {
+        name: "Green Bay",
+        artists: []
+      },
+      {
+        name: "Kenosha",
+        artists: []
+      },
+      {
+        name: "Madison",
+        artists: []
+      },
+      {
+        name: "Milwaukee",
+        artists: []
+      },
+      {
+        name: "Racine",
         artists: []
       }
     ]
