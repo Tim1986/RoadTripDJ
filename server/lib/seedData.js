@@ -1,3 +1,6 @@
+const akronoh = require("./artistsdata/akronohio")
+
+
 const seedData = [
   {
     name: "Alabama",
@@ -677,16 +680,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Akron",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: akronoh
       },
       {
         name: "Canton",
