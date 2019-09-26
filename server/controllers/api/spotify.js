@@ -184,18 +184,7 @@ router.get("/playlist/new/:userID/:accessToken", (req, res) => {
   // const isPopular = req.body.isPopular
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
-    console.log("API spot i fy: " + accessToken)
-  // spotifyTest.grabArtists(6009402,[
-  // { spotifyID: '1wVEYaqTmGsl3i7np7xQjW'},
-  // { spotifyID: '2qQLjtrCXMHvWF31LiQbyB'},
-  // { spotifyID: '1nzDJSsUJBn9uC7LJpY5wC'},
-  // { spotifyID: '0CdbG1eHVjqjkQsGoH2u1V'},
-  // { spotifyID: '6jpz8XE6j7M4q5DB5Cce6I'},
-  // { spotifyID: '4FXXf4RDJ6TIOX11JywHUg'},
-  // { spotifyID: '6IKq5gnh3GQrnxztypZKZR'},
-  // { spotifyID: '0lRHJ9PmO1uOD7LUO89KzI'},
-  // { spotifyID: '3KT4jB978CkSbdqWbLgT1x'},
-  // { spotifyID: '6gsEOKx8Z0CkVviR9DC3W6'}], accessToken)
+    
   spotifyTest.controller([
     { spotifyID: '1wVEYaqTmGsl3i7np7xQjW'},
     { spotifyID: '2qQLjtrCXMHvWF31LiQbyB'},

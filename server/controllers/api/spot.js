@@ -8,8 +8,8 @@ const promiseThrottle = new PromiseThrottle({
 });
 
 const spot = {
-    getTopSongs: (songNum, artistIDs, accessToken) => {
-      let spotifyURIs = []
+    getTopSongs: (totalNum, songNum, artistIDs, accessToken) => {
+      const spotifyURIs = []
       let promises = []
 
       artistIDs.forEach((artistID) => {
@@ -28,26 +28,59 @@ const spot = {
 
       return Promise.all(promises)
             .then(responses => {
-              console.log('-- Processing responses')
+              console.log('--Processing responses')
               responses.forEach((response) => {
                 let trackNum = response.data.tracks.slice(0, songNum)
                 trackNum.forEach((track) => {
                   let URI = track.uri
                   spotifyURIs.push(URI)
-                  // console.log("Artist Names: ", track.artists);
+                  console.log("Artist Names: ", track.artists);
                   console.log("Song Names: ", track.name);
                   // // console.log(track);
                   //push desired tracks into spotifyURIs array
-
+                  
                 })
+                // let startIndex = 0 
+                // let endIndex = songNum
+                // spot.parseResults(startIndex, endIndex, response)
               })
+              // const uriLength = spotifyURIs.length
+              // if (uriLength >= totalNum) {
+              //   return spotifyURIs
+              // } else {
+              //   startIndex = endIndex + 1
+              //   endIndex = endIndex + 2
+              //   spot.parseResults(spotifyURIs, startIndex, endIndex, response)
+              // }
 
-              return spotifyURIs
+              const uriLength = spotifyURIs.length
+              if (uriLength >= totalNum) {
+                return spotifyURIs
+              } else { 
+              let newTracks = response.data.tracks.slice(songNum, songNum + 1)
+              // push this shit to the uri array
+
+              }
+              let newTracks = response.data.tracks.slice(songNum + 1, songNum + 2)
+              // push this shit to the uri array
+              if (uriLength >= totalNum) {
+                return spotifyURIs
+              }
+
+
+
             }).catch(err => console.log(err))
         
           
         },
-          
+        
+        parseResults : function (spotifyURIs, startIndex, endIndex, response) {
+          let grabbedTracks = response.data.tracks.slice(startIndex, endIndex)
+          grabbedTracks.forEach((track) => {
+            let URI = track.uri
+            spotifyURIs.push(URI)
+          })
+        },
 
         populatePlaylist: (playlistID, spotifyURIs, accessToken, res) => {
           console.log("--Pushing songs to Playlist")
