@@ -1,6 +1,3 @@
-const akronoh = require("./artistsdata/akronohio")
-
-
 const seedData = [
   {
     name: "Alabama",
@@ -8,81 +5,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Birmingham",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Florence",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Gadsden",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Huntsville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Mobile",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Montgomery",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -92,16 +35,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Anchorage",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -111,68 +45,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Glendale",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Mesa",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Phoenix",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Scottsdale",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Tucson",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -182,29 +71,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Hot Springs",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Little Rock",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -214,523 +85,163 @@ const seedData = [
     wikiCities: [
       {
         name: "Anaheim",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Bakersfield",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Berkeley",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Beverly Hills",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Burbank",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Compton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Downey",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Fresno",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Fullerton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Glendale",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hawthorne",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Inglewood",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Long Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Los Angeles",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Manhatten Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Modesto",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Newport Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Oakland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Oxnard",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Palm Springs",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Palo Alto",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Pasadena",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Redondo Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Richmond",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Riverside",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Sacramento",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "San Bernardino",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "San Diego",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "San Francisco",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "San Jose",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "San Rafael",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Santa Barbarbara",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Santa Cruz",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Santa Monica",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Santa Rosa",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Stockton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Torrance",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Vallejo",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Vista",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Whittier",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -740,42 +251,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Boulder",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Colorado Springs",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Denver",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -785,94 +269,31 @@ const seedData = [
     wikiCities: [
       {
         name: "Bridgeport",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Greenwich",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hartford",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "New Haven",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "New London",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Norwalk",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Stamford",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -882,16 +303,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Wilmington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -901,172 +313,55 @@ const seedData = [
     wikiCities: [
       {
         name: "Coral Springs",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Daytona Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Fort Lauderdale",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Gainesville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Jacksonville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lakeland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Miami",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Ocala",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Orlando",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Pensacola",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "St. Petersburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Tallahassee",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Tampa",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1076,107 +371,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Albany",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Athens",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Atlanta",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Augusta",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Columbus",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Macon",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Marietta",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Savannah",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1186,16 +409,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Honolulu",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1205,16 +419,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Boise",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1224,107 +429,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Champaign",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Chicago",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Decatur",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Evanston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Joliet",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Oak Park",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Peoria",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Rockford",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1334,68 +467,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Anderson",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Bloomington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Evansville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Fort Wayne",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Gary",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1405,42 +493,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Cedar Rapids",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Des Moines",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Iowa City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1450,55 +511,19 @@ const seedData = [
     wikiCities: [
       {
         name: "Kansas City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lawrence",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Wichita",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Topeka",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1508,68 +533,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Ashland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Bowling Green",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lexington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Louisville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Paducah",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1579,81 +559,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Baton Rouge",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lafayette",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lake Charles",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Monroe",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "New Orleans",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Shreveport",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1663,29 +589,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Bangor",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Portland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1695,29 +603,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Baltimore",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Rockville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1727,107 +617,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Boston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Brockton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Cambridge",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lowell",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Newton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Somerville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Springfield",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Worcester",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1837,81 +655,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Ann Arbor",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Detroit",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Flint",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lansing",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Pontiac",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Saginaw",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1921,42 +685,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Duluth",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Minneapolis",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Saint Paul",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -1966,94 +703,31 @@ const seedData = [
     wikiCities: [
       {
         name: "Clarksdale",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Greenville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hattiesburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Jackson",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Meridian",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Natchez",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       },
       {
         name: "Vicksburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring24325"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring24325"
-          }
-        ]
+        artists: []
       }
     ]
   },
@@ -2064,56 +738,20 @@ const seedData = [
     wikiCities: [
       {
         name: "Columbia",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Kansas City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Springfield",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "St. Louis",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2122,17 +760,8 @@ const seedData = [
     wikiCities: [
       {
         name: "Missoula",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2141,30 +770,12 @@ const seedData = [
     wikiCities: [
       {
         name: "Lincoln",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Omaha",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2173,38 +784,18 @@ const seedData = [
     wikiCities: [
       {
         name: "Las Vegas",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Reno",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
     name: "New Hampshire",
     abbr: "NH",
-    wikiCities: [
-
-    ]
+    wikiCities: []
   },
   {
     name: "New Jersey",
@@ -2212,173 +803,56 @@ const seedData = [
     wikiCities: [
       {
         name: "Atlantic City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Bayonne",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Camden",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "East Orange",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hoboken",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Jersey City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "New Brunswick",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Newark",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Passaic",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Paterson",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Plainfield",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Summit",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Trenton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2387,30 +861,12 @@ const seedData = [
     wikiCities: [
       {
         name: "Alburquerque",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Santa Fe",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2419,186 +875,60 @@ const seedData = [
     wikiCities: [
       {
         name: "Albany",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Buffalo",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Ithaca",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Kingston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Mount Vernon",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "New Rochelle",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "New York City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "the New York metropolitan area",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Niagara Falls",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Poughkeepsie",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Rochester",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Syracuse",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Troy",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Utica",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2607,103 +937,38 @@ const seedData = [
     wikiCities: [
       {
         name: "Asheville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Charlotte",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Durham",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Fayetteville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Greensboro",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Raleigh",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Winston-Salem",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
     name: "North Dakota",
     abbr: "ND",
-    wikiCities: [
-
-    ]
+    wikiCities: []
   },
   {
     name: "Ohio",
@@ -2711,112 +976,40 @@ const seedData = [
     wikiCities: [
       {
         name: "Akron",
-        artists: akronoh
+        artists: []
       },
       {
         name: "Canton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Cincinnati",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Dayton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Columbus",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Shaker Heights",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Springfield",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Toledo",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Youngstown",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2825,56 +1018,20 @@ const seedData = [
     wikiCities: [
       {
         name: "Enid",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Norman",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Oklahoma City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Tulsa",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2883,69 +1040,24 @@ const seedData = [
     wikiCities: [
       {
         name: "Corvallis",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Eugene",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hillsboro",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Portland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Salem",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -2954,134 +1066,44 @@ const seedData = [
     wikiCities: [
       {
         name: "Allentown",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Easton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Erie",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Harrisburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lancaster",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Philadelphia",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Pittsburgh",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Reading",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Scranton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "York",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3090,30 +1112,12 @@ const seedData = [
     wikiCities: [
       {
         name: "Newport",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Providence",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3122,64 +1126,26 @@ const seedData = [
     wikiCities: [
       {
         name: "Charleston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Columbia",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Greenville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Spartanburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
     name: "South Dakota",
     abbr: "SD",
-    wikiCities: [
-
-    ]
+    wikiCities: []
   },
   {
     name: "Tennessee",
@@ -3187,43 +1153,16 @@ const seedData = [
     wikiCities: [
       {
         name: "Knoxville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Memphis",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Nashville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3232,56 +1171,20 @@ const seedData = [
     wikiCities: [
       {
         name: "Amarillo",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Austin",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Dallas",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Houston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3290,43 +1193,16 @@ const seedData = [
     wikiCities: [
       {
         name: "Ogden",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Provo",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Salt Lake City",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3335,17 +1211,8 @@ const seedData = [
     wikiCities: [
       {
         name: "Burlington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3354,121 +1221,40 @@ const seedData = [
     wikiCities: [
       {
         name: "Alexandria",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Charlottesville",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Hampton",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Lynchburg",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Newport News",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Norfolk",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Portsmouth",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Richmond",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Virginia Beach",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3477,69 +1263,24 @@ const seedData = [
     wikiCities: [
       {
         name: "Bainbridge Island",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Kirkland",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Olympia",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Seattle",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Spokane",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
@@ -3548,51 +1289,22 @@ const seedData = [
     wikiCities: [
       {
         name: "Charleston",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Huntington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
+        artists: []
       },
       {
         name: "Wheeling",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
   },
   {
     name: "Wyoming",
     abbr: "WY",
-    wikiCities: [
-
-    ]
+    wikiCities: []
   },
   {
     name: "D.C.",
@@ -3600,20 +1312,10 @@ const seedData = [
     wikiCities: [
       {
         name: "Washington",
-        artists: [
-          {
-            name: "Name 1",
-            spotifyID: "idstring32323"
-          },
-          {
-            name: "Name 2",
-            spotifyID: "idstring293994"
-          }
-        ]
-      },
+        artists: []
+      }
     ]
-  },
-
+  }
 ];
 
 module.exports = seedData;
