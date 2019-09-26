@@ -12,7 +12,7 @@ const algorithm = {
         return wikipedia.musicCities() //UPDATE: stored in Database database query
             .then(cityPool => {
 
-                return algorithm.initialize(start, end, cityPool, isPopular, newPlaylistID, accessToken)
+        return algorithm.initialize(start, end, cityPool, isPopular, newPlaylistID, accessToken)
             })
             .then(result => {
                 return Promise.all([
@@ -30,7 +30,7 @@ const algorithm = {
 
     initialize: (start, end, arrayOfCities, isPopular, playlistID, accessToken) => {
         // return console.log("this error")
-        return algorithm.step1(start, end)
+        return algorithm.step1(start, end) 
             .then(userInput => {
                 console.log("--Formatted user inputs for shear aesthetic appeal")
 
@@ -39,7 +39,7 @@ const algorithm = {
                     endPoint: userInput[0][1],
                     tripTime: userInput[1].tripMinutes
                 }
-                return algorithm.step2(tripObj.startPoint, tripObj.endPoint, arrayOfCities, tripObj.tripTime)
+                return algorithm.step2(tripObj.startPoint, tripObj.endPoint, arrayOfCities, tripObj.tripTime) 
             })
             .then(cityPoints => {
                 console.log("--Found Closest Cities...")
@@ -94,8 +94,7 @@ const algorithm = {
         const startObjArr = cityObjArr[0],
             endObjArr = cityObjArr[1],
             startNum = algorithm.getSongsPerArtist(Math.ceil(totalSongNumber / 2), startObjArr.length),
-            endNum = algorithm.getSongsPe
-            rArtist(Math.floor(totalSongNumber / 2), endObjArr.length),
+            endNum = algorithm.getSongsPerArtist(Math.floor(totalSongNumber / 2), endObjArr.length),
             first = algorithm.getTracks(startObjArr, totalSongNumber, startNum, isPopular, playlistID, accessToken),
             second = algorithm.getTracks(endObjArr, totalSongNumber, endNum, isPopular, playlistID, accessToken)
 
