@@ -1,9 +1,54 @@
-const akronOHArtists = require ("../lib/artistsdata/akronohio"),
-albanyNYArtists = require ("../lib/artistsdata/albanynewyork"),
+
+//These do not need the function!!!!!!!!!!!!!!!!!!!
+
+const akronOHArtists = require("../lib/artistsdata/akronohio"),
+  albanyNYArtists = require("../lib/artistsdata/albanynewyork"),
+  albuquerqueNMArtists = require("../lib/artistsdata/albuquerquenewmexico"),
+  ashevilleNCArtists = require("../lib/artistsdata/ashevillenorthcarolina"),
+  atlanticCityNJArtists = require("../lib/artistsdata/atlanticcitynewjersey"),
+  bayonneNJArtists = require("../lib/artistsdata/bayonnenewjersey"),
+  buffaloNYArtists = require("../lib/artistsdata/buffalonewyork"),
+  camdenNJArtists = require("../lib/artistsdata/camdennewjersey"),
+  charlotteNCArtists = require("../lib/artistsdata/charlottenorthcarolina"),
+  columbiaMOArtists = require("../lib/artistsdata/columbiamissouri"),
+  eastOrangeNJArtists = require("../lib/artistsdata/eastorangenewjersey"),
+  hobokenNJArtists = require("../lib/artistsdata/hobokennewjersey"),
+  ithacaNYArtists = require("../lib/artistsdata/ithacanewyork"),
+  jerseyCityNJArtists = require("../lib/artistsdata/jerseycitynewjersey"),
+  kansasCityMOArtists = require("../lib/artistsdata/kansascitymissouri"),
+  kingstonNYArtists = require("../lib/artistsdata/kingstonnewyork"),
+  lasVegasNVArtists = require("../lib/artistsdata/lasvegas"),
+  lincolnNEArtists = require("../lib/artistsdata/lincolnnebraska"),
+  missoulaMTArtists = require("../lib/artistsdata/missoulamontana"),
+  mountVernonNYArtists = require("../lib/artistsdata/mountvernonnewyork"),
+  newArkNJArtists = require("../lib/artistsdata/newarknewjersey"),
+  newBrunswickNJArtists = require("../lib/artistsdata/newbrunswicknewjersey"),
+  newRochelleNYArtists = require("../lib/artistsdata/newrochellenewyork"),
+  niagaraFallsNYArtists = require("../lib/artistsdata/niagarafallsnewyork"),
+  omahaNEArtists = require("../lib/artistsdata/omahanebraska"),
+  passaicNJArtists = require("../lib/artistsdata/passaicnewjersey"),
+  patersonNJArtists = require("../lib/artistsdata/patersonnewjersey"),
+  plainfieldNJArtists = require("../lib/artistsdata/plainfieldnewjersey"),
+  poughkeepsieNYArtists = require("../lib/artistsdata/poughkeepsienewyork"),
+  renoNVArtists = require("../lib/artistsdata/renonevada"),
+  rochesterNYArtists = require("../lib/artistsdata/rochesternewyork"),
+  santaFeNMArtists = require("../lib/artists/data/santafenewmexico"),
+  stLouisMOArtists = require("../lib/artistsdata/stlouis"),
+  summitNJArtists = require("../lib/artistsdata/summitnewjersey"),
+  syracuseNYArtists = require("../lib/artistsdata/syracusenewyork"),
+  trentonNJArtists = require("../lib/artistsdata/trentonnewjersey"),
+  troyNYArtists = require("../lib/artistsdata/troynewyork"),
+  uticaNYArtists = require("../lib/artistsdata/uticanewyork")
+
+
+//These do need the function!!!!!!!!!!!!!!!!!!?????????????????????????????????
 
 
 
 
+
+//FUNCTION!@#$#@@#$$#@@@#$#$#$@#$#$@#!@$!$!@$#$!@#!#
+const helperfunction = require("../lib/artisthelperfunction/commands");
 
 
 
