@@ -1,0 +1,21 @@
+const paloaltoCAArtists = [{"_id":{"$oid":"5d8a111d81ba0d56dff1998e"},"artist":"Matt Simons","spotifyID":"1g0fXhQMHAxlRyIBkCbuE7","popularity":68.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1998f"},"artist":"Andrew W.K.","spotifyID":"4YJR4xviDKHoelt9WKHlBa","popularity":57.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19990"},"artist":"Ricky Williams","spotifyID":"0DkGGPpMfDpbMt47bIwVRm","popularity":0.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19991"},"artist":"Richard Woodhams","spotifyID":"6A59VPOob1glrdzChjZ9by","popularity":0.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19992"},"artist":"Paul Barker","spotifyID":"5bJ3m8y88doOO0VERONg5J","popularity":10.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19993"},"artist":"Timo Andres","spotifyID":"6rsUydMSborFpWv0JkQgiz","popularity":38.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19994"},"artist":"David Hodo","spotifyID":"0V1ZXRSysVm52zbevZ53Rg","popularity":0.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19995"},"artist":"Mimi Fariña","spotifyID":"2mQkR9H7yBeT3tJ9vaGPjp","popularity":18.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19996"},"artist":"Loren Gold","spotifyID":"29yur1VaVHx6TJuE33Xv1h","popularity":1.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19997"},"artist":"Larisa Migachyov","spotifyID":"7I6L2jPfOOtMEAcYaWYTBz","popularity":3.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19998"},"artist":"Stephen M. Sano","spotifyID":"2AfTZO9tCjHCrxJ3KEUEaP","popularity":0.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff19999"},"artist":"Joan Baez","spotifyID":"1EevBGfUh3RSQSGpluxgBm","popularity":56.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999a"},"artist":"Fred Ho","spotifyID":"2dk8lDUPNJ173F9mPAI6Lo","popularity":10.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999b"},"artist":"Doug Clifford","spotifyID":"3RFGEI1fTgeUaMVsnIHVWQ","popularity":0.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999c"},"artist":"Alex Wong","spotifyID":"3IoAVMbs33TXE0ZCtYjJak","popularity":9.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999d"},"artist":"Brad Lee","spotifyID":"1qRDfo7EwrnpUMNjVs798o","popularity":1.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999e"},"artist":"Jesse Lee","spotifyID":"70MIneCfhYccUqdJfK9Dt7","popularity":17.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff1999f"},"artist":"Cory Lerios","spotifyID":"5IKrMROGWtyJT3KVS9QrB2","popularity":2.0},
+{"_id":{"$oid":"5d8a111d81ba0d56dff199a0"},"artist":"Lindsey Buckingham","spotifyID":"3Dzj993UEz8Z5ovxuirzFO","popularity":49.0}]
+
+module.exports = paloaltoCAArtists
