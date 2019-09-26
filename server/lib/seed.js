@@ -6,6 +6,14 @@ const seedData = require("../lib/seedData");
 
 const seed = () => {
   console.log("Seeding the database...");
+   // let stateIndex = seedData.findIndex(state => {
+  //   return state.name === "Ohio"
+  // })
+  // let cityIndex = seedData[stateIndex].wikiCities.findIndex(city => {
+  //   return city.name === "Akron"
+  // })
+  // console.log(seedData[stateIndex].wikiCities[cityIndex])
+  
   seedData.forEach((state) => {
     // Create each State
     State.create(
@@ -43,6 +51,7 @@ const seed = () => {
       }
     );
   });
+ 
 };
 
 module.exports = seed;
