@@ -1,6 +1,10 @@
 const router = require("express").Router(),
   axios = require("axios");
 
+const State = require("../../models/state"),
+  WikiCity = require("../../models/wikiCity"),
+  Artist = require("../../models/artist");
+
 const seed = require("../../lib/seed");
 
 //=================================================
@@ -16,8 +20,12 @@ const func2 = () => {};
 //=================================================
 
 router.get("/seed", (req, res) => {
-  seed();
-  res.end();
+  // seed();
+  // res.end()
+  State.find({}).populate("wikiCities").exec((err, states) => {
+    if (err) console.log(err)
+    res.send(states);
+  })
 });
 
 module.exports = router;
