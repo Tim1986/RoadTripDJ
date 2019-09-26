@@ -1,0 +1,25 @@
+const rockfordILArtists = [{ "_id": { "$oid": "5d8a169281ba0d56dff19bef" }, "artist": "Kurt Elling", "spotifyID": "1UhC1mCcd9SFXLibHhMX61", "popularity": 46.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf0" }, "artist": "Helen Armstrong", "spotifyID": "1D8iId9xGvBdOTeY0IC5E0", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf1" }, "artist": "Cheap Trick", "spotifyID": "1LB8qB5BPb3MHQrfkvifXU", "popularity": 65.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf2" }, "artist": "Paris Bennett", "spotifyID": "7HBJ2jOUPNp7DdKKqErhqu", "popularity": 6.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf3" }, "artist": "Jake Runestad", "spotifyID": "73154QMNXe4mwoVDLgYWMo", "popularity": 28.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf4" }, "artist": "Gerry Hundt", "spotifyID": "4VVo39yzJvYhQF9HkwkgNi", "popularity": 1.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf5" }, "artist": "Rick Nielsen", "spotifyID": "6aXZHzvxNhl8rhA0qd4YYH", "popularity": 40.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf6" }, "artist": "Jodi Benson", "spotifyID": "4mmMtabvFCKA6HfmVmitNH", "popularity": 56.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf7" }, "artist": "Bun E. Carlos", "spotifyID": "5uQSB1XKOtO2jkftTyZB2s", "popularity": 2.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf8" }, "artist": "Ryley Walker", "spotifyID": "7xwppARWdjgnJSKLhbGzFc", "popularity": 38.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bf9" }, "artist": "Marin Mazzie", "spotifyID": "26HZcBntJsXRix4UH8VpL8", "popularity": 36.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bfa" }, "artist": "Swan Hennessy", "spotifyID": "4tFGSLU5c1LyAIFyk8Pdsy", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bfb" }, "artist": "Frank La Forge", "spotifyID": "2YNLiU4hSryYTXbeZWDM3P", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bfc" }, "artist": "Brad Wood", "spotifyID": "4PwettVXvXARS2bnZQ3H9p", "popularity": 6.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bfd" }, "artist": "Emily Bear", "spotifyID": "0K1ilFOGrYhSKNZaDCYRvk", "popularity": 36.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bfe" }, "artist": "Amy Lee", "spotifyID": "0fGVuq5ed21pM7iWwTcMyk", "popularity": 58.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19bff" }, "artist": "Sarah Kelly", "spotifyID": "5uv2Sfd9jIDiHtQMZ5p38z", "popularity": 15.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19c00" }, "artist": "Kurt Stallmann", "spotifyID": "4CZGQwJZP9wjMQfYMM1Hbq", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19c01" }, "artist": "Michelle Williams", "spotifyID": "2LAqcqAQ8KPTsl1HBgBrqM", "popularity": 64.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19c02" }, "artist": "Fuse", "spotifyID": "374sWpAJsbZckf98df2jJJ", "popularity": 66.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19c03" }, "artist": "Weasel Walter", "spotifyID": "2FNH0OdXfs3pOUHtsWEmr4", "popularity": 23.0 },
+{ "_id": { "$oid": "5d8a169281ba0d56dff19c04" }, "artist": "Joie De Vivre", "spotifyID": "1sUOIv1YrZ2WRmTg0GRi0V", "popularity": 22.0 }
+]
+
+module.exports = rockfordILArtists;

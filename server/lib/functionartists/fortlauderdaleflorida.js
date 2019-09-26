@@ -1,0 +1,26 @@
+const fortLauderdaleFLArtsits = [{ "_id": { "$oid": "5d89840781ba0d56dff1920d" }, "artist": "David L. Cook", "spotifyID": "0Hd1kAcZEUp75x3yiampx6", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1920e" }, "artist": "Nadine Sierra", "spotifyID": "0KZxSBGvjZVKOo6dmwfkfN", "popularity": 31.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1920f" }, "artist": "Jerry Lawson", "spotifyID": "7mQKFWdLSZCt66Gi49tqfu", "popularity": 9.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19210" }, "artist": "Bleubird", "spotifyID": "1SXhYpaUVlcBQiAihU8tHb", "popularity": 14.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19211" }, "artist": "Bob Clark", "spotifyID": "7m81KiJJv6XS7eAh5fN0sf", "popularity": 13.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19212" }, "artist": "Bear McCreary", "spotifyID": "2ifvIECHAlEgPMBuBOJ0lG", "popularity": 63.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19213" }, "artist": "Paige O'Hara", "spotifyID": "7oavKrnYbTZPAPq7zCuipM", "popularity": 55.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19214" }, "artist": "Urban Mystic", "spotifyID": "1qn0COtzEiEinZ1xE3yfA0", "popularity": 33.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19215" }, "artist": "Stevie B", "spotifyID": "6V7pNWhlJpD0s0bMdB1PU9", "popularity": 51.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19216" }, "artist": "Billy Rush", "spotifyID": "4w3WorF6kWMISyL7x0jTBZ", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19217" }, "artist": "Justin Jarvis", "spotifyID": "3ETXmapfkZXZWXBHvUl9xj", "popularity": 26.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19218" }, "artist": "White Dawg", "spotifyID": "3lblkRx39iLuyKk1lsvqhW", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19219" }, "artist": "Mickey Zetts", "spotifyID": "7uOMcDOwS0nTR02zxwehN9", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921a" }, "artist": "Catherine Hickland", "spotifyID": "42rIc33IYkGWg4NtMdf8Qa", "popularity": 8.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921b" }, "artist": "Alexx Calise", "spotifyID": "0XxYqdAMqriYeGQf1Se0Ln", "popularity": 30.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921c" }, "artist": "Maine Event", "spotifyID": "6LcgbeXCZYQmSJWiXKQjsq", "popularity": 3.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921d" }, "artist": "David DeBoor Canfield", "spotifyID": "3tQeOdEXUN5c1IjwBEzCvi", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921e" }, "artist": "Jaco Pastorius", "spotifyID": "3U3C9o6UTYNdEsDckpRyvX", "popularity": 44.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff1921f" }, "artist": "B. Smyth", "spotifyID": "76JyRfZDqhAIow2Awv91iW", "popularity": 48.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19220" }, "artist": "Casely", "spotifyID": "1AeGYbZw11NJuTgs0wCOJ6", "popularity": 34.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19221" }, "artist": "Tom Maxwell", "spotifyID": "2ds10xvwmeblNPJ3ny4NIY", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19222" }, "artist": "Guitar Nubbit", "spotifyID": "2CzZGGzllkczgOvIqO2d3t", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89840781ba0d56dff19223" }, "artist": "Shana", "spotifyID": "0Krj6EH3TdGN1R7NtLledv", "popularity": 37.0 }
+]
+
+module.exports = fortLauderdaleFLArtsits;
