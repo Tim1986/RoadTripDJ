@@ -24,6 +24,7 @@ const seed = () => {
           if (err) console.log(err);
           listWikiCities.push(newWikiCity._id);
           countWikiCity++;
+          console.log("Populating:", wikiCity.name)
 
           // Create each artist
           let countArtists = 0;

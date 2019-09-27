@@ -9,3 +9,5 @@ const redondobeachCAArtists = [{"_id":{"$oid":"5d8a14f081ba0d56dff19b2d"},"artis
 {"_id":{"$oid":"5d8a14f081ba0d56dff19b35"},"artist":"Dick Smothers","spotifyID":"0mM2WxgFKDsLgcAaJqlhHQ","popularity":0.0},
 {"_id":{"$oid":"5d8a14f081ba0d56dff19b36"},"artist":"Smothers Brothers","spotifyID":"5ugjlc51azqrMoBLLbOnIg","popularity":20.0},
 {"_id":{"$oid":"5d8a14f081ba0d56dff19b37"},"artist":"Scott MacIntyre","spotifyID":"3zMmfPXv5UUdgE91Mmeb0H","popularity":6.0}]
+
+module.exports = redondobeachCAArtists

@@ -94,7 +94,7 @@ const albanyGAArtists = require("../lib/functionartists/albanygeorgia"),
   clevelandOHArtists = require("../lib/functionartists/cleveland"),
   coloradoSpringsCOArtists = require("../lib/functionartists/coloradospringscolorado"),
   columbiaSCArtists = require("../lib/functionartists/columbiasouthcarolina"),
-  columbusGAArtists = require("../lib/functionartists/columbusgeorgia")
+  columbusGAArtists = require("../lib/functionartists/columbusgeorgia"),
   columbusOHArtists = require("../lib/functionartists/columbusohio"),
   comptonCAArtists = require("../lib/functionartists/comptoncalifornia"),
   coralSpringsFLArtists = require("../lib/functionartists/coralspringsflorida"),
@@ -103,7 +103,7 @@ const albanyGAArtists = require("../lib/functionartists/albanygeorgia"),
   daytonaBeachFLArtists = require("../lib/functionartists/daytonabeachflorida"),
   daytonOHArtists = require("../lib/functionartists/daytonohio"),
   decaturILArtists = require("../lib/functionartists/decaturillinois"),
-  denverCOArtists = require("../lib/functionartists"),
+  denverCOArtists = require("../lib/functionartists/denver"),
   desMoinesIAArtists = require("../lib/functionartists/desmoinesiowa"),
   detroitMIArtists = require("../lib/functionartists/detroit"),
   downeyCAArtists = require("../lib/functionartists/downeycalifornia"),
@@ -277,9 +277,7 @@ const albanyGAArtists = require("../lib/functionartists/albanygeorgia"),
   winstonSalemNCArtists = require("../lib/functionartists/winstonsalemnorthcarolina"),
   worcesterMAArtists = require("../lib/functionartists/worcestermassachusetts"),
   yorkPAArtists = require("../lib/functionartists/yorkpennsylvania"),
-  youngstownOHArtists = require("../lib/functionartists/youngstownohioyoungs");
-
-
+  youngstownOHArtists = require("../lib/functionartists/youngstownohio");
 
 const seedData = [
   {
@@ -423,7 +421,7 @@ const seedData = [
         artists: losAngelesCAArtists
       },
       {
-        name: "Manhatten Beach",
+        name: "Manhattan Beach",
         artists: manhattanBeachCAArtists
       },
       {
@@ -491,7 +489,7 @@ const seedData = [
         artists: sanRafaelCAArtists
       },
       {
-        name: "Santa Barbarbara",
+        name: "Santa Barbara",
         artists: santaBarbaraCAArtists
       },
       {

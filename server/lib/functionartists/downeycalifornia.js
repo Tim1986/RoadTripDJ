@@ -13,3 +13,5 @@ const downeyCAArtists = [{"_id":{"$oid":"5d89801e81ba0d56dff19106"},"artist":"Ka
 {"_id":{"$oid":"5d89801e81ba0d56dff19112"},"artist":"Dark Angel","spotifyID":"0RFQyVQGVcECxnuSLvEKxV","popularity":33.0},
 {"_id":{"$oid":"5d89801e81ba0d56dff19113"},"artist":"The Carpenters","spotifyID":"1eEfMU2AhEo7XnKgL7c304","popularity":68.0},
 {"_id":{"$oid":"5d89801e81ba0d56dff19114"},"artist":"Bob Bennett","spotifyID":"6R0p06zJjHFNzlPhT7MC11","popularity":16.0}]
+
+module.exports = downeyCAArtists
