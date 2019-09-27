@@ -78,17 +78,18 @@ const algorithm = {
 
     State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
       // Check if returnedState.searchedCities includes a city.name === userInput
-      let doesExist = false;
-      foundState.searchedCities.forEach((city) => {
-        // If that city exists
-        if (city.name === userCity) {
-            return city.closestCities
-        }
-        return "there are no cities"
-
-        // If city doesn't exist, find the closest cities and save it to the database
-        //return listClosestCities
-      });
+    let doesExist = false;
+    if (foundState.searchedCities.length > 0) {
+        foundState.searchedCities.forEach((city) => {
+              // If that city exists
+            if (city.name === userCity) {
+                return city.closestCities
+            }
+            // If city doesn't exist, find the closest cities and save it to the database
+            //return listClosestCities
+        });
+    }
+    return "there are no cities"
     });
   },
 
