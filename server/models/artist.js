@@ -10,10 +10,7 @@ const ArtistSchema = new Schema({
     type: String,
     trim: true
   },
-  spotifyID: {
-    type: String,
-    unique: true
-  }
+  spotifyID: String
 });
 
 const Artist = mongoose.model("Artist", ArtistSchema);

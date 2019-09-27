@@ -1,6 +1,6 @@
 // mongoexport -h ds211368.mlab.com:11368 -d heroku_7k8rf6zz -c norwalkconnecticut -u dreamteam -p getgudjawbs4 -o norwalkconnecticut.json
 
-const birminghamALArtists = require("./birminghamalabama.js")
+// const birminghamALArtists = require("./birminghamalabama.js")
 
 const restructure = artistArray => {
     let newArray = []
@@ -14,6 +14,6 @@ const restructure = artistArray => {
     }
     return newArray
 }
-console.log(restructure(birminghamALArtists))
+// console.log(restructure(birminghamALArtists))
 
 module.exports = restructure

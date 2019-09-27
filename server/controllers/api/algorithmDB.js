@@ -22,10 +22,15 @@ const func2 = () => {};
 router.get("/seed", (req, res) => {
   // seed();
   // res.end()
-  State.find({}).populate("wikiCities").exec((err, states) => {
-    if (err) console.log(err)
-    res.send(states);
-  })
+  State.find({})
+    .populate({
+      path: "wikiCities",
+      populate: { path: "artists" }
+    })
+    .exec((err, states) => {
+      if (err) console.log(err);
+      res.send(states);
+    });
 });
 
 module.exports = router;

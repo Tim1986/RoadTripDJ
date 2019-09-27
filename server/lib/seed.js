@@ -24,29 +24,34 @@ const seed = () => {
           if (err) console.log(err);
           listWikiCities.push(newWikiCity._id);
           countWikiCity++;
-          console.log("Count:", countWikiCity);
-          console.log("listWikiCities", listWikiCities);
 
           // Create each artist
-          // wikiCity.artists.forEach((artist) => {
-          //   Artist.create(
-          //     {
-          //       name: artist.artist,
-          //       popularity: artist.popularity,
-          //       spotifyID: artist.spotifyID
-          //     },
-          //     (err, newArtist) => {
-          //       if (err) console.log(err);
-          //       // Puse newArtist into newWikiCity.artists
-          //       newWikiCity.artists.push(newArtist);
-          //       newWikiCity.save();
-          //     }
-          //   );
-          // });
+          let countArtists = 0;
+          let listArtists = [];
+          wikiCity.artists.forEach((artist) => {
+            Artist.create(
+              {
+                name: artist.artist,
+                popularity: artist.popularity,
+                spotifyID: artist.spotifyID
+              },
+              (err, newArtist) => {
+                if (err) console.log(err);
+                // Add array of newArtist id's to newWikiCity.wikiCities
+                listArtists.push(newArtist._id);
+                countArtists++;
+                if (countArtists >= wikiCity.artists.length) {
+                  console.log("Populated artists for:", newWikiCity.name);
+                  newWikiCity.artists = listArtists;
+                  newWikiCity.save();
+                }
+              }
+            );
+          });
 
           // Add array of newWikiCity id's to newState.wikiCities
           if (countWikiCity >= state.wikiCities.length) {
-            console.log("Populated", newState.name);
+            console.log("Added state:", newState.name);
             newState.wikiCities = listWikiCities;
             newState.save();
           }

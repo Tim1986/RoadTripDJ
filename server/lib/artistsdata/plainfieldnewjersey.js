@@ -25,4 +25,4 @@ const plainfieldNJArtists = [{ artist: "Pat DiNizio", spotifyID: "0M9n1PZNvicgGQ
 { artist: "Vita", spotifyID: "4NEYQeEYBUjfaXgDQGvFvu", popularity: 70.0 },
 ]
 
-modules.exports = plainfieldNJArtists;
+module.exports = plainfieldNJArtists;
