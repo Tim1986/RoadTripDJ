@@ -1,5 +1,5 @@
-const search = require("switch.js");
-const google = require("./google");
+const search = require("../lib/switch");
+const google = require("../lib/google");
 const wikipedia = require("./wikipedia");
 const spotifyNPM = require("./spotifyNPM");
 const spot = require("../controllers/api/spot");
@@ -19,11 +19,10 @@ const State = require("../models/state"),
 //-------------------------------------
 
 const algorithm = {
-  tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
+//   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
+  tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
-    return (
-      google
-        .startGeo(start, end)
+    return google.startGeo(start, end)
         .then((userInput) => {
           const tripObj = {
             startPoint: userInput[0][0],
@@ -37,21 +36,14 @@ const algorithm = {
           // if not, it should return the regional list of cities to compare distance with
           //-------------------------------------------------------------------------------------------------------
 
-					// Look up state in database, populated with searchedCities
-					algorithm.checkSearchedCities(tripObj.startPoint);
-					algorithm.checkSearchedCities(tripObj.endPoint);
-
-          if (itExistsInDB) {
-            //NEEDS: code to grab the artists from the from the searchCities
-            //and then pass that to the spotifyTest function
-          } else {
-            const startArray = algorithm.getSearch(tripObj.startPoint);
-            const endArray = algorithm.getSearch(tripObj.endPoint);
-
-            // return algorithm.findClosest(tripObj.startPoint, tripObj.endPoint, startArray, endArray, tripObj.tripTime)
-          }
+        // Look up state in database, populated with searchedCities
+        // return Promise.all([
+            return algorithm.checkSearchedCities(tripObj.startPoint)
+            // algorithm.checkSearchedCities(tripObj.endPoint),
+            // tripObj.tripTime])
         })
-        // .then(result => {
+        .then(result => {
+            console.log(result)
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -61,16 +53,28 @@ const algorithm = {
 
         // //NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
 
-				// //NEEDS: function to grab stuff from the wikiCities collection
+	    //NEEDS: function to grab stuff from the wikiCities collection
 
-        // })
+        })
         .catch((err) => console.log("\nERROR | Tracks error | " + err))
-    );
+    
   },
 
   checkSearchedCities: function(mapPoint) {
-    const userState = mapPoint.formattedAddress.split(", ")[2].split(" ")[0],
-      userCity = mapPoint.formattedAddress.split(", ")[1];
+    // const addressSplit = mapPoint.formattedAddress.split(", ")
+    // let userCity, userState
+    // if (addressSplit.length === 4){
+    //     userState = addressSplit[2].split(" ")[0];
+    //     userCity = addressSplit[1];
+    // } else if ( addressSplit.length === 3) {
+    //     userState = addressSplit[1].split(" ")[0];
+    //     userCity = addressSplit[0];
+    // } else {
+    //     console.log("Address Not formatted correctly")
+    // }
+    const userCity = mapPoint.city,
+          userState = mapPoint.state
+    console.log(userState, userCity)
 
     State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
       // Check if returnedState.searchedCities includes a city.name === userInput
@@ -78,53 +82,49 @@ const algorithm = {
       foundState.searchedCities.forEach((city) => {
         // If that city exists
         if (city.name === userCity) {
-					return city.closestCities
-				}
-				// If city doesn't exist, find the closest cities and save it to the database
-				//return listClosestCities
+            return city.closestCities
+        }
+        return "there are no cities"
+
+        // If city doesn't exist, find the closest cities and save it to the database
+        //return listClosestCities
       });
     });
   },
 
-  format: function(objArr) {
-    const array = [];
-    objArr.forEach((city) => {
-      if (city.includes(",")) {
-        const obj = {
-          city: city.to.split(", ")[0],
-          state: city.to.split(", ")[1]
-        };
-        array.push(obj);
-      } else {
-        const obj = {
-          city: city.to,
-          state: city.toFormatted.split(", ")[2].split(" ")[0]
-        };
-      }
-    });
-  },
+  format : function( objArr ) {
+    const array = []
+    objArr.forEach(city => {
+        if (city.includes(",")){
+            const obj = {
+                city: city.to.split(", ")[0],
+                state: city.to.split(", ")[1],
+            }
+            array.push(obj)
+        } else {
+            const obj = {
+                city: city.to,
+                state: city.toFormatted.split(", ")[2].split(" ")[0]
+                }
+            }
+        })
+    },
 
-  getSearch: function(pointObj) {
-    const split = pointObj.formattedAddress.split(", ");
-    const abrv = split[2].split(" ");
-    return search.citySearch(abrv[0]);
-  },
+    getSearch : function (pointObj){
+        const split = pointObj.formattedAddress.split(", ")
+        const abrv = split[2].split(" ")
+        return search.citySearch(abrv[0])
+    },
 
-  findClosest: function(start, end, startArray, endArray, tripTime) {
-    console.log("--Getting geoData for all supplied cities");
-    return promise
-      .all([
-        google.geoDataLoop(startArray, 0),
-        google.geoDataLoop(endArray, 0)
-      ])
-      .then(function(arrayGlob) {
-        return Promise.all([
-          algorithm.closestWiki(start, arrayGlob[0]),
-          algorithm.closestWiki(end, arrayGlob[1]),
-          tripTime
-        ]);
-      });
-  },
+
+    findClosest: function(point){
+        const array = algorithm.getSearch(point)
+        console.log("--Getting geoData for all supplied cities")
+        return google.geoDataLoop(array, 0)
+            .then(function (arrayGlob) {
+                return algorithm.closestWiki(point, arrayGlob)
+            })
+    },
 
   closestWiki: (staticObj, geoArray) => {
     console.log(
@@ -160,3 +160,5 @@ const algorithm = {
     }
   }
 };
+
+module.exports = algorithm

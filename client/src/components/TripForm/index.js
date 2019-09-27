@@ -25,11 +25,6 @@ class TripForm extends Component {
     e.preventDefault();
     this.props.onClick();
     API.Spotify.createPlaylist(e, this.state);
-    this.setState({
-      startPoint: "Point A",
-      endPoint: "Point B",
-      isPopular: true
-    });
   };
 
   handleChangeCheck = (e) => {

@@ -99,9 +99,9 @@ export default {
         spotifyUserID = localStorage.getItem("spotifyUserID");
       console.log(accessToken);
       axios({
-        method: "GET",
-        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`
-        // data: data
+        method: "POST",
+        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
+        data: data
       })
         .then((response) => {
           setTimeout(function() {

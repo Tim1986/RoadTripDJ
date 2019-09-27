@@ -1,6 +1,7 @@
 const router = require("express").Router(),
-  axios = require("axios");
-  spotifyTest = require("../api/spotifyTest.js")
+  axios = require("axios"),
+  spotifyTest = require("../api/spotifyTest.js"),
+  algorithm = require("../../lib/redo.js")
 
 //====================================
 //Dummy Data
@@ -253,8 +254,7 @@ router.get("/user/:accessToken", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.get("/playlist/new/:userID/:accessToken", (req, res) => {
-  console.log(req.body)
+router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   const startPoint = req.body.startPoint
   const endPoint = req.body.endPoint
   const playlistName = startPoint + " to " + endPoint
@@ -263,8 +263,10 @@ router.get("/playlist/new/:userID/:accessToken", (req, res) => {
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
     
-  spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
-  
+  // spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
+  // redo.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
+  return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
+  .then(res => console.log("this stuff is", res))
   // axios({
   //   url: `https://api.spotify.com/v1/users/${userID}/playlists`,
   //   method: "POST",

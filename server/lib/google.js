@@ -18,6 +18,7 @@ const google = {
 
 
     getGeoData : address => {
+        
         return googleMapsClient.geocode({ address: address })
             .asPromise()
             .then((response) => {
@@ -63,7 +64,7 @@ const google = {
                 return resultObj
             })
             .catch((error) => {
-                console.log("\nERROR | google | getDistance method: to " + to.input + " from " + from.input +  " | " + error)
+                console.log("\nERROR | google | getDistance method: to " + to.formattedAddress + " from " + from.formattedAddress +  " | " + error)
             })
     },
     
