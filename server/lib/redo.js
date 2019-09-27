@@ -30,7 +30,8 @@ const algorithm = {
             endClosest = result[1],
             tripTime = result[2]
         
-        
+        const startFormatted = algorithm.format(startClosest),
+              endFormatted = algorithm.format(endClosest)
         
         //function to 
 
