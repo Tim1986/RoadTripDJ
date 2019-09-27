@@ -39,13 +39,13 @@ const akronOHArtists = require("../lib/artistsdata/akronohio"),
   poughkeepsieNYArtists = require("../lib/artistsdata/poughkeepsienewyork"),
   renoNVArtists = require("../lib/artistsdata/renonevada"),
   rochesterNYArtists = require("../lib/artistsdata/rochesternewyork"),
-  santaFeNMArtists = require("../lib/artists/data/santafenewmexico"),
+  santaFeNMArtists = require("../lib/artistsdata/santafenewmexico"),
   stLouisMOArtists = require("../lib/artistsdata/stlouis"),
   summitNJArtists = require("../lib/artistsdata/summitnewjersey"),
   syracuseNYArtists = require("../lib/artistsdata/syracusenewyork"),
   trentonNJArtists = require("../lib/artistsdata/trentonnewjersey"),
   troyNYArtists = require("../lib/artistsdata/troynewyork"),
-  uticaNYArtists = require("../lib/artistsdata/uticanewyork")
+  uticaNYArtists = require("../lib/artistsdata/uticanewyork");
 
 //==============================================================
 // Artist Lists that must be imported and passed to jsonCleaner
@@ -1646,6 +1646,5 @@ const seedData = [
     ]
   }
 ];
-
 
 module.exports = seedData;
