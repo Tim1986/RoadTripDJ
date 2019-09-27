@@ -6,6 +6,7 @@ const googleMapsClient = require('@google/maps').createClient({
 const google = {
 
     startGeo : (start, end) => {
+        console.log(start, end)
         return google.geoDataLoop([start,end],0) //
         .then(posData => {
             return Promise.all([
@@ -30,11 +31,12 @@ const google = {
                 })
                 let geoRes = {
                     input: address,
-                    city:response.json.results[0].address_components[cityIndex],
-                    state:response.json.results[0].address_components[stateIndex],
+                    city:response.json.results[0].address_components[cityIndex].short_name,
+                    state:response.json.results[0].address_components[stateIndex].short_name,
                     formattedAddress: response.json.results[0].formatted_address,
                     latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
                 }
+                console.log(geoRes)
                 return geoRes
             })
     },
@@ -48,6 +50,7 @@ const google = {
     },
 
     getDistance : (from, to) => {  //requires the lat lng
+        console.log(from, to)
         return googleMapsClient.distanceMatrix({ origins: from.latLng, destinations: to.latLng, mode: 'driving' })
             .asPromise()
             .then((response) => {
