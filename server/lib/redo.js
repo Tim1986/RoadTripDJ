@@ -6,7 +6,8 @@ const spot = require("../controllers/api/spot")
 const _ = require("lodash")
 
 const algorithm = {
-    tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
+    // tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
+    tracks: (start, end, isPopular, userID, accessToken) => {
         //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
         return google.startGeo(start, end)
             .then(userInput => {
@@ -15,6 +16,7 @@ const algorithm = {
                 endPoint: userInput[0][1],
                 tripTime: userInput[1].tripMinutes
             }
+            
         //-------------------------------------------------------------------------------------------------------
         // NEEDS: function that will be run for start and end point to check database to see if it has been searched before. 
         // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
@@ -24,21 +26,21 @@ const algorithm = {
         if (itExistsInDB) {
         //NEEDS: code to grab the artists from the from the searchCities
         //and then pass that to the spotifyTest function
+
         } else {
 
-        const startArray = algorithm.getSearch(tripObj.startPoint)
         const endArray = algorithm.getSearch(tripObj.endPoint)
 
-        return algorithm.findClosest(tripObj.startPoint, tripObj.endPoint, startArray, endArray, tripObj.tripTime) 
+        // return algorithm.findClosest(tripObj.startPoint, tripObj.endPoint, startArray, endArray, tripObj.tripTime) 
         }
-        })
-        .then(result => {
-        const startClosest = result[0],
-            endClosest = result[1],
-            tripTime = result[2]
+        // })
+        // .then(result => {
+        // const startClosest = result[0],
+        //     endClosest = result[1],
+        //     tripTime = result[2]
         
-        const startFormatted = algorithm.format(startClosest),
-              endFormatted = algorithm.format(endClosest)
+        // const startFormatted = algorithm.format(startClosest),
+        //       endFormatted = algorithm.format(endClosest)
         
         //NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
 
@@ -75,15 +77,12 @@ const algorithm = {
     },
 
 
-    findClosest: function(start, end, startArray, endArray, tripTime){
+    findClosest: function(point){
+        const array = algorithm.getSearch(point)
         console.log("--Getting geoData for all supplied cities")
-        return promise.all([google.geoDataLoop(startArray, 0),google.geoDataLoop(endArray, 0)])
+        return google.geoDataLoop(array, 0)
             .then(function (arrayGlob) {
-                return Promise.all([
-                    algorithm.closestWiki(start, arrayGlob[0]),
-                    algorithm.closestWiki(end, arrayGlob[1]),
-                    tripTime
-                ])
+                return algorithm.closestWiki(point, arrayGlob)
             })
     },
 

@@ -263,8 +263,9 @@ router.get("/playlist/new/:userID/:accessToken", (req, res) => {
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
     
-  spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
-  
+  // spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
+  // redo.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
+  redo.tracks(startPoint, endPoint, isPopular, userID, accessToken)
   // axios({
   //   url: `https://api.spotify.com/v1/users/${userID}/playlists`,
   //   method: "POST",
