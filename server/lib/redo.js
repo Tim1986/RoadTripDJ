@@ -20,10 +20,17 @@ const algorithm = {
         // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
         // if not, it should return the regional list of cities to compare distance with
         //-------------------------------------------------------------------------------------------------------
+
+        if (itExistsInDB) {
+            //code to grab the artists from the from the searchCities
+            //and then pass that to the spotifyTest function
+        } else {
+
         const startArray = algorithm.getSearch(tripObj.startPoint)
         const endArray = algorithm.getSearch(tripObj.endPoint)
 
         return algorithm.findClosest(tripObj.startPoint, tripObj.endPoint, startArray, endArray, tripObj.tripTime) 
+        }
         })
         .then(result => {
         const startClosest = result[0],
@@ -33,13 +40,14 @@ const algorithm = {
         const startFormatted = algorithm.format(startClosest),
               endFormatted = algorithm.format(endClosest)
         
-        //function to 
+        //function to grab stuff 
 
         })
         .catch(err => console.log("\nERROR | Tracks error | " + err))
+        
     },
 
-    format : function(objArr) {
+    format : function( objArr ) {
         const array = []
         objArr.forEach(city => {
             if (city.includes(",")){
