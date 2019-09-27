@@ -1,5 +1,12 @@
+//==============================================================
+// Function to convert JSON object to JS object
+//--------------------------------------------------------------
 
-//These do not need the function!!!!!!!!!!!!!!!!!!!
+const jsonCleaner = require("../lib/artisthelperfunction/commands");
+
+//==============================================================
+// Artist Lists that can be imported normally
+//--------------------------------------------------------------
 
 const akronOHArtists = require("../lib/artistsdata/akronohio"),
   albanyNYArtists = require("../lib/artistsdata/albanynewyork"),
@@ -21,7 +28,7 @@ const akronOHArtists = require("../lib/artistsdata/akronohio"),
   lincolnNEArtists = require("../lib/artistsdata/lincolnnebraska"),
   missoulaMTArtists = require("../lib/artistsdata/missoulamontana"),
   mountVernonNYArtists = require("../lib/artistsdata/mountvernonnewyork"),
-  newArkNJArtists = require("../lib/artistsdata/newarknewjersey"),
+  newarkNJArtists = require("../lib/artistsdata/newarknewjersey"),
   newBrunswickNJArtists = require("../lib/artistsdata/newbrunswicknewjersey"),
   newRochelleNYArtists = require("../lib/artistsdata/newrochellenewyork"),
   niagaraFallsNYArtists = require("../lib/artistsdata/niagarafallsnewyork"),
@@ -40,17 +47,59 @@ const akronOHArtists = require("../lib/artistsdata/akronohio"),
   troyNYArtists = require("../lib/artistsdata/troynewyork"),
   uticaNYArtists = require("../lib/artistsdata/uticanewyork")
 
+//==============================================================
+// Artist Lists that must be imported and passed to jsonCleaner
+//--------------------------------------------------------------
 
-//These do need the function!!!!!!!!!!!!!!!!!!?????????????????????????????????
-
-
-
-
-
-//FUNCTION!@#$#@@#$$#@@@#$#$#$@#$#$@#!@$!$!@$#$!@#!#
-const helperfunction = require("../lib/artisthelperfunction/commands");
-
-
+const albanyGAArtists = require("../lib/functionartists/albanygeorgia"),
+  alexandriaVAArtists = require("../lib/functionartists/alexandriavirginia"),
+  allentownPAArtists = require("../lib/functionartists/allentownpennsylvania"),
+  amarilloTXArtists = require("../lib/functionartists/amarillotexas"),
+  anaheimCAArtists = require("../lib/functionartists/anaheimcalifornia"),
+  anchorageAKArtists = require("../lib/functionartists/anchoragealaska"),
+  andersonINArtists = require("../lib/functionartists/andersonindiana"),
+  annArborMIArtists = require("../lib/functionartists/annarbormichigan"),
+  ashlandKYArtists = require("../lib/functionartists/ashlandkentucky"),
+  athensGAArtists = require("../lib/functionartists/athensgeorgia"),
+  atlantaGAArtists = require("../lib/functionartists/atlanta"),
+  augustaGAArtists = require("../lib/functionartists/augustageorgia"),
+  austinTXArtists = require("../lib/functionartists/austintexas"),
+  bainbridgeIslandWAArtists = require("../lib/functionartists/bainbridgeislandwashington"),
+  bakersfieldCAArtists = require("../lib/functionartists/bakersfieldcalifornia"),
+  baltimoreMDArtists = require("../lib/functionartists/baltimore"),
+  bangorMEArtists = require("../lib/functionartists/bangormaine"),
+  batonRougeLAArtists = require("../lib/functionartists/batonrougelouisiana"),
+  berkeleyCAArtists = require("../lib/functionartists/berkeleycalifornia"),
+  beverlyHillsCAArtists = require("../lib/functionartists/beverlyhillscalifornia"),
+  birminghamALArtists = require("../lib/functionartists/birminghamalabama"),
+  bloomingtonINArtists = require("../lib/functionartists/bloomingtonindiana"),
+  boiseIDArtists = require("../lib/functionartists/boiseidaho"),
+  bostonMAArtists = require("../lib/functionartists/boston"),
+  boulderCOArtists = require("../lib/functionartists/bouldercolorado"),
+  bowlingGreenKYArtists = require("../lib/functionartists/bowlinggreenkentucky"),
+  bridgeportCTArtists = require("../lib/functionartists/bridgeportconnecticut"),
+  brocktonMAArtists = require("../lib/functionartists/brocktonmassachusetts"),
+  burbankCAArtists = require("../lib/functionartists/burbankcalifornia"),
+  burlingtonVTArtists = require("../lib/functionartists/burlingtonvermont"),
+  cambridgeMAArtists = require("../lib/functionartists/cambridgemassachusetts"),
+  cantonOHArtists = require("../lib/functionartists/cantonohio"),
+  cedarRapidsIAArtists = require("../lib/functionartists/cedarrapidsiowa"),
+  champaignILArtists = require("../lib/functionartists/champaignillinois"),
+  charlestonSCArtists = require("../lib/functionartists/charlestonsouthcarolina"),
+  charlestonWVArtists = require("../lib/functionartists/charlestonwestvirginia"),
+  charlottesvilleVAArtists = require("../lib/functionartists/charlottesvillevirginia"),
+  chicagoILArtists = require("../lib/functionartists/chicago"),
+  cincinnatiOHArtists = require("../lib/functionartists/cincinnati"),
+  clarksdaleMSArtists = require("../lib/functionartists/clarksdalemississippi"),
+  clevelandOHArtists = require("../lib/functionartists/cleveland"),
+  coloradoSpringsCOArtists = require("../lib/functionartists/coloradospringscolorado"),
+  columbiaSCArtists = require("../lib/functionartists/columbiasouthcarolina"),
+  columbusOHArtists = require("../lib/functionartists/columbusohio"),
+  comptonCAArtists = require("../lib/functionartists/comptoncalifornia"),
+  coralSpringsFLArtists = require("../lib/functionartists/coralspringsflorida"),
+  corvallisORArtists = require("../lib/functionartists/corvallisoregon"),
+  dallasTXArtists = require("../lib/functionartists/dallas"),
+  daytonaBeachFLArtists = require("../lib/functionartists/daytonabeachflorida");
 
 const seedData = [
   {
@@ -804,11 +853,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Columbia",
-        artists: []
+        artists: columbiaMOArtists
       },
       {
         name: "Kansas City",
-        artists: []
+        artists: kansasCityMOArtists
       },
       {
         name: "Springfield",
@@ -816,7 +865,7 @@ const seedData = [
       },
       {
         name: "St. Louis",
-        artists: []
+        artists: stLouisMOArtists
       }
     ]
   },
@@ -826,7 +875,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Missoula",
-        artists: []
+        artists: missoulaMTArtists
       }
     ]
   },
@@ -836,11 +885,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Lincoln",
-        artists: []
+        artists: lincolnNEArtists
       },
       {
         name: "Omaha",
-        artists: []
+        artists: omahaNEArtists
       }
     ]
   },
@@ -850,11 +899,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Las Vegas",
-        artists: []
+        artists: lasVegasNVArtists
       },
       {
         name: "Reno",
-        artists: []
+        artists: renoNVArtists
       }
     ]
   },
@@ -869,55 +918,55 @@ const seedData = [
     wikiCities: [
       {
         name: "Atlantic City",
-        artists: []
+        artists: atlanticCityNJArtists
       },
       {
         name: "Bayonne",
-        artists: []
+        artists: bayonneNJArtists
       },
       {
         name: "Camden",
-        artists: []
+        artists: camdenNJArtists
       },
       {
         name: "East Orange",
-        artists: []
+        artists: eastOrangeNJArtists
       },
       {
         name: "Hoboken",
-        artists: []
+        artists: hobokenNJArtists
       },
       {
         name: "Jersey City",
-        artists: []
+        artists: jerseyCityNJArtists
       },
       {
         name: "New Brunswick",
-        artists: []
+        artists: newBrunswickNJArtists
       },
       {
         name: "Newark",
-        artists: []
+        artists: newarkNJArtists
       },
       {
         name: "Passaic",
-        artists: []
+        artists: passaicNJArtists
       },
       {
         name: "Paterson",
-        artists: []
+        artists: patersonNJArtists
       },
       {
         name: "Plainfield",
-        artists: []
+        artists: plainfieldNJArtists
       },
       {
         name: "Summit",
-        artists: []
+        artists: summitNJArtists
       },
       {
         name: "Trenton",
-        artists: []
+        artists: trentonNJArtists
       }
     ]
   },
@@ -926,12 +975,12 @@ const seedData = [
     abbr: "NM",
     wikiCities: [
       {
-        name: "Alburquerque",
-        artists: []
+        name: "Albuquerque",
+        artists: albuquerqueNMArtists
       },
       {
         name: "Santa Fe",
-        artists: []
+        artists: santaFeNMArtists
       }
     ]
   },
@@ -941,27 +990,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Albany",
-        artists: []
+        artists: albanyNYArtists
       },
       {
         name: "Buffalo",
-        artists: []
+        artists: buffaloNYArtists
       },
       {
         name: "Ithaca",
-        artists: []
+        artists: ithacaNYArtists
       },
       {
         name: "Kingston",
-        artists: []
+        artists: kingstonNYArtists
       },
       {
         name: "Mount Vernon",
-        artists: []
+        artists: mountVernonNYArtists
       },
       {
         name: "New Rochelle",
-        artists: []
+        artists: newRochelleNYArtists
       },
       {
         name: "New York City",
@@ -973,27 +1022,27 @@ const seedData = [
       },
       {
         name: "Niagara Falls",
-        artists: []
+        artists: niagaraFallsNYArtists
       },
       {
         name: "Poughkeepsie",
-        artists: []
+        artists: poughkeepsieNYArtists
       },
       {
         name: "Rochester",
-        artists: []
+        artists: rochesterNYArtists
       },
       {
         name: "Syracuse",
-        artists: []
+        artists: syracuseNYArtists
       },
       {
         name: "Troy",
-        artists: []
+        artists: troyNYArtists
       },
       {
         name: "Utica",
-        artists: []
+        artists: uticaNYArtists
       }
     ]
   },
@@ -1003,11 +1052,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Asheville",
-        artists: []
+        artists: ashevilleNCArtists
       },
       {
         name: "Charlotte",
-        artists: []
+        artists: charlotteNCArtists
       },
       {
         name: "Durham",
