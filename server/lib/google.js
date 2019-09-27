@@ -18,11 +18,17 @@ const google = {
 
 
     getGeoData : address => {
+        
         return googleMapsClient.geocode({ address: address })
             .asPromise()
             .then((response) => {
+                console.log(response.json.results[0].address_components)
                 let geoRes = {
                     input: address,
+                    //NEEDS: findIndex() for types: "locality" to find city name. and or any check 
+                    city: response.json.results[0].address_components[(response.json.results[0].address_components.length - 3)].short_name,
+                    state: response.json.results[0].address_components[(response.json.results[0].address_components.length - 2)].short_name,
+
                     formattedAddress: response.json.results[0].formatted_address,
                     latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
                 }
@@ -55,7 +61,7 @@ const google = {
                 return resultObj
             })
             .catch((error) => {
-                console.log("\nERROR | google | getDistance method: to " + to.input + " from " + from.input +  " | " + error)
+                console.log("\nERROR | google | getDistance method: to " + to.formattedAddress + " from " + from.formattedAddress +  " | " + error)
             })
     },
     

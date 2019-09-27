@@ -1,5 +1,5 @@
-const search = require("switch.js");
-const google = require("./google");
+const search = require("../lib/switch");
+const google = require("../lib/google");
 const wikipedia = require("./wikipedia");
 const spotifyNPM = require("./spotifyNPM");
 const spot = require("../controllers/api/spot");
@@ -22,15 +22,14 @@ const algorithm = {
 //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
   tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
-    return (
-      google
-        .startGeo(start, end)
+    return google.startGeo(start, end)
         .then((userInput) => {
           const tripObj = {
             startPoint: userInput[0][0],
             endPoint: userInput[0][1],
             tripTime: userInput[1].tripMinutes
           };
+
           //-------------------------------------------------------------------------------------------------------
           // NEEDS: function that will be run for start and end point to check database to see if it has been searched before.
           // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
@@ -38,8 +37,10 @@ const algorithm = {
           //-------------------------------------------------------------------------------------------------------
 
         // Look up state in database, populated with searchedCities
-        return Promise.all([algorithm.checkSearchedCities(tripObj.startPoint),
-        algorithm.checkSearchedCities(tripObj.endPoint)])
+        // return Promise.all([
+            return algorithm.checkSearchedCities(tripObj.startPoint)
+            // algorithm.checkSearchedCities(tripObj.endPoint),
+            // tripObj.tripTime])
         })
         .then(result => {
             console.log(result)
@@ -52,16 +53,28 @@ const algorithm = {
 
         // //NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
 
-				// //NEEDS: function to grab stuff from the wikiCities collection
+	    //NEEDS: function to grab stuff from the wikiCities collection
 
         })
         .catch((err) => console.log("\nERROR | Tracks error | " + err))
-    );
+    
   },
 
   checkSearchedCities: function(mapPoint) {
-    const userState = mapPoint.formattedAddress.split(", ")[2].split(" ")[0],
-      userCity = mapPoint.formattedAddress.split(", ")[1];
+    // const addressSplit = mapPoint.formattedAddress.split(", ")
+    // let userCity, userState
+    // if (addressSplit.length === 4){
+    //     userState = addressSplit[2].split(" ")[0];
+    //     userCity = addressSplit[1];
+    // } else if ( addressSplit.length === 3) {
+    //     userState = addressSplit[1].split(" ")[0];
+    //     userCity = addressSplit[0];
+    // } else {
+    //     console.log("Address Not formatted correctly")
+    // }
+    const userCity = mapPoint.city,
+          userState = mapPoint.state
+    console.log(userState, userCity)
 
     State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
       // Check if returnedState.searchedCities includes a city.name === userInput
@@ -69,10 +82,12 @@ const algorithm = {
       foundState.searchedCities.forEach((city) => {
         // If that city exists
         if (city.name === userCity) {
-					return city.closestCities
-				}
-				// If city doesn't exist, find the closest cities and save it to the database
-				//return listClosestCities
+            return city.closestCities
+        }
+        return "there are no cities"
+
+        // If city doesn't exist, find the closest cities and save it to the database
+        //return listClosestCities
       });
     });
   },
@@ -145,3 +160,5 @@ const algorithm = {
     }
   }
 };
+
+module.exports = algorithm
