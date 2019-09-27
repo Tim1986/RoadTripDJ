@@ -44,6 +44,7 @@ const google = {
             .then((response) => {
                 let resultObj = {
                     to: to.input,
+                    to_formatted: to.formattedAddress,
                     from: from.input,
                     tripMinutes: response.json.rows[0].elements[0].duration.value * 60,
                     howClose: {
