@@ -1,0 +1,21 @@
+const normanOKArtists = [{"_id":{"$oid":"5d8a0d7e81ba0d56dff19823"},"artist":"Milena Govich","spotifyID":"0ZzOUzarX7fHrkUQyUQKlL","popularity":0.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19824"},"artist":"Wayne Coyne","spotifyID":"5gfPxEps3rAgyDzS5hfxHz","popularity":41.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19825"},"artist":"Chainsaw Kittens","spotifyID":"7Fo3gFeSFjoFg4ky6NyRjC","popularity":8.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19826"},"artist":"Harlow Wilcox","spotifyID":"4ap92n52jgV0Jxmf6xbHcT","popularity":6.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19827"},"artist":"Champian Fulton","spotifyID":"5urGxtsVyaytt3raSxNumC","popularity":15.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19828"},"artist":"Jerod Impichchaachaaha' Tate","spotifyID":"1ip39UEasw1Pgcv9KMILz8","popularity":0.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19829"},"artist":"Jason Deere","spotifyID":"4jkroqZw72tfPiULaeDaEl","popularity":23.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982a"},"artist":"Harrison Kerr","spotifyID":"2L7I64oyBhh86qXOOvcqVi","popularity":0.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982b"},"artist":"Christian Kane","spotifyID":"7pe9RADjXbcHXwxnCHaHRd","popularity":31.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982c"},"artist":"Jesse Ed Davis","spotifyID":"08x8OV8dtemdodZOjZRVM4","popularity":0.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982d"},"artist":"Krystal Keith","spotifyID":"0Uh7SltdvcEKsuWqWohuyB","popularity":29.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982e"},"artist":"Alan Munde","spotifyID":"7GR9EyAIkQ21grXZkvd6J6","popularity":15.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff1982f"},"artist":"Penny Hill","spotifyID":"1YuvAS2YBYSNyDp8xmDJ2S","popularity":0.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19830"},"artist":"Vince Gill","spotifyID":"3IhWQSrLj8EJjdvjFTpCyo","popularity":62.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19831"},"artist":"Brett Walker","spotifyID":"6hKVqFCCdJ3dTCKI1FgLYC","popularity":7.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19832"},"artist":"Radial Spangle","spotifyID":"71va46rEYCoLLaa1rpyRPg","popularity":2.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19833"},"artist":"Brian A. Britt","spotifyID":"2St8eGIvcteT95z6lQxlyz","popularity":25.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19834"},"artist":"Evangelicals","spotifyID":"1rseIU9GBRFvJ0X7SXgC3X","popularity":7.0},
+{"_id":{"$oid":"5d8a0d7e81ba0d56dff19835"},"artist":"Yolanda Kondonassis","spotifyID":"6cDaoaokVtlxKqG1Gi7lYz","popularity":18.0}]
+
+module.exports = normanOKArtists

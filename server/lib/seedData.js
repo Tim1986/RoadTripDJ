@@ -94,12 +94,190 @@ const albanyGAArtists = require("../lib/functionartists/albanygeorgia"),
   clevelandOHArtists = require("../lib/functionartists/cleveland"),
   coloradoSpringsCOArtists = require("../lib/functionartists/coloradospringscolorado"),
   columbiaSCArtists = require("../lib/functionartists/columbiasouthcarolina"),
+  columbusGAArtists = require("../lib/functionartists/columbusgeorgia"),
   columbusOHArtists = require("../lib/functionartists/columbusohio"),
   comptonCAArtists = require("../lib/functionartists/comptoncalifornia"),
   coralSpringsFLArtists = require("../lib/functionartists/coralspringsflorida"),
   corvallisORArtists = require("../lib/functionartists/corvallisoregon"),
   dallasTXArtists = require("../lib/functionartists/dallas"),
-  daytonaBeachFLArtists = require("../lib/functionartists/daytonabeachflorida");
+  daytonaBeachFLArtists = require("../lib/functionartists/daytonabeachflorida"),
+  daytonOHArtists = require("../lib/functionartists/daytonohio"),
+  decaturILArtists = require("../lib/functionartists/decaturillinois"),
+  denverCOArtists = require("../lib/functionartists/denver"),
+  desMoinesIAArtists = require("../lib/functionartists/desmoinesiowa"),
+  detroitMIArtists = require("../lib/functionartists/detroit"),
+  downeyCAArtists = require("../lib/functionartists/downeycalifornia"),
+  duluthMNArtists = require("../lib/functionartists/duluthminnesota"),
+  durhamNCArtists = require("../lib/functionartists/durhamnorthcarolina"),
+  eastonPAArtists = require("../lib/functionartists/eastonpennsylvania"),
+  enidOKArtists = require("../lib/functionartists/enidoklahoma"),
+  eriePAArtists = require("../lib/functionartists/eriepennsylvania"),
+  eugeneORArtists = require("../lib/functionartists/eugeneoregon"),
+  evanstonILArtists = require("../lib/functionartists/evanstonillinois"),
+  evansvilleINArtists = require("../lib/functionartists/evansvilleindiana"),
+  fayettevilleNCArtists = require("../lib/functionartists/fayettevillenorthcarolina"),
+  flintMIArtists = require("../lib/functionartists/flintmichigan"),
+  florenceALArtists = require("../lib/functionartists/florencealabama"),
+  fortLauderdaleFLArtists = require("../lib/functionartists/fortlauderdaleflorida"),
+  fortWayneINArtists = require("../lib/functionartists/fortwayneindiana"),
+  fresnoCAArtists = require("../lib/functionartists/fresnocalifornia"),
+  fullertonCAArtists = require("../lib/functionartists/fullertoncalifornia"),
+  gadsdenALArtists = require("../lib/functionartists/gadsdenalabama"),
+  gainesvilleFLArtists = require("../lib/functionartists/gainesvilleflorida"),
+  garyINArtists = require("../lib/functionartists/garyindiana"),
+  glendaleAZArtists = require("../lib/functionartists/glendalearizona"),
+  glendaleCAArtists = require("../lib/functionartists/glendalecalifornia"),
+  greenbayWIArtists = require("../lib/functionartists/greenbaywisconsin"),
+  greensboroNCArtists = require("../lib/functionartists/greensboronorthcarolina"),
+  greenvilleMSArtists = require("../lib/functionartists/greenvillemississippi"),
+  greenvilleSCArtists = require("../lib/functionartists/greenvillesouthcarolina"),
+  greenwichCTArtists = require("../lib/functionartists/greenwichconnecticut"),
+  hamptonVAArtists = require("../lib/functionartists/hamptonvirginia"),
+  harrisburgPAArtists = require("../lib/functionartists/harrisburgpennsylvania"),
+  hartfordCTArtists = require("../lib/functionartists/hartfordconnecticut"),
+  hattiesburgMSArtists = require("../lib/functionartists/hattiesburgmississippi"),
+  hawthorneCAArtists = require("../lib/functionartists/hawthornecalifornia"),
+  hillsboroOR = require("../lib/functionartists/hillsborooregon"),
+  honoluluHIArtists = require("../lib/functionartists/honoluluhawaii"),
+  hotspringsARArtists = require("../lib/functionartists/hotspringsarkansas"),
+  houstonTXArtists = require("../lib/functionartists/houston"),
+  huntingtonWVArtists = require("../lib/functionartists/huntingtonwestvirginia"),
+  huntsvilleALArtists = require("../lib/functionartists/huntsvillealabama"),
+  indianapolisINArtists = require("../lib/functionartists/indianapolis"),
+  inglewoodCAArtists = require("../lib/functionartists/inglewoodcalifornia"),
+  iowaCityIAArtists = require("../lib/functionartists/iowacityiowa"),
+  jacksonMSArtists = require("../lib/functionartists/jacksonmississippi"),
+  jacksonvilleFLArtists = require("../lib/functionartists/jacksonvilleflorida"),
+  jolietILArtists = require("../lib/functionartists/jolietillinois"),
+  kansasCityKSArtists = require("../lib/functionartists/kansascitykansas"),
+  kenoshaWIArtists = require("../lib/functionartists/kenoshawisconsin"),
+  kirklandWAArtists = require("../lib/functionartists/kirklandwashington"),
+  knoxvilleTNArtists = require("../lib/functionartists/knoxvilletennessee"),
+  lafayetteLAArtists = require("../lib/functionartists/lafayettelouisiana"),
+  lakeCharlesLAArtists = require("../lib/functionartists/lakecharleslouisiana"),
+  lakelandFLArtists = require("../lib/functionartists/lakelandflorida"),
+  lancasterPAArtists = require("../lib/functionartists/lancasterpennsylvania"),
+  lansingMIArtists = require("../lib/functionartists/lansingmichigan"),
+  lawrenceKSArtists = require("../lib/functionartists/lawrencekansas"),
+  lexingtonKYArtists = require("../lib/functionartists/lexingtonkentucky"),
+  littleRockARArtists = require("../lib/functionartists/littlerockarkansas"),
+  longBeachCAArtists = require("../lib/functionartists/longbeachcalifornia"),
+  losAngelesCAArtists = require("../lib/functionartists/losangeles"),
+  louisvilleKYArtists = require("../lib/functionartists/louisvillekentucky"),
+  lowellMAArtists = require("../lib/functionartists/lowellmassachusetts"),
+  lynchburgVAArtists = require("../lib/functionartists/lynchburgvirginia"),
+  maconGAArtists = require("../lib/functionartists/macongeorgia"),
+  madisonWIArtists = require("../lib/functionartists/madisonwisconsin"),
+  manhattanBeachCAArtists = require("../lib/functionartists/manhattanbeachcalifornia"),
+  mariettaGAArtists = require("../lib/functionartists/mariettageorgia"),
+  memphisTNArtists = require("../lib/functionartists/memphistennessee"),
+  meridianMSArtists = require("../lib/functionartists/meridianmississippi"),
+  mesaAZArtists = require("../lib/functionartists/mesaarizona"),
+  miamiFLArtists = require("../lib/functionartists/miami"),
+  milwaukeeWIArtists = require("../lib/functionartists/milwaukee"),
+  minneapolisMNArtists = require("../lib/functionartists/minneapolis"),
+  mobileALArtists = require("../lib/functionartists/mobilealabama"),
+  modestoCAArtists = require("../lib/functionartists/modestocalifornia"),
+  monroeLAArtists = require("../lib/functionartists/monroelouisiana"),
+  montgomeryALArtists = require("../lib/functionartists/montgomeryalabama"),
+  nashvilleTNArtists = require("../lib/functionartists/nashvilletennessee"),
+  natchezMSArtists = require("../lib/functionartists/natchezmississippi"),
+  newHavenCTArtists = require("../lib/functionartists/newhavenconnecticut"),
+  newLondonCTArtists = require("../lib/functionartists/newlondonconnecticut"),
+  newOrleansLAArtists = require("../lib/functionartists/neworleans"),
+  newportBeachCAArtists = require("../lib/functionartists/newportbeachcalifornia"),
+  newportNewsVAArtists = require("../lib/functionartists/newportnewsvirginia"),
+  newportRIArtists = require("../lib/functionartists/newportrhodeisland"),
+  newtonMAArtists = require("../lib/functionartists/newtonmassachusetts"),
+  newYorkCityNYArtists = require("../lib/functionartists/newyorkcitynewyork"),
+  norfolkVAArtists = require("../lib/functionartists/norfolkvirginia"),
+  normanOKArtists = require("../lib/functionartists/normanoklahoma"),
+  norwalkCTArtists = require("../lib/functionartists/norwalkconnecticut"),
+  oaklandCAArtists = require("../lib/functionartists/oaklandcalifornia"),
+  oakParkILArtists = require("../lib/functionartists/oakparkillinois"),
+  ocalaFLArtists = require("../lib/functionartists/ocalaflorida"),
+  ogdenUTArtists = require("../lib/functionartists/ogdenutah"),
+  okalahomaCityOKArtists = require("../lib/functionartists/oklahomacity"),
+  olympiaWAArtists = require("../lib/functionartists/olympiawashington"),
+  orlandoFLArtists = require("../lib/functionartists/orlandoflorida"),
+  oxnardCAArtists = require("../lib/functionartists/oxnardcalifornia"),
+  paducahKYArtists = require("../lib/functionartists/paducahkentucky"),
+  palmSpringsCAArtists = require("../lib/functionartists/palmspringscalifornia"),
+  paloaltoCAArtists = require("../lib/functionartists/paloaltocalifornia"),
+  pasadenaCAArtists = require("../lib/functionartists/pasadenacalifornia"),
+  pensacolaFLArtists = require("../lib/functionartists/pensacolaflorida"),
+  peoriaILArtists = require("../lib/functionartists/peoriaillinois"),
+  philadelphiaPAArtists = require("../lib/functionartists/philadelphia"),
+  phoenixAZArtists = require("../lib/functionartists/phoenixarizona"),
+  pittsburghPAArtists = require("../lib/functionartists/pittsburgh"),
+  pontiacMIArtists = require("../lib/functionartists/pontiacmichigan"),
+  portlandMEArtists = require("../lib/functionartists/portlandmaine"),
+  portlandORArtists = require("../lib/functionartists/portlandoregon"),
+  portsmouthVAArtists = require("../lib/functionartists/portsmouthvirginia"),
+  providenceRIArtists = require("../lib/functionartists/providencerhodeisland"),
+  provoUTArtists = require("../lib/functionartists/provoutah"),
+  racineWIArtists = require("../lib/functionartists/racinewisconsin"),
+  raleighNCArtists = require("../lib/functionartists/raleighnorthcarolina"),
+  readingPAArtists = require("../lib/functionartists/readingpennsylvania"),
+  redondoBeachCAArtists = require("../lib/functionartists/redondobeachcalifornia"),
+  richmondCAArtists = require("../lib/functionartists/richmondcalifornia"),
+  richmondINArtists = require("../lib/functionartists/richmondindiana"),
+  richmondVAArtists = require("../lib/functionartists/richmondvirginia"),
+  riversideCAArtists = require("../lib/functionartists/riversidecalifornia"),
+  rockfordILArtists = require("../lib/functionartists/rockfordillinois"),
+  rockvilleMDArtists = require("../lib/functionartists/rockvillemaryland"),
+  sacramentoCAArtists = require("../lib/functionartists/sacramentocalifornia"),
+  saginawMIArtists = require("../lib/functionartists/saginawmichigan"),
+  saintPaulMNArtists = require("../lib/functionartists/saintpaulminnesota"),
+  salemORArtists = require("../lib/functionartists/salemoregon"),
+  saltLakeCityUTArtists = require("../lib/functionartists/saltlakecity"),
+  sanAntonioTXArtists = require("../lib/functionartists/sanantonio"),
+  sanBernardinoCAArtists = require("../lib/functionartists/sanbernardinocalifornia"),
+  sanDiegoCAArtists = require("../lib/functionartists/sandiego"),
+  sanFranciscoCAArtists = require("../lib/functionartists/sanfrancisco"),
+  sanJoseCAArtists = require("../lib/functionartists/sanjosecalifornia"),
+  sanRafaelCAArtists = require("../lib/functionartists/sanrafaelcalifornia"),
+  santaBarbaraCAArtists = require("../lib/functionartists/santabarbaracalifornia"),
+  santaCruzCAArtists = require("../lib/functionartists/santacruzcalifornia"),
+  santaMonicaCAArtists = require("../lib/functionartists/santamonicacalifornia"),
+  santaRosaCAArtists = require("../lib/functionartists/santarosacalifornia"),
+  savannahGAArtists = require("../lib/functionartists/savannahgeorgia"),
+  scottsdaleAZArtists = require("../lib/functionartists/scottsdalearizona"),
+  scrantonPAArtists = require("../lib/functionartists/scrantonpennsylvania"),
+  seattleWAArtists = require("../lib/functionartists/seattle"),
+  shakerHeightsOHArtists = require("../lib/functionartists/shakerheightsohio"),
+  shreveportLAArtists = require("../lib/functionartists/shreveportlouisiana"),
+  somervilleMAArtists = require("../lib/functionartists/somervillemassachusetts"),
+  southbendINArtists = require("../lib/functionartists/southbendindiana"),
+  spartanburgSCArtists = require("../lib/functionartists/spartanburgsouthcarolina"),
+  spokaneWAArtists = require("../lib/functionartists/spokanewashington"),
+  springfieldMAArtists = require("../lib/functionartists/springfieldmassachusetts"),
+  springfieldMOArtists = require("../lib/functionartists/springfieldmissouri"),
+  springfieldOHArtists = require("../lib/functionartists/springfieldohio"),
+  stamfordCTArtists = require("../lib/functionartists/stamfordconnecticut"),
+  stocktonCAArtists = require("../lib/functionartists/stocktoncalifornia"),
+  stPetersburgFLArtists = require("../lib/functionartists/stpetersburgflorida"),
+  tallahasseeFLArtists = require("../lib/functionartists/tallahasseeflorida"),
+  tampaFLArtists = require("../lib/functionartists/tampaflorida"),
+  theNewYorkMetropolitanAreaArtists = require("../lib/functionartists/thenewyorkmetropolitanarea"),
+  toledoOHArtists = require("../lib/functionartists/toledoohio"),
+  topekaKSArtists = require("../lib/functionartists/topekakansas"),
+  torranceCAArtists = require("../lib/functionartists/torrancecalifornia"),
+  tucsonAZArtists = require("../lib/functionartists/tucsonarizona"),
+  tulsaOKArtists = require("../lib/functionartists/tulsaoklahoma"),
+  vallejoCAArtists = require("../lib/functionartists/vallejocalifornia"),
+  vicksburgMSArtists = require("../lib/functionartists/vicksburgmississippi"),
+  virginiaBeachVAArtists = require("../lib/functionartists/virginiabeachvirginia"),
+  vistaCAArtists = require("../lib/functionartists/vistacalifornia"),
+  washingtonDCArtists = require("../lib/functionartists/washingtondc"),
+  wheelingWVArtists = require("../lib/functionartists/wheelingwestvirginia"),
+  whittierCAArtists = require("../lib/functionartists/whittiercalifornia"),
+  wichitaKSArtists = require("../lib/functionartists/wichitakansas"),
+  wilmingtonDEArtists = require("../lib/functionartists/wilmingtondelaware"),
+  winstonSalemNCArtists = require("../lib/functionartists/winstonsalemnorthcarolina"),
+  worcesterMAArtists = require("../lib/functionartists/worcestermassachusetts"),
+  yorkPAArtists = require("../lib/functionartists/yorkpennsylvania"),
+  youngstownOHArtists = require("../lib/functionartists/youngstownohio");
 
 const seedData = [
   {
@@ -108,27 +286,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Birmingham",
-        artists: []
+        artists: birminghamALArtists
       },
       {
         name: "Florence",
-        artists: []
+        artists: florenceALArtists
       },
       {
         name: "Gadsden",
-        artists: []
+        artists: gadsdenALArtists
       },
       {
         name: "Huntsville",
-        artists: []
+        artists: huntsvilleALArtists
       },
       {
         name: "Mobile",
-        artists: []
+        artists: mobileALArtists
       },
       {
         name: "Montgomery",
-        artists: []
+        artists: montgomeryALArtists
       }
     ]
   },
@@ -138,7 +316,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Anchorage",
-        artists: []
+        artists: anchorageAKArtists
       }
     ]
   },
@@ -148,23 +326,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Glendale",
-        artists: []
+        artists: glendaleAZArtists
       },
       {
         name: "Mesa",
-        artists: []
+        artists: mesaAZArtists
       },
       {
         name: "Phoenix",
-        artists: []
+        artists: phoenixAZArtists
       },
       {
         name: "Scottsdale",
-        artists: []
+        artists: scottsdaleAZArtists
       },
       {
         name: "Tucson",
-        artists: []
+        artists: tucsonAZArtists
       }
     ]
   },
@@ -174,11 +352,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Hot Springs",
-        artists: []
+        artists: hotspringsARArtists
       },
       {
         name: "Little Rock",
-        artists: []
+        artists: littleRockARArtists
       }
     ]
   },
@@ -188,163 +366,163 @@ const seedData = [
     wikiCities: [
       {
         name: "Anaheim",
-        artists: []
+        artists: anaheimCAArtists
       },
       {
         name: "Bakersfield",
-        artists: []
+        artists: bakersfieldCAArtists
       },
       {
         name: "Berkeley",
-        artists: []
+        artists: berkeleyCAArtists
       },
       {
         name: "Beverly Hills",
-        artists: []
+        artists: beverlyHillsCAArtists
       },
       {
         name: "Burbank",
-        artists: []
+        artists: burbankCAArtists
       },
       {
         name: "Compton",
-        artists: []
+        artists: comptonCAArtists
       },
       {
         name: "Downey",
-        artists: []
+        artists: downeyCAArtists
       },
       {
         name: "Fresno",
-        artists: []
+        artists: fresnoCAArtists
       },
       {
         name: "Fullerton",
-        artists: []
+        artists: fullertonCAArtists
       },
       {
         name: "Glendale",
-        artists: []
+        artists: glendaleCAArtists
       },
       {
         name: "Hawthorne",
-        artists: []
+        artists: hawthorneCAArtists
       },
       {
         name: "Inglewood",
-        artists: []
+        artists: inglewoodCAArtists
       },
       {
         name: "Long Beach",
-        artists: []
+        artists: longBeachCAArtists
       },
       {
         name: "Los Angeles",
-        artists: []
+        artists: losAngelesCAArtists
       },
       {
-        name: "Manhatten Beach",
-        artists: []
+        name: "Manhattan Beach",
+        artists: manhattanBeachCAArtists
       },
       {
         name: "Modesto",
-        artists: []
+        artists: modestoCAArtists
       },
       {
         name: "Newport Beach",
-        artists: []
+        artists: newportBeachCAArtists
       },
       {
         name: "Oakland",
-        artists: []
+        artists: oaklandCAArtists
       },
       {
         name: "Oxnard",
-        artists: []
+        artists: oxnardCAArtists
       },
       {
         name: "Palm Springs",
-        artists: []
+        artists: palmSpringsCAArtists
       },
       {
         name: "Palo Alto",
-        artists: []
+        artists: paloaltoCAArtists
       },
       {
         name: "Pasadena",
-        artists: []
+        artists: pasadenaCAArtists
       },
       {
         name: "Redondo Beach",
-        artists: []
+        artists: redondoBeachCAArtists
       },
       {
         name: "Richmond",
-        artists: []
+        artists: richmondCAArtists
       },
       {
         name: "Riverside",
-        artists: []
+        artists: riversideCAArtists
       },
       {
         name: "Sacramento",
-        artists: []
+        artists: sacramentoCAArtists
       },
       {
         name: "San Bernardino",
-        artists: []
+        artists: sanBernardinoCAArtists
       },
       {
         name: "San Diego",
-        artists: []
+        artists: sanDiegoCAArtists
       },
       {
         name: "San Francisco",
-        artists: []
+        artists: sanFranciscoCAArtists
       },
       {
         name: "San Jose",
-        artists: []
+        artists: sanJoseCAArtists
       },
       {
         name: "San Rafael",
-        artists: []
+        artists: sanRafaelCAArtists
       },
       {
-        name: "Santa Barbarbara",
-        artists: []
+        name: "Santa Barbara",
+        artists: santaBarbaraCAArtists
       },
       {
         name: "Santa Cruz",
-        artists: []
+        artists: santaCruzCAArtists
       },
       {
         name: "Santa Monica",
-        artists: []
+        artists: santaMonicaCAArtists
       },
       {
         name: "Santa Rosa",
-        artists: []
+        artists: santaRosaCAArtists
       },
       {
         name: "Stockton",
-        artists: []
+        artists: stocktonCAArtists
       },
       {
         name: "Torrance",
-        artists: []
+        artists: torranceCAArtists
       },
       {
         name: "Vallejo",
-        artists: []
+        artists: vallejoCAArtists
       },
       {
         name: "Vista",
-        artists: []
+        artists: vistaCAArtists
       },
       {
         name: "Whittier",
-        artists: []
+        artists: whittierCAArtists
       }
     ]
   },
@@ -354,15 +532,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Boulder",
-        artists: []
+        artists: boulderCOArtists
       },
       {
         name: "Colorado Springs",
-        artists: []
+        artists: coloradoSpringsCOArtists
       },
       {
         name: "Denver",
-        artists: []
+        artists: denverCOArtists
       }
     ]
   },
@@ -372,31 +550,31 @@ const seedData = [
     wikiCities: [
       {
         name: "Bridgeport",
-        artists: []
+        artists: bridgeportCTArtists
       },
       {
         name: "Greenwich",
-        artists: []
+        artists: greenwichCTArtists
       },
       {
         name: "Hartford",
-        artists: []
+        artists: hartfordCTArtists
       },
       {
         name: "New Haven",
-        artists: []
+        artists: newHavenCTArtists
       },
       {
         name: "New London",
-        artists: []
+        artists: newLondonCTArtists
       },
       {
         name: "Norwalk",
-        artists: []
+        artists: norwalkCTArtists
       },
       {
         name: "Stamford",
-        artists: []
+        artists: stamfordCTArtists
       }
     ]
   },
@@ -406,7 +584,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Wilmington",
-        artists: []
+        artists: wilmingtonDEArtists
       }
     ]
   },
@@ -416,55 +594,55 @@ const seedData = [
     wikiCities: [
       {
         name: "Coral Springs",
-        artists: []
+        artists: coralSpringsFLArtists
       },
       {
         name: "Daytona Beach",
-        artists: []
+        artists: daytonaBeachFLArtists
       },
       {
         name: "Fort Lauderdale",
-        artists: []
+        artists: fortLauderdaleFLArtists
       },
       {
         name: "Gainesville",
-        artists: []
+        artists: gainesvilleFLArtists
       },
       {
         name: "Jacksonville",
-        artists: []
+        artists: jacksonvilleFLArtists
       },
       {
         name: "Lakeland",
-        artists: []
+        artists: lakelandFLArtists
       },
       {
         name: "Miami",
-        artists: []
+        artists: miamiFLArtists
       },
       {
         name: "Ocala",
-        artists: []
+        artists: ocalaFLArtists
       },
       {
         name: "Orlando",
-        artists: []
+        artists: orlandoFLArtists
       },
       {
         name: "Pensacola",
-        artists: []
+        artists: pensacolaFLArtists
       },
       {
         name: "St. Petersburg",
-        artists: []
+        artists: stPetersburgFLArtists
       },
       {
         name: "Tallahassee",
-        artists: []
+        artists: tallahasseeFLArtists
       },
       {
         name: "Tampa",
-        artists: []
+        artists: tampaFLArtists
       }
     ]
   },
@@ -474,35 +652,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Albany",
-        artists: []
+        artists: albanyGAArtists
       },
       {
         name: "Athens",
-        artists: []
+        artists: athensGAArtists
       },
       {
         name: "Atlanta",
-        artists: []
+        artists: atlantaGAArtists
       },
       {
         name: "Augusta",
-        artists: []
+        artists: augustaGAArtists
       },
       {
         name: "Columbus",
-        artists: []
+        artists: columbusGAArtists
       },
       {
         name: "Macon",
-        artists: []
+        artists: maconGAArtists
       },
       {
         name: "Marietta",
-        artists: []
+        artists: mariettaGAArtists
       },
       {
         name: "Savannah",
-        artists: []
+        artists: savannahGAArtists
       }
     ]
   },
@@ -512,7 +690,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Honolulu",
-        artists: []
+        artists: honoluluHIArtists
       }
     ]
   },
@@ -522,7 +700,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Boise",
-        artists: []
+        artists: boiseIDArtists
       }
     ]
   },
@@ -532,35 +710,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Champaign",
-        artists: []
+        artists: champaignILArtists
       },
       {
         name: "Chicago",
-        artists: []
+        artists: chicagoILArtists
       },
       {
         name: "Decatur",
-        artists: []
+        artists: decaturILArtists
       },
       {
         name: "Evanston",
-        artists: []
+        artists: evanstonILArtists
       },
       {
         name: "Joliet",
-        artists: []
+        artists: jolietILArtists
       },
       {
         name: "Oak Park",
-        artists: []
+        artists: oakParkILArtists
       },
       {
         name: "Peoria",
-        artists: []
+        artists: peoriaILArtists
       },
       {
         name: "Rockford",
-        artists: []
+        artists: rockfordILArtists
       }
     ]
   },
@@ -570,35 +748,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Anderson",
-        artists: []
+        artists: andersonINArtists
       },
       {
         name: "Bloomington",
-        artists: []
+        artists: bloomingtonINArtists
       },
       {
         name: "Evansville",
-        artists: []
+        artists: evansvilleINArtists
       },
       {
         name: "Fort Wayne",
-        artists: []
+        artists: fortWayneINArtists
       },
       {
         name: "Gary",
-        artists: []
+        artists: garyINArtists
       },
       {
         name: "Indianapolis",
-        artists: []
+        artists: indianapolisINArtists
       },
       {
         name: "Richmond",
-        artists: []
+        artists: richmondINArtists
       },
       {
         name: "South Bend",
-        artists: []
+        artists: southbendINArtists
       }
     ]
   },
@@ -608,15 +786,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Cedar Rapids",
-        artists: []
+        artists: cedarRapidsIAArtists
       },
       {
         name: "Des Moines",
-        artists: []
+        artists: desMoinesIAArtists
       },
       {
         name: "Iowa City",
-        artists: []
+        artists: iowaCityIAArtists
       }
     ]
   },
@@ -626,19 +804,19 @@ const seedData = [
     wikiCities: [
       {
         name: "Kansas City",
-        artists: []
+        artists: kansasCityKSArtists
       },
       {
         name: "Lawrence",
-        artists: []
+        artists: lawrenceKSArtists
       },
       {
         name: "Wichita",
-        artists: []
+        artists: wichitaKSArtists
       },
       {
         name: "Topeka",
-        artists: []
+        artists: topekaKSArtists
       }
     ]
   },
@@ -648,23 +826,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Ashland",
-        artists: []
+        artists: ashlandKYArtists
       },
       {
         name: "Bowling Green",
-        artists: []
+        artists: bowlingGreenKYArtists
       },
       {
         name: "Lexington",
-        artists: []
+        artists: lexingtonKYArtists
       },
       {
         name: "Louisville",
-        artists: []
+        artists: louisvilleKYArtists
       },
       {
         name: "Paducah",
-        artists: []
+        artists: paducahKYArtists
       }
     ]
   },
@@ -674,27 +852,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Baton Rouge",
-        artists: []
+        artists: batonRougeLAArtists
       },
       {
         name: "Lafayette",
-        artists: []
+        artists: lafayetteLAArtists
       },
       {
         name: "Lake Charles",
-        artists: []
+        artists: lakeCharlesLAArtists
       },
       {
         name: "Monroe",
-        artists: []
+        artists: monroeLAArtists
       },
       {
         name: "New Orleans",
-        artists: []
+        artists: newOrleansLAArtists
       },
       {
         name: "Shreveport",
-        artists: []
+        artists: shreveportLAArtists
       }
     ]
   },
@@ -704,11 +882,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Bangor",
-        artists: []
+        artists: bangorMEArtists
       },
       {
         name: "Portland",
-        artists: []
+        artists: portlandMEArtists
       }
     ]
   },
@@ -718,11 +896,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Baltimore",
-        artists: []
+        artists: baltimoreMDArtists
       },
       {
         name: "Rockville",
-        artists: []
+        artists: rockvilleMDArtists
       }
     ]
   },
@@ -732,35 +910,35 @@ const seedData = [
     wikiCities: [
       {
         name: "Boston",
-        artists: []
+        artists: bostonMAArtists
       },
       {
         name: "Brockton",
-        artists: []
+        artists: brocktonMAArtists
       },
       {
         name: "Cambridge",
-        artists: []
+        artists: cambridgeMAArtists
       },
       {
         name: "Lowell",
-        artists: []
+        artists: lowellMAArtists
       },
       {
         name: "Newton",
-        artists: []
+        artists: newtonMAArtists
       },
       {
         name: "Somerville",
-        artists: []
+        artists: somervilleMAArtists
       },
       {
         name: "Springfield",
-        artists: []
+        artists: springfieldMAArtists
       },
       {
         name: "Worcester",
-        artists: []
+        artists: worcesterMAArtists
       }
     ]
   },
@@ -770,27 +948,27 @@ const seedData = [
     wikiCities: [
       {
         name: "Ann Arbor",
-        artists: []
+        artists: annArborMIArtists
       },
       {
         name: "Detroit",
-        artists: []
+        artists: detroitMIArtists
       },
       {
         name: "Flint",
-        artists: []
+        artists: flintMIArtists
       },
       {
         name: "Lansing",
-        artists: []
+        artists: lansingMIArtists
       },
       {
         name: "Pontiac",
-        artists: []
+        artists: pontiacMIArtists
       },
       {
         name: "Saginaw",
-        artists: []
+        artists: saginawMIArtists
       }
     ]
   },
@@ -800,15 +978,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Duluth",
-        artists: []
+        artists: duluthMNArtists
       },
       {
         name: "Minneapolis",
-        artists: []
+        artists: minneapolisMNArtists
       },
       {
         name: "Saint Paul",
-        artists: []
+        artists: saintPaulMNArtists
       }
     ]
   },
@@ -818,31 +996,31 @@ const seedData = [
     wikiCities: [
       {
         name: "Clarksdale",
-        artists: []
+        artists: clarksdaleMSArtists
       },
       {
         name: "Greenville",
-        artists: []
+        artists: greenvilleMSArtists
       },
       {
         name: "Hattiesburg",
-        artists: []
+        artists: hattiesburgMSArtists
       },
       {
         name: "Jackson",
-        artists: []
+        artists: jacksonMSArtists
       },
       {
         name: "Meridian",
-        artists: []
+        artists: meridianMSArtists
       },
       {
         name: "Natchez",
-        artists: []
+        artists: natchezMSArtists
       },
       {
         name: "Vicksburg",
-        artists: []
+        artists: vicksburgMSArtists
       }
     ]
   },
@@ -861,7 +1039,7 @@ const seedData = [
       },
       {
         name: "Springfield",
-        artists: []
+        artists: springfieldMOArtists
       },
       {
         name: "St. Louis",
@@ -910,7 +1088,7 @@ const seedData = [
   {
     name: "New Hampshire",
     abbr: "NH",
-    wikiCities: []
+    wikiCities: [] // Empty
   },
   {
     name: "New Jersey",
@@ -1014,11 +1192,11 @@ const seedData = [
       },
       {
         name: "New York City",
-        artists: []
+        artists: newYorkCityNYArtists
       },
       {
         name: "the New York metropolitan area",
-        artists: []
+        artists: theNewYorkMetropolitanAreaArtists
       },
       {
         name: "Niagara Falls",
@@ -1060,30 +1238,30 @@ const seedData = [
       },
       {
         name: "Durham",
-        artists: []
+        artists: durhamNCArtists
       },
       {
         name: "Fayetteville",
-        artists: []
+        artists: fayettevilleNCArtists
       },
       {
         name: "Greensboro",
-        artists: []
+        artists: greensboroNCArtists
       },
       {
         name: "Raleigh",
-        artists: []
+        artists: raleighNCArtists
       },
       {
         name: "Winston-Salem",
-        artists: []
+        artists: winstonSalemNCArtists
       }
     ]
   },
   {
     name: "North Dakota",
     abbr: "ND",
-    wikiCities: []
+    wikiCities: [] // Empty
   },
   {
     name: "Ohio",
@@ -1095,39 +1273,39 @@ const seedData = [
       },
       {
         name: "Canton",
-        artists: []
+        artists: cantonOHArtists
       },
       {
         name: "Cincinnati",
-        artists: []
+        artists: cincinnatiOHArtists
       },
       {
         name: "Cleveland",
-        artists: []
+        artists: clevelandOHArtists
       },
       {
         name: "Dayton",
-        artists: []
+        artists: daytonOHArtists
       },
       {
         name: "Columbus",
-        artists: []
+        artists: columbusOHArtists
       },
       {
         name: "Shaker Heights",
-        artists: []
+        artists: shakerHeightsOHArtists
       },
       {
         name: "Springfield",
-        artists: []
+        artists: springfieldOHArtists
       },
       {
         name: "Toledo",
-        artists: []
+        artists: toledoOHArtists
       },
       {
         name: "Youngstown",
-        artists: []
+        artists: youngstownOHArtists
       }
     ]
   },
@@ -1137,19 +1315,19 @@ const seedData = [
     wikiCities: [
       {
         name: "Enid",
-        artists: []
+        artists: enidOKArtists
       },
       {
         name: "Norman",
-        artists: []
+        artists: normanOKArtists
       },
       {
         name: "Oklahoma City",
-        artists: []
+        artists: okalahomaCityOKArtists
       },
       {
         name: "Tulsa",
-        artists: []
+        artists: tulsaOKArtists
       }
     ]
   },
@@ -1159,23 +1337,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Corvallis",
-        artists: []
+        artists: corvallisORArtists
       },
       {
         name: "Eugene",
-        artists: []
+        artists: eugeneORArtists
       },
       {
         name: "Hillsboro",
-        artists: []
+        artists: hillsboroOR
       },
       {
         name: "Portland",
-        artists: []
+        artists: portlandORArtists
       },
       {
         name: "Salem",
-        artists: []
+        artists: salemORArtists
       }
     ]
   },
@@ -1185,43 +1363,43 @@ const seedData = [
     wikiCities: [
       {
         name: "Allentown",
-        artists: []
+        artists: allentownPAArtists
       },
       {
         name: "Easton",
-        artists: []
+        artists: eastonPAArtists
       },
       {
         name: "Erie",
-        artists: []
+        artists: eriePAArtists
       },
       {
         name: "Harrisburg",
-        artists: []
+        artists: harrisburgPAArtists
       },
       {
         name: "Lancaster",
-        artists: []
+        artists: lancasterPAArtists
       },
       {
         name: "Philadelphia",
-        artists: []
+        artists: philadelphiaPAArtists
       },
       {
         name: "Pittsburgh",
-        artists: []
+        artists: pittsburghPAArtists
       },
       {
         name: "Reading",
-        artists: []
+        artists: readingPAArtists
       },
       {
         name: "Scranton",
-        artists: []
+        artists: scrantonPAArtists
       },
       {
         name: "York",
-        artists: []
+        artists: yorkPAArtists
       }
     ]
   },
@@ -1231,11 +1409,11 @@ const seedData = [
     wikiCities: [
       {
         name: "Newport",
-        artists: []
+        artists: newportRIArtists
       },
       {
         name: "Providence",
-        artists: []
+        artists: providenceRIArtists
       }
     ]
   },
@@ -1245,26 +1423,26 @@ const seedData = [
     wikiCities: [
       {
         name: "Charleston",
-        artists: []
+        artists: charlestonSCArtists
       },
       {
         name: "Columbia",
-        artists: []
+        artists: columbiaSCArtists
       },
       {
         name: "Greenville",
-        artists: []
+        artists: greenvilleSCArtists
       },
       {
         name: "Spartanburg",
-        artists: []
+        artists: spartanburgSCArtists
       }
     ]
   },
   {
     name: "South Dakota",
     abbr: "SD",
-    wikiCities: []
+    wikiCities: [] // Empty
   },
   {
     name: "Tennessee",
@@ -1272,15 +1450,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Knoxville",
-        artists: []
+        artists: knoxvilleTNArtists
       },
       {
         name: "Memphis",
-        artists: []
+        artists: memphisTNArtists
       },
       {
         name: "Nashville",
-        artists: []
+        artists: nashvilleTNArtists
       }
     ]
   },
@@ -1290,23 +1468,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Amarillo",
-        artists: []
+        artists: amarilloTXArtists
       },
       {
         name: "Austin",
-        artists: []
+        artists: austinTXArtists
       },
       {
         name: "Dallas",
-        artists: []
+        artists: dallasTXArtists
       },
       {
         name: "Houston",
-        artists: []
+        artists: houstonTXArtists
       },
       {
         name: "San Antonio",
-        artists: []
+        artists: sanAntonioTXArtists
       }
     ]
   },
@@ -1316,15 +1494,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Ogden",
-        artists: []
+        artists: ogdenUTArtists
       },
       {
         name: "Provo",
-        artists: []
+        artists: provoUTArtists
       },
       {
         name: "Salt Lake City",
-        artists: []
+        artists: saltLakeCityUTArtists
       }
     ]
   },
@@ -1334,7 +1512,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Burlington",
-        artists: []
+        artists: burlingtonVTArtists
       }
     ]
   },
@@ -1344,39 +1522,39 @@ const seedData = [
     wikiCities: [
       {
         name: "Alexandria",
-        artists: []
+        artists: alexandriaVAArtists
       },
       {
         name: "Charlottesville",
-        artists: []
+        artists: charlottesvilleVAArtists
       },
       {
         name: "Hampton",
-        artists: []
+        artists: hamptonVAArtists
       },
       {
         name: "Lynchburg",
-        artists: []
+        artists: lynchburgVAArtists
       },
       {
         name: "Newport News",
-        artists: []
+        artists: newportNewsVAArtists
       },
       {
         name: "Norfolk",
-        artists: []
+        artists: norfolkVAArtists
       },
       {
         name: "Portsmouth",
-        artists: []
+        artists: portsmouthVAArtists
       },
       {
         name: "Richmond",
-        artists: []
+        artists: richmondVAArtists
       },
       {
         name: "Virginia Beach",
-        artists: []
+        artists: virginiaBeachVAArtists
       }
     ]
   },
@@ -1386,23 +1564,23 @@ const seedData = [
     wikiCities: [
       {
         name: "Bainbridge Island",
-        artists: []
+        artists: bainbridgeIslandWAArtists
       },
       {
         name: "Kirkland",
-        artists: []
+        artists: kirklandWAArtists
       },
       {
         name: "Olympia",
-        artists: []
+        artists: olympiaWAArtists
       },
       {
         name: "Seattle",
-        artists: []
+        artists: seattleWAArtists
       },
       {
         name: "Spokane",
-        artists: []
+        artists: spokaneWAArtists
       }
     ]
   },
@@ -1412,15 +1590,15 @@ const seedData = [
     wikiCities: [
       {
         name: "Charleston",
-        artists: []
+        artists: charlestonWVArtists
       },
       {
         name: "Huntington",
-        artists: []
+        artists: huntingtonWVArtists
       },
       {
         name: "Wheeling",
-        artists: []
+        artists: wheelingWVArtists
       }
     ]
   },
@@ -1430,30 +1608,30 @@ const seedData = [
     wikiCities: [
       {
         name: "Green Bay",
-        artists: []
+        artists: greenbayWIArtists
       },
       {
         name: "Kenosha",
-        artists: []
+        artists: kenoshaWIArtists
       },
       {
         name: "Madison",
-        artists: []
+        artists: madisonWIArtists
       },
       {
         name: "Milwaukee",
-        artists: []
+        artists: milwaukeeWIArtists
       },
       {
         name: "Racine",
-        artists: []
+        artists: racineWIArtists
       }
     ]
   },
   {
     name: "Wyoming",
     abbr: "WY",
-    wikiCities: []
+    wikiCities: [] // Empty
   },
   {
     name: "D.C.",
@@ -1461,7 +1639,7 @@ const seedData = [
     wikiCities: [
       {
         name: "Washington",
-        artists: []
+        artists: washingtonDCArtists
       }
     ]
   }

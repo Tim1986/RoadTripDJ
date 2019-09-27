@@ -59,4 +59,4 @@ const eugeneORArtists = [{ "_id": { "$oid": "5d89824681ba0d56dff19175" }, "artis
 { "_id": { "$oid": "5d89824681ba0d56dff191af" }, "artist": "Stick Against Stone", "spotifyID": "4ZV24336cMjQjb9ezrfgcJ", "popularity": 0.0 }
 ]
 
-module.export = eugeneORArtists;
+module.exports = eugeneORArtists;
