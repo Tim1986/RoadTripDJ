@@ -34,7 +34,7 @@ const spot = {
                   let URI = track.uri
                   spotifyURIs.push(URI)
                   console.log("Artist Names: ", track.artists[0].name);
-                  console.log("Song Names: ", track.name);                  
+                  // console.log("Song Names: ", track.name);                  
                 })
               })
               console.log(spotifyURIs)
