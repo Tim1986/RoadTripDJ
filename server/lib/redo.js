@@ -16,14 +16,14 @@ const algorithm = {
                 tripTime: userInput[1].tripMinutes
             }
         //-------------------------------------------------------------------------------------------------------
-        // function that will be run for start and end point to check database to see if it has been searched before. 
+        // NEEDS: function that will be run for start and end point to check database to see if it has been searched before. 
         // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
         // if not, it should return the regional list of cities to compare distance with
         //-------------------------------------------------------------------------------------------------------
 
         if (itExistsInDB) {
-            //code to grab the artists from the from the searchCities
-            //and then pass that to the spotifyTest function
+        //NEEDS: code to grab the artists from the from the searchCities
+        //and then pass that to the spotifyTest function
         } else {
 
         const startArray = algorithm.getSearch(tripObj.startPoint)
@@ -40,7 +40,10 @@ const algorithm = {
         const startFormatted = algorithm.format(startClosest),
               endFormatted = algorithm.format(endClosest)
         
-        //function to grab stuff 
+        //NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
+
+
+        //NEEDS: function to grab stuff from the wikiCities collection
 
         })
         .catch(err => console.log("\nERROR | Tracks error | " + err))
