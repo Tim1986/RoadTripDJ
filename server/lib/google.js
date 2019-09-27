@@ -21,8 +21,16 @@ const google = {
         return googleMapsClient.geocode({ address: address })
             .asPromise()
             .then((response) => {
+                const cityIndex = response.json.results[0].address_components.findIndex(components => {
+                    return components.types.includes("locality")
+                })
+                const stateIndex = response.json.results[0].address_components.findIndex(components => {
+                    return components.types.includes("administrative_area_level_1")
+                })
                 let geoRes = {
                     input: address,
+                    city:response.json.results[0].address_components[cityIndex],
+                    state:response.json.results[0].address_components[stateIndex],
                     formattedAddress: response.json.results[0].formatted_address,
                     latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
                 }

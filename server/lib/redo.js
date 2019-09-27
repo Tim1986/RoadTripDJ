@@ -30,6 +30,7 @@ const algorithm = {
             endPoint: userInput[0][1],
             tripTime: userInput[1].tripMinutes
           };
+          console.log(tripObj)
           //-------------------------------------------------------------------------------------------------------
           // NEEDS: function that will be run for start and end point to check database to see if it has been searched before.
           // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
