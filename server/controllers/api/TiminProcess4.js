@@ -1,74 +1,52 @@
 let test = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8],
-    [9, 10, 11, 12, 13, 14, 15, 16],
-    [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
-    [31]
+    [
+        { artist: 1, spotifyID: 1.5 },
+        { artist: 2, spotifyID: 2.5 },
+        { artist: 3, spotifyID: 3.5 },
+        { artist: 4, spotifyID: 4.5 },
+        { artist: 5, spotifyID: 5.5 },
+    ],
+    [
+        { artist: 6, spotifyID: 6.5 },
+        { artist: 7, spotifyID: 7.5 },
+        { artist: 8, spotifyID: 8.5 },
+    ],
+    [
+        { artist: 9, spotifyID: 9.5 },
+        { artist: 10, spotifyID: 10.5 },
+        { artist: 11, spotifyID: 11.5 },
+        { artist: 12, spotifyID: 12.5 },
+        { artist: 13, spotifyID: 13.5 },
+        { artist: 14, spotifyID: 14.5 },
+        { artist: 15, spotifyID: 15.5 },
+        { artist: 16, spotifyID: 16.5 },
+    ],
+    [
+        { artist: 17, spotifyID: 17.5 },
+        { artist: 18, spotifyID: 18.5 },
+        { artist: 19, spotifyID: 19.5 },
+        { artist: 20, spotifyID: 20.5 },
+        { artist: 21, spotifyID: 21.5 },
+        { artist: 22, spotifyID: 22.5 },
+        { artist: 23, spotifyID: 23.5 },
+        { artist: 24, spotifyID: 24.5 },
+        { artist: 25, spotifyID: 25.5 },
+        { artist: 26, spotifyID: 26.5 },
+        { artist: 27, spotifyID: 27.5 },
+        { artist: 28, spotifyID: 28.5 },
+        { artist: 29, spotifyID: 29.5 },
+        { artist: 30, spotifyID: 30.5 },
+    ],
+    [{ artist: 31, spotifyID: 31.5 },]
 ]
 
-// let test = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]]
+// const birminghamALArtists = require("./birminghamalabama")
+// const anchorageALArtists = require("./anchoragealaska")
+// const riversideCAArtists = require("./riversidecalifornia")
+// const richmondCAArtists = require("./richmondcalifornia")
+// const comptonCAArtists = require("./comptoncalifornia")
 
-// let test = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]]
-
-// let test2 = [
-//     [
-//         { "artist": "Steve Barton" },
-//         { "artist": "Bobby Bones" },
-//         { "artist": "Henry Glover" },
-//         { "artist": "Randy Goodrum" },
-//         { "artist": "Billy Bob Thornton" },
-//         { "artist": "David Ruffin" },
-//         { "artist": "Roseanna Vitro" }
-//     ],
-//     [
-//         { "artist": "Jordin Sparks" },
-//         { "artist": "Knights of the Abyss" },
-//         { "artist": "Craig Mabbitt" },
-//         { "artist": "Nate Ruess" },
-//         { "artist": "Marty Robbins" },
-//         { "artist": "David Hernandez" }
-//     ],
-//     [
-//         { "artist": "Yelawolf" },
-//         { "artist": "Danny Mayo" },
-//         { "artist": "Aimee Mayo" },
-//         { "artist": "Bradley Gaskin" },
-//         { "artist": "Jean Cox" },
-//         { "artist": "Grant Langston" },
-//         { "artist": "Jerry McCain" },
-//         { "artist": "Tommy Stewart" },
-//         { "artist": "Gordon Mote" },
-//         { "artist": "Gold City" }
-//     ],
-//     [
-//         { "artist": "The Butler Twins" },
-//         { "artist": "Autry Inman" },
-//         { "artist": "Sam Phillips" },
-//         { "artist": "Donna Jean Godchaux" },
-//         { "artist": "Jerry Carrigan" },
-//         { "artist": "Donnie Fritts" },
-//         { "artist": "Buddy Killen" },
-//         { "artist": "W. C. Handy" },
-//         { "artist": "Melba Montgomery" },
-//         { "artist": "Lenny LeBlanc" },
-//         { "artist": "Roger Briggs" },
-//         { "artist": "B. Cooper" },
-//     ],
-//     [
-//         { "artist": "Quinn Christopherson" },
-//         { "artist": "Starship Amazing" },
-//         { "artist": "Mythological Horses" },
-//         { "artist": "Khleo Thomas" },
-//         { "artist": "Olga Bell" },
-//         { "artist": "Kate Earl" },
-//         { "artist": "Libby Roderick" },
-//         { "artist": "Pamyua" },
-//         { "artist": "Lane McCray" },
-//         { "artist": "Alan Paul" },
-//         { "artist": "Carmel Buckingham" },
-//         { "artist": "Marcus Shelby" }
-//     ]
-// ]
+// let test = [anchorageALArtists, birminghamALArtists, riversideCAArtists, richmondCAArtists, comptonCAArtists]
 
 const pickTwenty = array => {
     const justTwenty = []
@@ -96,7 +74,11 @@ const searchCity = (array, justTwenty, city) => {
     } else {
         for (let i = 0; i < array[city].length; i++) {
             // console.log(array[city][i])
-            justTwenty.push(array[city][i])
+            let obj = {
+                name: array[city][i].artist,
+                spotifyID: array[city][i].spotifyID
+            }
+            justTwenty.push(obj)
         }
     }
 }
@@ -107,7 +89,11 @@ const getRandom = (array, justTwenty, city) => {
         let randomNum = Math.floor(Math.random() * array[city].length)
         // console.log("randomNum is: " + randomNum)
         if (!usedRandomNumbers.includes(randomNum)) {
-            justTwenty.push(array[city][randomNum])
+            let obj = {
+                name: array[city][randomNum].artist,
+                spotifyID: array[city][randomNum].spotifyID
+            }
+            justTwenty.push(obj)
             usedRandomNumbers.push(randomNum)
             // console.log(usedRandomNumbers)
         }
@@ -115,37 +101,6 @@ const getRandom = (array, justTwenty, city) => {
     return justTwenty
 }
 
-console.log(pickTwenty(test))
-console.log(pickTwenty(test).length)
-
-// let songsLeft = 20 - justTwenty.length
-// if (array[1].length >= songsLeft) {
-//     // randomly push songsLeft songs into justTwenty
-//     return getRandom(array, justTwenty, 1)
-// } else {
-//     for (let i = 0; i < array[1].length; i++) {
-//         justTwenty.push(array[1][i])
-//     }
-//     let songsLeft = 20 - justTwenty.length
-//     if (array[2].length >= songsLeft) {
-//         // randomly push songsLeft songs into justTwenty
-//         return getRandom(array, justTwenty, 2)
-//     } else {
-//         for (let i = 0; i < array[2].length; i++) {
-//             justTwenty.push(array[2][i])
-//         }
-//         let songsLeft = 20 - justTwenty.length
-//         if (array[3].length >= songsLeft) {
-//             // randomly push songsLeft songs into justTwenty
-//             return getRandom(array, justTwenty, 3)
-//         } else {
-//             for (let i = 0; i < array[3].length; i++) {
-//                 justTwenty.push(array[3][[i]])
-//             }
-//             let songsLeft = 20 - justTwenty.length
-//             // randomly push songsLeft songs into justTwenty
-//             return getRandom(array, justTwenty, 4)
-//         }
-//     }
-
-// }
+let finalArray = pickTwenty(test)
+console.log(finalArray)
+console.log(finalArray.length)

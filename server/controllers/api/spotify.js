@@ -185,17 +185,27 @@ router.get("/playlist/new/:userID/:accessToken", (req, res) => {
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
     
-  spotifyTest.controller([
-    { spotifyID: '4FXXf4RDJ6TIOX11JywHUg'},
-    { spotifyID: '6IKq5gnh3GQrnxztypZKZR'},
-    { spotifyID: '0lRHJ9PmO1uOD7LUO89KzI'},
-    { spotifyID: '3KT4jB978CkSbdqWbLgT1x'},
-    { spotifyID: '6gsEOKx8Z0CkVviR9DC3W6'}],
-    [{spotifyID:"2eTcJVakGgCvZQMnw9Evbn"},
-    {spotifyID:"4ew79B4SqevHGtYGR9bY0t"},
-    {spotifyID:"2AUT4fNQ2QC0e2f5pIxOCd"},
-    {spotifyID:"5vKNduT1XEQtCsdTPlVPkT"},
-    {spotifyID:"5OoN9Ifb912te3rnAkXISP"}], accessToken)
+  spotifyTest.controller([ { spotifyID: '0tzC81XDBWtTPfJyUg6O2j' },
+  { spotifyID: '7xiWlhA5ShFKDX05WHuwgJ' },
+  { spotifyID: '4ksX5V17mBghfLyHLw3j4I' },
+  { spotifyID: '1XpVrDPWfcwfoiibRjyBvc' },
+  { spotifyID: '1zjqPZmlIYTMAjmDtigRSo' },
+  { spotifyID: '51P4Dbg6whYIZ0WexxVUqX' },
+  { spotifyID: '1IVub12Ffx56KIVhTIGOGU' },
+  { spotifyID: '2M8PVNl4h0SpE23a6Z6BOW' },
+  { spotifyID: '6M6Nof3tXxZ41LvOcFEXdm' },
+  { spotifyID: '76uYhRYlr6WwZhPHLXNQK6' },
+   ],
+    [{ spotifyID: '4U1ljhhuXnNEuoGGpC8b6Q' },
+    { spotifyID: '4jHrN6nBdviGaDZpkImoCJ' },
+    { spotifyID: '6L5kgEyFIlckHbMdRM2KXQ' },
+    { spotifyID: '2pZCKLhbrrDD4PwEzrDig3' },
+    { spotifyID: '4C2mRKodTEQRrE5EaGtjr5' },
+    { spotifyID: '6W07XPRu62EPkBuzauIQTI' },
+    { spotifyID: '5OPhZptrztOU4W75eMEPiX' },
+    { spotifyID: '0oTDbGjQMOIgGTnYGoh4W1' },
+    { spotifyID: '0H0yrKDty3I7pPrNUSH3wW' },
+    { spotifyID: '2eFVIT8j6TJ7pPMhZYPwti' }], accessToken)
   
   // axios({
   //   url: `https://api.spotify.com/v1/users/${userID}/playlists`,
