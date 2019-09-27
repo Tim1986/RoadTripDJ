@@ -1,0 +1,20 @@
+const scottsdaleAZArtists = [{"_id":{"$oid":"5d8a20e481ba0d56dff19d5b"},"artist":"Obadiah Parker","spotifyID":"3Kji8hBU9Tqea6pAWRwagQ","popularity":46.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d5c"},"artist":"Ralna English","spotifyID":"6neCa2c9GnB0a3nq9nbl67","popularity":0.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d5d"},"artist":"Bret Michaels","spotifyID":"1eKucUW0u8DXDBkNCewl0m","popularity":37.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d5e"},"artist":"Craig Mabbitt","spotifyID":"0whorprfBPk2ZY7u81QwHa","popularity":25.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d5f"},"artist":"Tamar Kaprelian","spotifyID":"7bP6eltGhNnG66NPQH3Zpd","popularity":17.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d60"},"artist":"Lauren Hildebrandt","spotifyID":"2H1wvvHoZKyXKgWz1u6VUG","popularity":0.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d61"},"artist":"Jerry Riopelle","spotifyID":"3MaUsdkXvsEqYhPLysaKBw","popularity":9.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d62"},"artist":"Tim Kelleher","spotifyID":"2sAgMs7CGaiXlik6P4c6zP","popularity":0.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d63"},"artist":"Heather Morris","spotifyID":"161amjFMgVmXZFKdRea4Q6","popularity":1.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d64"},"artist":"Joey DeFrancesco","spotifyID":"2hpwTpq2QENZv7EAvniKDR","popularity":39.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d65"},"artist":"John W. Peterson","spotifyID":"37gN6Z45aRhTsMMoybDdkP","popularity":0.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d66"},"artist":"Jerry Lawson","spotifyID":"7mQKFWdLSZCt66Gi49tqfu","popularity":8.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d67"},"artist":"Nils Lofgren","spotifyID":"2TpAfGX0XNikAg5QjrbbvE","popularity":42.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d68"},"artist":"Marshall Trimble","spotifyID":"1cHmfbJ63Bj2L4JQ0EruNK","popularity":0.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d69"},"artist":"Silas Hite","spotifyID":"3wNDer1huCI8BLSeL8k3jA","popularity":1.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d6a"},"artist":"Scott MacIntyre","spotifyID":"3zMmfPXv5UUdgE91Mmeb0H","popularity":6.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d6b"},"artist":"Kongos","spotifyID":"58R5LHkK3vkmEyGUPOR5kS","popularity":59.0},
+{"_id":{"$oid":"5d8a20e481ba0d56dff19d6c"},"artist":"Thomas L. Thomas","spotifyID":"1QIk1DH335tib4aGiuk6Pq","popularity":18.0}]
+
+module.exports = scottsdaleAZArtists

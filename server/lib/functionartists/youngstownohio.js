@@ -1,0 +1,27 @@
+const youngsTownOHArtists = [{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f57f" }, "artist": "The Human Beinz", "spotifyID": "7KdxWrkwsSjIxyHL0HNtiv", "popularity": 39.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f580" }, "artist": "Tiny Bradshaw", "spotifyID": "70sHURBVOq2rwWkmBpDxYa", "popularity": 30.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f581" }, "artist": "Stiv Bators", "spotifyID": "3q963NeNihjI0vYAGLIpjI", "popularity": 21.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f582" }, "artist": "The Edsels", "spotifyID": "7FQVHPRA74BTNsNHRob0F7", "popularity": 29.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f583" }, "artist": "Lady Miss Kier", "spotifyID": "3EnQ902sUjgJYPpOXtVYLD", "popularity": 5.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f584" }, "artist": "George Bennard", "spotifyID": "1OrADibiLxDMpCve1qgEwJ", "popularity": 6.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f585" }, "artist": "Beebe Freitas", "spotifyID": "0velnWkVfSHZSLUeyZJMtd", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f586" }, "artist": "Donald Erb", "spotifyID": "2WYk125Tw800AYBklj265e", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f587" }, "artist": "Booker Newberry III", "spotifyID": "1yv6dwyahiw7s50m4a6jW5", "popularity": 32.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f588" }, "artist": "John DeMain", "spotifyID": "6BahJrMevOG1dKeCY9KVKe", "popularity": 14.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f589" }, "artist": "Lawrence Brownlee", "spotifyID": "38ZFGQidKbRMrPPA2sqE8n", "popularity": 15.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58a" }, "artist": "Joe Pizzulo", "spotifyID": "1H7ISY9TtKU7Ogx2VhKq36", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58b" }, "artist": "John Sferra", "spotifyID": "3N7Pe4NWjg7mUkVFu5qgvE", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58c" }, "artist": "Mick", "spotifyID": "1FvjvACFvko2Z91IvDljrx", "popularity": 62.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58d" }, "artist": "Mark Boals", "spotifyID": "3DZswaiXDAxwBmRG6QfcOv", "popularity": 8.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58e" }, "artist": "Phil Keaggy", "spotifyID": "1bAzlT6fMBcvCfwgh4S3Xl", "popularity": 40.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f58f" }, "artist": "JD Eicher", "spotifyID": "410MPX0LjYx4PFgIJsBbPT", "popularity": 19.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f590" }, "artist": "Anthony LaMarca", "spotifyID": "2TM8Ql6kzOWW3fF8t3Jn3b", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f591" }, "artist": "Ronald Bell", "spotifyID": "5HwLAC2tkAyerjLmbABYDL", "popularity": 1.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f592" }, "artist": "Maureen McGovern", "spotifyID": "3bnf5pPVQFWv762IiavilV", "popularity": 33.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f593" }, "artist": "Bobby Marchan", "spotifyID": "3hHAdG4gMD9GnqqWWST9D7", "popularity": 14.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f594" }, "artist": "Youngstown", "spotifyID": "0icdU2PQXnZ5Fo1EGkb6BU", "popularity": 19.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f595" }, "artist": "Kendra Ross", "spotifyID": "0JecZKwHhhu33XL7HJKGpI", "popularity": 14.0 },
+{ "_id": { "$oid": "5d8a2e848f7cfb4d4cb9f596" }, "artist": "Emii", "spotifyID": "3ofwHk3IbzOnWUaTfZ5TNj", "popularity": 18.0 }
+]
+
+module.exports = youngsTownOHArtists;

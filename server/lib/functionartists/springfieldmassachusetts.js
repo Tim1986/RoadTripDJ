@@ -1,0 +1,27 @@
+const springfieldMAArtists = [{ "_id": { "$oid": "5d8a229781ba0d56dff19df9" }, "artist": "Bill Danoff", "spotifyID": "1K2t6CrwYBJgp3Kr7C6BAP", "popularity": 26.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dfa" }, "artist": "Carole Fredericks", "spotifyID": "4EfRgpfLaAzQLV08MpruGH", "popularity": 52.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dfb" }, "artist": "Marjorie Hughes", "spotifyID": "0uLyz5wCWsQt9C96NkQhiO", "popularity": 5.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dfc" }, "artist": "Tony MacAlpine", "spotifyID": "5gB57Ct8qLWAo6dlTjp5QI", "popularity": 28.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dfd" }, "artist": "Joe Morello", "spotifyID": "2XHGLglpO58EeFaYktKslK", "popularity": 9.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dfe" }, "artist": "Steven Schoenberg", "spotifyID": "4UMW99KssDF8049ZhQe7Us", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19dff" }, "artist": "Ashley Gearing", "spotifyID": "1SBOIGVsnKRnTj8Cp7xthl", "popularity": 20.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e00" }, "artist": "Linda Perry", "spotifyID": "5tfiJ40SRxluWNgA6ruvSo", "popularity": 31.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e01" }, "artist": "Eddie Fontaine", "spotifyID": "2OJEqa0vH3epErNtguOFFp", "popularity": 12.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e02" }, "artist": "Jeff Winkless", "spotifyID": "0Me4DreT17CVEHWszbNWMu", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e03" }, "artist": "Jeanne Sagan", "spotifyID": "0ymAwhb4qsvKeF9RP1duXl", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e04" }, "artist": "Tommy Tallarico", "spotifyID": "1gxG8dxYpWw4KpYkH3TFgq", "popularity": 26.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e05" }, "artist": "Ran Blake", "spotifyID": "5Oe2el698y8tac9DMvlI7o", "popularity": 17.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e06" }, "artist": "Adele Addison", "spotifyID": "0efwUZapTfJs8BJHoJKUke", "popularity": 9.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e07" }, "artist": "Eddie Marshall", "spotifyID": "5039NlFULng6rwXaLxxUbo", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e08" }, "artist": "D. Woods", "spotifyID": "1Qceau3EXQ0nVywCdY8smF", "popularity": 24.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e09" }, "artist": "Bruce Forman", "spotifyID": "1bnizoGwMKVeSsLBtvfC2K", "popularity": 9.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0a" }, "artist": "Herbert Blomstedt", "spotifyID": "3H5lFsmGtr8CoZexz2rznB", "popularity": 35.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0b" }, "artist": "Aaron Lewis", "spotifyID": "2t2XKfWKLXpFIjFwy1K8wx", "popularity": 62.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0c" }, "artist": "Phil Woods", "spotifyID": "6G4hVmXKJ9NW5JecncK89f", "popularity": 40.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0d" }, "artist": "Paul Weston", "spotifyID": "3EVyH5tLgdq62aXTdKfzey", "popularity": 42.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0e" }, "artist": "Norman Leyden", "spotifyID": "4ORqqaeZop3yziho1yD5nZ", "popularity": 1.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e0f" }, "artist": "Signs", "spotifyID": "0yxJx8OEyDfd7dzLsFuNrS", "popularity": 40.0 },
+{ "_id": { "$oid": "5d8a229781ba0d56dff19e10" }, "artist": "Lambert Murphy", "spotifyID": "0BVbTjWa8IiDG5WBIaEShk", "popularity": 0.0 }
+]
+
+module.exports = springfieldMAArtists;

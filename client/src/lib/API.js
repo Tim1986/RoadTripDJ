@@ -112,5 +112,16 @@ export default {
         })
         .catch((err) => console.log(err));
     }
+  },
+
+  DB: {
+    seed: function() {
+      axios({
+        method: "GET",
+        url: "/api/db/seed"
+      })
+        .then((response) => console.log(response))
+        .catch((err) => console.log(err));
+    }
   }
 };

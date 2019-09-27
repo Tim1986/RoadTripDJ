@@ -1,0 +1,20 @@
+const santabarbaraCAArtists = [{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cd8"},"artist":"Nicky Shane","spotifyID":"0eJUGQZbrjLd5myHQpFlrz","popularity":0.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cd9"},"artist":"Jay Dee Daugherty","spotifyID":"2BKyVvd8rtg2VbJnYdCnKU","popularity":5.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cda"},"artist":"Glen Phillips","spotifyID":"7pbZAYKypiqCp97hiE8YmN","popularity":24.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cdb"},"artist":"Jordan Corey","spotifyID":"7fVAMCPyWtZf1yx92YTBmJ","popularity":27.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cdc"},"artist":"David Woodard","spotifyID":"3f2lzAGkC3mpJxr9wNKYJq","popularity":13.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cdd"},"artist":"Damizza","spotifyID":"153DSc5aP292d50HWp2SfF","popularity":17.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cde"},"artist":"Gardens & Villa","spotifyID":"5NgfalfOtMDHkJ0SbFAxyA","popularity":37.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19cdf"},"artist":"Leonardo De Lorenzo","spotifyID":"50xa9CCdnIhAT8DZ4SwCdx","popularity":1.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce0"},"artist":"Seven Lions","spotifyID":"6fcTRFpz0yH79qSKfof7lp","popularity":68.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce1"},"artist":"Katy Perry","spotifyID":"6jJ0s89eD6GaHleKKya26X","popularity":86.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce2"},"artist":"Julie Felix","spotifyID":"7jqjvT22ycFRTQD0lI6Vi8","popularity":18.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce3"},"artist":"Parry Gripp","spotifyID":"56P8qdYp640M24wkk9eTfc","popularity":54.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce4"},"artist":"Rebelution","spotifyID":"2WjvvwAX0mdWwq3aFuUdtc","popularity":68.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce5"},"artist":"Tom Rainey","spotifyID":"3GLpFMa3feEODjzWx0XSIO","popularity":27.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce6"},"artist":"The Tearaways","spotifyID":"4oLc9GOXQoeHrvKYJyRtgV","popularity":24.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce7"},"artist":"Crosby Loggins","spotifyID":"1XMyelskjrdVKYhWrPfD1X","popularity":7.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce8"},"artist":"Steve Davis","spotifyID":"37SVnwHrnnfBR1Gb0Yq7GD","popularity":39.0},
+{"_id":{"$oid":"5d8a1f0a81ba0d56dff19ce9"},"artist":"Kathleen Wilhoite","spotifyID":"0HzGzdLEXxNzJbuhMJihe2","popularity":0.0}]
+
+module.exports = santabarbaraCAArtists
