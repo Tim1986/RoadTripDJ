@@ -32,4 +32,4 @@ const garyINArtists = [{ "_id": { "$oid": "5d8985fb81ba0d56dff19270" }, "artist"
 { "_id": { "$oid": "5d8985fb81ba0d56dff1928f" }, "artist": "Praiz'", "spotifyID": "41MWgwfjzWDupE1i0OUghd", "popularity": 42.0 }
 ]
 
-modules.exports = garyINArtists;
+module.exports = garyINArtists;

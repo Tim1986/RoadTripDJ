@@ -19,4 +19,4 @@ const norwalkCTArtists = [{ "_id": { "$oid": "5d8cfc0fff66aa68f48f0a8b" }, "arti
 { "_id": { "$oid": "5d8cfc0fff66aa68f48f0a9d" }, "artist": "Adam Nussbaum", "spotifyID": "1ymZAHNSJ5rvzjW01iwQRi", "popularity": 19.0 }
 ]
 
-modules.exports = norwalkCTArtists;
+module.exports = norwalkCTArtists;

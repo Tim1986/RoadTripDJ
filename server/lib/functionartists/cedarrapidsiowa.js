@@ -7,4 +7,4 @@ const cedarRapidsIAArtists = [{ "_id": { "$oid": "5d89798a81ba0d56dff18f4c" }, "
 { "_id": { "$oid": "5d89798a81ba0d56dff18f52" }, "artist": "Riley Smith", "spotifyID": "6kVxCBUNiNjVcpj1ODhViy", "popularity": 18.0 }
 ]
 
-modules.exports = cedarRapidsIAArtists;
+module.exports = cedarRapidsIAArtists;
