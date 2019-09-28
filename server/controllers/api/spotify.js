@@ -266,7 +266,7 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   // spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
   // redo.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
   // return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
-  return algorithm.getSearch('TN')
+  return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
   .then(res => console.log("this stuff is", res))
   // axios({
   //   url: `https://api.spotify.com/v1/users/${userID}/playlists`,
