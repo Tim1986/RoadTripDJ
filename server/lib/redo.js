@@ -22,6 +22,7 @@ const algorithm = {
   //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
   tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
+
     return google
       .startGeo(start, end)
       .then((userInput) => {
@@ -50,20 +51,21 @@ const algorithm = {
         // result contains 3 items:
         //    result.startPoint, result.endPoint, and result.tripTime
         //
-
+        console.log("Result:", result)
         // Create an array to hold the arrays of startPoint Artists
-        const listSPArtists = [];
-        result.startPoint.forEach((city) => {
-          const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
-          listSPArtists.push(listCityArtists);
-        });
+        // const listSPArtists = [];
+        // result[0].forEach((city) => {
+        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
+        //   listSPArtists.push(listCityArtists);
+        // });
 
         // Create an array to hold the arrays of endPoint Artists
-        const listEPArtists = [];
-        result.endPoint.forEach((city) => {
-          const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
-          listEPArtists.push(listCityArtists);
-        });
+        // const listEPArtists = [];
+        // result[1].forEach((city) => {
+        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
+        //   listEPArtists.push(listCityArtists);
+        // });
+
       })
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
@@ -87,10 +89,12 @@ const algorithm = {
               }
             });
           }
-          // If city doesn't exist, find the closest cities and save it to the database
-          algorithm.createSearchedCity(foundState, userCity, listClosestCities);
-          resolve(listClosestCities);
-          // resolve(console.log("there are no cities"));
+          algorithm.getClosest(mapPoint).then((listClosestCities) => {
+            // If city doesn't exist, find the closest cities and save it to the database
+            algorithm.createSearchedCity(foundState, userCity, listClosestCities);
+            resolve(listClosestCities);
+            // resolve(console.log("there are no cities"));
+          });
         });
     });
   },
@@ -147,14 +151,12 @@ const algorithm = {
     });
   },
 
-  getSearch: function(pointObj) {
-    const split = pointObj.formattedAddress.split(", ");
-    const abrv = split[2].split(" ");
-    return search.citySearch(abrv[0]);
+  getSearch: function(state) {
+    return search.citySearch(state);
   },
 
   findClosest: function(point) {
-    const array = algorithm.getSearch(point);
+    const array = algorithm.getSearch(point.state);
     console.log("--Getting geoData for all supplied cities");
     return google.geoDataLoop(array, 0).then(function(arrayGlob) {
       return algorithm.closestWiki(point, arrayGlob);
