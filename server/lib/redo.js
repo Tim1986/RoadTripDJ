@@ -58,7 +58,6 @@ const algorithm = {
     return new Promise(function(resolve, reject){
       const userCity = mapPoint.city,
             userState = mapPoint.state
-      console.log(userState, userCity)
 
       State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
         // Check if returnedState.searchedCities includes a city.name === userInput
@@ -139,16 +138,7 @@ const algorithm = {
 
     return closestCities;
   },
-
-  getSongsPerArtist: (songNumber, artistNumberFirstGroup) => {
-    if (Math.ceil(songNumber / artistNumberFirstGroup) >= 3) {
-      return 3;
-    } else if (Math.ceil(songNumber / artistNumberFirstGroup) <= 1) {
-      return 1;
-    } else {
-      return 2;
-    }
-  }
+  
 };
 
 module.exports = algorithm

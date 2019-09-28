@@ -49,7 +49,6 @@ const google = {
     },
 
     getDistance : (from, to) => {  //requires the lat lng
-        console.log(from, to)
         return googleMapsClient.distanceMatrix({ origins: from.latLng, destinations: to.latLng, mode: 'driving' })
             .asPromise()
             .then((response) => {
