@@ -72,16 +72,6 @@ const algorithm = {
   checkSearchedCities: function(mapPoint) {
     return new Promise(function(resolve, reject) {
       const userCity = mapPoint.city,
-<<<<<<< HEAD
-            userState = mapPoint.state
-
-      State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
-        // Check if returnedState.searchedCities includes a city.name === userInput
-      let doesExist = false;
-      if (foundState[0].searchedCities.length > 0) {
-          foundState[0].searchedCities.forEach((city) => {
-                // If that city exists
-=======
         userState = mapPoint.state;
       console.log(userState, userCity);
 
@@ -93,7 +83,6 @@ const algorithm = {
           if (foundState.searchedCities.length > 0) {
             foundState.searchedCities.forEach((city) => {
               // If that city exists, just return the array of closestCities
->>>>>>> 8385fc0dd70154dd90cad3bd52be568bf0a7e425
               if (city.name === userCity) {
                 resolve(city.closestCities);
               }
