@@ -22,21 +22,23 @@ const algorithm = {
 //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
   tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
-    return google.startGeo(start, end)
-        .then((userInput) => {
-          const tripObj = {
-            startPoint: userInput[0][0],
-            endPoint: userInput[0][1],
-            tripTime: userInput[1].tripMinutes
-          };
+    return algorithm.getSearch('TN')
+    
+    // return google.startGeo(start, end)
+        // .then((userInput) => {
+        //   const tripObj = {
+        //     startPoint: userInput[0][0],
+        //     endPoint: userInput[0][1],
+        //     tripTime: userInput[1].tripMinutes
+        //   };
 
         // Look up state in database, populated with searchedCities
-        return Promise.all([
-            algorithm.checkSearchedCities(tripObj.startPoint),
-            algorithm.checkSearchedCities(tripObj.endPoint),
-            tripObj.tripTime])
-        })
-        .then(result => {
+        // return Promise.all([
+        //     algorithm.checkSearchedCities(tripObj.startPoint),
+        //     algorithm.checkSearchedCities(tripObj.endPoint),
+        //     tripObj.tripTime])
+        // })
+        // .then(result => {
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -48,12 +50,12 @@ const algorithm = {
 
 	    //NEEDS: function to grab stuff from the wikiCities collection
 
-        })
-        .catch((err) => console.log("\nERROR | Tracks error | " + err))
+        // })
+        // .catch((err) => console.log("\nERROR | Tracks error | " + err))
     
   },
 
-  checkSearchedCities: function(mapPoint) {
+  checkSearchedCities: function( mapPoint ) {
     return new Promise(function(resolve, reject){
       const userCity = mapPoint.city,
             userState = mapPoint.state
@@ -95,10 +97,8 @@ const algorithm = {
         })
     },
 
-    getSearch : function (pointObj){
-        const split = pointObj.formattedAddress.split(", ")
-        const abrv = split[2].split(" ")
-        return search.citySearch(abrv[0])
+    getSearch : function (state){
+        return search.citySearch(state)
     },
 
 
