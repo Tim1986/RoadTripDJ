@@ -105,13 +105,15 @@ const algorithm = {
     },
 
 
-    findClosest: function(point){
-        const array = algorithm.getSearch(point.state)
+    getClosest: function(point){
+        return algorithm.getSearch(point.state)
+        .then(array =>{
         console.log("--Getting geoData for all supplied cities")
         return google.geoDataLoop(array, 0)
             .then(function (arrayGlob) {
                 return algorithm.closestWiki(point, arrayGlob)
             })
+        })
     },
 
   closestWiki: (staticObj, geoArray) => {
