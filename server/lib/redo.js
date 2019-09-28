@@ -59,21 +59,32 @@ const algorithm = {
             userState = mapPoint.state
       console.log(userState, userCity)
 
-      State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
+      State.findOne({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
         // Check if returnedState.searchedCities includes a city.name === userInput
-      let doesExist = false;
-      if (foundState[0].searchedCities.length > 0) {
-          foundState[0].searchedCities.forEach((city) => {
+      if (err) console.log(err)
+      if (foundState.searchedCities.length > 0) {
+          foundState.searchedCities.forEach((city) => {
                 // If that city exists
               if (city.name === userCity) {
                   resolve(city.closestCities)
               }
               // If city doesn't exist, find the closest cities and save it to the database
-              // return listClosestCities
+              algorithm.createSearchedCity(foundState, userCity, listClosestCities)
+              return listClosestCities
           });
       }
       resolve(console.log("there are no cities"))
       });
+    })
+  },
+
+  createSearchedCity: function(state, cityName, cityArray) {
+    SearchedCity.create({
+      name: cityName,
+      closestCities: cityArray
+    }, (err, newSearchedCity) => {
+      state.searchedCities.push(newSearchedCity)
+      state.save()
     })
   },
 
