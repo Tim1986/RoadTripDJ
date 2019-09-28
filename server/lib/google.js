@@ -7,7 +7,7 @@ const google = {
 
     startGeo : (start, end) => {
         console.log(start, end)
-        return google.geoDataLoop([start,end],0) //
+        return google.geoDataLoop([start,end],0)
         .then(posData => {
             return Promise.all([
                 posData,
@@ -36,7 +36,6 @@ const google = {
                     formattedAddress: response.json.results[0].formatted_address,
                     latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
                 }
-                console.log(geoRes)
                 return geoRes
             })
     },

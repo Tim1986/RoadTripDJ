@@ -29,17 +29,12 @@ const algorithm = {
             endPoint: userInput[0][1],
             tripTime: userInput[1].tripMinutes
           };
-          //-------------------------------------------------------------------------------------------------------
-          // NEEDS: function that will be run for start and end point to check database to see if it has been searched before.
-          // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
-          // if not, it should return the regional list of cities to compare distance with
-          //-------------------------------------------------------------------------------------------------------
 
         // Look up state in database, populated with searchedCities
-        // return Promise.all([
-            return algorithm.checkSearchedCities(tripObj.startPoint)
-            // algorithm.checkSearchedCities(tripObj.endPoint),
-            // tripObj.tripTime])
+        return Promise.all([
+            algorithm.checkSearchedCities(tripObj.startPoint),
+            algorithm.checkSearchedCities(tripObj.endPoint),
+            tripObj.tripTime])
         })
         .then(result => {
         // const startClosest = result[0],
