@@ -266,54 +266,32 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   // spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
   // redo.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
   // return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
-  return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
-  .then(res => console.log("this stuff is", res))
-  // axios({
-  //   url: `https://api.spotify.com/v1/users/${userID}/playlists`,
-  //   method: "POST",
-  //   data: {
-  //     name: "Charlotte, NC to Atlanta, GA",
-  //     description: "A playlist for your trip from Charlotte, NC to Atlanta, GA.",
-  //     public: "false"
-  //   },
-  //   headers: {
-  //     Authorization: "Bearer " + accessToken
-  //   }
-  // })
-  //   .then((response2) => {
-  //     let artistIDs = [
-  //       "4r63FhuTkUYltbVAg5TQnk",
-  //       "7oR6vQt8KT2ZWUpC65jTha",
-  //       "0jmJE0UcA2Ngp9qXYiGqsM",
-  //       "3AWctn8IqczGFgBtAmnrQJ",
-  //       "0sBKkpFqxsLg0Ao6924RHK",
-  //       "7DMUqI3HAaKc3x0Y4QKftV",
-  //       "4xTArdz7s8XtbmErzEcMvg",
-  //       "23zg3TcAtWQy7J6upgbUnj",
-  //       "1G9G7WwrXka3Z1r7aIDjI7",
-  //       "2hnzQ6eCFkxUIPsVcsdj8A"
-  //     ];
-  //     const newPlaylistID = response2.data.id;
-  //     // console.log(response2);
-  //     getTopSongs(newPlaylistID, artistIDs, accessToken, res);
-  //     // getTopSongs(
-  //     //   newPlaylistID,
-  //     //   [
-  //     //     "0FJ3jpm4yEcaAMzek1bD6i",
-  //     //     "2H3xDjMmp31iLmsgXxLFyI"
-  //     //   ],
-  //     //   accessToken,
-  //     //   res
-  //     // );
-  //     // populatePlaylist(newPlaylistID, accessToken, res)
-  //   })
-  //   .then( results => { 
-  //     console.log(results)
-  //     spot.populatePlaylist(results[3], results[0], results[2], res)
-  //     //this is the send to the front-end end
 
-    // })  
-    // .catch((err) => console.log(err));
+ 
+
+  axios({
+    url: `https://api.spotify.com/v1/users/${userID}/playlists`,
+    method: "POST",
+    data: {
+      name: playlistName,
+      description: `A playlist for your trip from ${startPoint} to ${endPoint}.`,
+      public: "false"
+    },
+    headers: {
+      Authorization: "Bearer " + accessToken
+    }
+  })
+    .then((response2) => {
+      const newPlaylistID = response2.data.id;
+      return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
+    })
+    .then( results => { 
+      console.log(results)
+      spot.populatePlaylist(results[2], results[0], results[1], res)
+      //this is the send to the front-end end
+
+    })  
+    .catch((err) => console.log(err));
 })
   
 

@@ -1,4 +1,5 @@
 const spot = require("../api/spot.js")
+const _ = require("lodash");
 
 const test = {
 
@@ -7,6 +8,7 @@ const test = {
             test.grabArtists(startArr, accessToken),
             test.grabArtists(endArr, accessToken),
         ])
+        .then(array => _.flattenDeep(array))
     },
 
     grabArtists : function(arrayOfObjects, accessToken){

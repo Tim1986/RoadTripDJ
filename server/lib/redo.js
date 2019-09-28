@@ -22,7 +22,7 @@ const State = require("../models/state"),
 
 const algorithm = {
   //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
-  tracks: (start, end, isPopular, userID, accessToken) => {
+  tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
 
     return google
@@ -79,7 +79,11 @@ const algorithm = {
           ])
       })
       .then(culledArr => {
-        return test.controller(culledArr[0],culledArr[1])
+        return Promise.all([
+          test.controller(culledArr[0],culledArr[1]),
+          accessToken, 
+          newPlaylistID
+        ])
       })
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
