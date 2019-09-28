@@ -6,11 +6,11 @@ const promiseThrottle = new PromiseThrottle({
   requestsPerSecond: 5,
   promiseImplementation: Promise
 });
-const spotifyURIs = [] // I moved this global because when it's with the promises, it gets overwritten when the function runs again
 
 const spot = {
     getTopSongs: (artistIDs, accessToken) => {
       let promises = []
+      const spotifyURIs = [] // I moved this global because when it's with the promises, it gets overwritten when the function runs again
 
       artistIDs.forEach((artistID) => {
             promises.push(
