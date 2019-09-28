@@ -29,7 +29,6 @@ const algorithm = {
             endPoint: userInput[0][1],
             tripTime: userInput[1].tripMinutes
           };
-          console.log(tripObj)
           //-------------------------------------------------------------------------------------------------------
           // NEEDS: function that will be run for start and end point to check database to see if it has been searched before.
           // if it has then it will return the correct info and then skip to spotify track grabbing and playlist population
@@ -43,7 +42,6 @@ const algorithm = {
             // tripObj.tripTime])
         })
         .then(result => {
-            console.log(result)
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -61,36 +59,27 @@ const algorithm = {
   },
 
   checkSearchedCities: function(mapPoint) {
-    // const addressSplit = mapPoint.formattedAddress.split(", ")
-    // let userCity, userState
-    // if (addressSplit.length === 4){
-    //     userState = addressSplit[2].split(" ")[0];
-    //     userCity = addressSplit[1];
-    // } else if ( addressSplit.length === 3) {
-    //     userState = addressSplit[1].split(" ")[0];
-    //     userCity = addressSplit[0];
-    // } else {
-    //     console.log("Address Not formatted correctly")
-    // }
-    const userCity = mapPoint.city,
-          userState = mapPoint.state
-    console.log(userState, userCity)
+    return new Promise(function(resolve, reject){
+      const userCity = mapPoint.city,
+            userState = mapPoint.state
+      console.log(userState, userCity)
 
-    State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
-      // Check if returnedState.searchedCities includes a city.name === userInput
-    let doesExist = false;
-    if (foundState.searchedCities.length > 0) {
-        foundState.searchedCities.forEach((city) => {
-              // If that city exists
-            if (city.name === userCity) {
-                return city.closestCities
-            }
-            // If city doesn't exist, find the closest cities and save it to the database
-            //return listClosestCities
-        });
-    }
-    return "there are no cities"
-    });
+      State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
+        // Check if returnedState.searchedCities includes a city.name === userInput
+      let doesExist = false;
+      if (foundState[0].searchedCities.length > 0) {
+          foundState[0].searchedCities.forEach((city) => {
+                // If that city exists
+              if (city.name === userCity) {
+                  resolve(city.closestCities)
+              }
+              // If city doesn't exist, find the closest cities and save it to the database
+              // return listClosestCities
+          });
+      }
+      resolve(console.log("there are no cities"))
+      });
+    })
   },
 
   format : function( objArr ) {
