@@ -58,7 +58,7 @@ const google = {
                     state: to.state,
                     to_formatted: to.formattedAddress,
                     from: from.input,
-                    tripMinutes: response.json.rows[0].elements[0].duration.value * 60,
+                    tripMinutes: response.json.rows[0].elements[0].duration.value / 60,
                     howClose: {
                         value: response.json.rows[0].elements[0].distance.value ,
                         unitString: response.json.rows[0].elements[0].distance.text

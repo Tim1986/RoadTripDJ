@@ -31,14 +31,14 @@ const algorithm = {
         const tripObj = {
           startPoint: userInput[0][0],
           endPoint: userInput[0][1],
-          tripTime: userInput[1].tripMinutes
+          tripTime: userInput[1].tripMinutes,
         };
 
         // Look up state in database, populated with searchedCities
         return Promise.all([
           algorithm.checkSearchedCities(tripObj.startPoint),
           algorithm.checkSearchedCities(tripObj.endPoint),
-          tripObj.tripTime
+          tripObj.tripTime,
         ]);
       })
       .then((result) => {
@@ -57,13 +57,14 @@ const algorithm = {
         return Promise.all([
           algorithm.getArtists(result[0]),
           algorithm.getArtists(result[1]),
-          result[2]
+          result[2],
         ]);
       })
       .then(wikiCityResultsAndTripTime =>{
         const start = wikiCityResultsAndTripTime[0],
               end = wikiCityResultsAndTripTime[1],
               tripTime = wikiCityResultsAndTripTime[2]
+              console.log("tripTime: " + tripTime)
 
           return Promise.all([
             minify.correctNumberOfSongs(start, tripTime),
