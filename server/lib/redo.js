@@ -109,7 +109,7 @@ const algorithm = {
             match: { name: city.name }
           })
           .exec((err, foundState2) => {
-            console.log(foundState2)
+            console.log(foundState2);
             // newSearchedCity.closestCities.push(foundState.wikiCities[0]._id)
           });
       });
@@ -162,10 +162,11 @@ const algorithm = {
   },
 
   getClosest: function(point) {
-    const array = algorithm.getSearch(point.state);
-    console.log("--Getting geoData for all supplied cities");
-    return google.geoDataLoop(array, 0).then(function(arrayGlob) {
-      return algorithm.closestWiki(point, arrayGlob);
+    return algorithm.getSearch(point.state).then((array) => {
+      console.log("--Getting geoData for all supplied cities");
+      return google.geoDataLoop(array, 0).then(function(arrayGlob) {
+        return algorithm.closestWiki(point, arrayGlob);
+      });
     });
   },
 
