@@ -1,5 +1,7 @@
 const search = require("../lib/switch");
 const google = require("../lib/google");
+const minify = require("../controllers/api/minify")
+const test = require("../controllers/api/spotifyTest")
 const wikipedia = require("./wikipedia");
 const spotifyNPM = require("./spotifyNPM");
 const spot = require("../controllers/api/spot");
@@ -20,7 +22,7 @@ const State = require("../models/state"),
 
 const algorithm = {
   //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
-  tracks: (start, end, isPopular, userID, accessToken) => {
+  tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
 
     return google
@@ -58,7 +60,23 @@ const algorithm = {
           result[2]
         ]);
       })
-      .then((test1) => console.log(test1))
+      .then(wikiCityResultsAndTripTime =>{
+        const start = wikiCityResultsAndTripTime[0],
+              end = wikiCityResultsAndTripTime[1],
+              tripTime = wikiCityResultsAndTripTime[2]
+
+          return Promise.all([
+            minify.correctNumberOfSongs(start, tripTime),
+            minify.correctNumberOfSongs(end, tripTime)
+          ])
+      })
+      .then(culledArr => {
+        return Promise.all([
+          test.controller(culledArr[0],culledArr[1]),
+          accessToken, 
+          newPlaylistID
+        ])
+      })
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
 

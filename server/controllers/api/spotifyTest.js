@@ -1,38 +1,27 @@
 const spot = require("../api/spot.js")
+const _ = require("lodash");
 
 const test = {
 
     controller : function(startArr, endArr, accessToken){
         return Promise.all([
-            test.grabArtists(6009402,startArr, accessToken),
-            test.grabArtists(6009402,endArr, accessToken),
+            test.grabArtists(startArr, accessToken),
+            test.grabArtists(endArr, accessToken),
         ])
+        .then(array => _.flattenDeep(array))
     },
 
-    grabArtists : function(tripTime,arrayOfObjects, accessToken){
-        let totalSongNumber = Math.round(tripTime / 3.5)
-        const numberOfSongs = test.getSongsPerArtist(Math.ceil(totalSongNumber / 2), arrayOfObjects.length)
+    grabArtists : function(arrayOfObjects, accessToken){
         //database grabbing of artist id's 
         const artistIDs = []
         arrayOfObjects.forEach(object => {
             artistIDs.push(object.spotifyID)
         })
-  
         // spot.getTopSongs(numberOfSongs, playlistID, artistIDs, accessToken)
         return spot.getTopSongs(totalSongNumber, numberOfSongs, artistIDs, accessToken)
         // .then(URIs => {console.log(URIs)})
 
             
-    },
-    getSongsPerArtist: function(songNumber, artistNumberFirstGroup){
-
-        if (Math.ceil(songNumber / artistNumberFirstGroup) >= 3) {
-            return 3;
-        } else if (Math.ceil(songNumber / artistNumberFirstGroup) <= 1) {
-            return 1;
-        } else {
-            return 2;
-        }
     },
 
 }
