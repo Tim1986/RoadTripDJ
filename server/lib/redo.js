@@ -40,6 +40,8 @@ const algorithm = {
         ]);
       })
       .then((result) => {
+        console.log("Start Point:", result[0]);
+        console.log("End Point:", result[1]);
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -72,54 +74,68 @@ const algorithm = {
     return new Promise(function(resolve, reject) {
       const userCity = mapPoint.city,
         userState = mapPoint.state;
-      console.log("User State:", userState, "User City", userCity);
+      // console.log("User State:", userState, "User City", userCity);
 
       State.findOne({ abbr: userState })
-        .populate("searchedCities")
+        .populate({
+          path: "searchedCities",
+          match: { name: userCity },
+          populate: { path: "closestCities" }
+        })
         .exec((err, foundState) => {
-          // Check if returnedState.searchedCities includes a city.name === userInput
-          if (err) console.log(err);
-          if (foundState.searchedCities.length > 0) {
-            foundState.searchedCities.forEach((city) => {
-              // If that city exists, just return the array of closestCities
-              if (city.name === userCity) {
-                resolve(city.closestCities);
-              }
-            });
+          if (err) {
+            console.log(err);
+          } else {
+            // If the city doesn't exist in the DB...
+            if (foundState.searchedCities[0] === undefined) {
+              console.log("That city doesn't exist. Adding to database...");
+              algorithm.getClosest(mapPoint).then((listClosestCities) => {
+                // If city doesn't exist, find the closest cities and save it to the database
+                return algorithm
+                  .createSearchedCity(foundState, userCity, listClosestCities)
+                  .then((listCityIDs) => {
+                    resolve(listCityIDs);
+                  });
+              });
+              // If the city does exist in the DB...
+            } else {
+              let listCities = foundState.searchedCities[0].closestCities,
+                listCityIDs = [];
+              listCities.forEach((city) => listCityIDs.push(city._id));
+              resolve(listCityIDs);
+            }
           }
-          algorithm.getClosest(mapPoint).then((listClosestCities) => {
-            // If city doesn't exist, find the closest cities and save it to the database
-            algorithm.createSearchedCity(foundState, userCity, listClosestCities);
-            resolve(listClosestCities);
-          });
         });
     });
   },
 
   createSearchedCity: function(state, cityName, cityArray) {
-    // Create the new SearchedCity
-    let countCities = 0;
-    let listCities = [];
-    SearchedCity.create({ name: cityName }, (err, newSearchedCity) => {
-      console.log("Adding", newSearchedCity.name, "to", state.name);
-      state.searchedCities.push(newSearchedCity);
-      state.save();
-      // Loop through the array of closestCity Objects
-      cityArray.forEach((city) => {
-        // Find each state and it's matching city
-        State.findOne({ abbr: city.state })
-          .populate({
-            path: "wikiCities",
-            match: { name: city.name }
-          })
-          .exec((err, foundState2) => {
-            listCities.push(foundState2.wikiCities[0]._id);
-            countCities++;
-            if (countCities === 5) {
-              newSearchedCity.closestCities = listCities;
-              newSearchedCity.save();
-            }
-          });
+    return new Promise(function(resolve, reject) {
+      // Create the new SearchedCity
+      let countCities = 0;
+      let listCities = [];
+      SearchedCity.create({ name: cityName }, (err, newSearchedCity) => {
+        console.log("Adding", newSearchedCity.name, "to", state.name);
+        state.searchedCities.push(newSearchedCity);
+        state.save();
+        // Loop through the array of closestCity Objects
+        cityArray.forEach((city) => {
+          // Find each state and it's matching city
+          State.findOne({ abbr: city.state })
+            .populate({
+              path: "wikiCities",
+              match: { name: city.name }
+            })
+            .exec((err, foundState2) => {
+              listCities.push(foundState2.wikiCities[0]._id);
+              countCities++;
+              if (countCities === 5) {
+                newSearchedCity.closestCities = listCities;
+                newSearchedCity.save();
+                resolve(listCities);
+              }
+            });
+        });
       });
     });
   },
