@@ -40,8 +40,6 @@ const algorithm = {
         ]);
       })
       .then((result) => {
-        console.log("Start Point:", result[0]);
-        console.log("End Point:", result[1]);
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -52,22 +50,26 @@ const algorithm = {
         //
         // result contains 3 items:
         //    result.startPoint, result.endPoint, and result.tripTime
-        //
-        // console.log("Result:", result);
+
         // Create an array to hold the arrays of startPoint Artists
-        // const listSPArtists = [];
-        // result[0].forEach((city) => {
-        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
-        //   listSPArtists.push(listCityArtists);
-        // });
-        // Create an array to hold the arrays of endPoint Artists
-        // const listEPArtists = [];
-        // result[1].forEach((city) => {
-        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
-        //   listEPArtists.push(listCityArtists);
-        // });
+        return Promise.all([
+          algorithm.getArtists(result[0]),
+          algorithm.getArtists(result[1]),
+          result[2]
+        ]);
       })
+      .then((test1) => console.log(test1))
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
+  },
+
+  getArtists: function(arr) {
+      const result = [];
+      arr.forEach((id) => {
+        result.push(algorithm.getWikiCityArtists(id))
+        });
+      if (result.length === 5) {
+        return Promise.all(result)
+      }
   },
 
   checkSearchedCities: function(mapPoint) {
@@ -140,25 +142,12 @@ const algorithm = {
     });
   },
 
-  getWikiCityArtists: function(stateAbbr, wikiCity) {
-    // Find the state the wikiCity is in
-    State.findOne({ abbr: stateAbbr })
-      // Include ONLY the wikiCity with the given name
-      .populate({
-        path: "wikiCities",
-        match: { name: wikiCity.name },
-        // Includee all artists from that city
-        populate: { path: "artists" }
-      })
-      .exec((err, foundState) => {
-        if (err) console.log(err);
-        // Return just the array of artist objects so it can be saved in a variable?
-        // return foundState.wikiCities[0].artists;
-        console.log(
-          "State from getWikiCityArtists =================================================",
-          foundState
-        );
+  getWikiCityArtists: function(id) {
+    return new Promise(function(resolve, reject) {
+      WikiCity.findById(id).populate("artists").exec((err, foundWikiCity) => {
+        resolve(foundWikiCity.artists);
       });
+    });
   },
 
   format: function(objArr) {
