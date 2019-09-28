@@ -51,7 +51,7 @@ const algorithm = {
         // result contains 3 items:
         //    result.startPoint, result.endPoint, and result.tripTime
         //
-        console.log("Result:", result)
+        console.log("Result:", result);
         // Create an array to hold the arrays of startPoint Artists
         // const listSPArtists = [];
         // result[0].forEach((city) => {
@@ -65,7 +65,6 @@ const algorithm = {
         //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
         //   listEPArtists.push(listCityArtists);
         // });
-
       })
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
@@ -93,23 +92,30 @@ const algorithm = {
             // If city doesn't exist, find the closest cities and save it to the database
             algorithm.createSearchedCity(foundState, userCity, listClosestCities);
             resolve(listClosestCities);
-            // resolve(console.log("there are no cities"));
           });
         });
     });
   },
 
   createSearchedCity: function(state, cityName, cityArray) {
-    SearchedCity.create(
-      {
-        name: cityName,
-        closestCities: cityArray
-      },
-      (err, newSearchedCity) => {
-        state.searchedCities.push(newSearchedCity);
-        state.save();
-      }
-    );
+    // Create the new SearchedCity
+    SearchedCity.create({ name: cityName }, (err, newSearchedCity) => {
+      // Loop through the array of closestCity Objects
+      cityArray.forEach((city) => {
+        // Find each state and it's matching city
+        State.findOne({ abbr: city.state })
+          .populate({
+            path: "wikiCities",
+            match: { name: city.name }
+          })
+          .exec((err, foundState2) => {
+            console.log(foundState2)
+            // newSearchedCity.closestCities.push(foundState.wikiCities[0]._id)
+          });
+      });
+      // state.searchedCities.push(newSearchedCity);
+      // state.save();
+    });
   },
 
   getWikiCityArtists: function(stateAbbr, wikiCity) {
@@ -155,7 +161,7 @@ const algorithm = {
     return search.citySearch(state);
   },
 
-  findClosest: function(point) {
+  getClosest: function(point) {
     const array = algorithm.getSearch(point.state);
     console.log("--Getting geoData for all supplied cities");
     return google.geoDataLoop(array, 0).then(function(arrayGlob) {
