@@ -7,33 +7,33 @@ const search =
         switch (state) {
             // 1
             case "AL":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.AL,
                     search.MS,
                     search.TN,
                     search.GA,
                     search.FL
-                ])
+                ]))
                 break;
     
             case "AK":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.AK
-                ])
+                ]))
                 break;
     
             case "AZ":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.AZ,
                     search.CA,
                     search.NV,
                     search.UT,
                     search.CO,
-                    search.NM])
+                    search.NM]))
                 break;
     
             case "AR":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.AR,
                     search.LA,
                     search.TX,
@@ -41,21 +41,21 @@ const search =
                     search.KS,
                     search.MO,
                     search.TN,
-                    search.MS])
+                    search.MS]))
                 break;
     
             // 5
             case "CA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.CA,
                     search.OR,
                     search.NV,
                     search.AZ
-                ])
+                ]))
                 break;
     
             case "CO":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.CO,
                     search.UT,
                     search.WY,
@@ -64,106 +64,106 @@ const search =
                     search.OK,
                     search.TX,
                     search.NM,
-                    search.AZ])
+                    search.AZ]))
                 break;
     
             case "CT":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.CT,
                     search.RI,
                     search.MA,
                     search.NY,
-                    search.NJ])
+                    search.NJ]))
                 break;
     
             case "DE":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.DE,
                     search.MD,
                     search.VA,
                     search.PA,
                     search.DC,
-                    search.NJ])
+                    search.NJ]))
                 break;
     
             case "FL":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.GA,
                     search.FL,
-                    search.AL])
+                    search.AL]))
                 break;
     
             // 10
             case "GA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.GA,
                     search.FL,
                     search.AL,
                     search.TN,
                     search.NC,
-                    search.SC])
+                    search.SC]))
                 break;
     
             case "HI":
-                search.giveCities([
-                    search.HI])
+                resolve(search.giveCities([
+                    search.HI]))
                 break;
     
             case "ID":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.ID,
                     search.WA,
                     search.OR,
                     search.NV,
                     search.UT,
                     search.WY,
-                    search.MT])
+                    search.MT]))
                 break;
     
             case "IL":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.IL,
                     search.WI,
                     search.IA,
                     search.MO,
                     search.KY,
-                    search.IN])
+                    search.IN]))
                 break;
     
             case "IN":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.IN,
                     search.MI,
                     search.OH,
                     search.KY,
-                    search.IL])
+                    search.IL]))
                 break;
     
             // 15
             case "IA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.IA,
                     search.MN,
                     search.WI,
                     search.IL,
                     search.MO,
                     search.NE,
-                    search.SD])
+                    search.SD]))
                 break;
     
             case "KS":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.KS,
                     search.NE,
                     search.MO,
                     search.AR,
                     search.OK,
                     search.TX,
-                    search.CO])
+                    search.CO]))
                 break;
     
             case "KY":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.KY,
                     search.IN,
                     search.OH,
@@ -171,74 +171,74 @@ const search =
                     search.VA,
                     search.TN,
                     search.MO,
-                    search.IL])
+                    search.IL]))
                 break;
     
             case "LA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.LA,
                     search.TX,
                     search.AR,
-                    search.MS])
+                    search.MS]))
                 break;
     
             case "ME":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.ME,
                     search.NH,
                     search.VT,
                     search.MA,
-                    search.NY])
+                    search.NY]))
                 break;
     
             // 20
             case "MD":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MD,
                     search.DC,
                     search.DE,
                     search.PA,
-                    search.VA])
+                    search.VA]))
                 break;
     
             case "MA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MA,
                     search.NH,
                     search.VT,
                     search.NY,
                     search.CT,
-                    search.RI])
+                    search.RI]))
                 break;
     
             case "MI":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MI,
                     search.IN,
-                    search.OH])
+                    search.OH]))
                 break;
     
             case "MN":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MN,
                     search.ND,
                     search.SD,
                     search.IA,
-                    search.WI])
+                    search.WI]))
                 break;
     
             case "MS":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MS,
                     search.LA,
                     search.AR,
                     search.TN,
-                    search.AL])
+                    search.AL]))
                 break;
     
             // 25
             case "MO":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MO,
                     search.KS,
                     search.NE,
@@ -247,107 +247,107 @@ const search =
                     search.KY,
                     search.TN,
                     search.AR,
-                    search.OK])
+                    search.OK]))
                 break;
     
             case "MT":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.MT,
                     search.ID,
                     search.WY,
                     search.SD,
-                    search.ND])
+                    search.ND]))
                 break;
     
             case "NE":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NE,
                     search.SD,
                     search.IA,
                     search.MO,
                     search.KS,
                     search.CO,
-                    search.WY])
+                    search.WY]))
                 break;
     
             case "NV":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NV,
                     search.CA,
                     search.OR,
                     search.ID,
                     search.UT,
-                    search.AZ])
+                    search.AZ]))
                 break;
     
             case "NH":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NH,
                     search.ME,
                     search.VT,
-                    search.MA])
+                    search.MA]))
                 break;
     
             // 30
             case "NJ":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NJ,
                     search.DE,
                     search.PA,
-                    search.NY])
+                    search.NY]))
                 break;
     
             case "NM":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NM,
                     search.TX,
                     search.OK,
                     search.CO,
                     search.AZ,
-                    search.UT])
+                    search.UT]))
                 break;
     
             case "NY":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NY,
                     search.PA,
                     search.NJ,
                     search.CT,
                     search.MA,
-                    search.VT])
+                    search.VT]))
                 break;
     
             case "NC":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.NC,
                     search.SC,
                     search.GA,
                     search.TN,
-                    search.VA])
+                    search.VA]))
                 break;
     
             case "ND":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.ND,
                     search.MT,
                     search.WY,
                     search.SD,
-                    search.MN])
+                    search.MN]))
                 break;
     
             // 35
             case "OH":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.OH,
                     search.MI,
                     search.IN,
                     search.KY,
                     search.WV,
-                    search.PA])
+                    search.PA]))
                 break;
     
             case "OK":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.OK,
                     search.TX,
                     search.KS,
@@ -355,20 +355,20 @@ const search =
                     search.CO,
                     search.MO,
                     search.AR,
-                    search.LA])
+                    search.LA]))
                 break;
     
             case "OR":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.OR,
                     search.WA,
                     search.ID,
                     search.NV,
-                    search.CA])
+                    search.CA]))
                 break;
     
             case "PA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.PA,
                     search.NY,
                     search.NJ,
@@ -376,37 +376,37 @@ const search =
                     search.MD,
                     search.DC,
                     search.WV,
-                    search.OH])
+                    search.OH]))
                 break;
     
             case "RI":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.RI,
                     search.CT,
-                    search.MA])
+                    search.MA]))
                 break;
     
             // 40
             case "SC":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.SC,
                     search.NC,
-                    search.GA])
+                    search.GA]))
                 break;
     
             case "SD":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.SD,
                     search.ND,
                     search.MT,
                     search.WY,
                     search.NE,
                     search.IA,
-                    search.MN])
+                    search.MN]))
                 break;
     
             case "TN":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.TN,
                     search.KY,
                     search.VA,
@@ -415,83 +415,83 @@ const search =
                     search.AL,
                     search.MS,
                     search.AR,
-                    search.MO])
+                    search.MO]))
                 break;
     
             case "TX":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.TX,
                     search.NM,
                     search.OK,
                     search.AR,
-                    search.LA])
+                    search.LA]))
                 break;
     
             case "UT":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.UT,
                     search.ID,
                     search.WY,
                     search.CO,
                     search.NM,
                     search.AZ,
-                    search.NV])
+                    search.NV]))
                 break;
     
             // 45
             case "VT":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.VT,
                     search.NH,
                     search.MA,
-                    search.NY])
+                    search.NY]))
                 break;
     
             case "VA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.VA,
                     search.DC,
                     search.KY,
                     search.KY,
                     search.TN,
-                    search.NC])
+                    search.NC]))
                 break;
     
             case "WA":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.WA,
                     search.OR,
-                    search.ID])
+                    search.ID]))
                 break;
     
             case "WV":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.WV,
                     search.DC,
                     search.VA,
                     search.KY,
                     search.OH,
-                    search.PA])
+                    search.PA]))
                 break;
     
             case "WI":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.WI,
                     search.MN,
                     search.IA,
-                    search.IL])
+                    search.IL]))
                 break;
     
             // 50
             case "WY":
-                search.giveCities([
+                resolve(search.giveCities([
                     search.WY,
                     search.MT,
                     search.ID,
                     search.UT,
                     search.CO,
                     search.NE,
-                    search.SD])
+                    search.SD]))
                 break;
     
         }})
