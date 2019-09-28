@@ -1,5 +1,7 @@
 const search = require("../lib/switch");
 const google = require("../lib/google");
+const minify = require("../controllers/api/minify")
+const test = require("../controllers/api/spotifyTest")
 const wikipedia = require("./wikipedia");
 const spotifyNPM = require("./spotifyNPM");
 const spot = require("../controllers/api/spot");
@@ -66,22 +68,25 @@ const algorithm = {
         //   listEPArtists.push(listCityArtists);
         // });
       })
+      .then(wikiCityResultsAndTripTime =>{
+        const start = wikiCityResultsAndTripTime[0],
+              end = wikiCityResultsAndTripTime[1],
+              tripTime = wikiCityResultsAndTripTime[2]
+
+          return Promise.all([
+            minify.correctNumberOfSongs(start, tripTime),
+            minify.correctNumberOfSongs(end, tripTime)
+          ])
+      })
+      .then(culledArr => {
+        return test.controller(culledArr[0],culledArr[1])
+      })
       .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
 
   checkSearchedCities: function(mapPoint) {
     return new Promise(function(resolve, reject) {
       const userCity = mapPoint.city,
-<<<<<<< HEAD
-            userState = mapPoint.state
-
-      State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
-        // Check if returnedState.searchedCities includes a city.name === userInput
-      let doesExist = false;
-      if (foundState[0].searchedCities.length > 0) {
-          foundState[0].searchedCities.forEach((city) => {
-                // If that city exists
-=======
         userState = mapPoint.state;
       console.log(userState, userCity);
 
@@ -93,7 +98,6 @@ const algorithm = {
           if (foundState.searchedCities.length > 0) {
             foundState.searchedCities.forEach((city) => {
               // If that city exists, just return the array of closestCities
->>>>>>> 8385fc0dd70154dd90cad3bd52be568bf0a7e425
               if (city.name === userCity) {
                 resolve(city.closestCities);
               }
