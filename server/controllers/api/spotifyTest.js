@@ -1,5 +1,4 @@
 const spot = require("../api/spot.js")
-const _ = require("lodash");
 
 const test = {
 
@@ -8,7 +7,6 @@ const test = {
             test.grabArtists(startArr, accessToken),
             test.grabArtists(endArr, accessToken),
         ])
-        .then(array => _.flattenDeep(array))
     },
 
     grabArtists : function(arrayOfObjects, accessToken){
@@ -18,7 +16,7 @@ const test = {
             artistIDs.push(object.spotifyID)
         })
         // spot.getTopSongs(numberOfSongs, playlistID, artistIDs, accessToken)
-        return spot.getTopSongs(totalSongNumber, numberOfSongs, artistIDs, accessToken)
+        return spot.getTopSongs(artistIDs, accessToken)
         // .then(URIs => {console.log(URIs)})
 
             

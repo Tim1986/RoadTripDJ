@@ -3,17 +3,16 @@ const PromiseThrottle = require('promise-throttle');
 const timer = ms => new Promise(res => setTimeout(res, ms));
 
 const promiseThrottle = new PromiseThrottle({
-  requestsPerSecond: 3,
+  requestsPerSecond: 5,
   promiseImplementation: Promise
 });
 const spotifyURIs = [] // I moved this global because when it's with the promises, it gets overwritten when the function runs again
 
 const spot = {
-    getTopSongs: (totalNum, songNum, artistIDs, accessToken) => {
+    getTopSongs: (artistIDs, accessToken) => {
       let promises = []
 
       artistIDs.forEach((artistID) => {
-        console.log("--finding songs for " + artistID)
             promises.push(
               promiseThrottle.add(() => (axios({
                 url: `https://api.spotify.com/v1/artists/${artistID}/top-tracks?country=from_token`,

@@ -71,9 +71,8 @@ const algorithm = {
           ])
       })
       .then(culledArr => {
-        console.log(culledArr)
         return Promise.all([
-          test.controller(culledArr[0],culledArr[1]),
+          test.controller(culledArr[0],culledArr[1], accessToken),
           accessToken, 
           newPlaylistID
         ])

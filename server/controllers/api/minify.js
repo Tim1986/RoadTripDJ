@@ -6,21 +6,21 @@ const minify = {
         const halfSongNumber = Math.round(totalSongNumber / 2)
         console.log("halfSongNumber: " + halfSongNumber)
         console.log(array[4][0].spotifyID)
-        searchCity(array, finalArray, halfSongNumber, 0)
+        minify.searchCity(array, finalArray, halfSongNumber, 0)
         if (finalArray.length < halfSongNumber) {
-            searchCity(array, finalArray, halfSongNumber, 1)
+            minify.searchCity(array, finalArray, halfSongNumber, 1)
         }
         console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
-            searchCity(array, finalArray, halfSongNumber, 2)
+            minify.searchCity(array, finalArray, halfSongNumber, 2)
         }
         console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
-            searchCity(array, finalArray, halfSongNumber, 3)
+            minify.searchCity(array, finalArray, halfSongNumber, 3)
         }
         console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
-            searchCity(array, finalArray, halfSongNumber, 4)
+            minify.searchCity(array, finalArray, halfSongNumber, 4)
         }
         return finalArray
     },
@@ -29,12 +29,12 @@ const minify = {
         let songsLeft = halfSongNumber - finalArray.length
         if (array[city].length >= songsLeft) {
             // randomly push 20 from this array into finalArray
-            return getRandom(array, finalArray, halfSongNumber, city)
+            return minify.getRandom(array, finalArray, halfSongNumber, city)
         } else {
             for (let i = 0; i < array[city].length; i++) {
                 // console.log(array[city][i])
                 let obj = {
-                    name: array[city][i].artist,
+                    name: array[city][i].name,
                     spotifyID: array[city][i].spotifyID
                 }
                 finalArray.push(obj)
@@ -49,7 +49,7 @@ const minify = {
             // console.log("randomNum is: " + randomNum)
             if (!usedRandomNumbers.includes(randomNum)) {
                 let obj = {
-                    name: array[city][randomNum].artist,
+                    name: array[city][randomNum].name,
                     spotifyID: array[city][randomNum].spotifyID
                 }
                 finalArray.push(obj)
