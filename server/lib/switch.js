@@ -3,6 +3,7 @@ const _ = require('lodash')
 const search =
     {
     citySearch: (state) => {
+        return new Promise(function(resolve, reject){
         switch (state) {
             // 1
             case "AL":
@@ -493,7 +494,8 @@ const search =
                     search.SD])
                 break;
     
-        }},
+        }})
+    },
     
     AL : ["Birmingham, Alabama", "Florence, Alabama", "Gadsden, Alabama", "Huntsville, Alabama", "Mobile, Alabama",
             "Montgomery, Alabama"],
