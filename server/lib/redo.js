@@ -109,7 +109,7 @@ const algorithm = {
             match: { name: city.name }
           })
           .exec((err, foundState2) => {
-            console.log(foundState2);
+            console.log("foundState2 ====================================================", foundState2);
             // newSearchedCity.closestCities.push(foundState.wikiCities[0]._id)
           });
       });
