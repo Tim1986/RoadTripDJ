@@ -1,7 +1,9 @@
 const router = require("express").Router(),
   axios = require("axios"),
   spotifyTest = require("../api/spotifyTest.js"),
-  algorithm = require("../../lib/redo.js")
+  algorithm = require("../../lib/redo.js"),
+  spot = require("../api/spot");
+
 
 //====================================
 //Dummy Data

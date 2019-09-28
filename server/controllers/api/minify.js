@@ -64,11 +64,11 @@ const minify = {
 
 module.exports = minify
 
-let finalArray = correctNumberOfSongs(test, 100)
-console.log(finalArray)
-console.log(finalArray.length)
-// console.log(test2[0].length)
-// console.log(test2[1].length)
-// console.log(test2[2].length)
-// console.log(test2[3].length)
-// console.log(test2[4].length)
+// let finalArray = correctNumberOfSongs(test, 100)
+// console.log(finalArray)
+// console.log(finalArray.length)
+// // console.log(test2[0].length)
+// // console.log(test2[1].length)
+// // console.log(test2[2].length)
+// // console.log(test2[3].length)
+// // console.log(test2[4].length)
