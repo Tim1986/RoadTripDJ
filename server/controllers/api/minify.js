@@ -10,15 +10,12 @@ const minify = {
         if (finalArray.length < halfSongNumber) {
             minify.searchCity(array, finalArray, halfSongNumber, 1)
         }
-        console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
             minify.searchCity(array, finalArray, halfSongNumber, 2)
         }
-        console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
             minify.searchCity(array, finalArray, halfSongNumber, 3)
         }
-        console.log(finalArray.length)
         if (finalArray.length < halfSongNumber) {
             minify.searchCity(array, finalArray, halfSongNumber, 4)
         }

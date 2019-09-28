@@ -46,6 +46,7 @@ const spot = {
         
         populatePlaylist: (playlistID, spotifyURIs, accessToken, res) => {
           console.log("--Pushing songs to Playlist")
+          console.log(spotifyURIs)
           axios({
             url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
             method: "POST",

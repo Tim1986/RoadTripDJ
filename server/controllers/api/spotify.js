@@ -289,6 +289,7 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
     })
     .then( results => { 
       console.log("this is the final link---------------------------------------------------------------------------------------------------------------------")
+      console.log(results)
       spot.populatePlaylist(results[2], results[0], results[1], res)
       //this is the send to the front-end end
 
