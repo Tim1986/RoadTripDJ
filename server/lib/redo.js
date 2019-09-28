@@ -19,44 +19,60 @@ const State = require("../models/state"),
 //-------------------------------------
 
 const algorithm = {
-//   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
+  //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
   tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
-    
-    return google.startGeo(start, end)
-        .then((userInput) => {
-          const tripObj = {
-            startPoint: userInput[0][0],
-            endPoint: userInput[0][1],
-            tripTime: userInput[1].tripMinutes
-          };
+
+    return google
+      .startGeo(start, end)
+      .then((userInput) => {
+        const tripObj = {
+          startPoint: userInput[0][0],
+          endPoint: userInput[0][1],
+          tripTime: userInput[1].tripMinutes
+        };
 
         // Look up state in database, populated with searchedCities
         return Promise.all([
-            algorithm.checkSearchedCities(tripObj.startPoint),
-            algorithm.checkSearchedCities(tripObj.endPoint),
-            tripObj.tripTime])
-        })
-        .then(result => {
+          algorithm.checkSearchedCities(tripObj.startPoint),
+          algorithm.checkSearchedCities(tripObj.endPoint),
+          tripObj.tripTime
+        ]);
+      })
+      .then((result) => {
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
-
         // const startFormatted = algorithm.format(startClosest),
         //       endFormatted = algorithm.format(endClosest)
+        // NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
+        // NEEDS: function to grab stuff from the wikiCities collection
+        //
+        // result contains 3 items:
+        //    result.startPoint, result.endPoint, and result.tripTime
+        //
+        console.log("Result:", result);
+        // Create an array to hold the arrays of startPoint Artists
+        // const listSPArtists = [];
+        // result[0].forEach((city) => {
+        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
+        //   listSPArtists.push(listCityArtists);
+        // });
 
-        // //NEEDS: function to save startFormatted and endFormatted arrays to searchCities collection
-
-	    //NEEDS: function to grab stuff from the wikiCities collection
-
-        })
-        .catch((err) => console.log("\nERROR | Tracks error | " + err))
-    
+        // Create an array to hold the arrays of endPoint Artists
+        // const listEPArtists = [];
+        // result[1].forEach((city) => {
+        //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
+        //   listEPArtists.push(listCityArtists);
+        // });
+      })
+      .catch((err) => console.log("\nERROR | Tracks error | " + err));
   },
 
-  checkSearchedCities: function( mapPoint ) {
-    return new Promise(function(resolve, reject){
+  checkSearchedCities: function(mapPoint) {
+    return new Promise(function(resolve, reject) {
       const userCity = mapPoint.city,
+<<<<<<< HEAD
             userState = mapPoint.state
 
       State.find({ abbr: userState }).populate("searchedCities").exec((err, foundState) => {
@@ -65,55 +81,105 @@ const algorithm = {
       if (foundState[0].searchedCities.length > 0) {
           foundState[0].searchedCities.forEach((city) => {
                 // If that city exists
+=======
+        userState = mapPoint.state;
+      console.log(userState, userCity);
+
+      State.findOne({ abbr: userState })
+        .populate("searchedCities")
+        .exec((err, foundState) => {
+          // Check if returnedState.searchedCities includes a city.name === userInput
+          if (err) console.log(err);
+          if (foundState.searchedCities.length > 0) {
+            foundState.searchedCities.forEach((city) => {
+              // If that city exists, just return the array of closestCities
+>>>>>>> 8385fc0dd70154dd90cad3bd52be568bf0a7e425
               if (city.name === userCity) {
-                  resolve(city.closestCities)
+                resolve(city.closestCities);
               }
-              algorithm.getClosest( mapPoint )
-                .then((resultArray) => {
-                  
-                })
-              // If city doesn't exist, find the closest cities and save it to the database
-              // return listClosestCities
+            });
+          }
+          algorithm.getClosest(mapPoint).then((listClosestCities) => {
+            // If city doesn't exist, find the closest cities and save it to the database
+            algorithm.createSearchedCity(foundState, userCity, listClosestCities);
+            resolve(listClosestCities);
           });
-      }
-          resolve()
-      });
-    })
+        });
+    });
   },
 
-  format : function( objArr ) {
-    const array = []
-    objArr.forEach(city => {
-        if (city.includes(",")){
-            const obj = {
-                city: city.to.split(", ")[0],
-                state: city.to.split(", ")[1],
-            }
-            array.push(obj)
-        } else {
-            const obj = {
-                city: city.to,
-                state: city.toFormatted.split(", ")[2].split(" ")[0]
-                }
-            }
-        })
-    },
+  createSearchedCity: function(state, cityName, cityArray) {
+    // Create the new SearchedCity
+    SearchedCity.create({ name: cityName }, (err, newSearchedCity) => {
+      // Loop through the array of closestCity Objects
+      cityArray.forEach((city) => {
+        // Find each state and it's matching city
+        State.findOne({ abbr: city.state })
+          .populate({
+            path: "wikiCities",
+            match: { name: city.name }
+          })
+          .exec((err, foundState2) => {
+            console.log("foundState2 ====================================================", foundState2);
+            // newSearchedCity.closestCities.push(foundState.wikiCities[0]._id)
+          });
+      });
+      // state.searchedCities.push(newSearchedCity);
+      // state.save();
+    });
+  },
 
-    getSearch : function (state){
-        return search.citySearch(state)
-    },
+  getWikiCityArtists: function(stateAbbr, wikiCity) {
+    // Find the state the wikiCity is in
+    State.findOne({ abbr: stateAbbr })
+      // Include ONLY the wikiCity with the given name
+      .populate({
+        path: "wikiCities",
+        match: { name: wikiCity.name },
+        // Includee all artists from that city
+        populate: { path: "artists" }
+      })
+      .exec((err, foundState) => {
+        if (err) console.log(err);
+        // Return just the array of artist objects so it can be saved in a variable?
+        // return foundState.wikiCities[0].artists;
+        console.log(
+          "State from getWikiCityArtists =================================================",
+          foundState
+        );
+      });
+  },
 
+  format: function(objArr) {
+    const array = [];
+    objArr.forEach((city) => {
+      if (city.includes(",")) {
+        const obj = {
+          city: city.to.split(", ")[0],
+          state: city.to.split(", ")[1]
+        };
+        array.push(obj);
+      } else {
+        const obj = {
+          city: city.to,
+          state: city.toFormatted.split(", ")[2].split(" ")[0]
+        };
+      }
+    });
+  },
 
-    getClosest: function(point){
-        return algorithm.getSearch(point.state)
-        .then(array =>{
-        console.log("--Getting geoData for all supplied cities")
-        return google.geoDataLoop(array, 0)
-            .then(function (arrayGlob) {
-                return algorithm.closestWiki(point, arrayGlob)
-            })
-        })
-    },
+  getSearch: function(state) {
+    return search.citySearch(state);
+  },
+
+  getClosest: function(point) {
+    return algorithm.getSearch(point.state).then((array) => {
+      console.log("--Getting geoData for all supplied cities");
+      return google.geoDataLoop(array, 0).then(function(arrayGlob) {
+        return algorithm.closestWiki(point, arrayGlob);
+      });
+    });
+  },
 
   closestWiki: (staticObj, geoArray) => {
     console.log(
@@ -141,4 +207,4 @@ const algorithm = {
   
 };
 
-module.exports = algorithm
+module.exports = algorithm;
