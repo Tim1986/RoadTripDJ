@@ -7,7 +7,10 @@ const SearchedCitySchema = new Schema({
     trim: true
   },
   closestCities: [
-    String
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "WikiCity"
+    }
   ]
 });
 
