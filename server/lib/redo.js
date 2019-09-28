@@ -51,14 +51,13 @@ const algorithm = {
         // result contains 3 items:
         //    result.startPoint, result.endPoint, and result.tripTime
         //
-        console.log("Result:", result);
+        // console.log("Result:", result);
         // Create an array to hold the arrays of startPoint Artists
         // const listSPArtists = [];
         // result[0].forEach((city) => {
         //   const listCityArtists = algorithm.getWikiCityArtists(stateAbbr, city);
         //   listSPArtists.push(listCityArtists);
         // });
-
         // Create an array to hold the arrays of endPoint Artists
         // const listEPArtists = [];
         // result[1].forEach((city) => {
@@ -73,7 +72,7 @@ const algorithm = {
     return new Promise(function(resolve, reject) {
       const userCity = mapPoint.city,
         userState = mapPoint.state;
-      console.log(userState, userCity);
+      console.log("User State:", userState, "User City", userCity);
 
       State.findOne({ abbr: userState })
         .populate("searchedCities")
@@ -99,7 +98,12 @@ const algorithm = {
 
   createSearchedCity: function(state, cityName, cityArray) {
     // Create the new SearchedCity
+    let countCities = 0;
+    let listCities = [];
     SearchedCity.create({ name: cityName }, (err, newSearchedCity) => {
+      console.log("Adding", newSearchedCity.name, "to", state.name);
+      state.searchedCities.push(newSearchedCity);
+      state.save();
       // Loop through the array of closestCity Objects
       cityArray.forEach((city) => {
         // Find each state and it's matching city
@@ -109,12 +113,14 @@ const algorithm = {
             match: { name: city.name }
           })
           .exec((err, foundState2) => {
-            console.log("foundState2 ====================================================", foundState2);
-            // newSearchedCity.closestCities.push(foundState.wikiCities[0]._id)
+            listCities.push(foundState2.wikiCities[0]._id);
+            countCities++;
+            if (countCities === 5) {
+              newSearchedCity.closestCities = listCities;
+              newSearchedCity.save();
+            }
           });
       });
-      // state.searchedCities.push(newSearchedCity);
-      // state.save();
     });
   },
 
@@ -192,8 +198,7 @@ const algorithm = {
     console.table(closestCities);
 
     return closestCities;
-  },
-  
+  }
 };
 
 module.exports = algorithm;
