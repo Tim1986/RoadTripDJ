@@ -6,491 +6,491 @@ const search =
         switch (state) {
             // 1
             case "AL":
-                this.giveCities([
-                    this.AL,
-                    this.MS,
-                    this.TN,
-                    this.GA,
-                    this.FL
+                search.giveCities([
+                    search.AL,
+                    search.MS,
+                    search.TN,
+                    search.GA,
+                    search.FL
                 ])
                 break;
     
             case "AK":
-                this.giveCities([
-                    this.AK
+                search.giveCities([
+                    search.AK
                 ])
                 break;
     
             case "AZ":
-                this.giveCities([
-                    this.AZ,
-                    this.CA,
-                    this.NV,
-                    this.UT,
-                    this.CO,
-                    this.NM])
+                search.giveCities([
+                    search.AZ,
+                    search.CA,
+                    search.NV,
+                    search.UT,
+                    search.CO,
+                    search.NM])
                 break;
     
             case "AR":
-                this.giveCities([
-                    this.AR,
-                    this.LA,
-                    this.TX,
-                    this.OK,
-                    this.KS,
-                    this.MO,
-                    this.TN,
-                    this.MS])
+                search.giveCities([
+                    search.AR,
+                    search.LA,
+                    search.TX,
+                    search.OK,
+                    search.KS,
+                    search.MO,
+                    search.TN,
+                    search.MS])
                 break;
     
             // 5
             case "CA":
-                this.giveCities([
-                    this.CA,
-                    this.OR,
-                    this.NV,
-                    this.AZ
+                search.giveCities([
+                    search.CA,
+                    search.OR,
+                    search.NV,
+                    search.AZ
                 ])
                 break;
     
             case "CO":
-                this.giveCities([
-                    this.CO,
-                    this.UT,
-                    this.WY,
-                    this.NE,
-                    this.KS,
-                    this.OK,
-                    this.TX,
-                    this.NM,
-                    this.AZ])
+                search.giveCities([
+                    search.CO,
+                    search.UT,
+                    search.WY,
+                    search.NE,
+                    search.KS,
+                    search.OK,
+                    search.TX,
+                    search.NM,
+                    search.AZ])
                 break;
     
             case "CT":
-                this.giveCities([
-                    this.CT,
-                    this.RI,
-                    this.MA,
-                    this.NY,
-                    this.NJ])
+                search.giveCities([
+                    search.CT,
+                    search.RI,
+                    search.MA,
+                    search.NY,
+                    search.NJ])
                 break;
     
             case "DE":
-                this.giveCities([
-                    this.DE,
-                    this.MD,
-                    this.VA,
-                    this.PA,
-                    this.DC,
-                    this.NJ])
+                search.giveCities([
+                    search.DE,
+                    search.MD,
+                    search.VA,
+                    search.PA,
+                    search.DC,
+                    search.NJ])
                 break;
     
             case "FL":
-                this.giveCities([
-                    this.GA,
-                    this.FL,
-                    this.AL])
+                search.giveCities([
+                    search.GA,
+                    search.FL,
+                    search.AL])
                 break;
     
             // 10
             case "GA":
-                this.giveCities([
-                    this.GA,
-                    this.FL,
-                    this.AL,
-                    this.TN,
-                    this.NC,
-                    this.SC])
+                search.giveCities([
+                    search.GA,
+                    search.FL,
+                    search.AL,
+                    search.TN,
+                    search.NC,
+                    search.SC])
                 break;
     
             case "HI":
-                this.giveCities([
-                    this.HI])
+                search.giveCities([
+                    search.HI])
                 break;
     
             case "ID":
-                this.giveCities([
-                    this.ID,
-                    this.WA,
-                    this.OR,
-                    this.NV,
-                    this.UT,
-                    this.WY,
-                    this.MT])
+                search.giveCities([
+                    search.ID,
+                    search.WA,
+                    search.OR,
+                    search.NV,
+                    search.UT,
+                    search.WY,
+                    search.MT])
                 break;
     
             case "IL":
-                this.giveCities([
-                    this.IL,
-                    this.WI,
-                    this.IA,
-                    this.MO,
-                    this.KY,
-                    this.IN])
+                search.giveCities([
+                    search.IL,
+                    search.WI,
+                    search.IA,
+                    search.MO,
+                    search.KY,
+                    search.IN])
                 break;
     
             case "IN":
-                this.giveCities([
-                    this.IN,
-                    this.MI,
-                    this.OH,
-                    this.KY,
-                    this.IL])
+                search.giveCities([
+                    search.IN,
+                    search.MI,
+                    search.OH,
+                    search.KY,
+                    search.IL])
                 break;
     
             // 15
             case "IA":
-                this.giveCities([
-                    this.IA,
-                    this.MN,
-                    this.WI,
-                    this.IL,
-                    this.MO,
-                    this.NE,
-                    this.SD])
+                search.giveCities([
+                    search.IA,
+                    search.MN,
+                    search.WI,
+                    search.IL,
+                    search.MO,
+                    search.NE,
+                    search.SD])
                 break;
     
             case "KS":
-                this.giveCities([
-                    this.KS,
-                    this.NE,
-                    this.MO,
-                    this.AR,
-                    this.OK,
-                    this.TX,
-                    this.CO])
+                search.giveCities([
+                    search.KS,
+                    search.NE,
+                    search.MO,
+                    search.AR,
+                    search.OK,
+                    search.TX,
+                    search.CO])
                 break;
     
             case "KY":
-                this.giveCities([
-                    this.KY,
-                    this.IN,
-                    this.OH,
-                    this.WV,
-                    this.VA,
-                    this.TN,
-                    this.MO,
-                    this.IL])
+                search.giveCities([
+                    search.KY,
+                    search.IN,
+                    search.OH,
+                    search.WV,
+                    search.VA,
+                    search.TN,
+                    search.MO,
+                    search.IL])
                 break;
     
             case "LA":
-                this.giveCities([
-                    this.LA,
-                    this.TX,
-                    this.AR,
-                    this.MS])
+                search.giveCities([
+                    search.LA,
+                    search.TX,
+                    search.AR,
+                    search.MS])
                 break;
     
             case "ME":
-                this.giveCities([
-                    this.ME,
-                    this.NH,
-                    this.VT,
-                    this.MA,
-                    this.NY])
+                search.giveCities([
+                    search.ME,
+                    search.NH,
+                    search.VT,
+                    search.MA,
+                    search.NY])
                 break;
     
             // 20
             case "MD":
-                this.giveCities([
-                    this.MD,
-                    this.DC,
-                    this.DE,
-                    this.PA,
-                    this.VA])
+                search.giveCities([
+                    search.MD,
+                    search.DC,
+                    search.DE,
+                    search.PA,
+                    search.VA])
                 break;
     
             case "MA":
-                this.giveCities([
-                    this.MA,
-                    this.NH,
-                    this.VT,
-                    this.NY,
-                    this.CT,
-                    this.RI])
+                search.giveCities([
+                    search.MA,
+                    search.NH,
+                    search.VT,
+                    search.NY,
+                    search.CT,
+                    search.RI])
                 break;
     
             case "MI":
-                this.giveCities([
-                    this.MI,
-                    this.IN,
-                    this.OH])
+                search.giveCities([
+                    search.MI,
+                    search.IN,
+                    search.OH])
                 break;
     
             case "MN":
-                this.giveCities([
-                    this.MN,
-                    this.ND,
-                    this.SD,
-                    this.IA,
-                    this.WI])
+                search.giveCities([
+                    search.MN,
+                    search.ND,
+                    search.SD,
+                    search.IA,
+                    search.WI])
                 break;
     
             case "MS":
-                this.giveCities([
-                    this.MS,
-                    this.LA,
-                    this.AR,
-                    this.TN,
-                    this.AL])
+                search.giveCities([
+                    search.MS,
+                    search.LA,
+                    search.AR,
+                    search.TN,
+                    search.AL])
                 break;
     
             // 25
             case "MO":
-                this.giveCities([
-                    this.MO,
-                    this.KS,
-                    this.NE,
-                    this.IA,
-                    this.IL,
-                    this.KY,
-                    this.TN,
-                    this.AR,
-                    this.OK])
+                search.giveCities([
+                    search.MO,
+                    search.KS,
+                    search.NE,
+                    search.IA,
+                    search.IL,
+                    search.KY,
+                    search.TN,
+                    search.AR,
+                    search.OK])
                 break;
     
             case "MT":
-                this.giveCities([
-                    this.MT,
-                    this.ID,
-                    this.WY,
-                    this.SD,
-                    this.ND])
+                search.giveCities([
+                    search.MT,
+                    search.ID,
+                    search.WY,
+                    search.SD,
+                    search.ND])
                 break;
     
             case "NE":
-                this.giveCities([
-                    this.NE,
-                    this.SD,
-                    this.IA,
-                    this.MO,
-                    this.KS,
-                    this.CO,
-                    this.WY])
+                search.giveCities([
+                    search.NE,
+                    search.SD,
+                    search.IA,
+                    search.MO,
+                    search.KS,
+                    search.CO,
+                    search.WY])
                 break;
     
             case "NV":
-                this.giveCities([
-                    this.NV,
-                    this.CA,
-                    this.OR,
-                    this.ID,
-                    this.UT,
-                    this.AZ])
+                search.giveCities([
+                    search.NV,
+                    search.CA,
+                    search.OR,
+                    search.ID,
+                    search.UT,
+                    search.AZ])
                 break;
     
             case "NH":
-                this.giveCities([
-                    this.NH,
-                    this.ME,
-                    this.VT,
-                    this.MA])
+                search.giveCities([
+                    search.NH,
+                    search.ME,
+                    search.VT,
+                    search.MA])
                 break;
     
             // 30
             case "NJ":
-                this.giveCities([
-                    this.NJ,
-                    this.DE,
-                    this.PA,
-                    this.NY])
+                search.giveCities([
+                    search.NJ,
+                    search.DE,
+                    search.PA,
+                    search.NY])
                 break;
     
             case "NM":
-                this.giveCities([
-                    this.NM,
-                    this.TX,
-                    this.OK,
-                    this.CO,
-                    this.AZ,
-                    this.UT])
+                search.giveCities([
+                    search.NM,
+                    search.TX,
+                    search.OK,
+                    search.CO,
+                    search.AZ,
+                    search.UT])
                 break;
     
             case "NY":
-                this.giveCities([
-                    this.NY,
-                    this.PA,
-                    this.NJ,
-                    this.CT,
-                    this.MA,
-                    this.VT])
+                search.giveCities([
+                    search.NY,
+                    search.PA,
+                    search.NJ,
+                    search.CT,
+                    search.MA,
+                    search.VT])
                 break;
     
             case "NC":
-                this.giveCities([
-                    this.NC,
-                    this.SC,
-                    this.GA,
-                    this.TN,
-                    this.VA])
+                search.giveCities([
+                    search.NC,
+                    search.SC,
+                    search.GA,
+                    search.TN,
+                    search.VA])
                 break;
     
             case "ND":
-                this.giveCities([
-                    this.ND,
-                    this.MT,
-                    this.WY,
-                    this.SD,
-                    this.MN])
+                search.giveCities([
+                    search.ND,
+                    search.MT,
+                    search.WY,
+                    search.SD,
+                    search.MN])
                 break;
     
             // 35
             case "OH":
-                this.giveCities([
-                    this.OH,
-                    this.MI,
-                    this.IN,
-                    this.KY,
-                    this.WV,
-                    this.PA])
+                search.giveCities([
+                    search.OH,
+                    search.MI,
+                    search.IN,
+                    search.KY,
+                    search.WV,
+                    search.PA])
                 break;
     
             case "OK":
-                this.giveCities([
-                    this.OK,
-                    this.TX,
-                    this.KS,
-                    this.NM,
-                    this.CO,
-                    this.MO,
-                    this.AR,
-                    this.LA])
+                search.giveCities([
+                    search.OK,
+                    search.TX,
+                    search.KS,
+                    search.NM,
+                    search.CO,
+                    search.MO,
+                    search.AR,
+                    search.LA])
                 break;
     
             case "OR":
-                this.giveCities([
-                    this.OR,
-                    this.WA,
-                    this.ID,
-                    this.NV,
-                    this.CA])
+                search.giveCities([
+                    search.OR,
+                    search.WA,
+                    search.ID,
+                    search.NV,
+                    search.CA])
                 break;
     
             case "PA":
-                this.giveCities([
-                    this.PA,
-                    this.NY,
-                    this.NJ,
-                    this.DE,
-                    this.MD,
-                    this.DC,
-                    this.WV,
-                    this.OH])
+                search.giveCities([
+                    search.PA,
+                    search.NY,
+                    search.NJ,
+                    search.DE,
+                    search.MD,
+                    search.DC,
+                    search.WV,
+                    search.OH])
                 break;
     
             case "RI":
-                this.giveCities([
-                    this.RI,
-                    this.CT,
-                    this.MA])
+                search.giveCities([
+                    search.RI,
+                    search.CT,
+                    search.MA])
                 break;
     
             // 40
             case "SC":
-                this.giveCities([
-                    this.SC,
-                    this.NC,
-                    this.GA])
+                search.giveCities([
+                    search.SC,
+                    search.NC,
+                    search.GA])
                 break;
     
             case "SD":
-                this.giveCities([
-                    this.SD,
-                    this.ND,
-                    this.MT,
-                    this.WY,
-                    this.NE,
-                    this.IA,
-                    this.MN])
+                search.giveCities([
+                    search.SD,
+                    search.ND,
+                    search.MT,
+                    search.WY,
+                    search.NE,
+                    search.IA,
+                    search.MN])
                 break;
     
             case "TN":
-                this.giveCities([
-                    this.TN,
-                    this.KY,
-                    this.VA,
-                    this.NC,
-                    this.GA,
-                    this.AL,
-                    this.MS,
-                    this.AR,
-                    this.MO])
+                search.giveCities([
+                    search.TN,
+                    search.KY,
+                    search.VA,
+                    search.NC,
+                    search.GA,
+                    search.AL,
+                    search.MS,
+                    search.AR,
+                    search.MO])
                 break;
     
             case "TX":
-                this.giveCities([
-                    this.TX,
-                    this.NM,
-                    this.OK,
-                    this.AR,
-                    this.LA])
+                search.giveCities([
+                    search.TX,
+                    search.NM,
+                    search.OK,
+                    search.AR,
+                    search.LA])
                 break;
     
             case "UT":
-                this.giveCities([
-                    this.UT,
-                    this.ID,
-                    this.WY,
-                    this.CO,
-                    this.NM,
-                    this.AZ,
-                    this.NV])
+                search.giveCities([
+                    search.UT,
+                    search.ID,
+                    search.WY,
+                    search.CO,
+                    search.NM,
+                    search.AZ,
+                    search.NV])
                 break;
     
             // 45
             case "VT":
-                this.giveCities([
-                    this.VT,
-                    this.NH,
-                    this.MA,
-                    this.NY])
+                search.giveCities([
+                    search.VT,
+                    search.NH,
+                    search.MA,
+                    search.NY])
                 break;
     
             case "VA":
-                this.giveCities([
-                    this.VA,
-                    this.DC,
-                    this.KY,
-                    this.KY,
-                    this.TN,
-                    this.NC])
+                search.giveCities([
+                    search.VA,
+                    search.DC,
+                    search.KY,
+                    search.KY,
+                    search.TN,
+                    search.NC])
                 break;
     
             case "WA":
-                this.giveCities([
-                    this.WA,
-                    this.OR,
-                    this.ID])
+                search.giveCities([
+                    search.WA,
+                    search.OR,
+                    search.ID])
                 break;
     
             case "WV":
-                this.giveCities([
-                    this.WV,
-                    this.DC,
-                    this.VA,
-                    this.KY,
-                    this.OH,
-                    this.PA])
+                search.giveCities([
+                    search.WV,
+                    search.DC,
+                    search.VA,
+                    search.KY,
+                    search.OH,
+                    search.PA])
                 break;
     
             case "WI":
-                this.giveCities([
-                    this.WI,
-                    this.MN,
-                    this.IA,
-                    this.IL])
+                search.giveCities([
+                    search.WI,
+                    search.MN,
+                    search.IA,
+                    search.IL])
                 break;
     
             // 50
             case "WY":
-                this.giveCities([
-                    this.WY,
-                    this.MT,
-                    this.ID,
-                    this.UT,
-                    this.CO,
-                    this.NE,
-                    this.SD])
+                search.giveCities([
+                    search.WY,
+                    search.MT,
+                    search.ID,
+                    search.UT,
+                    search.CO,
+                    search.NE,
+                    search.SD])
                 break;
     
         }},
@@ -625,7 +625,9 @@ const search =
     DC : ["Washington, D.C."],
 
     giveCities : array => {
-        return _.flattenDeep(array)
+        const mergedArray = _.flattenDeep(array)
+        // console.log(mergedArray)
+        return mergedArray
      },
 }
 

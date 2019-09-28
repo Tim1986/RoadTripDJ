@@ -22,23 +22,22 @@ const algorithm = {
 //   tracks: (start, end, isPopular, userID, accessToken, newPlaylistID) => {
   tracks: (start, end, isPopular, userID, accessToken) => {
     //Start and End point passed to geocoder to get Latitude/Longitude and formatted address for playlist name and database check
-    return algorithm.getSearch('TN')
     
-    // return google.startGeo(start, end)
-        // .then((userInput) => {
-        //   const tripObj = {
-        //     startPoint: userInput[0][0],
-        //     endPoint: userInput[0][1],
-        //     tripTime: userInput[1].tripMinutes
-        //   };
+    return google.startGeo(start, end)
+        .then((userInput) => {
+          const tripObj = {
+            startPoint: userInput[0][0],
+            endPoint: userInput[0][1],
+            tripTime: userInput[1].tripMinutes
+          };
 
         // Look up state in database, populated with searchedCities
-        // return Promise.all([
-        //     algorithm.checkSearchedCities(tripObj.startPoint),
-        //     algorithm.checkSearchedCities(tripObj.endPoint),
-        //     tripObj.tripTime])
-        // })
-        // .then(result => {
+        return Promise.all([
+            algorithm.checkSearchedCities(tripObj.startPoint),
+            algorithm.checkSearchedCities(tripObj.endPoint),
+            tripObj.tripTime])
+        })
+        .then(result => {
         // const startClosest = result[0],
         //     endClosest = result[1],
         //     tripTime = result[2]
@@ -50,8 +49,8 @@ const algorithm = {
 
 	    //NEEDS: function to grab stuff from the wikiCities collection
 
-        // })
-        // .catch((err) => console.log("\nERROR | Tracks error | " + err))
+        })
+        .catch((err) => console.log("\nERROR | Tracks error | " + err))
     
   },
 
@@ -70,11 +69,15 @@ const algorithm = {
               if (city.name === userCity) {
                   resolve(city.closestCities)
               }
+              algorithm.getClosest( mapPoint )
+                .then((resultArray) => {
+                  
+                })
               // If city doesn't exist, find the closest cities and save it to the database
               // return listClosestCities
           });
       }
-      resolve(console.log("there are no cities"))
+          resolve()
       });
     })
   },
@@ -103,7 +106,7 @@ const algorithm = {
 
 
     findClosest: function(point){
-        const array = algorithm.getSearch(point)
+        const array = algorithm.getSearch(point.state)
         console.log("--Getting geoData for all supplied cities")
         return google.geoDataLoop(array, 0)
             .then(function (arrayGlob) {
