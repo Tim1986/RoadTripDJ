@@ -19,6 +19,7 @@ const test = {
         })
         // spot.getTopSongs(numberOfSongs, playlistID, artistIDs, accessToken)
         return spot.getTopSongs(artistIDs, accessToken)
+        
         // .then(URIs => {console.log(URIs)})
 
             

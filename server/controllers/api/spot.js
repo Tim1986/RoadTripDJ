@@ -3,7 +3,7 @@ const PromiseThrottle = require('promise-throttle');
 const timer = ms => new Promise(res => setTimeout(res, ms));
 
 const promiseThrottle = new PromiseThrottle({
-  requestsPerSecond: 5,
+  requestsPerSecond: 25,
   promiseImplementation: Promise
 });
 
@@ -32,12 +32,12 @@ const spot = {
                 trackNum.forEach((track) => {
                   let URI = track.uri
                   spotifyURIs.push(URI)
-                  console.log("Artist Names: ", track.artists[0].name);
+                  // console.log("Artist Names: ", track.artists[0].name);
                   // console.log("Song Names: ", track.name);                  
                 })
               })
               console.log(spotifyURIs)
-              console.log(spotifyURIs.length)
+              console.log("--Grabbed " + spotifyURIs.length + " spotify track URIs")
               return spotifyURIs
 
 
@@ -63,8 +63,9 @@ const spot = {
               "Content-Type": "application/json"
             }
           })
-            .then(() => res.json(playlistID))
-            .catch((err) => console.log(err));
+          .then(() => (res.json(playlistID))
+          )
+          .catch((err) => console.log(err));
         }
 
     }

@@ -79,10 +79,6 @@ const algorithm = {
         ])
       })
       .then(culledArr => {
-          console.log("=====================================================================================================")
-          console.log("culledArr: " + culledArr)
-          console.log("culledArr[0][0]: " + culledArr[0][0][0])
-          console.log("=====================================================================================================")
         return Promise.all([
           test.controller(culledArr[0],culledArr[1], accessToken),
           accessToken, 

@@ -265,12 +265,6 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
   const userID = req.params.userID,
     accessToken = req.params.accessToken;
     
-  // spotifyTest.controller(startArrayFinal, endArrayFinal, accessToken)
-  // redo.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
-  // return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken)
-
- 
-
   axios({
     url: `https://api.spotify.com/v1/users/${userID}/playlists`,
     method: "POST",
@@ -287,21 +281,10 @@ router.post("/playlist/new/:userID/:accessToken", (req, res) => {
       const newPlaylistID = response2.data.id;
       return algorithm.tracks(startPoint, endPoint, isPopular, userID, accessToken, newPlaylistID)
     })
-  //   .then(culledArr => {
-  //     console.log("=====================================================================================================")
-  //     console.log("culledArr: " + culledArr)
-  //     console.log("culledArr[0][0]: " + culledArr[0][0])
-  //     console.log("=====================================================================================================")
-  //   return Promise.all([
-  //     spotifyTest.controller(culledArr[0],culledArr[1], accessToken),
-  //     accessToken, 
-  //     newPlaylistID
-  //   ])
-  // })
     .then( results => { 
       console.log("this is the final link---------------------------------------------------------------------------------------------------------------------")
       console.log(results)
-      spot.populatePlaylist(results[2], results[0], results[1], res)
+      return spot.populatePlaylist(results[2], results[0], results[1], res)
       //this is the send to the front-end end
 
     })  
