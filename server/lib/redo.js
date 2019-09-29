@@ -65,16 +65,23 @@ const algorithm = {
               end = wikiCityResultsAndTripTime[1],
               tripTime = wikiCityResultsAndTripTime[2]
               console.log("tripTime: " + tripTime)
+        
+        // const  startArr = minify.correctNumberOfSongs(start, tripTime),
+        //        endArr = minify.correctNumberOfSongs(end, tripTime),
+        //        testArr = [startArr, endArr]
+        
+        //        return Promise.all(testArr)
+        
 
-          return Promise.all([
-            minify.correctNumberOfSongs(start, tripTime),
-            minify.correctNumberOfSongs(end, tripTime)
-          ])
+        return Promise.all([
+          minify.correctNumberOfSongs(start, tripTime),
+          minify.correctNumberOfSongs(end, tripTime)
+        ])
       })
       .then(culledArr => {
           console.log("=====================================================================================================")
           console.log("culledArr: " + culledArr)
-          console.log("culledArr[0][0][0]: " + culledArr[0][0][0])
+          console.log("culledArr[0][0]: " + culledArr[0][0][0])
           console.log("=====================================================================================================")
         return Promise.all([
           test.controller(culledArr[0],culledArr[1], accessToken),

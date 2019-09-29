@@ -38,6 +38,7 @@ const spot = {
               })
               console.log(spotifyURIs)
               console.log(spotifyURIs.length)
+              return spotifyURIs
 
 
             }).catch(err => console.log(err))
