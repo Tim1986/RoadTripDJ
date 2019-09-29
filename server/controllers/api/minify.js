@@ -6,21 +6,28 @@ const minify = {
             const totalSongNumber = Math.round(tripTime / 3.5)
             const halfSongNumber = Math.round(totalSongNumber / 2)
             console.log("halfSongNumber: " + halfSongNumber)
-            console.log(array[4][0].spotifyID)
             minify.searchCity(array, finalArray, halfSongNumber, 0)
-            if (finalArray.length < halfSongNumber) {
+            console.log(finalArray.length)
+            if (finalArray.length < halfSongNumber && finalArray.length < 50) {
                 minify.searchCity(array, finalArray, halfSongNumber, 1)
             }
-            if (finalArray.length < halfSongNumber) {
+            console.log(finalArray.length)
+            if (finalArray.length < halfSongNumber && finalArray.length < 50) {
                 minify.searchCity(array, finalArray, halfSongNumber, 2)
             }
-            if (finalArray.length < halfSongNumber) {
+            console.log(finalArray.length)
+            if (finalArray.length < halfSongNumber && finalArray.length < 50) {
                 minify.searchCity(array, finalArray, halfSongNumber, 3)
             }
-            if (finalArray.length < halfSongNumber) {
+            console.log(finalArray.length)
+            if (finalArray.length < halfSongNumber && finalArray.length < 50) {
                 minify.searchCity(array, finalArray, halfSongNumber, 4)
             }
-            // console.log(finalArray)
+            console.log(finalArray.length)
+            if (finalArray.length > 50) {
+                finalArray.length = 50
+            }
+            console.log("finalArray.length: " + finalArray.length)
             resolve(finalArray)
             // return finalArray
         })
