@@ -2,7 +2,10 @@ import React, { Component } from "react";
 // import { Link } from 'react-router-dom';
 
 import BlurbMulti from "../../components/BlurbMulti";
+import Button from "../../components/Button";
 import Login from "../Login";
+
+import API from "../../lib/API";
 
 import "./index.css";
 
@@ -52,6 +55,10 @@ class LandingPage extends Component {
     "It is necessary to grant access to your Spotify account in order to use this app."
   ];
 
+  seedDB = () => {
+    API.DB.seed()
+  }
+
   render() {
     return (
       <div className="landing">
@@ -61,6 +68,7 @@ class LandingPage extends Component {
               <div>
                 <h3 className="hero__welcome-subtitle">Welcome to</h3>
                 <h1 className="display-3">Road Trip DJ</h1>
+                <Button value="Seed DB" onClick={this.seedDB} />
               </div>
             </div>
             <div

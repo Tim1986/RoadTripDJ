@@ -1,0 +1,26 @@
+const shakerHeightsOHArtists = [{ "_id": { "$oid": "5d8a214a81ba0d56dff19d76" }, "artist": "Jeff Bass", "spotifyID": "29LUur2mpi5s0OdMueyuvO", "popularity": 41.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d77" }, "artist": "Jamey Haddad", "spotifyID": "6pA6z9BWm4Y3L2pc4h4LfY", "popularity": 16.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d78" }, "artist": "John Blackburn", "spotifyID": "7sKmv7gggCvYXUZk0w1DQ8", "popularity": 4.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d79" }, "artist": "Joshua Radin", "spotifyID": "7omzannyG2lfDqP5xyZo34", "popularity": 58.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7a" }, "artist": "Kid Cudi", "spotifyID": "0fA0VVWsXO9YnASrzqfmYu", "popularity": 77.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7b" }, "artist": "Machine Gun Kelly", "spotifyID": "6TIYQ3jFPwQSRmorSezPxX", "popularity": 81.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7c" }, "artist": "Anne Cochran", "spotifyID": "5pcMsYi5xHlcpX0AWQXXV6", "popularity": 13.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7d" }, "artist": "Billy Newton-Davis", "spotifyID": "2CeRGWyl6T1oTgjWqAhIUn", "popularity": 25.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7e" }, "artist": "Jim Brickman", "spotifyID": "2NzWRNaaLByHyI3wpuec8P", "popularity": 57.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d7f" }, "artist": "Scott Savol", "spotifyID": "2HshEuWNGFXgsaT8uqyTbj", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d80" }, "artist": "Maurice Goldman", "spotifyID": "4M32g2J70vOUmxsrozUugJ", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d81" }, "artist": "Craig Finn", "spotifyID": "78DZaDfOK3i88eRVPkzZu2", "popularity": 37.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d82" }, "artist": "Jaime Laredo", "spotifyID": "3f6FlxZfcsNeOZCXgbp1yW", "popularity": 47.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d83" }, "artist": "Sharon Robinson", "spotifyID": "7EsxmSwL9SY34ZK2MmhAmD", "popularity": 25.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d84" }, "artist": "John Morris Russell", "spotifyID": "0xv5yAJHwklZx723AFfuQC", "popularity": 21.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d85" }, "artist": "Cheri Dennis", "spotifyID": "15U1prrFKwSBJamlMNuVW5", "popularity": 34.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d86" }, "artist": "Lorin Maazel", "spotifyID": "3EQvBmWlfyaRLGDuVfKmve", "popularity": 53.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d87" }, "artist": "Sean Levert", "spotifyID": "1JWlTM2DxHUx06ZIetSHmM", "popularity": 8.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d88" }, "artist": "Paul Kantor", "spotifyID": "0eRyCxCtNP7vui24J8R65v", "popularity": 0.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d89" }, "artist": "George Szell", "spotifyID": "2CFaOiHKik5FgNGzZJ08sx", "popularity": 47.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d8a" }, "artist": "Christoph von Dohnányi", "spotifyID": "00Z7CY1UMeGccawHXlZ6Zd", "popularity": 32.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d8b" }, "artist": "Bill Taft", "spotifyID": "1wpOqswdgrPlVeLQzdE6Uw", "popularity": 14.0 },
+{ "_id": { "$oid": "5d8a214a81ba0d56dff19d8c" }, "artist": "Gerald Levert", "spotifyID": "7BLOa6FxCbMnowidkQfLIA", "popularity": 47.0 }
+]
+
+module.exports = shakerHeightsOHArtists;

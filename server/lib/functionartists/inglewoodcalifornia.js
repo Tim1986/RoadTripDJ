@@ -1,0 +1,21 @@
+const inglewoodCAArtists = [{"_id":{"$oid":"5d898c0781ba0d56dff19422"},"artist":"Tay Walker","spotifyID":"31RaitnNW0bVhYgLl01rRw","popularity":38.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19423"},"artist":"Shawn Chrystopher","spotifyID":"2RIAZJVGT3qjZ5BNw0yVxH","popularity":34.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19424"},"artist":"Cuco","spotifyID":"2Tglaf8nvDzwSQnpSrjLHP","popularity":76.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19425"},"artist":"Stephan Marcellus","spotifyID":"2aS5xoHgpQlZ5qwFxKNAt5","popularity":6.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19426"},"artist":"Chikezie","spotifyID":"3YTED43TNzak26vc9qVZW1","popularity":0.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19427"},"artist":"Tina Campbell","spotifyID":"3dipd1qrih3c6oRdUzyfpP","popularity":29.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19428"},"artist":"Jim Photoglo","spotifyID":"2MtaGjp33oMpAQ702qK4Rj","popularity":17.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19429"},"artist":"Erica Campbell","spotifyID":"46CCmeVLrgc6MnyVpVMOzp","popularity":40.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942a"},"artist":"Sonny Bono","spotifyID":"4ui9JwXE5MHylLzpsoiEhr","popularity":12.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942b"},"artist":"Thurz","spotifyID":"7bWmyvqnoAdWHLBvGprwsz","popularity":35.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942c"},"artist":"Omarion","spotifyID":"0f5nVCcR06GX8Qikz0COtT","popularity":66.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942d"},"artist":"Fever 333","spotifyID":"1B0155rdv175D1tQ8VH7Oy","popularity":56.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942e"},"artist":"Ren Hanami","spotifyID":"4ojwY8CEqdxntDPsmrHYxp","popularity":0.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff1942f"},"artist":"Bishop Lamont","spotifyID":"4RV0poOKGzij1Xe9dsO57h","popularity":33.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19430"},"artist":"David Townsend","spotifyID":"3eQf3jkkx6MXOW8RulCYOM","popularity":5.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19431"},"artist":"William Clarke","spotifyID":"2eECVTTCHnDwsBirJPiDke","popularity":25.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19432"},"artist":"Big Syke","spotifyID":"5J32qSlWzKCdcL31B8wglv","popularity":36.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19433"},"artist":"Sabi","spotifyID":"3tB8VKd0rtEnc9x8l78ymo","popularity":53.0},
+{"_id":{"$oid":"5d898c0781ba0d56dff19434"},"artist":"Zoot Sims","spotifyID":"1pwr5rTWLVfqhvHfB7Reap","popularity":43.0}]
+
+module.exports = inglewoodCAArtists

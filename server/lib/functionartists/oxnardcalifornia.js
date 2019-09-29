@@ -1,0 +1,20 @@
+const oxnardCAArtists = [{"_id":{"$oid":"5d8a102781ba0d56dff19958"},"artist":"Anderson Paak","spotifyID":"3jK9MiCrA42lLAdMGUZpwa","popularity":78.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19959"},"artist":"Kemuri","spotifyID":"3tRqvT7FoScxartUAj68Wp","popularity":32.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995a"},"artist":"False Confession","spotifyID":"14YgK8DfWqTx88DXpDZTJU","popularity":3.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995b"},"artist":"Brooke Candy","spotifyID":"3amwMyDd1uxTBoUZlazZ9m","popularity":55.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995c"},"artist":"Dr. Know","spotifyID":"1aKAy6QfmE1qVmCGdHXYIv","popularity":31.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995d"},"artist":"Timmy Curran","spotifyID":"5jktPAtRLcFGxkifGO9jK0","popularity":21.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995e"},"artist":"Ill Repute","spotifyID":"2FE7KWiPJqwic38cmnAUQs","popularity":25.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff1995f"},"artist":"Down AKA Kilo","spotifyID":"73igm5OnnT93vqQaukD4oE","popularity":4.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19960"},"artist":"Madlib","spotifyID":"5LhTec3c7dcqBvpLRWbMcf","popularity":66.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19961"},"artist":"Brandon Cruz","spotifyID":"4wJyPVcdfycCaQY3xOC2SN","popularity":23.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19962"},"artist":"Homer Keller","spotifyID":"4UQP2k5pFG8GNCC1cwaMkj","popularity":0.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19963"},"artist":"DJ Babu","spotifyID":"7LSCBbEAuCqQqE0MGszyKl","popularity":36.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19964"},"artist":"M.E.D.","spotifyID":"1bIKlIHjMjNIDLTTrDAtpM","popularity":0.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19965"},"artist":"Dudley Perkins","spotifyID":"08xLtQbGdIZfVfk6QTgYIW","popularity":28.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19966"},"artist":"Agression","spotifyID":"5Frvd8cVodI6MGNaMHvqV9","popularity":19.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19967"},"artist":"Dave Carter","spotifyID":"3DQlT4YRvt7NCncG9Pk3bE","popularity":19.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19968"},"artist":"Oh No","spotifyID":"5PA6iCCOkq14PpMWWlhJ5T","popularity":46.0},
+{"_id":{"$oid":"5d8a102781ba0d56dff19969"},"artist":"Nails","spotifyID":"0X380XXQSNBYuleKzav5UO","popularity":67.0}]
+
+module.exports = oxnardCAArtists

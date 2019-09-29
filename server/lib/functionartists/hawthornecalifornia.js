@@ -1,0 +1,21 @@
+const hawthorneCAArtists = [{"_id":{"$oid":"5d89896881ba0d56dff19359"},"artist":"Chris Montez","spotifyID":"0QRgfCLzSR9GyCjXboWQTA","popularity":45.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935a"},"artist":"Kerry Mills","spotifyID":"6YSkJxB0v7qPiwAiLhOuHd","popularity":2.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935b"},"artist":"Kelly Hansen","spotifyID":"3WpGEiHL6aFMX4vdrj7cGP","popularity":24.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935c"},"artist":"Jeff McDonald","spotifyID":"6DzzzAt3ZIwDatpJ6W2S0M","popularity":0.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935d"},"artist":"Domo Genesis","spotifyID":"6vHBuUxrcpn1do5UaEJ7g6","popularity":57.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935e"},"artist":"Cuco","spotifyID":"2Tglaf8nvDzwSQnpSrjLHP","popularity":76.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1935f"},"artist":"Al Jardine","spotifyID":"1kqh7mzo24yFoDNBgDP3j5","popularity":16.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19360"},"artist":"Emitt Rhodes","spotifyID":"1yap1SgRPMxgyfrrDlQ95y","popularity":36.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19361"},"artist":"Dennis Wilson","spotifyID":"5gl6pfPwJ1coivVUMZPiS9","popularity":39.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19362"},"artist":"Redd Kross","spotifyID":"1USc9u5yL4tUaQKhGWNuvj","popularity":35.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19363"},"artist":"Dios","spotifyID":"0ODWsmNXtn928qhhEn87C8","popularity":51.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19364"},"artist":"Zoot Horn Rollo","spotifyID":"2iN3B5zBcPVDXjTsiGj0Bm","popularity":6.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19365"},"artist":"Darlene Love","spotifyID":"391oLRVmoTkumiN79HkTWu","popularity":44.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19366"},"artist":"Kurupt","spotifyID":"6NyJIFHAePjHR1pFxwisqz","popularity":64.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19367"},"artist":"Carl Wilson","spotifyID":"4YYuVqNzwhVadEmKgLdMkN","popularity":10.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19368"},"artist":"The Beach Boys","spotifyID":"3oDbviiivRWhXwIE8hxkVV","popularity":75.0},
+{"_id":{"$oid":"5d89896881ba0d56dff19369"},"artist":"Britt Woodman","spotifyID":"2uWUfjAPSMukkv9JYXRRfR","popularity":13.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1936a"},"artist":"Pigeon John","spotifyID":"3RfeWhoxAqlNRNcywG7RJj","popularity":47.0},
+{"_id":{"$oid":"5d89896881ba0d56dff1936b"},"artist":"Brian Wilson","spotifyID":"5K2BdUwQNqXy70BX2L8BQx","popularity":47.0}]
+
+module.exports = hawthorneCAArtists

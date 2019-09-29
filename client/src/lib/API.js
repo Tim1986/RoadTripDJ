@@ -87,8 +87,8 @@ export default {
         .then((response) => {
           localStorage.setItem("spotifyAccessToken", response.data.access_token);
           localStorage.setItem("spotifyRefreshToken", response.data.refresh_token);
-          window.location.assign("https://glacial-savannah-65289.herokuapp.com/newtrip");
-          // window.location.assign("http://localhost:3000/newtrip");
+          // window.location.assign("https://glacial-savannah-65289.herokuapp.com/newtrip");
+          window.location.assign("http://localhost:3000/newtrip");
         })
         .catch((err) => console.log(err));
     },
@@ -99,17 +99,28 @@ export default {
         spotifyUserID = localStorage.getItem("spotifyUserID");
       console.log(accessToken);
       axios({
-        method: "GET",
-        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`
-        // data: data
+        method: "POST",
+        url: `/api/spotify/playlist/new/${spotifyUserID}/${accessToken}`,
+        data: data
       })
         .then((response) => {
           setTimeout(function() {
             localStorage.setItem("playlistID", response.data);
-            window.location.assign("https://glacial-savannah-65289.herokuapp.com/done");
-            // window.location.assign("http://localhost:3000/done");
+            // window.location.assign("https://glacial-savannah-65289.herokuapp.com/done");
+            window.location.assign("http://localhost:3000/done");
           }, 30000);
         })
+        .catch((err) => console.log(err));
+    }
+  },
+
+  DB: {
+    seed: function() {
+      axios({
+        method: "GET",
+        url: "/api/db/seed"
+      })
+        .then((response) => console.log(response))
         .catch((err) => console.log(err));
     }
   }

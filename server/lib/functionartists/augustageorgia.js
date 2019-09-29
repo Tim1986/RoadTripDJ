@@ -1,0 +1,26 @@
+const augustanaGAArtists = [{ "_id": { "$oid": "5d89723081ba0d56dff18ddf" }, "artist": "Josh Kelley", "spotifyID": "1yLlQimDTRrACa45u50LXW", "popularity": 41.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de0" }, "artist": "Terri Gibbs", "spotifyID": "53I5L1MaOYGfbRM1uZ80xg", "popularity": 32.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de1" }, "artist": "Pastor Troy", "spotifyID": "3D04N2X2w6vUGeyG94FBaY", "popularity": 50.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de2" }, "artist": "Chocolate Williams", "spotifyID": "3fuAkGrwz1M164eNYnpGvR", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de3" }, "artist": "Lonnie Youngblood", "spotifyID": "03KTlUpI4DZIWImZ2Y6tkH", "popularity": 14.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de4" }, "artist": "James Brown", "spotifyID": "7GaxyUddsPok8BuhxN6OUW", "popularity": 67.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de5" }, "artist": "J. B. Hutto", "spotifyID": "1Xc5z7yb5PIgpLImjfXX6G", "popularity": 15.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de6" }, "artist": "12 Gauge", "spotifyID": "3vUqAeiSgELkALBNlBlaOA", "popularity": 10.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de7" }, "artist": "Hunter Foster", "spotifyID": "43BnUJBWDZs1vEHVIStQRR", "popularity": 35.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de8" }, "artist": "Michael Dease", "spotifyID": "29h9KL3WADCGIx9ykAZxRS", "popularity": 17.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18de9" }, "artist": "DJ Spinz", "spotifyID": "7m4YY1JUSagIGuM9BL7KR1", "popularity": 14.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18dea" }, "artist": "Anthony Kellman", "spotifyID": "5LoDgl0q5doKa0buFSm96R", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18deb" }, "artist": "Julia Easterlin", "spotifyID": "4f4k9MkmDmRToDktQomwrX", "popularity": 22.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18dec" }, "artist": "Jessye Norman", "spotifyID": "0zdBW3w3XzBuPMUEiarUUw", "popularity": 41.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18ded" }, "artist": "Dana Andrews", "spotifyID": "7qQfcR4AgF5GWRnigyHHvL", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18dee" }, "artist": "Kim Dexter", "spotifyID": "7G31D2D9qiVkkumf5QJB8y", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18def" }, "artist": "Amy Grant", "spotifyID": "72Nhcx7prNk2ZCxhx0Y5es", "popularity": 55.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df0" }, "artist": "Walt Weiskopf", "spotifyID": "0tdWD3Wpf0kyUYI6zeT1w3", "popularity": 42.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df1" }, "artist": "Dave Haywood", "spotifyID": "3OXpxVSfOayD7akwrHdsWL", "popularity": 0.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df2" }, "artist": "Sharon Jones", "spotifyID": "6LufpoVlIYKQCu9Gjpk8B7", "popularity": 58.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df3" }, "artist": "Pete Drake", "spotifyID": "15QFACW5Ds2oQABA1Atqxs", "popularity": 30.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df4" }, "artist": "Charles Kelley", "spotifyID": "2Hbxyk7qJ22i8wFEqgM3vC", "popularity": 48.0 },
+{ "_id": { "$oid": "5d89723081ba0d56dff18df5" }, "artist": "Hulk Hogan", "spotifyID": "77i7nRpOQMt0AFjphYOqnL", "popularity": 1.0 }
+]
+
+module.exports = augustanaGAArtists;

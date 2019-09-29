@@ -1,0 +1,21 @@
+const ithacaNYArtists = [{ artist: "Willie Watson", spotifyID: "5j9IEu1SEY0JslCPmfVsgq", popularity: 44.0 },
+{ artist: "Julius Eastman", spotifyID: "0pOwr98sKzhTEHlLzkFzyQ", popularity: 26.0 },
+{ artist: "Raphael Hillyer", spotifyID: "4Ivpq3LSEeyofWmICGO7Pi", popularity: 3.0 },
+{ artist: "Kyle Jarrow", spotifyID: "0zoKcajCBBmaQibhH8b7QS", popularity: 0.0 },
+{ artist: "Kurt Riley", spotifyID: "1z5zJp6wZ5xrqBVGsmw2P0", popularity: 17.0 },
+{ artist: "Frederic Chiu", spotifyID: "1ZCJrRwwHakm5xUvVWZC9Z", popularity: 28.0 },
+{ artist: "James Milton Black", spotifyID: "0CeLrvcR8zMM5eOw9V9wQA", popularity: 0.0 },
+{ artist: "The Hangovers", spotifyID: "3UZzVrbupYk8flWlQTn6OV", popularity: 9.0 },
+{ artist: "Elizabeth Alexander", spotifyID: "13lPbK76bgntSgie5jcXcy", popularity: 0.0 },
+{ artist: "Sammus", spotifyID: "1tc4LrAlQ8EmlauDoAvpBa", popularity: 32.0 },
+{ artist: "Kevin Kinsella", spotifyID: "241J7EY5FACBAhxsRfCRor", popularity: 17.0 },
+{ artist: "Jeremy Lyons", spotifyID: "00Wec1CZrEmhtrDER2ArTp", popularity: 2.0 },
+{ artist: "John Schneiderman", spotifyID: "3ojJLBClGi9OeiR2zU7CZw", popularity: 12.0 },
+{ artist: "Alex Kresovich", spotifyID: "0hApbdN8rfOXlTZ6ddx3A0", popularity: 20.0 },
+{ artist: "Bobby Comstock", spotifyID: "2e9lKW1SmMOqZpNcVaGW5f", popularity: 8.0 },
+{ artist: "Johnny Dowd", spotifyID: "37XGRhnYWhiV6o2jPB8nxt", popularity: 11.0 },
+{ artist: "Gary Driscoll", spotifyID: "2uW07oq2oBadeC9LgxkyOt", popularity: 0.0 },
+{ artist: "Lewis Hartsough", spotifyID: "39VaCOujpRPDrzA1SC14mY", popularity: 3.0 },
+]
+
+module.exports = ithacaNYArtists;
