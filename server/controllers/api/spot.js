@@ -36,7 +36,6 @@ const spot = {
                   // console.log("Song Names: ", track.name);                  
                 })
               })
-              console.log(spotifyURIs)
               console.log("--Grabbed " + spotifyURIs.length + " spotify track URIs")
               return spotifyURIs
 
