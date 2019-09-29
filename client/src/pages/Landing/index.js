@@ -68,7 +68,7 @@ class LandingPage extends Component {
               <div>
                 <h3 className="hero__welcome-subtitle">Welcome to</h3>
                 <h1 className="display-3">Road Trip DJ</h1>
-                <Button value="Seed DB" onClick={this.seedDB} />
+                {/* <Button value="Seed DB" onClick={this.seedDB} /> */}
               </div>
             </div>
             <div
