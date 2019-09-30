@@ -155,6 +155,10 @@ const algorithm = {
               match: { name: city.name }
             })
             .exec((err, foundState2) => {
+              console.log("========================================")
+              console.log(city.name)
+              console.log(foundState2)
+              console.log("========================================")
               listCities.push(foundState2.wikiCities[0]._id);
               countCities++;
               if (countCities === 5) {
