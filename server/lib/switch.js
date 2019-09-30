@@ -18,7 +18,8 @@ const search =
     
             case "AK":
                 resolve(search.giveCities([
-                    search.AK
+                    search.AK,
+                    search.WA
                 ]))
                 break;
     
@@ -106,7 +107,8 @@ const search =
     
             case "HI":
                 resolve(search.giveCities([
-                    search.HI]))
+                    search.HI,
+                    search.CA]))
                 break;
     
             case "ID":
@@ -332,6 +334,8 @@ const search =
                     search.MT,
                     search.WY,
                     search.SD,
+                    search.NE,
+                    search.IA,
                     search.MN]))
                 break;
     
