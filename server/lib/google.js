@@ -31,10 +31,24 @@ const google = {
                 })
                 let geoRes = {
                     input: address,
-                    city:response.json.results[0].address_components[cityIndex].short_name,
-                    state:response.json.results[0].address_components[stateIndex].short_name,
+                    city: "N/A",
+                    state: "N/A",
                     formattedAddress: response.json.results[0].formatted_address,
                     latLng: `${response.json.results[0].geometry.location.lat}, ${response.json.results[0].geometry.location.lng}`,
+                }
+                if (cityIndex > -1 ) {
+                    geoRes.city = response.json.results[0].address_components[cityIndex].short_name;
+                } else {
+                    if (response.json.results[0].formatted_address === "New York Metropolitan Area, USA") {
+                        geoRes.city = "the New York metropolitan area"
+                    }
+                }
+                if (stateIndex > -1) {
+                    geoRes.state = response.json.results[0].address_components[stateIndex].short_name;
+                } else {
+                    if (response.json.results[0].formatted_address === "New York Metropolitan Area, USA") {
+                        geoRes.state = "NY"
+                    }
                 }
                 return geoRes
             })

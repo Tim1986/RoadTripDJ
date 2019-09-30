@@ -985,7 +985,7 @@ const seedData = [
         artists: minneapolisMNArtists
       },
       {
-        name: "Saint Paul",
+        name: "St Paul",
         artists: saintPaulMNArtists
       }
     ]
@@ -1191,7 +1191,7 @@ const seedData = [
         artists: newRochelleNYArtists
       },
       {
-        name: "New York City",
+        name: "New York",
         artists: newYorkCityNYArtists
       },
       {

@@ -18,7 +18,8 @@ const search =
     
             case "AK":
                 resolve(search.giveCities([
-                    search.AK
+                    search.AK,
+                    search.WA
                 ]))
                 break;
     
@@ -75,6 +76,15 @@ const search =
                     search.NY,
                     search.NJ]))
                 break;
+
+            case "DC":
+                resolve(search.giveCities([
+                    search.DC,
+                    search.MD,
+                    search.VA,
+                    search.PA,
+                    search.DE]))
+                break;
     
             case "DE":
                 resolve(search.giveCities([
@@ -106,7 +116,8 @@ const search =
     
             case "HI":
                 resolve(search.giveCities([
-                    search.HI]))
+                    search.HI,
+                    search.CA]))
                 break;
     
             case "ID":
@@ -254,6 +265,10 @@ const search =
                 resolve(search.giveCities([
                     search.MT,
                     search.ID,
+                    search.WA,
+                    search.OR,
+                    search.NE,
+                    search.CO,
                     search.WY,
                     search.SD,
                     search.ND]))
@@ -332,6 +347,8 @@ const search =
                     search.MT,
                     search.WY,
                     search.SD,
+                    search.NE,
+                    search.IA,
                     search.MN]))
                 break;
     
@@ -558,7 +575,7 @@ const search =
     
     MI : ["Ann Arbor, Michigan", "Detroit", "Flint, Michigan", "Lansing, Michigan", "Pontiac, Michigan", "Saginaw, Michigan"],
     
-    MN : ["Duluth, Minnesota", "Minneapolis", "Saint Paul, Minnesota"],
+    MN : ["Duluth, Minnesota", "Minneapolis", "St Paul, Minnesota"],
     
     MS : ["Clarksdale, Mississippi", "Greenville, Mississippi", "Hattiesburg, Mississippi", "Jackson, Mississippi",
             "Meridian, Mississippi", "Natchez, Mississippi", "Vicksburg, Mississippi"],
@@ -580,7 +597,7 @@ const search =
     NM : ["Albuquerque, New Mexico", "Santa Fe, New Mexico"],
     
     NY : ["Albany, New York", "Buffalo, New York", "Ithaca, New York", "Kingston, New York", "Mount Vernon, New York",
-            "New Rochelle, New York", "New York City", "the New York metropolitan area", "Niagara Falls, New York",
+            "New Rochelle, New York", "New York", "the New York metropolitan area", "Niagara Falls, New York",
             "Poughkeepsie, New York", "Rochester, New York", "Syracuse, New York", "Troy, New York", "Utica, New York"],
     
     NC : ["Asheville, North Carolina", "Charlotte, North Carolina", "Durham, North Carolina", "Fayetteville, North Carolina",
