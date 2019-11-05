@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
-    "mongoose": "^5.6.11",
+    "mongoose": "^5.7.5",
     "react-router": "^5.0.1",
     "wikijs": "^6.0.0",
     "yarn": "^1.17.3"
